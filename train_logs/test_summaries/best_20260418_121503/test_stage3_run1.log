@@ -1,0 +1,23 @@
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/client_mode_hook.py:104: FutureWarning: `local_mode` is an experimental feature that is no longer maintained and will be removed in the near future. For debugging consider using the Ray distributed debugger.
+  return func(*args, **kwargs)
+2026-04-18 12:15:25,921	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+:job_id:01000000
+:actor_name:RolloutWorker
+[INFO] [1776485727.753646894] [gym_env_robot_0_26622]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776485727.783720270] [gym_env_robot_1_25437]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776485727.801938222] [gym_env_robot_2_71988]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776485727.821675262] [gym_env_robot_3_94714]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers

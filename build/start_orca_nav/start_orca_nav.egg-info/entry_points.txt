@@ -1,0 +1,4 @@
+[console_scripts]
+orca_nav_node = start_orca_nav.orca_nav_node:main
+orca_nav_node_nav2 = start_orca_nav.orca_nav_node_nav2:main
+

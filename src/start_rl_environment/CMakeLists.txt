@@ -24,7 +24,7 @@ if(BUILD_TESTING)
 endif()
 
 install(
-  DIRECTORY description launch worlds models
+  DIRECTORY description launch worlds models maps rviz config
   DESTINATION share/${PROJECT_NAME}
 )
 ament_package()

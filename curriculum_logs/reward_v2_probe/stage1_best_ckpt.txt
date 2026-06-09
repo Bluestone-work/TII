@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/reward_v2_probe/GNN_MAPPO_Stage1_Interact_reward_v2_probe_EnvStage1/best

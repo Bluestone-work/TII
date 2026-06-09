@@ -1,0 +1,137 @@
+[INFO] [launch]: All log files can be found below /home/wj/.ros/log/2026-01-16-10-52-53-243658-wj-Default-string-338623
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] Loading world: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment/share/start_rl_environment/worlds/map1.world
+[INFO] Spawning 1 robots on map1...
+[INFO] Map Server loading: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment/share/start_rl_environment/maps/map1.yaml
+[INFO] [gzserver-1]: process started with pid [338683]
+[INFO] [gzclient-2]: process started with pid [338685]
+[INFO] [robot_state_publisher-3]: process started with pid [338687]
+[INFO] [spawn_entity.py-4]: process started with pid [338689]
+[INFO] [static_transform_publisher-5]: process started with pid [338692]
+[INFO] [map_server-6]: process started with pid [338694]
+[INFO] [lifecycle_manager-7]: process started with pid [338696]
+[INFO] [rviz2-8]: process started with pid [338698]
+[INFO] [run_matd3-9]: process started with pid [338700]
+[static_transform_publisher-5] [WARN] [1768531974.003702915] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-5] [INFO] [1768531974.034194483] [static_tf_my_bot0]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-5] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-5] from 'map' to 'my_bot0/odom'
+[lifecycle_manager-7] [INFO] [1768531974.061053681] [lifecycle_manager_map]: Creating
+[map_server-6] [INFO] [1768531974.064998281] [map_server]: 
+[map_server-6] 	map_server lifecycle node launched. 
+[map_server-6] 	Waiting on external lifecycle transitions to activate
+[map_server-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-6] [INFO] [1768531974.065245657] [map_server]: Creating
+[robot_state_publisher-3] [INFO] [1768531974.075466569] [my_bot0.robot_state_publisher]: got segment base_link
+[robot_state_publisher-3] [INFO] [1768531974.075590330] [my_bot0.robot_state_publisher]: got segment caster_wheel
+[robot_state_publisher-3] [INFO] [1768531974.075611060] [my_bot0.robot_state_publisher]: got segment chassis
+[robot_state_publisher-3] [INFO] [1768531974.075623935] [my_bot0.robot_state_publisher]: got segment laser_frame
+[robot_state_publisher-3] [INFO] [1768531974.075635137] [my_bot0.robot_state_publisher]: got segment left_wheel
+[robot_state_publisher-3] [INFO] [1768531974.075646002] [my_bot0.robot_state_publisher]: got segment right_wheel
+[lifecycle_manager-7] [INFO] [1768531974.075648410] [lifecycle_manager_map]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-7] [INFO] [1768531974.085823818] [lifecycle_manager_map]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-7] [INFO] [1768531974.085903051] [lifecycle_manager_map]: [34m[1mConfiguring map_server[0m[0m
+[lifecycle_manager-7] [ERROR] [1768531974.281208882] [lifecycle_manager_map]: Failed to change state for node: map_server
+[lifecycle_manager-7] [ERROR] [1768531974.281251196] [lifecycle_manager_map]: Failed to bring up all requested nodes. Aborting bringup.
+[ERROR] [gzserver-1]: process has died [pid 338683, exit code 255, cmd 'gzserver /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment/share/start_rl_environment/worlds/map1.world --seed=0 -slibgazebo_ros_init.so -slibgazebo_ros_factory.so -slibgazebo_ros_force_system.so --verbose -s libgazebo_ros_factory.so'].
+[spawn_entity.py-4] [INFO] [1768531974.907808421] [my_bot0.spawn_entity]: Spawn Entity started
+[spawn_entity.py-4] [INFO] [1768531974.908393849] [my_bot0.spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-4] [INFO] [1768531974.911444183] [my_bot0.spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-4] [INFO] [1768531974.922473847] [my_bot0.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-4] [INFO] [1768531974.922829391] [my_bot0.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-4] [INFO] [1768531975.177690213] [my_bot0.spawn_entity]: Calling service /spawn_entity
+[run_matd3-9] [INFO] [1768531975.381770305] [matd3_ns.matd3_node]: Map number: 1 (map1)
+[run_matd3-9] [INFO] [1768531975.382238739] [matd3_ns.matd3_node]: Robot number: 1
+[run_matd3-9] [INFO] [1768531975.382690432] [matd3_ns.matd3_node]: Position mode: Fixed Mode
+[run_matd3-9] [WARN] [1768531975.413421622] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [WARN] [1768531975.422634598] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [WARN] [1768531975.433822070] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [WARN] [1768531975.446937399] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [WARN] [1768531975.459039534] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [WARN] [1768531975.466773524] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [WARN] [1768531975.477770278] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [INFO] [1768531975.487884502] [matd3_ns.matd3_node]: MapSubscriber initialized, waiting for /map topic...
+[run_matd3-9] 
+[run_matd3-9] ================================================================================
+[run_matd3-9] [INFO] 📝 交互数据将记录到: /home/wj/work/multi-robot-exploration-rl/interaction_logs/interaction_log_map1_robots1_20260116_105255.jsonl
+[run_matd3-9] ================================================================================
+[run_matd3-9] 
+[run_matd3-9] [INFO] Loaded map map1: 400x400, resolution=0.05
+[run_matd3-9] [INFO] Loaded spawn presets for map1
+[run_matd3-9] [INFO] Fixed mode: will use robot positions from environment
+[run_matd3-9] [DEBUG] Final current_goal_poses (1 goals):
+[run_matd3-9]   Robot 0 goal: x=2.00, y=-3.00
+[run_matd3-9] 
+[run_matd3-9] ================================================================================
+[run_matd3-9] [INFO] 正在初始化距离场功能...
+[run_matd3-9] [INFO] 等待地图数据发布到 /map 话题...
+[run_matd3-9] ================================================================================
+[run_matd3-9] 
+[run_matd3-9] [INFO] [1768531975.498436886] [matd3_ns.matd3_node]: 🎉 Map callback triggered! Processing map data...
+[run_matd3-9] [INFO] [1768531975.499024718] [matd3_ns.matd3_node]: ✅ Map received successfully:
+[run_matd3-9]    Size: 400x400
+[run_matd3-9]    Resolution: 0.05000000074505806m
+[run_matd3-9]    Origin: (-10.00, -10.00)
+[run_matd3-9]    Data length: 160000
+[run_matd3-9] 
+[run_matd3-9] ================================================================================
+[run_matd3-9] [INFO] ✅ 地图数据已接收成功！
+[run_matd3-9] [INFO]    尺寸: 400x400
+[run_matd3-9] [INFO]    分辨率: 0.05000000074505806m
+[run_matd3-9] [INFO]    原点: (-10.00, -10.00)
+[run_matd3-9] [INFO]    数据长度: 160000
+[run_matd3-9] [INFO] 距离场功能已启用 ✓
+[run_matd3-9] ================================================================================
+[run_matd3-9] 
+[rviz2-8] [INFO] [1768531975.585943868] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-8] [INFO] [1768531975.586106555] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[spawn_entity.py-4] [INFO] [1768531975.619477396] [my_bot0.spawn_entity]: Spawn status: Entity [my_bot0] already exists.
+[spawn_entity.py-4] [ERROR] [1768531975.619999189] [my_bot0.spawn_entity]: Spawn service failed. Exiting.
+[rviz2-8] [INFO] [1768531975.786121197] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [spawn_entity.py-4]: process has died [pid 338689, exit code 1, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -topic robot_description -entity my_bot0 -robot_namespace my_bot0 -x 0.015154001459098065 -y -8.336560145299119 -z 0.1 -Y -1.384695527995959 --ros-args -r __node:=spawn_entity -r __ns:=/my_bot0'].
+[run_matd3-9] [WARN] [1768531976.313729883] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-9] [INFO] [1768531976.550722083] [matd3_ns.matd3_node]: %%%%%%%%%% Goal Spawned Successfully %%%%%%%%%%
+[run_matd3-9] 
+[run_matd3-9] [INFO] 🚀 开始训练: 5000 episodes
+[run_matd3-9] 
+[run_matd3-9] [DEBUG] Episode 0: 调用 env.reset()...
+[run_matd3-9] [INFO] Recording initial robot positions from environment
+[run_matd3-9] [WARN] Robot 0 at (-1.10, -7.00) is in obstacle, adjusting...
+[run_matd3-9] [INFO] Adjusted position (-1.10, -7.00) -> (-1.00, -7.00)
+[run_matd3-9]   Robot 0: (-1.00, -7.00, yaw=3.13)
+[run_matd3-9] [DEBUG] First reset - calling spawn_goals()
+[run_matd3-9] [DEBUG] spawn_goals() called, spawning 1 goals
+[run_matd3-9] [DEBUG] current_goal_poses has 1 poses
+[run_matd3-9] [DEBUG] Spawning goal_box_0 at x=2.00, y=-3.00
+[run_matd3-9] [DEBUG] spawn_goals() completed, returning 1 locations
+[run_matd3-9] [DEBUG] spawn_goals() returned 1 locations
+[run_matd3-9] [DEBUG]   Goal 0: (2.00, -3.00)
+[run_matd3-9] debug1
+[run_matd3-9] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-9] [DEBUG] 目标 (2.00, -3.00):
+[run_matd3-9]   - 自由空间距离: min=0.000, max=17.658, mean=8.467
+[run_matd3-9]   - 目标栅格: (239, 139)
+[run_matd3-9]   - 目标处地图值: 0
+[run_matd3-9] [DEBUG] Episode 0: reset完成，obs维度: (98,)
+[run_matd3-9] [DEBUG] Episode 0: 进入while循环...
+[run_matd3-9] [DEBUG] Episode 0 Step 0: 调用 choose_action()...
+[run_matd3-9] [DEBUG] Episode 0 Step 0: 动作生成完成，调用 env.step()...
+[run_matd3-9] 
+[run_matd3-9] ================================================================================
+[run_matd3-9] [DEBUG] 🎯 第一次step()调用！
+[run_matd3-9] [DEBUG] 日志文件: /home/wj/work/multi-robot-exploration-rl/interaction_logs/interaction_log_map1_robots1_20260116_105255.jsonl
+[run_matd3-9] [DEBUG] enable_interaction_logging: True
+[run_matd3-9] ================================================================================
+[run_matd3-9] 
+[run_matd3-9] [INFO] [1768531978.840495051] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768531982.850626696] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768531986.457006687] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768531989.662542081] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768531992.870815088] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768531996.480531753] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768532000.089480729] [matd3_ns.matd3_node]: Collision detected!
+[run_matd3-9] [INFO] [1768532003.293745035] [matd3_ns.matd3_node]: Collision detected!
+[INFO] [rviz2-8]: process has finished cleanly [pid 338698]
+[INFO] [gzclient-2]: process has finished cleanly [pid 338685]
+[run_matd3-9] [INFO] [1768532006.500126721] [matd3_ns.matd3_node]: Collision detected!

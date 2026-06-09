@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/interaction_potential_smoke/GNN_MAPPO_Stage1_Interact_interaction_potential_smoke_EnvStage1/best

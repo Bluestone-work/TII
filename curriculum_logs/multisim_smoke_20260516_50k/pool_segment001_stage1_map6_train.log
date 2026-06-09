@@ -1,0 +1,49 @@
+2026-05-16 16:55:18,110	INFO worker.py:2013 -- Started a local Ray instance.
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  4
+  Multi-Sim:     on  base_domain=40  base_gazebo=11345  stride=1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     50,000
+  动作模式:     option_mode
+  Option源:     rl  replan=on  hold=[1, 30]  topk=3
+  PPO配置:      option_discrete  (clip=0.2, ent=0.01, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.75
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+Traceback (most recent call last):
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 2228, in <module>
+    main()
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 2161, in main
+    ckpt = _run_tune(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 1574, in _run_tune
+    return _run_training(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 892, in _run_training
+    algo = config.build()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_common/deprecation.py", line 169, in _ctor
+    return obj(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm_config.py", line 5906, in build
+    return self.build_algo(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm_config.py", line 1007, in build_algo
+    return algo_class(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py", line 469, in __init__
+    config.validate()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/ppo/ppo.py", line 295, in validate
+    self.validate_train_batch_size_vs_rollout_fragment_length()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm_config.py", line 4395, in validate_train_batch_size_vs_rollout_fragment_length
+    self._value_error(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm_config.py", line 4894, in _value_error
+    raise ValueError(msg)
+ValueError: Your desired `total_train_batch_size` (5000=0 learners x 5000) or a value 10% off of that cannot be achieved with your other settings (num_env_runners=4; num_envs_per_env_runner=1; rollout_fragment_length=1000)! Try setting `rollout_fragment_length` to 'auto' OR to a value of 1250.
+To suppress all validation errors, set `config.experimental(_validate_config=False)` at your own risk.

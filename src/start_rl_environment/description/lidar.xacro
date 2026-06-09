@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
+    <xacro:arg name="robot_name" default="my_bot"/>
     <joint name="laser_joint" type="fixed">
         <parent link="chassis"/>
         <child link="laser_frame"/>
@@ -62,7 +62,7 @@
                     <argument>~/out:=scan</argument>                   
                 </ros>
                 <output_type>sensor_msgs/LaserScan</output_type>
-                <frame_name>laser_frame</frame_name>
+                <frame_name>$(arg robot_name)/laser_frame</frame_name>
             </plugin>
         </sensor>
     </gazebo>

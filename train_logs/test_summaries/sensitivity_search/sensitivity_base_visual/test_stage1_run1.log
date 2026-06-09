@@ -1,0 +1,1410 @@
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/client_mode_hook.py:104: FutureWarning: `local_mode` is an experimental feature that is no longer maintained and will be removed in the near future. For debugging consider using the Ray distributed debugger.
+  return func(*args, **kwargs)
+2026-05-25 22:05:59,133	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+:job_id:01000000
+:actor_name:RolloutWorker
+[INFO] [1779717961.325732324] [gym_env_robot_0_43969]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717961.396377586] [gym_env_robot_1_79558]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717961.445344007] [gym_env_robot_2_55458]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717961.495698940] [gym_env_robot_3_96067]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717963.835433237] [gym_env_robot_0_74427]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717963.960797974] [gym_env_robot_1_7822]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717964.030304430] [gym_env_robot_2_93861]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779717964.105195061] [gym_env_robot_3_54822]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-05-25 22:06:04,124	WARNING rollout_worker.py:507 -- You are running ray with `local_mode=True`, but have configured 1 GPUs to be used! In local mode, Policies are placed on the CPU and the `num_gpus` setting is ignored.
+2026-05-25 22:06:04,214	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+[INFO] [1779717964.493061097] [gym_env_robot_0_47327]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779718049.005996765] [gym_env_robot_0_39583]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+================================================================================
+正在读取 Checkpoint 配置...
+================================================================================
+:job_id:01000000
+:actor_name:RolloutWorker
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+✅ 成功克隆训练架构:
+   - 模型结构: gat_model
+   - 机器人数量: 4
+   - 动作模式: interaction_mode
+================================================================================
+
+测试环境关键参数:
+   - map_number: 6
+   - num_dynamic_obstacles: 0
+   - obs_speed: 0.0
+   - action_mode: interaction_mode
+   - interaction_neighbor_perception_range: 3.5
+   - max_episode_steps: 1500
+   - auto_reset_agents: False
+   - min_active_agents_to_continue: 0
+   - max_failed_agents_before_cutoff: 0
+   - stall_global_replan_enable: None
+   - stall_global_replan_sec: None
+创建测试环境...
+固定基准场景集: fixed50_v1 (49 cases)
+================================================================================
+Episode 1/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_01 category=weak_interaction map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.49 left=1.54 right=1.32 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.600,-0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.49 left=1.54 right=1.32 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.602,-0.003) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.50 left=1.55 right=0.93 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.606,-0.010) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.50 left=1.55 right=0.93 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=1.72 right=1.28 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+  [diag-post] agent_0 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=1.72 right=1.28 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.211 clear=0.083 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.40 left=0.95 right=1.28 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.214 clear=0.082 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.40 left=0.95 right=1.28 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=0.61 right=1.28 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.222 clear=0.080 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=0.61 right=1.28 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.201 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=0.61 right=1.27 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.211 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=0.61 right=1.27 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.210 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.37 left=0.62 right=1.26 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.209 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.37 left=0.62 right=1.26 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=0.62 right=1.27 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.208 clear=0.001 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 758/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=758)
+  [episode-summary] steps=758 avg_reward=-20.74 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.211 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.038 truncated=False
+  [mode-summary] policy=detour_left:2;detour_right:376;go:379;slow_follow:1
+  [mode-summary] effective=detour_left:2;detour_right:376;go:379;slow_follow:1
+  [mode-summary] executed=detour_left:2;detour_right:376;go:379;slow_follow:1
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 2/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_02 category=weak_interaction map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.000,-4.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+[INFO] [1779718138.404983475] [gym_env_robot_0_30269]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=1.42 left=0.75 right=1.08 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.000,-4.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=0.75 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.002,-4.799) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.333 clear=0.041 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=0.75 right=1.07 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.006,-4.798) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.204 clear=0.086 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=0.76 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.214 clear=0.082 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=0.76 right=1.07 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.205 clear=0.086 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.45 left=0.76 right=1.08 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.214 clear=0.083 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.45 left=0.76 right=1.08 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.210 clear=0.084 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.48 left=0.77 right=1.10 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.209 clear=0.084 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.48 left=0.77 right=1.10 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.51 left=0.77 right=1.12 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.51 left=0.77 right=1.12 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.046 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.44 left=0.74 right=1.11 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.001 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.44 left=0.74 right=1.11 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.005 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=0.75 right=1.11 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.002 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=0.75 right=1.11 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.005 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...Step 800...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 802/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=802)
+  [episode-summary] steps=802 avg_reward=-23.95 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.224 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.020 truncated=False
+  [mode-summary] policy=detour_left:4;detour_right:397;go:400;slow_follow:1
+  [mode-summary] effective=detour_left:4;detour_right:397;go:400;slow_follow:1
+  [mode-summary] executed=detour_left:4;detour_right:397;go:400;slow_follow:1
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 3/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_03 category=weak_interaction map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.28 left=0.61 right=1.31 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.801, 0.799) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.338 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.30 left=0.30 right=1.33 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.804, 0.795) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.30 left=0.30 right=1.33 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.808, 0.788) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=0.27 right=1.30 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=0.27 right=1.30 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.25 right=1.46 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.25 right=1.46 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.25 right=1.70 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.25 right=1.70 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.61 left=0.24 right=1.14 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[INFO] [1779718305.396438486] [gym_env_robot_0_8592]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779718306.767771988] [gym_env_robot_0_72092]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.048 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.61 left=0.24 right=1.14 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.30 left=0.25 right=0.89 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.30 left=0.25 right=0.89 social_risk=0.000 front_risk=0.904 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.26 left=1.07 right=0.77 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.26 left=1.07 right=0.77 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...Step 800...Step 850...Step 900...Step 950...Step 1000...Step 1050...Step 1100...Step 1150...Step 1200...Step 1250...Step 1300...Step 1350...Step 1400...Step 1450...
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 1500/1500
+   完成: 1/1
+   活跃: 0  失败: 0
+============================================================
+
+Step 1500...  [episode-summary] steps=1500 avg_reward=-32.55 success=0 collision=0 reached_agents=0 collided_agents=0 min_dist=0.240 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.081 truncated=True
+  [mode-summary] policy=detour_left:49;detour_right:696;go:728;slow_follow:27
+  [mode-summary] effective=detour_left:49;detour_right:696;go:728;slow_follow:27
+  [mode-summary] executed=detour_left:49;detour_right:696;go:728;slow_follow:27
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 4/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_04 category=weak_interaction map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=0.64 left=0.72 right=0.71 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.64 left=0.24 right=0.71 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.799, 0.802) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.221 clear=0.080 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.64 left=0.24 right=0.71 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.794, 0.808) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.65 left=0.25 right=0.71 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.65 left=0.25 right=0.71 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.71 left=0.60 right=0.76 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 6/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+碰撞: agent_0 (step=6)
+  [episode-summary] steps=6 avg_reward=-10.18 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.234 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.000 truncated=False
+  [mode-summary] policy=detour_right:3;go:3
+  [mode-summary] effective=detour_right:3;go:3
+  [mode-summary] executed=detour_right:3;go:3
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 5/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_05 category=weak_interaction map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.000, 4.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.000, 4.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.55 right=1.09 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.002, 4.801) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.333 clear=0.041 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.55 right=1.09 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-0.007, 4.802) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.40 left=0.91 right=1.09 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.40 left=0.91 right=1.09 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=0.91 right=1.09 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=0.91 right=1.09 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.37 left=0.87 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+[INFO] [1779718392.941572408] [gym_env_robot_0_87140]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=1.37 left=0.87 right=1.07 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.36 left=0.84 right=1.06 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.36 left=0.84 right=1.06 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.046 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.36 left=0.80 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.36 left=0.80 right=1.07 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=0.79 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=0.79 right=1.07 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 773/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=773)
+  [episode-summary] steps=773 avg_reward=-20.25 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.213 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.058 truncated=False
+  [mode-summary] policy=detour_right:386;go:387
+  [mode-summary] effective=detour_right:386;go:387
+  [mode-summary] executed=detour_right:386;go:387
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 6/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_06 category=weak_interaction map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.600, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.42 left=1.27 right=0.66 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.600,-0.001) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.335 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.28 right=0.66 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.600,-0.005) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.231 clear=0.036 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.28 right=0.66 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.599,-0.013) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.06 left=1.28 right=0.92 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.06 left=1.28 right=0.92 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.77 left=1.28 right=1.80 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.77 left=1.28 right=1.80 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.63 left=0.93 right=1.56 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.63 left=0.93 right=1.56 social_risk=0.000 front_risk=0.905 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.56 left=0.91 right=1.46 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.047 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.56 left=0.91 right=1.46 social_risk=0.000 front_risk=0.470 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.011 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.53 left=0.89 right=1.43 social_risk=0.000 front_risk=0.746 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.53 left=0.89 right=1.43 social_risk=0.000 front_risk=0.258 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.53 left=0.90 right=1.44 social_risk=0.000 front_risk=0.278 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.53 left=0.90 right=1.44 social_risk=0.000 front_risk=0.058 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 767/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=767)
+  [episode-summary] steps=767 avg_reward=-22.64 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.235 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.048 truncated=False
+  [mode-summary] policy=detour_left:3;detour_right:380;go:381;slow_follow:3
+  [mode-summary] effective=detour_left:3;detour_right:380;go:381;slow_follow:3
+  [mode-summary] executed=detour_left:3;detour_right:380;go:381;slow_follow:3
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 7/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[INFO] [1779718478.823054939] [gym_env_robot_0_664]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779718536.930903266] [gym_env_robot_0_96870]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_07 category=weak_interaction map=6 agents=1
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-1.000, 4.200) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.71 left=0.38 right=1.30 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-1.000, 4.200) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.71 left=0.38 right=1.30 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.999, 4.203) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.255 clear=0.068 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.71 left=0.38 right=1.30 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-0.997, 4.209) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.72 left=0.38 right=1.29 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.72 left=0.38 right=1.29 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.73 left=0.39 right=1.30 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.73 left=0.39 right=1.30 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.85 left=0.40 right=1.33 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.85 left=0.40 right=1.33 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.99 left=0.43 right=1.40 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.99 left=0.43 right=1.40 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.019 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.28 left=0.49 right=1.52 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.28 left=0.49 right=1.52 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.37 left=0.60 right=1.78 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.37 left=0.60 right=1.78 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 517/1500
+   完成: 1/1
+   活跃: 0  失败: 0
+============================================================
+
+✅ agent_0 到达目标 (step=517)
+  [episode-summary] steps=517 avg_reward=2.45 success=1 collision=0 reached_agents=1 collided_agents=0 min_dist=0.353 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.098 truncated=False
+  [mode-summary] policy=detour_right:259;go:258
+  [mode-summary] effective=detour_right:259;go:258
+  [mode-summary] executed=detour_right:259;go:258
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 8/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=weak_follow_08 category=weak_interaction map=6 agents=1
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.900, 5.200) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.38 left=1.07 right=0.70 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.900, 5.200) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=1.07 right=0.70 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.898, 5.200) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.320 clear=0.045 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=1.07 right=0.69 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.893, 5.201) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.41 left=1.07 right=0.69 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.75 left=1.09 right=0.69 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.75 left=1.09 right=0.69 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.29 left=0.87 right=0.69 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.29 left=0.87 right=0.69 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.29 left=0.83 right=0.67 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[INFO] [1779718627.932071052] [gym_env_robot_0_82923]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779718629.839235958] [gym_env_robot_0_79215]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.29 left=0.83 right=0.67 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.26 left=0.77 right=0.69 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.042 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.26 left=0.77 right=0.69 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.24 left=0.76 right=0.68 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.24 left=0.76 right=0.68 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.24 left=0.75 right=0.69 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...Step 800...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 815/1500
+   完成: 1/1
+   活跃: 0  失败: 0
+============================================================
+
+✅ agent_0 到达目标 (step=815)
+  [episode-summary] steps=815 avg_reward=-3.62 success=1 collision=0 reached_agents=1 collided_agents=0 min_dist=0.446 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.030 truncated=False
+  [mode-summary] policy=detour_right:407;go:408
+  [mode-summary] effective=detour_right:407;go:408
+  [mode-summary] executed=detour_right:407;go:408
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 9/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=corner_l_01 category=corner_turn map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=0.61 left=1.10 right=0.66 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.62 left=0.29 right=0.68 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.801, 0.802) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.231 clear=0.076 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.62 left=0.29 right=0.68 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.803, 0.809) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.61 left=0.26 right=0.68 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.61 left=0.26 right=0.68 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.59 left=0.24 right=0.68 social_risk=0.000 front_risk=0.137 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.59 left=0.24 right=0.68 social_risk=0.000 front_risk=0.045 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.58 left=0.24 right=0.69 social_risk=0.000 front_risk=0.153 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.58 left=0.24 right=0.69 social_risk=0.000 front_risk=0.034 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.57 left=0.23 right=0.69 social_risk=0.000 front_risk=0.084 | raw=detour_right -> v=nan, w=nan
+
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 10/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+碰撞: agent_0 (step=10)
+  [episode-summary] steps=10 avg_reward=-10.20 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.234 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.045 truncated=False
+  [mode-summary] policy=detour_right:5;go:5
+  [mode-summary] effective=detour_right:5;go:5
+  [mode-summary] executed=detour_right:5;go:5
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 10/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=corner_l_02 category=corner_turn map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=0.63 left=0.75 right=1.10 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.63 left=0.73 right=1.10 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.801, 0.802) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.242 clear=0.073 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.63 left=0.73 right=1.10 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.804, 0.810) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.61 left=0.83 right=0.29 social_risk=0.000 front_risk=0.053 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+[INFO] [1779718631.398002062] [gym_env_robot_0_63725]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779718669.242812425] [gym_env_robot_0_71569]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=0.61 left=0.83 right=0.29 social_risk=0.000 front_risk=0.053 | raw=slow_follow -> v=nan, w=nan
+  [diag-post] agent_0 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.60 left=1.01 right=0.26 social_risk=0.000 front_risk=0.177 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.60 left=1.01 right=0.26 social_risk=0.000 front_risk=0.014 | raw=slow_follow -> v=nan, w=nan
+  [diag-post] agent_0 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.58 left=1.39 right=0.25 social_risk=0.000 front_risk=0.124 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.58 left=1.39 right=0.25 social_risk=0.000 front_risk=0.025 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.56 left=1.53 right=0.24 social_risk=0.000 front_risk=0.247 | raw=detour_left -> v=nan, w=nan
+
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 10/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+碰撞: agent_0 (step=10)
+  [episode-summary] steps=10 avg_reward=-10.13 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.237 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.085 truncated=False
+  [mode-summary] policy=detour_left:5;go:2;slow_follow:3
+  [mode-summary] effective=detour_left:5;go:2;slow_follow:3
+  [mode-summary] executed=detour_left:5;go:2;slow_follow:3
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 11/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=corner_l_03 category=corner_turn map=6 agents=1
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.400,-0.450) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.73 left=0.81 right=0.93 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.399,-0.450) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.283 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.73 left=0.81 right=0.94 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.391,-0.452) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.73 left=0.81 right=0.94 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.384,-0.454) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.58 left=0.80 right=0.94 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.58 left=0.80 right=0.94 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.46 left=0.80 right=0.94 social_risk=0.000 front_risk=0.265 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.46 left=0.80 right=0.94 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.35 left=0.80 right=0.93 social_risk=0.000 front_risk=0.173 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.35 left=0.80 right=0.93 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.24 left=0.81 right=0.92 social_risk=0.000 front_risk=0.340 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.24 left=0.81 right=0.92 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.14 left=0.80 right=0.92 social_risk=0.000 front_risk=0.497 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.14 left=0.80 right=0.92 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.08 left=0.81 right=0.90 social_risk=0.000 front_risk=0.250 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.08 left=0.81 right=0.90 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 337/1500
+   完成: 1/1
+   活跃: 0  失败: 0
+============================================================
+
+✅ agent_0 到达目标 (step=337)
+  [episode-summary] steps=337 avg_reward=3.24 success=1 collision=0 reached_agents=1 collided_agents=0 min_dist=0.637 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.070 truncated=False
+  [mode-summary] policy=detour_left:4;detour_right:164;go:169
+  [mode-summary] effective=detour_left:4;detour_right:164;go:169
+  [mode-summary] executed=detour_left:4;detour_right:164;go:169
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 12/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=corner_l_04 category=corner_turn map=6 agents=1
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.900,-5.150) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+[INFO] [1779718836.432784156] [gym_env_robot_0_76953]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=0.98 left=1.60 right=0.49 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.900,-5.150) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.447 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.98 left=1.60 right=0.49 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.900,-5.149) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.343 clear=0.037 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.05 left=1.70 right=0.49 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.901,-5.144) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.05 left=1.70 right=0.49 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=1.65 right=0.47 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=1.65 right=0.47 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.203 clear=0.086 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.84 left=1.38 right=0.48 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.84 left=1.38 right=0.48 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.46 left=1.18 right=0.48 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.46 left=1.18 right=0.48 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.15 left=1.10 right=0.48 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.050 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.15 left=1.10 right=0.48 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.94 left=1.03 right=0.48 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.94 left=1.03 right=0.48 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.83 left=1.01 right=0.49 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.001 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...Step 800...Step 850...Step 900...Step 950...Step 1000...Step 1050...Step 1100...Step 1150...Step 1200...Step 1250...Step 1300...Step 1350...Step 1400...Step 1450...
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 1500/1500
+   完成: 1/1
+   活跃: 0  失败: 0
+============================================================
+
+Step 1500...  [episode-summary] steps=1500 avg_reward=-33.04 success=0 collision=0 reached_agents=0 collided_agents=0 min_dist=0.395 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.052 truncated=True
+  [mode-summary] policy=detour_left:27;detour_right:714;go:738;slow_follow:21
+  [mode-summary] effective=detour_left:27;detour_right:714;go:738;slow_follow:21
+  [mode-summary] executed=detour_left:27;detour_right:714;go:738;slow_follow:21
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 13/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=corner_l_05 category=corner_turn map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=0.80 left=1.27 right=1.76 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.80 left=1.27 right=1.76 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.599, 0.003) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.255 clear=0.068 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.79 left=1.26 right=1.76 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.596, 0.009) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.79 left=1.26 right=1.76 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.62 left=0.95 right=1.54 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.62 left=0.95 right=1.54 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.58 left=0.93 right=1.43 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.58 left=0.93 right=1.43 social_risk=0.000 front_risk=0.212 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.57 left=0.92 right=1.42 social_risk=0.000 front_risk=0.326 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+[INFO] [1779718920.933857945] [gym_env_robot_0_15566]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779719009.610641978] [gym_env_robot_0_27342]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=0.57 left=0.92 right=1.42 social_risk=0.000 front_risk=0.058 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.56 left=0.92 right=1.41 social_risk=0.000 front_risk=0.141 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.019 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.56 left=0.92 right=1.41 social_risk=0.000 front_risk=0.050 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.66 left=0.94 right=1.42 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.66 left=0.94 right=1.42 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.23 left=0.76 right=1.43 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 757/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=757)
+  [episode-summary] steps=757 avg_reward=-21.42 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.232 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.061 truncated=False
+  [mode-summary] policy=detour_right:378;go:378;slow_follow:1
+  [mode-summary] effective=detour_right:378;go:378;slow_follow:1
+  [mode-summary] executed=detour_right:378;go:378;slow_follow:1
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 14/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=corner_l_06 category=corner_turn map=6 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.000,-4.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=0.80 left=1.12 right=1.40 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-0.001,-4.799) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.315 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.80 left=1.12 right=1.40 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.004,-4.795) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.79 left=1.14 right=1.41 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-0.009,-4.789) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.79 left=1.14 right=1.41 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.77 left=1.29 right=1.39 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.77 left=1.29 right=1.39 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.75 left=1.38 right=1.40 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.75 left=1.38 right=1.40 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.73 left=1.37 right=1.41 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=0.73 left=1.37 right=1.41 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.040 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.03 left=1.21 right=1.42 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.03 left=1.21 right=1.42 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.59 left=1.01 right=1.41 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.59 left=1.01 right=1.41 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=2.29 left=0.82 right=1.40 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 796/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=796)
+  [episode-summary] steps=796 avg_reward=-21.70 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.239 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.061 truncated=False
+  [mode-summary] policy=detour_right:398;go:398
+  [mode-summary] effective=detour_right:398;go:398
+  [mode-summary] executed=detour_right:398;go:398
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 15/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=wall_close_01 category=wall_margin map=3 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.800, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+[INFO] [1779719092.727726612] [gym_env_robot_0_90488]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.799,-0.001) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.307 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.79 left=0.80 right=1.23 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.794,-0.004) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.79 left=0.80 right=1.23 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.789,-0.007) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.83 left=0.80 right=1.24 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.83 left=0.80 right=1.24 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.80 left=0.80 right=1.24 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.80 left=0.80 right=1.24 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.75 right=1.17 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.75 right=1.17 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.55 left=0.73 right=1.15 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.038 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.55 left=0.73 right=1.15 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.48 left=0.74 right=1.15 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.48 left=0.74 right=1.15 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.47 left=0.74 right=1.17 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.47 left=0.74 right=1.17 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 746/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=746)
+  [episode-summary] steps=746 avg_reward=-19.45 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.232 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.057 truncated=False
+  [mode-summary] policy=detour_right:373;go:373
+  [mode-summary] effective=detour_right:373;go:373
+  [mode-summary] executed=detour_right:373;go:373
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 16/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=wall_close_02 category=wall_margin map=3 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.600) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.17 left=1.12 right=0.80 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.799, 0.599) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.283 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.16 left=1.12 right=0.80 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.793, 0.593) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.16 left=1.12 right=0.80 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.785, 0.586) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.14 left=1.16 right=0.81 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.14 left=1.16 right=0.81 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.12 left=1.23 right=0.81 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.12 left=1.23 right=0.81 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.24 left=1.35 right=0.81 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.24 left=1.35 right=0.81 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.30 left=1.39 right=0.81 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.029 risk_delta=0.000 replan=(0,0)
+[INFO] [1779719173.404109051] [gym_env_robot_0_44472]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779719257.234043615] [gym_env_robot_0_99254]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+  [diag-pre] agent_0 front=1.30 left=1.39 right=0.81 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.40 left=1.41 right=0.83 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.40 left=1.41 right=0.83 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.48 left=1.41 right=0.83 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.48 left=1.41 right=0.83 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 724/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=724)
+  [episode-summary] steps=724 avg_reward=-19.00 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.222 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.078 truncated=False
+  [mode-summary] policy=backoff:1;detour_left:1;detour_right:358;go:360;slow_follow:4
+  [mode-summary] effective=backoff:1;detour_left:1;detour_right:358;go:360;slow_follow:4
+  [mode-summary] executed=backoff:1;detour_left:1;detour_right:358;go:360;slow_follow:4
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 17/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=wall_close_03 category=wall_margin map=3 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.800,-0.600) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=1.46 left=1.07 right=1.45 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.800,-0.600) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.46 left=1.07 right=1.45 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.800,-0.596) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.231 clear=0.076 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.45 left=1.09 right=1.43 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.799,-0.588) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.45 left=1.09 right=1.43 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.20 left=1.09 right=1.10 social_risk=0.000 front_risk=0.783 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.20 left=1.09 right=1.10 social_risk=0.000 front_risk=0.655 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.15 left=1.08 right=0.96 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.15 left=1.08 right=0.96 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.13 left=1.10 right=0.89 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.13 left=1.10 right=0.89 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.11 left=1.14 right=0.86 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.011 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.11 left=1.14 right=0.86 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.07 left=1.22 right=0.86 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.07 left=1.22 right=0.86 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.08 left=1.34 right=0.86 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 750/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=750)
+Step 750...  [episode-summary] steps=750 avg_reward=-19.90 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.234 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.065 truncated=False
+  [mode-summary] policy=backoff:1;detour_right:374;go:374;slow_follow:1
+  [mode-summary] effective=backoff:1;detour_right:374;go:374;slow_follow:1
+  [mode-summary] executed=backoff:1;detour_right:374;go:374;slow_follow:1
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 18/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=wall_close_04 category=wall_margin map=3 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+[INFO] [1779719340.651735432] [gym_env_robot_0_36828]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779719341.147532422] [gym_env_robot_0_97025]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779719341.230764135] [gym_env_robot_1_2530]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.000) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.372 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.53 left=0.77 right=0.88 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.797, 0.004) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.220 clear=0.053 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.53 left=0.77 right=0.88 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.792, 0.008) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.59 left=0.78 right=0.86 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.59 left=0.78 right=0.86 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.58 left=0.74 right=0.86 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.58 left=0.74 right=0.86 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.61 left=0.77 right=0.85 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.61 left=0.77 right=0.85 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.75 right=0.85 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.060 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.62 left=0.75 right=0.85 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.007 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.65 left=0.75 right=0.84 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.65 left=0.75 right=0.84 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.67 left=0.74 right=0.83 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.67 left=0.74 right=0.83 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 750/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+碰撞: agent_0 (step=750)
+Step 750...  [episode-summary] steps=750 avg_reward=-21.43 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.230 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=0.072 truncated=False
+  [mode-summary] policy=detour_left:1;detour_right:373;go:375;slow_follow:1
+  [mode-summary] effective=detour_left:1;detour_right:373;go:375;slow_follow:1
+  [mode-summary] executed=detour_left:1;detour_right:373;go:375;slow_follow:1
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 19/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+  [benchmark-case] name=wall_close_05 category=wall_margin map=3 agents=1
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.500, 1.800) status=active
+    adj=[1]  dist=[ 0.00]  neighbors=[]
+  [diag-pre] agent_0 front=0.49 left=3.41 right=0.41 social_risk=0.000 front_risk=0.117 | raw=go -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.221, 1.901) status=done
+    adj=[0]  dist=[ 0.00]  neighbors=[]
+
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 1/1500
+   完成: 1/1
+   活跃: 0  失败: 1
+============================================================
+
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.612 clear=0.000 risk_delta=0.000 replan=(0,0)
+碰撞: agent_0 (step=1)
+  [episode-summary] steps=1 avg_reward=-10.11 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.120 avg_social_risk=0.000 avg_social_risk_delta=0.000 avg_front_risk=1.000 truncated=False
+  [mode-summary] policy=go:1
+  [mode-summary] effective=go:1
+  [mode-summary] executed=go:1
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=0
+================================================================================
+Episode 20/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+  [benchmark-case] name=head_on_01 category=strong_interaction map=6 agents=2
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   0  agent_0  my_pos=(-4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   0  agent_1  my_pos=(4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-pre] agent_0 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.32 left=1.38 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.600,-0.000) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.600,-0.000) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   1  agent_0  my_pos=(-4.600,-0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   1  agent_1  my_pos=(4.600,-0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.33 left=1.37 right=0.56 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.32 left=1.38 right=1.07 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.600,-0.000) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.600,-0.000) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   2  agent_0  my_pos=(-4.600,-0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   2  agent_1  my_pos=(4.600,-0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=1.36 right=0.55 social_risk=0.000 front_risk=1.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.32 left=1.38 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.604, 0.002) status=active
+    adj=[1  0]  dist=[ 0.00   9.21]  neighbors=[]
+  robot_1 pos=( 4.602, 0.000) status=active
+    adj=[0  1]  dist=[ 9.21   0.00]  neighbors=[]
+[perception] step=   3  agent_0  my_pos=(-4.604,0.002)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   3  agent_1  my_pos=(4.602,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.226 clear=0.078 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.327 clear=0.043 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=1.37 right=0.54 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.31 left=1.39 right=0.95 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.34 left=1.37 right=0.54 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.31 left=1.39 right=0.95 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.37 right=0.59 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.30 left=1.38 right=0.94 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.37 right=0.59 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.30 left=1.38 right=0.94 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.210 clear=0.084 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.45 left=1.29 right=0.58 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.31 left=1.39 right=0.93 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.45 left=1.29 right=0.58 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.31 left=1.39 right=0.93 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=1.27 right=0.60 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=0.94 left=1.44 right=0.93 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.38 left=1.27 right=0.60 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=0.94 left=1.44 right=0.93 social_risk=0.000 front_risk=1.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.36 left=1.26 right=0.58 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=0.93 left=1.57 right=0.93 social_risk=0.000 front_risk=1.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.009 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.045 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.36 left=1.26 right=0.58 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=0.93 left=1.57 right=0.93 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.213 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.23 left=1.25 right=0.65 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=0.91 left=1.80 right=1.25 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.23 left=1.25 right=0.65 social_risk=0.000 front_risk=0.000 | raw=detour_right -> v=nan, w=nan
+  [diag-pre] agent_1 front=0.91 left=1.80 right=1.25 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_right effective=detour_right executed=detour_right stuck=0.200 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.212 clear=0.000 risk_delta=0.000 replan=(0,0)
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...Step 500...Step 550...Step 600...Step 650...Step 700...Step 750...[INFO] [1779719508.654525389] [gym_env_robot_0_75187]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779719508.722685401] [gym_env_robot_1_55512]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+Step 800...Step 850...Step 900...Step 950...Step 1000...Step 1050...Step 1100...Step 1150...Step 1200...Step 1250...Step 1300...Step 1350...Step 1400...Step 1450...碰撞: agent_0 (step=1463)
+
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 1500/1500
+   完成: 2/2
+   活跃: 0  失败: 1
+============================================================
+
+Step 1500...  [episode-summary] steps=1500 avg_reward=-198.61 success=0 collision=1 reached_agents=0 collided_agents=1 min_dist=0.234 avg_social_risk=0.119 avg_social_risk_delta=0.000 avg_front_risk=0.072 truncated=True
+  [mode-summary] policy=backoff:876;detour_left:154;detour_right:518;go:1355;slow_follow:36;wait:24
+  [mode-summary] effective=backoff:876;detour_left:154;detour_right:518;go:1355;slow_follow:36;wait:24
+  [mode-summary] executed=backoff:876;detour_left:154;detour_right:518;go:1355;slow_follow:36;wait:24
+  [interaction-summary] replan_attempt=0 replan_success=0 conflict_steps=966
+================================================================================
+Episode 21/49
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+  [benchmark-case] name=head_on_02 category=strong_interaction map=6 agents=2
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.000,-4.800) status=active
+    adj=[1  0]  dist=[ 0.00   9.60]  neighbors=[]
+  robot_1 pos=( 0.000, 4.800) status=active
+    adj=[0  1]  dist=[ 9.60   0.00]  neighbors=[]
+[perception] step=   0  agent_0  my_pos=(0.000,-4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   0  agent_1  my_pos=(0.000,4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-pre] agent_0 front=1.13 left=1.41 right=1.29 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.32 left=1.51 right=1.13 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-0.000,-4.800) status=active
+    adj=[1  0]  dist=[ 0.00   9.60]  neighbors=[]
+  robot_1 pos=(-0.000, 4.800) status=active
+    adj=[0  1]  dist=[ 9.60   0.00]  neighbors=[]
+[perception] step=   1  agent_0  my_pos=(-0.000,-4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   1  agent_1  my_pos=(-0.000,4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.450 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.15 left=1.41 right=1.31 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.32 left=1.51 right=1.13 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.000,-4.800) status=active
+    adj=[1  0]  dist=[ 0.00   9.60]  neighbors=[]
+  robot_1 pos=(-0.000, 4.800) status=active
+    adj=[0  1]  dist=[ 9.60   0.00]  neighbors=[]
+[perception] step=   2  agent_0  my_pos=(0.000,-4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   2  agent_1  my_pos=(-0.000,4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-post] agent_0 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.14 left=1.39 right=1.30 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.32 left=1.51 right=1.13 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.000,-4.800) status=active
+    adj=[1  0]  dist=[ 0.00   9.60]  neighbors=[]
+  robot_1 pos=(-0.002, 4.801) status=active
+    adj=[0  1]  dist=[ 9.60   0.00]  neighbors=[]
+[perception] step=   3  agent_0  my_pos=(0.000,-4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   3  agent_1  my_pos=(-0.002,4.801)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.449 clear=0.000 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.259 clear=0.067 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.14 left=1.39 right=1.30 social_risk=0.000 front_risk=0.000 | raw=slow_follow -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.31 left=1.53 right=1.14 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=slow_follow effective=slow_follow executed=slow_follow stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.15 left=1.41 right=1.22 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.35 left=1.56 right=1.12 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.208 clear=0.085 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.208 clear=0.084 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.15 left=1.41 right=1.22 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.35 left=1.56 right=1.12 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.26 left=1.47 right=1.14 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.39 left=1.76 right=1.09 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.214 clear=0.083 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.210 clear=0.084 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.26 left=1.47 right=1.14 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.39 left=1.76 right=1.09 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan
+  [diag-post] agent_0 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=go effective=go executed=go stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.66 right=1.08 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-pre] agent_1 front=1.39 left=0.89 right=1.07 social_risk=0.000 front_risk=0.000 | raw=detour_left -> v=nan, w=nan
+  [diag-post] agent_0 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-post] agent_1 policy=detour_left effective=detour_left executed=detour_left stuck=0.200 clear=0.087 risk_delta=0.000 replan=(0,0)
+  [diag-pre] agent_0 front=1.42 left=1.66 right=1.08 social_risk=0.000 front_risk=0.000 | raw=go -> v=nan, w=nan

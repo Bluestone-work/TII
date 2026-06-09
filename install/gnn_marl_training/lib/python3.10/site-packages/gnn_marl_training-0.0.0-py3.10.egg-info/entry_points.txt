@@ -1,0 +1,7 @@
+[console_scripts]
+option_tester = gnn_marl_training.option_tester:main
+robot_policy_node = gnn_marl_training.robot_policy_node:main
+test_gnn_mappo = gnn_marl_training.test_gnn_mappo:main
+train_gnn_mappo = gnn_marl_training.train_gnn_mappo:main
+train_gnn_mappo_full = gnn_marl_training.train_gnn_mappo_full:main
+

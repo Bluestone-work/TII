@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/tune_gat_stage1_localrisk_30k/GNN_MAPPO_Stage1_Interact_tune_gat_stage1_localrisk_30k_EnvStage1/best

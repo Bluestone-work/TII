@@ -1,0 +1,3 @@
+[console_scripts]
+train_ppo = sb3_training.train_ppo:main
+

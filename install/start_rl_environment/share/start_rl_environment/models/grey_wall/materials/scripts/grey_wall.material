@@ -1,1 +1,17 @@
-/home/unruly/testcm30082ros/src/start_rl_environment/models/grey_wall/materials/scripts/grey_wall.material
+material vrc/grey_wall
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture grey_wall.png
+				filtering anistropic
+				max_anisotropy 16
+				scale 1 1
+			}
+		}
+	}
+}

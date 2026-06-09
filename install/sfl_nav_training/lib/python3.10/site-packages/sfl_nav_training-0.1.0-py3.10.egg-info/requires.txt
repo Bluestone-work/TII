@@ -1,0 +1,10 @@
+gymnasium
+numpy
+setuptools
+
+[test]
+pytest
+
+[train]
+ray[rllib]
+torch

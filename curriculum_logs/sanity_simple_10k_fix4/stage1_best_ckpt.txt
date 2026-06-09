@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/sanity_simple_10k_fix4/GNN_MAPPO_Stage1_Interact_sanity_simple_10k_fix4_EnvStage1/best

@@ -1,0 +1,1344 @@
+2026-05-20 17:18:10,868	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-05-20 17:18:11,681 E 644160 644160] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: '5e44e17f3d6ecff53f489dcf01000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=645768)[0m [INFO] [1779268698.013372606] [gym_env_robot_0_53156]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=645768)[0m [INFO] [1779268698.056076724] [gym_env_robot_1_75165]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=645768)[0m [INFO] [1779268698.078556503] [gym_env_robot_2_9586]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=645768)[0m [INFO] [1779268698.105826058] [gym_env_robot_3_20452]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779268700.939529648] [gym_env_robot_0_77787]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779268700.991858848] [gym_env_robot_1_46292]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779268701.032227120] [gym_env_robot_2_70023]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1779268701.330016227] [gym_env_robot_3_6718]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-05-20 17:18:24,500	INFO trainable.py:161 -- Trainable.setup took 12.912 seconds. If your trainable is slow to initialize, consider setting reuse_actors=True to reduce actor creation overheads.
+2026-05-20 17:18:24,501	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+ℹ️ Method3 + map6(interaction_hub) 自动启用交互专项默认值: num_obstacles=0, obs_speed_scale=0.0
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=200 mode=truncate_episodes
+  训练步数:     300,000
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.2, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.75
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+[36m(RolloutWorker pid=645768)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=645768)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=645768)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=645768)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=645768)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=645768)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=645768)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=645768)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=645768)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=645768)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=645768)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=645768)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.65   5.33   4.85]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.65   0.00   6.37   4.86]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.500, 1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 5.33   6.37   0.00   1.52]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250, 0.050) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.85   4.86   1.52   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(-0.500,1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.521m  n_pos=(-0.250,0.050)  rel_pos=(0.250,-1.500)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-0.250,0.050)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.521m  n_pos=(-0.500,1.550)  rel_pos=(-0.250,1.500)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.65   5.33   4.85]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.65   0.00   6.37   4.86]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.500, 1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 5.33   6.37   0.00   1.52]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250, 0.050) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.85   4.86   1.52   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-0.500,1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.521m  n_pos=(-0.250,0.050)  rel_pos=(0.250,-1.500)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-0.250,0.050)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.521m  n_pos=(-0.500,1.550)  rel_pos=(-0.250,1.500)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.65   5.33   4.85]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.65   0.00   6.37   4.86]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.500, 1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 5.33   6.37   0.00   1.52]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250, 0.050) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.85   4.86   1.52   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-0.500,1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.521m  n_pos=(-0.250,0.050)  rel_pos=(0.250,-1.500)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-0.250,0.050)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.521m  n_pos=(-0.500,1.550)  rel_pos=(-0.250,1.500)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.65   5.33   4.85]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.65   0.00   6.37   4.86]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.500, 1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 5.33   6.37   0.00   1.52]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250, 0.050) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.85   4.86   1.52   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-0.500,1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.521m  n_pos=(-0.250,0.050)  rel_pos=(0.250,-1.500)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-0.250,0.050)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.521m  n_pos=(-0.500,1.550)  rel_pos=(-0.250,1.500)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.950, 1.950) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.88   6.92   2.35]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.88   0.00   5.95   5.61]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.950,-4.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.92   5.95   0.00   4.72]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.000,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 2.35   5.61   4.72   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-0.950,1.950)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.351m  n_pos=(-1.000,-0.400)  rel_pos=(-0.050,-2.350)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(0.950,-4.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-1.000,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.351m  n_pos=(-0.950,1.950)  rel_pos=(0.050,2.350)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.950, 1.950) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.88   6.92   2.35]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.88   0.00   5.95   5.61]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.950,-4.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.92   5.95   0.00   4.72]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.000,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 2.35   5.61   4.72   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-0.950,1.950)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.351m  n_pos=(-1.000,-0.400)  rel_pos=(-0.050,-2.350)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(0.950,-4.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-1.000,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.351m  n_pos=(-0.950,1.950)  rel_pos=(0.050,2.350)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.7%     2,000 / 300,000 步  回报 -1178.25  ETA 10:01:33[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.869, 1.964) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.81   6.91   2.37]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.81   0.00   5.95   5.61]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.950,-4.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.91   5.95   0.00   4.72]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.000,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 2.37   5.61   4.72   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-0.869,1.964)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.367m  n_pos=(-1.000,-0.400)  rel_pos=(-0.131,-2.364)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(0.950,-4.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-1.000,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.367m  n_pos=(-0.869,1.964)  rel_pos=(0.131,2.364)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.868, 1.962) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.81   6.91   2.37]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.81   0.00   5.95   5.61]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.950,-4.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.91   5.95   0.00   4.72]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.000,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 2.37   5.61   4.72   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-0.868,1.962)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.366m  n_pos=(-1.000,-0.400)  rel_pos=(-0.132,-2.362)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(0.950,-4.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-1.000,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.366m  n_pos=(-0.868,1.962)  rel_pos=(0.132,2.362)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.60,0.00) goal=(-4.60,0.00)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.950, 0.200) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.78   4.95   1.85]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.78   0.00   6.76   4.18]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.600,-4.500) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.95   6.76   0.00   4.10]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.800,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 1.85   4.18   4.10   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-0.950,0.200)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.850m  n_pos=(0.800,-0.400)  rel_pos=(1.750,-0.600)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(0.600,-4.500)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(0.800,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.850m  n_pos=(-0.950,0.200)  rel_pos=(-1.750,0.600)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.950, 0.200) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.78   4.95   1.85]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.78   0.00   6.76   4.18]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.600,-4.500) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.95   6.76   0.00   4.10]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.800,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 1.85   4.18   4.10   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-0.950,0.200)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.850m  n_pos=(0.800,-0.400)  rel_pos=(1.750,-0.600)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(0.600,-4.500)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(0.800,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.850m  n_pos=(-0.950,0.200)  rel_pos=(-1.750,0.600)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   1.3%     4,000 / 300,000 步  回报 -1153.02  ETA 09:47:51[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.014, 0.154) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   5.85   4.93   1.90]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.85   0.00   6.76   4.18]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.600,-4.500) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.93   6.76   0.00   4.10]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.800,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 1.90   4.18   4.10   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-1.014,0.154)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.896m  n_pos=(0.800,-0.400)  rel_pos=(1.814,-0.554)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(0.600,-4.500)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(0.800,-0.400)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.896m  n_pos=(-1.014,0.154)  rel_pos=(-1.814,0.554)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.003, 0.140) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 0.00   6.19   4.98   1.85]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 5.160, 0.769) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.19   0.00   6.96   4.58]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.663,-4.549) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.98   6.96   0.00   4.09]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.749,-0.461) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  1]  dist=[ 1.85   4.58   4.09   0.00]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-1.003,0.140)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.852m  n_pos=(0.749,-0.461)  rel_pos=(1.752,-0.601)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(5.160,0.769)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(0.663,-4.549)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(0.749,-0.461)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.852m  n_pos=(-1.003,0.140)  rel_pos=(-1.752,0.601)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.60,0.00) goal=(-4.60,0.00)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.150, 4.750) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.72   6.10   5.96]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.72   0.00   9.43   2.56]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.10   9.43   0.00   7.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-2.150,-0.750) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.96   2.56   7.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(0.150,4.750)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(-4.600,0.000)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.562m  n_pos=(-2.150,-0.750)  rel_pos=(2.450,-0.750)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-2.150,-0.750)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=2.562m  n_pos=(-4.600,0.000)  rel_pos=(-2.450,0.750)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.150, 4.750) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.72   6.10   5.96]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.72   0.00   9.43   2.56]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.10   9.43   0.00   7.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-2.150,-0.750) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.96   2.56   7.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(0.150,4.750)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(-4.600,-0.000)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.562m  n_pos=(-2.150,-0.750)  rel_pos=(2.450,-0.750)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-2.150,-0.750)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=2.562m  n_pos=(-4.600,-0.000)  rel_pos=(-2.450,0.750)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   2.0%     6,000 / 300,000 步  回报 -1207.07  ETA 09:40:59[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.080, 4.698) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.63   6.12   5.89]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.63   0.00   9.43   2.56]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.12   9.43   0.00   7.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-2.150,-0.750) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.89   2.56   7.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(0.080,4.698)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(-4.600,-0.000)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.562m  n_pos=(-2.150,-0.750)  rel_pos=(2.450,-0.750)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-2.150,-0.750)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=2.562m  n_pos=(-4.600,-0.000)  rel_pos=(-2.450,0.750)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.078, 4.701) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.63   6.12   5.89]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.63   0.00   9.43   2.56]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.12   9.43   0.00   7.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-2.150,-0.750) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.89   2.56   7.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(0.078,4.701)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(-4.600,-0.000)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=2.562m  n_pos=(-2.150,-0.750)  rel_pos=(2.450,-0.750)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-2.150,-0.750)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=2.562m  n_pos=(-4.600,-0.000)  rel_pos=(-2.450,0.750)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(0.00,4.80) goal=(0.00,-4.80)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(0.00,4.80) goal=(0.00,-4.80)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.350,-5.100) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   9.96   7.83   6.15]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-0.750, 4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 9.96   0.00   6.87   4.16]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.83   6.87   0.00   6.70]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.900, 0.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 6.15   4.16   6.70   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-0.350,-5.100)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(-0.750,4.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-1.900,0.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.350,-5.100) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   9.96   7.83   6.15]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-0.750, 4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 9.96   0.00   6.87   4.16]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.83   6.87   0.00   6.70]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.900, 0.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 6.15   4.16   6.70   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-0.350,-5.100)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(-0.750,4.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-1.900,0.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   2.7%     8,000 / 300,000 步  回报 -1136.21  ETA 09:35:27[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.291,-5.022) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   9.88   7.73   6.09]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-0.750, 4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 9.88   0.00   6.87   4.16]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.73   6.87   0.00   6.70]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.900, 0.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 6.09   4.16   6.70   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-0.291,-5.022)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(-0.750,4.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(4.800,0.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-1.900,0.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.296,-4.995) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   9.86   7.71   5.98]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-0.750, 4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 9.86   0.00   6.95   4.24]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.856, 0.745) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.71   6.95   0.00   6.76]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.899, 0.770) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.98   4.24   6.76   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-0.296,-4.995)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(-0.750,4.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(4.856,0.745)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-1.899,0.770)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(0.00,4.80) goal=(0.00,-4.80)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.65   2.92   9.60]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.65   0.00   5.30   6.65]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.350,-1.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 2.92   5.30   0.00   6.71]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.60   6.65   6.71   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(0.000,-4.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.921m  n_pos=(-0.350,-1.900)  rel_pos=(-0.350,2.900)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(-0.350,-1.900)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.921m  n_pos=(0.000,-4.800)  rel_pos=(0.350,-2.900)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.65   2.92   9.60]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.65   0.00   5.30   6.65]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.350,-1.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 2.92   5.30   0.00   6.71]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.60   6.65   6.71   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-0.000,-4.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.921m  n_pos=(-0.350,-1.900)  rel_pos=(-0.350,2.900)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-0.350,-1.900)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.921m  n_pos=(-0.000,-4.800)  rel_pos=(0.350,-2.900)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   3.3%    10,000 / 300,000 步  回报 -1066.79  ETA 09:29:44
+  [monitor] iter=5 steps=10000 reward=-1066.786 ep_len=2000.0 entropy=0.9311
+  [monitor] policy_loss=0.0968 vf_loss=0.2097 total_loss=0.3009 kl=0.00928
+  [monitor] custom_metrics -> agent_0/R_progress_mean=0.0095 | agent_0/active_option_mode_mean=1.8137 | agent_0/backoff_release_reward_mean=0.0000 | agent_0/best_gap_clearance_mean=0.9999 | agent_0/best_gap_width_mean=0.9944 | agent_0/clear_reward_mean=0.0191
+[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.076,-4.823) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.72   2.94   9.62]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.72   0.00   5.30   6.65]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.350,-1.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 2.94   5.30   0.00   6.71]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.62   6.65   6.71   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-0.076,-4.823)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.936m  n_pos=(-0.350,-1.900)  rel_pos=(-0.274,2.923)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-0.350,-1.900)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.936m  n_pos=(-0.076,-4.823)  rel_pos=(0.274,-2.923)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.068,-4.837) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.72   2.96   9.67]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.625,-0.020) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.72   0.00   5.39   6.66]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.426,-1.897) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 2.96   5.39   0.00   6.75]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.067, 4.835) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.67   6.66   6.75   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-0.068,-4.837)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.962m  n_pos=(-0.426,-1.897)  rel_pos=(-0.359,2.940)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(4.625,-0.020)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-0.426,-1.897)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.962m  n_pos=(-0.068,-4.837)  rel_pos=(0.359,-2.940)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(0.067,4.835)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.050,-1.300) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.10   2.01   3.62]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.10   0.00   8.10   9.67]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.250,-3.300) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 2.01   8.10   0.00   1.79]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.650,-4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 3.62   9.67   1.79   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(0.050,-1.300)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.010m  n_pos=(0.250,-3.300)  rel_pos=(0.200,-2.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(0.250,-3.300)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.792m  n_pos=(-0.650,-4.850)  rel_pos=(-0.900,-1.550)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=2.010m  n_pos=(0.050,-1.300)  rel_pos=(-0.200,2.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-0.650,-4.850)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.792m  n_pos=(0.250,-3.300)  rel_pos=(0.900,1.550)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.050,-1.300) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.10   2.01   3.62]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.10   0.00   8.10   9.67]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.250,-3.300) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 2.01   8.10   0.00   1.79]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.650,-4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 3.62   9.67   1.79   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(0.050,-1.300)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.010m  n_pos=(0.250,-3.300)  rel_pos=(0.200,-2.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(0.250,-3.300)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.792m  n_pos=(-0.650,-4.850)  rel_pos=(-0.900,-1.550)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=2.010m  n_pos=(0.050,-1.300)  rel_pos=(-0.200,2.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-0.650,-4.850)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.792m  n_pos=(0.250,-3.300)  rel_pos=(0.900,1.550)
+  [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.0%    12,000 / 300,000 步  回报 -996.56  ETA 09:25:01[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.004,-1.272) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.07   2.04   3.64]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.07   0.00   8.10   9.67]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.250,-3.300) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 2.04   8.10   0.00   1.79]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.650,-4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 3.64   9.67   1.79   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(0.004,-1.272)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.043m  n_pos=(0.250,-3.300)  rel_pos=(0.246,-2.028)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(0.250,-3.300)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.792m  n_pos=(-0.650,-4.850)  rel_pos=(-0.900,-1.550)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=2.043m  n_pos=(0.004,-1.272)  rel_pos=(-0.246,2.028)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-0.650,-4.850)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.792m  n_pos=(0.250,-3.300)  rel_pos=(0.900,1.550)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.001,-1.273) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   6.07   2.04   3.64]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.07   0.00   8.10   9.67]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.250,-3.300) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 2.04   8.10   0.00   1.79]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.650,-4.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 3.64   9.67   1.79   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(0.001,-1.273)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.043m  n_pos=(0.250,-3.300)  rel_pos=(0.249,-2.027)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(0.250,-3.300)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=1.792m  n_pos=(-0.650,-4.850)  rel_pos=(-0.900,-1.550)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=2.043m  n_pos=(0.001,-1.273)  rel_pos=(-0.249,2.027)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-0.650,-4.850)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.792m  n_pos=(0.250,-3.300)  rel_pos=(0.900,1.550)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.80,0.80) goal=(-4.80,-0.80)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.93   6.65   9.80]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.350,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.93   0.00   8.97   6.01]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.65   8.97   0.00   6.97]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250,-5.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.80   6.01   6.97   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(-4.350,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-0.250,-5.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.93   6.65   9.80]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.350,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.93   0.00   8.97   6.01]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.65   8.97   0.00   6.97]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250,-5.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.80   6.01   6.97   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(-4.350,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-0.250,-5.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.7%    14,000 / 300,000 步  回报 -975.91  ETA 09:20:07[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.115, 4.936) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   7.11   6.67   9.94]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.350,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 7.11   0.00   8.97   6.01]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.67   8.97   0.00   6.97]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.250,-5.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.94   6.01   6.97   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(0.115,4.936)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(-4.350,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-0.250,-5.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 0.092, 4.926) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   7.03   6.75   9.93]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.305,-0.565) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 7.03   0.00   9.07   6.01]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 4.746, 0.043) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 6.75   9.07   0.00   7.10]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.252,-4.998) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 9.93   6.01   7.10   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(0.092,4.926)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(-4.305,-0.565)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(4.746,0.043)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-0.252,-4.998)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-3.950,-0.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 0.00   1.90   5.55   3.81]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 1.90   0.00   7.38   4.86]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 5.55   7.38   0.00   4.20]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.150,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.81   4.86   4.20   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-3.950,-0.900)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.901m  n_pos=(-4.800,0.800)  rel_pos=(-0.850,1.700)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(-4.800,0.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.901m  n_pos=(-3.950,-0.900)  rel_pos=(0.850,-1.700)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-0.150,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-3.950,-0.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 0.00   1.90   5.55   3.81]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 1.90   0.00   7.38   4.86]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 5.55   7.38   0.00   4.20]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.150,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.81   4.86   4.20   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-3.950,-0.900)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.901m  n_pos=(-4.800,0.800)  rel_pos=(-0.850,1.700)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(-4.800,0.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.901m  n_pos=(-3.950,-0.900)  rel_pos=(0.850,-1.700)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-0.150,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   5.3%    16,000 / 300,000 步  回报 -933.53  ETA 09:15:15[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.119,-0.999) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 0.00   1.92   5.60   3.99]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 1.92   0.00   7.38   4.86]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 5.60   7.38   0.00   4.20]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.150,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.99   4.86   4.20   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-4.119,-0.999)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.924m  n_pos=(-4.800,0.800)  rel_pos=(-0.681,1.799)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(-4.800,0.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.924m  n_pos=(-4.119,-0.999)  rel_pos=(0.681,-1.799)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-0.150,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.117,-0.995) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 0.00   1.92   5.61   3.99]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.800, 0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 1.92   0.00   7.38   4.86]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.000,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 5.61   7.38   0.00   4.20]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.150,-0.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.99   4.86   4.20   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-4.117,-0.995)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.921m  n_pos=(-4.800,0.800)  rel_pos=(-0.683,1.795)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(-4.800,0.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.921m  n_pos=(-4.117,-0.995)  rel_pos=(0.683,-1.795)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-0.000,-4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-0.150,-0.600)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 1.650,-0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 0.00   1.95   3.18   3.60]  neighbors=[1, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.150, 0.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 1.95   0.00   1.86   4.80]  neighbors=[0, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-1.500,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 3.18   1.86   0.00   6.53]  neighbors=[0, 1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 4.950, 0.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.60   4.80   6.53   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(1.650,-0.800)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.953m  n_pos=(0.150,0.450)  rel_pos=(-1.500,1.250)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_2 dist=3.175m  n_pos=(-1.500,-0.400)  rel_pos=(-3.150,0.400)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(0.150,0.450)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.856m  n_pos=(-1.500,-0.400)  rel_pos=(-1.650,-0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=1.953m  n_pos=(1.650,-0.800)  rel_pos=(1.500,-1.250)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(-1.500,-0.400)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.856m  n_pos=(0.150,0.450)  rel_pos=(1.650,0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=3.175m  n_pos=(1.650,-0.800)  rel_pos=(3.150,-0.400)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(4.950,0.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 1.650,-0.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 0.00   1.95   3.18   3.60]  neighbors=[1, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.150, 0.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 1.95   0.00   1.86   4.80]  neighbors=[0, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-1.500,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 3.18   1.86   0.00   6.53]  neighbors=[0, 1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 4.950, 0.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.60   4.80   6.53   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(1.650,-0.800)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.953m  n_pos=(0.150,0.450)  rel_pos=(-1.500,1.250)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_2 dist=3.175m  n_pos=(-1.500,-0.400)  rel_pos=(-3.150,0.400)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(0.150,0.450)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.856m  n_pos=(-1.500,-0.400)  rel_pos=(-1.650,-0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=1.953m  n_pos=(1.650,-0.800)  rel_pos=(1.500,-1.250)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-1.500,-0.400)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.856m  n_pos=(0.150,0.450)  rel_pos=(1.650,0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=3.175m  n_pos=(1.650,-0.800)  rel_pos=(3.150,-0.400)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(4.950,0.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   6.0%    18,000 / 300,000 步  回报 -928.50  ETA 09:10:28[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 1.682,-0.805) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 0.00   1.98   3.21   3.58]  neighbors=[1, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.150, 0.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 1.98   0.00   1.86   4.80]  neighbors=[0, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-1.500,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 3.21   1.86   0.00   6.53]  neighbors=[0, 1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 4.950, 0.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.58   4.80   6.53   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(1.682,-0.805)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.980m  n_pos=(0.150,0.450)  rel_pos=(-1.532,1.255)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_2 dist=3.207m  n_pos=(-1.500,-0.400)  rel_pos=(-3.182,0.405)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(0.150,0.450)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.856m  n_pos=(-1.500,-0.400)  rel_pos=(-1.650,-0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=1.980m  n_pos=(1.682,-0.805)  rel_pos=(1.532,-1.255)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-1.500,-0.400)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.856m  n_pos=(0.150,0.450)  rel_pos=(1.650,0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=3.207m  n_pos=(1.682,-0.805)  rel_pos=(3.182,-0.405)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(4.950,0.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=( 1.685,-0.804) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 0.00   1.98   3.21   3.57]  neighbors=[1, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.150, 0.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 1.98   0.00   1.86   4.80]  neighbors=[0, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-1.500,-0.400) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 3.21   1.86   0.00   6.53]  neighbors=[0, 1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 4.950, 0.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.57   4.80   6.53   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(1.685,-0.804)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.982m  n_pos=(0.150,0.450)  rel_pos=(-1.535,1.254)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_2 dist=3.210m  n_pos=(-1.500,-0.400)  rel_pos=(-3.185,0.404)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(0.150,0.450)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.856m  n_pos=(-1.500,-0.400)  rel_pos=(-1.650,-0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=1.982m  n_pos=(1.685,-0.804)  rel_pos=(1.535,-1.254)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-1.500,-0.400)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.856m  n_pos=(0.150,0.450)  rel_pos=(1.650,0.850)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_0 dist=3.210m  n_pos=(1.685,-0.804)  rel_pos=(3.185,-0.404)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(4.950,0.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.500,-0.200) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   5.10   4.60   5.94]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.600,-0.100) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 5.10   0.00   1.61   4.76]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.100,-1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 4.60   1.61   0.00   6.04]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.800, 4.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.94   4.76   6.04   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-4.500,-0.200)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(0.600,-0.100)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.610m  n_pos=(-0.100,-1.550)  rel_pos=(-0.700,-1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(-0.100,-1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.610m  n_pos=(0.600,-0.100)  rel_pos=(0.700,1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-0.800,4.450)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.500,-0.200) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   5.10   4.60   5.94]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.600,-0.100) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 5.10   0.00   1.61   4.76]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.100,-1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 4.60   1.61   0.00   6.04]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.800, 4.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.94   4.76   6.04   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-4.500,-0.200)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(0.600,-0.100)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.610m  n_pos=(-0.100,-1.550)  rel_pos=(-0.700,-1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-0.100,-1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.610m  n_pos=(0.600,-0.100)  rel_pos=(0.700,1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-0.800,4.450)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   6.7%    20,000 / 300,000 步  回报 -930.30  ETA 09:06:14
+  [monitor] iter=10 steps=20000 reward=-930.302 ep_len=2000.0 entropy=0.8125
+  [monitor] policy_loss=0.0648 vf_loss=0.3988 total_loss=0.4582 kl=0.00521
+  [monitor] custom_metrics -> agent_0/R_progress_mean=0.0103 | agent_0/active_option_mode_mean=1.7451 | agent_0/backoff_release_reward_mean=0.0001 | agent_0/best_gap_clearance_mean=0.9997 | agent_0/best_gap_width_mean=0.9816 | agent_0/clear_reward_mean=0.0193
+[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.486,-0.279) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   5.09   4.57   6.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.600,-0.100) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 5.09   0.00   1.61   4.76]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.100,-1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 4.57   1.61   0.00   6.04]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.800, 4.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 6.00   4.76   6.04   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-4.486,-0.279)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(0.600,-0.100)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.610m  n_pos=(-0.100,-1.550)  rel_pos=(-0.700,-1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-0.100,-1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.610m  n_pos=(0.600,-0.100)  rel_pos=(0.700,1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-0.800,4.450)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.481,-0.278) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   5.08   4.56   5.99]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.600,-0.100) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 5.08   0.00   1.61   4.76]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.100,-1.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  1  0]  dist=[ 4.56   1.61   0.00   6.04]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-0.800, 4.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.99   4.76   6.04   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-4.481,-0.278)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(0.600,-0.100)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.610m  n_pos=(-0.100,-1.550)  rel_pos=(-0.700,-1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-0.100,-1.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=1.610m  n_pos=(0.600,-0.100)  rel_pos=(0.700,1.450)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-0.800,4.450)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.80,0.80) goal=(4.80,-0.80)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.800,-0.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   5.52   1.61   4.76]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.050, 4.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.52   0.00   6.56   9.45]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.850,-1.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 1.61   6.56   0.00   3.18]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.350,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.76   9.45   3.18   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-1.800,-0.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.610m  n_pos=(-0.850,-1.850)  rel_pos=(0.950,-1.300)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(0.050,4.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(-0.850,-1.850)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.610m  n_pos=(-1.800,-0.550)  rel_pos=(-0.950,1.300)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_3 dist=3.185m  n_pos=(0.350,-4.800)  rel_pos=(1.200,-2.950)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(0.350,-4.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=3.185m  n_pos=(-0.850,-1.850)  rel_pos=(-1.200,2.950)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.800,-0.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   5.52   1.61   4.76]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.050, 4.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.52   0.00   6.56   9.45]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.850,-1.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 1.61   6.56   0.00   3.18]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.350,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.76   9.45   3.18   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-1.800,-0.550)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.610m  n_pos=(-0.850,-1.850)  rel_pos=(0.950,-1.300)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(0.050,4.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-0.850,-1.850)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.610m  n_pos=(-1.800,-0.550)  rel_pos=(-0.950,1.300)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_3 dist=3.185m  n_pos=(0.350,-4.800)  rel_pos=(1.200,-2.950)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(0.350,-4.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=3.185m  n_pos=(-0.850,-1.850)  rel_pos=(-1.200,2.950)
+  [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   7.3%    22,000 / 300,000 步  回报 -921.99  ETA 09:01:58[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.960,-0.660) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   5.68   1.63   4.74]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.050, 4.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.68   0.00   6.56   9.45]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.850,-1.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 1.63   6.56   0.00   3.18]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.350,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.74   9.45   3.18   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-1.960,-0.660)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.627m  n_pos=(-0.850,-1.850)  rel_pos=(1.110,-1.190)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(0.050,4.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-0.850,-1.850)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.627m  n_pos=(-1.960,-0.660)  rel_pos=(-1.110,1.190)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_3 dist=3.185m  n_pos=(0.350,-4.800)  rel_pos=(1.200,-2.950)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(0.350,-4.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=3.185m  n_pos=(-0.850,-1.850)  rel_pos=(-1.200,2.950)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.958,-0.655) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 0.00   5.67   1.63   4.74]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.050, 4.650) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 5.67   0.00   6.56   9.45]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-0.850,-1.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  1]  dist=[ 1.63   6.56   0.00   3.18]  neighbors=[0, 3]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.350,-4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  1]  dist=[ 4.74   9.45   3.18   0.00]  neighbors=[2]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-1.958,-0.655)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=1.630m  n_pos=(-0.850,-1.850)  rel_pos=(1.108,-1.195)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(0.050,4.650)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-0.850,-1.850)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=1.630m  n_pos=(-1.958,-0.655)  rel_pos=(-1.108,1.195)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_3 dist=3.185m  n_pos=(0.350,-4.800)  rel_pos=(1.200,-2.950)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(0.350,-4.800)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=3.185m  n_pos=(-0.850,-1.850)  rel_pos=(-1.200,2.950)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.800,-0.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.20   4.57   3.89]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 5.200, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.20   0.00   7.61   9.82]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.450,-5.250) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.57   7.61   0.00   7.28]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.89   9.82   7.28   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-0.800,-0.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(5.200,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(0.450,-5.250)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.800,-0.850) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.20   4.57   3.89]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 5.200, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.20   0.00   7.61   9.82]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.450,-5.250) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.57   7.61   0.00   7.28]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.89   9.82   7.28   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-0.800,-0.850)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(5.200,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(0.450,-5.250)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   8.0%    24,000 / 300,000 步  回报 -914.55  ETA 08:57:37[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.976,-0.784) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.35   4.69   3.71]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 5.200, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.35   0.00   7.61   9.82]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.450,-5.250) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.69   7.61   0.00   7.28]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.71   9.82   7.28   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-0.976,-0.784)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(5.200,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(0.450,-5.250)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.971,-0.783) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.35   4.69   3.71]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 5.200, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.35   0.00   7.61   9.82]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.450,-5.250) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 4.69   7.61   0.00   7.28]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 3.71   9.82   7.28   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-0.971,-0.783)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(5.200,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(0.450,-5.250)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-4.600,-0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(0.00,4.80) goal=(0.00,-4.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.80,0.80) goal=(-4.80,-0.80)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.650, 4.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.34   7.39   5.49]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.100, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.34   0.00   9.36   5.59]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-5.100,-1.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.39   9.36   0.00   3.78]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.350,-0.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.49   5.59   3.78   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-0.650,4.900)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(4.100,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(-5.100,-1.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(-1.350,-0.550)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.650, 4.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.34   7.39   5.49]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.100, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.34   0.00   9.36   5.59]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-5.100,-1.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.39   9.36   0.00   3.78]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.350,-0.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.49   5.59   3.78   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-0.650,4.900)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(4.100,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(-5.100,-1.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(-1.350,-0.550)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   8.7%    26,000 / 300,000 步  回报 -887.68  ETA 08:54:34[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.508, 4.994) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.30   7.55   5.61]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 4.100, 0.700) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.30   0.00   9.36   5.59]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-5.100,-1.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.55   9.36   0.00   3.78]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.350,-0.550) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.61   5.59   3.78   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-0.508,4.994)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(4.100,0.700)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(-5.100,-1.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(-1.350,-0.550)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-0.503, 5.008) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.16   7.60   5.66]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 3.929, 0.722) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  0]  dist=[ 6.16   0.00   9.20   5.42]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=(-5.096,-1.049) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 7.60   9.20   0.00   3.79]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=(-1.331,-0.589) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.66   5.42   3.79   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-0.503,5.008)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(3.929,0.722)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(-5.096,-1.049)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(-1.331,-0.589)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.65   9.94   5.54]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.200,-4.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.65   0.00   7.50   3.20]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 5.300, 0.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 9.94   7.50   0.00   5.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.750,-1.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.54   3.20   5.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(0.200,-4.600)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=3.198m  n_pos=(0.750,-1.450)  rel_pos=(0.550,3.150)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(5.300,0.900)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(0.750,-1.450)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=3.198m  n_pos=(0.200,-4.600)  rel_pos=(-0.550,-3.150)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.65   9.94   5.54]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.200,-4.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.65   0.00   7.50   3.20]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 5.300, 0.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[ 9.94   7.50   0.00   5.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.750,-1.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.54   3.20   5.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-4.600,0.000)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(0.200,-4.600)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=3.198m  n_pos=(0.750,-1.450)  rel_pos=(0.550,3.150)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(5.300,0.900)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(0.750,-1.450)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=3.198m  n_pos=(0.200,-4.600)  rel_pos=(-0.550,-3.150)
+  [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   9.3%    28,000 / 300,000 步  回报 -869.19  ETA 08:51:55[36m(RolloutWorker pid=645768)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.784,-0.015) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.77  10.12   5.72]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.200,-4.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.77   0.00   7.50   3.20]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 5.300, 0.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[10.12   7.50   0.00   5.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.750,-1.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.72   3.20   5.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_0  my_pos=(-4.784,-0.015)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_1  my_pos=(0.200,-4.600)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=3.198m  n_pos=(0.750,-1.450)  rel_pos=(0.550,3.150)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_2  my_pos=(5.300,0.900)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   2  agent_3  my_pos=(0.750,-1.450)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=3.198m  n_pos=(0.200,-4.600)  rel_pos=(-0.550,-3.150)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-4.788,-0.013) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  0  0]  dist=[ 0.00   6.78  10.13   5.72]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=( 0.200,-4.600) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 6.78   0.00   7.50   3.20]  neighbors=[3]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 5.300, 0.900) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  1  0]  dist=[10.13   7.50   0.00   5.12]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.750,-1.450) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  1  0  1]  dist=[ 5.72   3.20   5.12   0.00]  neighbors=[1]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_0  my_pos=(-4.788,-0.013)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_1  my_pos=(0.200,-4.600)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_3 dist=3.198m  n_pos=(0.750,-1.450)  rel_pos=(0.550,3.150)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_2  my_pos=(5.300,0.900)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   3  agent_3  my_pos=(0.750,-1.450)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_1 dist=3.198m  n_pos=(0.200,-4.600)  rel_pos=(-0.550,-3.150)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 🏁 Episode 结束 (timeout)
+[36m(RolloutWorker pid=645768)[0m    步数: 2000/2000
+[36m(RolloutWorker pid=645768)[0m    完成: 0/4
+[36m(RolloutWorker pid=645768)[0m    活跃: 4  失败: 0
+[36m(RolloutWorker pid=645768)[0m ============================================================
+[36m(RolloutWorker pid=645768)[0m 
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+[36m(RolloutWorker pid=645768)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.80,0.80) goal=(4.80,-0.80)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.850, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.75   2.30   5.14]  neighbors=[1, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.600, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 2.75   0.00   4.94   6.65]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.250,-0.950) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 2.30   4.94   0.00   5.76]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.14   6.65   5.76   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_0  my_pos=(-1.850,0.000)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.305m  n_pos=(0.250,-0.950)  rel_pos=(2.100,-0.950)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_1 dist=2.750m  n_pos=(-4.600,0.000)  rel_pos=(-2.750,0.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_1  my_pos=(-4.600,0.000)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.750m  n_pos=(-1.850,0.000)  rel_pos=(2.750,0.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_2  my_pos=(0.250,-0.950)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.305m  n_pos=(-1.850,0.000)  rel_pos=(-2.100,0.950)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   0  agent_3  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[36m(RolloutWorker pid=645768)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=645768)[0m   robot_0 pos=(-1.850, 0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.75   2.30   5.14]  neighbors=[1, 2]
+[36m(RolloutWorker pid=645768)[0m   robot_1 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  1  0  0]  dist=[ 2.75   0.00   4.94   6.65]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_2 pos=( 0.250,-0.950) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[1  0  1  0]  dist=[ 2.30   4.94   0.00   5.76]  neighbors=[0]
+[36m(RolloutWorker pid=645768)[0m   robot_3 pos=( 0.000, 4.800) status=active
+[36m(RolloutWorker pid=645768)[0m     adj=[0  0  0  1]  dist=[ 5.14   6.65   5.76   0.00]  neighbors=[]
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_0  my_pos=(-1.850,0.000)  received=2
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_2 dist=2.305m  n_pos=(0.250,-0.950)  rel_pos=(2.100,-0.950)
+[36m(RolloutWorker pid=645768)[0m     slot[1] neighbor=agent_1 dist=2.750m  n_pos=(-4.600,-0.000)  rel_pos=(-2.750,-0.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_1  my_pos=(-4.600,-0.000)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.750m  n_pos=(-1.850,0.000)  rel_pos=(2.750,0.000)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_2  my_pos=(0.250,-0.950)  received=1
+[36m(RolloutWorker pid=645768)[0m     slot[0] neighbor=agent_0 dist=2.305m  n_pos=(-1.850,0.000)  rel_pos=(-2.100,0.950)
+[36m(RolloutWorker pid=645768)[0m [perception] step=   1  agent_3  my_pos=(0.000,4.800)  received=0
+[36m(RolloutWorker pid=645768)[0m     (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+  [███░░░░░░░░░░░░░░░░░░░░░░░░░░░]  10.0%    30,000 / 300,000 步  回报 -846.82  ETA 08:49:08

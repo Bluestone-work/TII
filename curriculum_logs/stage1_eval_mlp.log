@@ -1,0 +1,15 @@
+
+================================================================================
+[2026-03-15 10:41:18] MAPPO-MLP Eval Summary
+checkpoint=/home/wj/work/multi-robot-exploration-rl/ray_results/MAPPO_MLP_LSTM_Stage1
+env_stage=1, stage_name=Stage 1 · 静态入门
+num_agents=4, episodes=5, explore=False
+mean_steps=2000.00
+mean_reward_per_agent=-269.4566
+mean_success_per_episode=0.2000
+mean_collision_per_episode=5.6000
+ep1: steps=2000, success=1, collision=6, avg_reward=-162.7122
+ep2: steps=2000, success=0, collision=8, avg_reward=-374.4432
+ep3: steps=2000, success=0, collision=7, avg_reward=-152.6821
+ep4: steps=2000, success=0, collision=1, avg_reward=-206.3547
+ep5: steps=2000, success=0, collision=6, avg_reward=-451.0907

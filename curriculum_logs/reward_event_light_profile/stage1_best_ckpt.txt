@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/reward_search/reward_event_light_profile/GNN_MAPPO_Stage1_Interact_reward_event_light_profile_EnvStage1/best

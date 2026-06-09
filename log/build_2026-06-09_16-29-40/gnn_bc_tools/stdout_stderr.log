@@ -1,0 +1,62 @@
+running egg_info
+creating ../../build/gnn_bc_tools/gnn_bc_tools.egg-info
+writing ../../build/gnn_bc_tools/gnn_bc_tools.egg-info/PKG-INFO
+writing dependency_links to ../../build/gnn_bc_tools/gnn_bc_tools.egg-info/dependency_links.txt
+writing entry points to ../../build/gnn_bc_tools/gnn_bc_tools.egg-info/entry_points.txt
+writing requirements to ../../build/gnn_bc_tools/gnn_bc_tools.egg-info/requires.txt
+writing top-level names to ../../build/gnn_bc_tools/gnn_bc_tools.egg-info/top_level.txt
+writing manifest file '../../build/gnn_bc_tools/gnn_bc_tools.egg-info/SOURCES.txt'
+reading manifest file '../../build/gnn_bc_tools/gnn_bc_tools.egg-info/SOURCES.txt'
+writing manifest file '../../build/gnn_bc_tools/gnn_bc_tools.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build
+creating /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib
+creating /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/run_orca_dwa_bc_pipeline.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/expert_apf.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/path_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/orca_dwa_scene_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/tune_orca_dwa_map1.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/expert_orca_dwa.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/collect_orca_dwa_bc.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/pretrain_mappo_bc.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+copying gnn_bc_tools/rl_finetune_from_bc.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools
+running install
+running install_lib
+creating /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/run_orca_dwa_bc_pipeline.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/expert_apf.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/path_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/orca_dwa_scene_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/tune_orca_dwa_map1.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/expert_orca_dwa.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/collect_orca_dwa_bc.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/pretrain_mappo_bc.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+copying /home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/build/lib/gnn_bc_tools/rl_finetune_from_bc.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/run_orca_dwa_bc_pipeline.py to run_orca_dwa_bc_pipeline.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/expert_apf.py to expert_apf.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/path_utils.py to path_utils.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/orca_dwa_scene_utils.py to orca_dwa_scene_utils.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/tune_orca_dwa_map1.py to tune_orca_dwa_map1.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/expert_orca_dwa.py to expert_orca_dwa.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/collect_orca_dwa_bc.py to collect_orca_dwa_bc.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/pretrain_mappo_bc.py to pretrain_mappo_bc.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools/rl_finetune_from_bc.py to rl_finetune_from_bc.cpython-310.pyc
+running install_data
+creating /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/share/ament_index
+creating /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/share/ament_index/resource_index
+creating /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/share/ament_index/resource_index/packages
+copying resource/gnn_bc_tools -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/share/ament_index/resource_index/packages
+copying package.xml -> /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/share/gnn_bc_tools
+running install_egg_info
+Copying ../../build/gnn_bc_tools/gnn_bc_tools.egg-info to /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/python3.10/site-packages/gnn_bc_tools-0.1.0-py3.10.egg-info
+running install_scripts
+Installing collect_orca_dwa_bc script to /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/gnn_bc_tools
+Installing pretrain_mappo_bc script to /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/gnn_bc_tools
+Installing run_orca_dwa_bc_pipeline script to /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/gnn_bc_tools
+Installing tune_orca_dwa_map1 script to /home/wj/work/multi-robot-exploration-rl/install/gnn_bc_tools/lib/gnn_bc_tools
+writing list of installed files to '/home/wj/work/multi-robot-exploration-rl/build/gnn_bc_tools/install.log'

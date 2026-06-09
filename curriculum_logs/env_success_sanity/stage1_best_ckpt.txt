@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/env_success_sanity/MAPPO_MLP_LSTM_Stage1_Interact_env_success_sanity/best

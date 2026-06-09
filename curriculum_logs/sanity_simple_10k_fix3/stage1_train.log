@@ -1,0 +1,227 @@
+2026-06-08 17:19:13,927	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-06-08 17:19:14,643 E 2390754 2390754] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: '3158cc6284f4e69a2456fee301000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=2392118)[0m [INFO] [1780910359.508051965] [gym_env_robot_0_93298]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2392118)[0m [INFO] [1780910359.539934736] [gym_env_robot_1_47544]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2392118)[0m [INFO] [1780910359.561688897] [gym_env_robot_2_49589]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2392118)[0m [INFO] [1780910359.586267773] [gym_env_robot_3_84914]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2392118)[0m /home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+[36m(RolloutWorker pid=2392118)[0m   init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+[INFO] [1780910361.646322883] [gym_env_robot_0_82812]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780910361.685963421] [gym_env_robot_1_79325]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780910361.714848694] [gym_env_robot_2_76120]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780910361.747571736] [gym_env_robot_3_23305]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+  init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+2026-06-08 17:19:24,435	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+[36m(RolloutWorker pid=2392118)[0m 2026-06-08 17:19:24,438	ERROR actor_manager.py:186 -- Worker exception caught during `apply()`: 'GNNMARLEnv' object has no attribute 'corner_curriculum_enable'
+[36m(RolloutWorker pid=2392118)[0m Traceback (most recent call last):
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/actor_manager.py", line 182, in apply
+[36m(RolloutWorker pid=2392118)[0m     return func(self, *args, **kwargs)
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/execution/rollout_ops.py", line 109, in <lambda>
+[36m(RolloutWorker pid=2392118)[0m     (lambda w: w.sample(**random_action_kwargs))
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/util/tracing/tracing_helper.py", line 461, in _resume_span
+[36m(RolloutWorker pid=2392118)[0m     return method(self, *_args, **_kwargs)
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 679, in sample
+[36m(RolloutWorker pid=2392118)[0m     batches = [self.input_reader.next()]
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 59, in next
+[36m(RolloutWorker pid=2392118)[0m     batches = [self.get_data()]
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 225, in get_data
+[36m(RolloutWorker pid=2392118)[0m     item = next(self._env_runner)
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 330, in run
+[36m(RolloutWorker pid=2392118)[0m     outputs = self.step()
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 349, in step
+[36m(RolloutWorker pid=2392118)[0m     ) = self._base_env.poll()
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 529, in poll
+[36m(RolloutWorker pid=2392118)[0m     ) = env_state.poll()
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 716, in poll
+[36m(RolloutWorker pid=2392118)[0m     self.reset()
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 800, in reset
+[36m(RolloutWorker pid=2392118)[0m     raise e
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 794, in reset
+[36m(RolloutWorker pid=2392118)[0m     obs_and_infos = self.env.reset(seed=seed, options=options)
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 1077, in reset
+[36m(RolloutWorker pid=2392118)[0m     route_plan, route_plan_source, route_plan_meta = self._build_episode_route_plan()
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 510, in _build_episode_route_plan
+[36m(RolloutWorker pid=2392118)[0m     corner_plan, corner_meta = self._consume_corner_curriculum_plan()
+[36m(RolloutWorker pid=2392118)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 458, in _consume_corner_curriculum_plan
+[36m(RolloutWorker pid=2392118)[0m     if not self.corner_curriculum_enable or not self._corner_curriculum_plans:
+[36m(RolloutWorker pid=2392118)[0m AttributeError: 'GNNMARLEnv' object has no attribute 'corner_curriculum_enable'
+2026-06-08 17:20:26,470	ERROR actor_manager.py:973 -- Ray error (The actor 3158cc6284f4e69a2456fee301000000 is unavailable: The actor is temporarily unavailable: UnexpectedSystemExit: Worker exits with an exit code 1.. The task may or may not have been executed on the actor.), taking actor 1 out of service.
+2026-06-08 17:20:26,470	ERROR actor_manager.py:771 -- The actor 3158cc6284f4e69a2456fee301000000 is unavailable: The actor is temporarily unavailable: UnexpectedSystemExit: Worker exits with an exit code 1.. The task may or may not have been executed on the actor.
+NoneType: None
+2026-06-08 17:20:26,470	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+ℹ️ Method3 + map6(interaction_hub) 自动启用交互专项默认值: num_obstacles=0, obs_speed_scale=0.0
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     10,000
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.2, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     mode=decentralized graph_source=comm_only  (dropout=5%, latency=1, jitter=1, noise=0.05, max_age=0.30s)
+  冲突路线:     mode=off prob=0.00
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+[36m(RolloutWorker pid=2392118)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=2392118)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2392118)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=2392118)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=2392118)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2392118)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=2392118)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=2392118)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2392118)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=2392118)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=2392118)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2392118)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+[33m(raylet)[0m A worker died or was killed while executing a task by an unexpected system error. To troubleshoot the problem, check the logs for the dead worker. Lease ID: 000000004f7996dc4b3b0463413f17ec623579c42f0d76e921b14ec272a4e887 Worker ID: 1a49255a2a0453491b7f6a473a2fe7667147bc5fde92c25c821f4b61 Node ID: 6e5de9c42b13e7ca57094c3195ac2534ce91517fbfdea0ab02416aab Worker IP address: 198.18.0.1 Worker port: 45215 Worker PID: 2392118 Worker exit type: SYSTEM_ERROR Worker exit detail: Worker exits unexpectedly. Worker exits with an exit code 1.
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=1 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 17:20:28,471	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+
+  [debug] timesteps未增长，关键字段: {'timesteps_total': 0, 'num_env_steps_sampled_lifetime': 0, 'num_env_steps_sampled': 0, 'timesteps_this_iter': None, 'num_env_steps_sampled_this_iter': 0, 'lifetime_steps': 0, 'episodes_total': None, 'episodes_this_iter': 0, 'env_max_steps': 2000}
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=2 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--[36m(RolloutWorker pid=2399886)[0m [INFO] [1780910429.521408287] [gym_env_robot_3_80760]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers[32m [repeated 4x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(RolloutWorker pid=2399886)[0m /home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+[36m(RolloutWorker pid=2399886)[0m   init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+2026-06-08 17:20:30,473	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+
+  [debug] timesteps未增长，关键字段: {'timesteps_total': 0, 'num_env_steps_sampled_lifetime': 0, 'num_env_steps_sampled': 0, 'timesteps_this_iter': None, 'num_env_steps_sampled_this_iter': 0, 'lifetime_steps': 0, 'episodes_total': None, 'episodes_this_iter': 0, 'env_max_steps': 2000}
+[36m(RolloutWorker pid=2399886)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=2399886)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2399886)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=2399886)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=2399886)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2399886)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=2399886)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=2399886)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2399886)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=2399886)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=2399886)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2399886)[0m ✅ Robot 3: A*规划器初始化完成
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=3 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 17:20:32,473	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+
+  [debug] timesteps未增长，关键字段: {'timesteps_total': 0, 'num_env_steps_sampled_lifetime': 0, 'num_env_steps_sampled': 0, 'timesteps_this_iter': None, 'num_env_steps_sampled_this_iter': 0, 'lifetime_steps': 0, 'episodes_total': None, 'episodes_this_iter': 0, 'env_max_steps': 2000}
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=4 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 17:20:32,498	WARNING actor_manager.py:986 -- Bringing previously unhealthy, now-healthy actor 1 back into service.
+[36m(RolloutWorker pid=2399886)[0m 2026-06-08 17:20:32,545	ERROR actor_manager.py:186 -- Worker exception caught during `apply()`: 'GNNMARLEnv' object has no attribute 'corner_curriculum_enable'
+[36m(RolloutWorker pid=2399886)[0m Traceback (most recent call last):
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/actor_manager.py", line 182, in apply
+[36m(RolloutWorker pid=2399886)[0m     return func(self, *args, **kwargs)
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/execution/rollout_ops.py", line 109, in <lambda>
+[36m(RolloutWorker pid=2399886)[0m     (lambda w: w.sample(**random_action_kwargs))
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/util/tracing/tracing_helper.py", line 461, in _resume_span
+[36m(RolloutWorker pid=2399886)[0m     return method(self, *_args, **_kwargs)
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 679, in sample
+[36m(RolloutWorker pid=2399886)[0m     batches = [self.input_reader.next()]
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 59, in next
+[36m(RolloutWorker pid=2399886)[0m     batches = [self.get_data()]
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 225, in get_data
+[36m(RolloutWorker pid=2399886)[0m     item = next(self._env_runner)
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 330, in run
+[36m(RolloutWorker pid=2399886)[0m     outputs = self.step()
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 349, in step
+[36m(RolloutWorker pid=2399886)[0m     ) = self._base_env.poll()
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 529, in poll
+[36m(RolloutWorker pid=2399886)[0m     ) = env_state.poll()
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 716, in poll
+[36m(RolloutWorker pid=2399886)[0m     self.reset()
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 800, in reset
+[36m(RolloutWorker pid=2399886)[0m     raise e
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 794, in reset
+[36m(RolloutWorker pid=2399886)[0m     obs_and_infos = self.env.reset(seed=seed, options=options)
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 1077, in reset
+[36m(RolloutWorker pid=2399886)[0m     route_plan, route_plan_source, route_plan_meta = self._build_episode_route_plan()
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 510, in _build_episode_route_plan
+[36m(RolloutWorker pid=2399886)[0m     corner_plan, corner_meta = self._consume_corner_curriculum_plan()
+[36m(RolloutWorker pid=2399886)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 458, in _consume_corner_curriculum_plan
+[36m(RolloutWorker pid=2399886)[0m     if not self.corner_curriculum_enable or not self._corner_curriculum_plans:
+[36m(RolloutWorker pid=2399886)[0m AttributeError: 'GNNMARLEnv' object has no attribute 'corner_curriculum_enable'
+2026-06-08 17:21:34,493	ERROR actor_manager.py:973 -- Ray error (The actor 3158cc6284f4e69a2456fee301000000 is unavailable: The actor is temporarily unavailable: UnexpectedSystemExit: Worker exits with an exit code 1.. The task may or may not have been executed on the actor.), taking actor 1 out of service.
+2026-06-08 17:21:34,493	ERROR actor_manager.py:771 -- The actor 3158cc6284f4e69a2456fee301000000 is unavailable: The actor is temporarily unavailable: UnexpectedSystemExit: Worker exits with an exit code 1.. The task may or may not have been executed on the actor.
+NoneType: None
+2026-06-08 17:21:34,494	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+[33m(raylet)[0m A worker died or was killed while executing a task by an unexpected system error. To troubleshoot the problem, check the logs for the dead worker. Lease ID: 0100000007a673e283c63497707be88703da19eed9d47289879c7cc6612ebc4a Worker ID: 4f229fc00a0ff3e3f4e59ad12ecfd9086802a634d9e62ae7191d0f9e Node ID: 6e5de9c42b13e7ca57094c3195ac2534ce91517fbfdea0ab02416aab Worker IP address: 198.18.0.1 Worker port: 34925 Worker PID: 2399886 Worker exit type: SYSTEM_ERROR Worker exit detail: Worker exits unexpectedly. Worker exits with an exit code 1.
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=5 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 17:21:37,494	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=6 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--[36m(RolloutWorker pid=2407287)[0m [INFO] [1780910498.011959022] [gym_env_robot_0_95788]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2407287)[0m [INFO] [1780910498.044457956] [gym_env_robot_1_33551]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2407287)[0m [INFO] [1780910498.065412936] [gym_env_robot_2_61574]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2407287)[0m [INFO] [1780910498.097171151] [gym_env_robot_3_85563]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2407287)[0m /home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+[36m(RolloutWorker pid=2407287)[0m   init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+2026-06-08 17:21:39,494	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+[36m(RolloutWorker pid=2407287)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=2407287)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2407287)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=2407287)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=2407287)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2407287)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=2407287)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=2407287)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2407287)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=2407287)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=2407287)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2407287)[0m ✅ Robot 3: A*规划器初始化完成
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=7 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 17:21:41,495	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=8 steps=0/10,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 17:21:41,520	WARNING actor_manager.py:986 -- Bringing previously unhealthy, now-healthy actor 1 back into service.
+[36m(RolloutWorker pid=2407287)[0m 2026-06-08 17:21:41,598	ERROR actor_manager.py:186 -- Worker exception caught during `apply()`: 'IndependentRobotEnv' object has no attribute 'sanity_fixed_fallback_enable'
+[36m(RolloutWorker pid=2407287)[0m Traceback (most recent call last):
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/actor_manager.py", line 182, in apply
+[36m(RolloutWorker pid=2407287)[0m     return func(self, *args, **kwargs)
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/execution/rollout_ops.py", line 109, in <lambda>
+[36m(RolloutWorker pid=2407287)[0m     (lambda w: w.sample(**random_action_kwargs))
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/util/tracing/tracing_helper.py", line 461, in _resume_span
+[36m(RolloutWorker pid=2407287)[0m     return method(self, *_args, **_kwargs)
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 679, in sample
+[36m(RolloutWorker pid=2407287)[0m     batches = [self.input_reader.next()]
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 59, in next
+[36m(RolloutWorker pid=2407287)[0m     batches = [self.get_data()]
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 225, in get_data
+[36m(RolloutWorker pid=2407287)[0m     item = next(self._env_runner)
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 330, in run
+[36m(RolloutWorker pid=2407287)[0m     outputs = self.step()
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 349, in step
+[36m(RolloutWorker pid=2407287)[0m     ) = self._base_env.poll()
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 529, in poll
+[36m(RolloutWorker pid=2407287)[0m     ) = env_state.poll()
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 716, in poll
+[36m(RolloutWorker pid=2407287)[0m     self.reset()
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 800, in reset
+[36m(RolloutWorker pid=2407287)[0m     raise e
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 794, in reset
+[36m(RolloutWorker pid=2407287)[0m     obs_and_infos = self.env.reset(seed=seed, options=options)
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 1110, in reset
+[36m(RolloutWorker pid=2407287)[0m     obs, info = agent.reset(other_agent_starts=agent_starts, forced_start_goal=forced)
+[36m(RolloutWorker pid=2407287)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 5189, in reset
+[36m(RolloutWorker pid=2407287)[0m     if not forced_ok and self.sanity_fixed_fallback_enable:
+[36m(RolloutWorker pid=2407287)[0m AttributeError: 'IndependentRobotEnv' object has no attribute 'sanity_fixed_fallback_enable'

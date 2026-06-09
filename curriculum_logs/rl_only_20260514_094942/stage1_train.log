@@ -1,0 +1,1648 @@
+2026-05-14 09:50:17,432	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[INFO] [1778723418.957795208] [gym_env_robot_0_17246]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1778723418.989949890] [gym_env_robot_1_47724]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1778723419.009839325] [gym_env_robot_2_56780]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1778723419.032151693] [gym_env_robot_3_22243]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-05-14 09:50:21,674	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  0
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     500,000
+  动作模式:     option_mode
+  Option源:     rl  hold=[1, 30]  topk=3
+  PPO配置:      option_discrete  (clip=0.2, ent=0.01, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.75
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.80,0.80) goal=(4.80,-0.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.750, 5.050) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   7.75   7.36   2.24]  neighbors=[3]
+  robot_1 pos=( 0.750,-2.700) status=active
+    adj=[0  1  0  0]  dist=[ 7.75   0.00   5.99   5.90]  neighbors=[]
+  robot_2 pos=(-4.600, 0.000) status=active
+    adj=[0  0  1  0]  dist=[ 7.36   5.99   0.00   5.26]  neighbors=[]
+  robot_3 pos=(-0.350, 3.100) status=active
+    adj=[1  0  0  1]  dist=[ 2.24   5.90   5.26   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(0.750,5.050)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.239m  n_pos=(-0.350,3.100)  rel_pos=(-1.100,-1.950)
+[comm] step=   0  agent_1  my_pos=(0.750,-2.700)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(-0.350,3.100)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.239m  n_pos=(0.750,5.050)  rel_pos=(1.100,1.950)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.750, 5.050) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   7.75   7.36   2.24]  neighbors=[3]
+  robot_1 pos=( 0.750,-2.700) status=active
+    adj=[0  1  0  0]  dist=[ 7.75   0.00   5.99   5.90]  neighbors=[]
+  robot_2 pos=(-4.600,-0.000) status=active
+    adj=[0  0  1  0]  dist=[ 7.36   5.99   0.00   5.26]  neighbors=[]
+  robot_3 pos=(-0.350, 3.100) status=active
+    adj=[1  0  0  1]  dist=[ 2.24   5.90   5.26   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(0.750,5.050)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.239m  n_pos=(-0.350,3.100)  rel_pos=(-1.100,-1.950)
+[comm] step=   1  agent_1  my_pos=(0.750,-2.700)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-4.600,-0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-0.350,3.100)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.239m  n_pos=(0.750,5.050)  rel_pos=(1.100,1.950)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.750, 5.050) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   7.75   7.36   2.24]  neighbors=[3]
+  robot_1 pos=( 0.750,-2.700) status=active
+    adj=[0  1  0  0]  dist=[ 7.75   0.00   5.99   5.90]  neighbors=[]
+  robot_2 pos=(-4.600,-0.000) status=active
+    adj=[0  0  1  0]  dist=[ 7.36   5.99   0.00   5.26]  neighbors=[]
+  robot_3 pos=(-0.350, 3.100) status=active
+    adj=[1  0  0  1]  dist=[ 2.24   5.90   5.26   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(0.750,5.050)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.239m  n_pos=(-0.350,3.100)  rel_pos=(-1.100,-1.950)
+[comm] step=   2  agent_1  my_pos=(0.750,-2.700)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-4.600,-0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-0.350,3.100)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.239m  n_pos=(0.750,5.050)  rel_pos=(1.100,1.950)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.754, 5.047) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   7.74   7.36   2.24]  neighbors=[3]
+  robot_1 pos=( 0.750,-2.696) status=active
+    adj=[0  1  0  0]  dist=[ 7.74   0.00   5.99   5.90]  neighbors=[]
+  robot_2 pos=(-4.596,-0.002) status=active
+    adj=[0  0  1  0]  dist=[ 7.36   5.99   0.00   5.26]  neighbors=[]
+  robot_3 pos=(-0.350, 3.100) status=active
+    adj=[1  0  0  1]  dist=[ 2.24   5.90   5.26   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(0.754,5.047)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.238m  n_pos=(-0.350,3.100)  rel_pos=(-1.104,-1.946)
+[comm] step=   3  agent_1  my_pos=(0.750,-2.696)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-4.596,-0.002)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-0.350,3.100)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.238m  n_pos=(0.754,5.047)  rel_pos=(1.104,1.946)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 1512/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-0.750, 1.100) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.46   3.78   1.93]  neighbors=[3]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1  0  0]  dist=[ 5.46   0.00   6.65   3.54]  neighbors=[]
+  robot_2 pos=( 0.000, 4.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.78   6.65   0.00   4.39]  neighbors=[]
+  robot_3 pos=( 1.100, 0.550) status=active
+    adj=[1  0  0  1]  dist=[ 1.93   3.54   4.39   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(-0.750,1.100)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.930m  n_pos=(1.100,0.550)  rel_pos=(1.850,-0.550)
+[comm] step=   0  agent_1  my_pos=(4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(1.100,0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.930m  n_pos=(-0.750,1.100)  rel_pos=(-1.850,0.550)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-0.750, 1.100) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.46   3.78   1.93]  neighbors=[3]
+  robot_1 pos=( 4.600,-0.000) status=active
+    adj=[0  1  0  0]  dist=[ 5.46   0.00   6.65   3.54]  neighbors=[]
+  robot_2 pos=(-0.000, 4.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.78   6.65   0.00   4.39]  neighbors=[]
+  robot_3 pos=( 1.100, 0.550) status=active
+    adj=[1  0  0  1]  dist=[ 1.93   3.54   4.39   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(-0.750,1.100)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.930m  n_pos=(1.100,0.550)  rel_pos=(1.850,-0.550)
+[comm] step=   1  agent_1  my_pos=(4.600,-0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(1.100,0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.930m  n_pos=(-0.750,1.100)  rel_pos=(-1.850,0.550)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.750, 1.100) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.46   3.78   1.93]  neighbors=[3]
+  robot_1 pos=( 4.600,-0.000) status=active
+    adj=[0  1  0  0]  dist=[ 5.46   0.00   6.65   3.54]  neighbors=[]
+  robot_2 pos=(-0.000, 4.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.78   6.65   0.00   4.39]  neighbors=[]
+  robot_3 pos=( 1.100, 0.550) status=active
+    adj=[1  0  0  1]  dist=[ 1.93   3.54   4.39   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(-0.750,1.100)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.930m  n_pos=(1.100,0.550)  rel_pos=(1.850,-0.550)
+[comm] step=   2  agent_1  my_pos=(4.600,-0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(1.100,0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.930m  n_pos=(-0.750,1.100)  rel_pos=(-1.850,0.550)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-0.750, 1.100) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.47   3.77   1.93]  neighbors=[3]
+  robot_1 pos=( 4.603,-0.001) status=active
+    adj=[0  1  0  0]  dist=[ 5.47   0.00   6.65   3.54]  neighbors=[]
+  robot_2 pos=( 0.004, 4.799) status=active
+    adj=[0  0  1  0]  dist=[ 3.77   6.65   0.00   4.39]  neighbors=[]
+  robot_3 pos=( 1.102, 0.547) status=active
+    adj=[1  0  0  1]  dist=[ 1.93   3.54   4.39   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(-0.750,1.100)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.933m  n_pos=(1.102,0.547)  rel_pos=(1.852,-0.553)
+[comm] step=   3  agent_1  my_pos=(4.603,-0.001)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(0.004,4.799)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(1.102,0.547)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.933m  n_pos=(-0.750,1.100)  rel_pos=(-1.852,0.553)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 646/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.60,0.00) goal=(4.60,0.00)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.000, 4.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   9.60   6.61]  neighbors=[]
+  robot_1 pos=(-4.800, 0.800) status=active
+    adj=[0  1  0  0]  dist=[ 6.25   0.00   7.38   9.48]  neighbors=[]
+  robot_2 pos=( 0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 9.60   7.38   0.00   6.76]  neighbors=[]
+  robot_3 pos=( 4.650, 0.100) status=active
+    adj=[0  0  0  1]  dist=[ 6.61   9.48   6.76   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(4.650,0.100)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-0.000, 4.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   9.60   6.61]  neighbors=[]
+  robot_1 pos=(-4.800, 0.800) status=done
+    adj=[0  0  0  0]  dist=[ 6.25   0.00   7.38   9.48]  neighbors=[]
+  robot_2 pos=(-0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 9.60   7.38   0.00   6.76]  neighbors=[]
+  robot_3 pos=( 4.650, 0.100) status=active
+    adj=[0  0  0  1]  dist=[ 6.61   9.48   6.76   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(4.650,0.100)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.000, 4.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   9.60   6.61]  neighbors=[]
+  robot_1 pos=(-4.800, 0.800) status=done
+    adj=[0  0  0  0]  dist=[ 6.25   0.00   7.38   9.48]  neighbors=[]
+  robot_2 pos=(-0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 9.60   7.38   0.00   6.76]  neighbors=[]
+  robot_3 pos=( 4.650, 0.100) status=active
+    adj=[0  0  0  1]  dist=[ 6.61   9.48   6.76   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(4.650,0.100)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.000, 4.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   9.60   6.61]  neighbors=[]
+  robot_1 pos=(-4.800, 0.799) status=done
+    adj=[0  0  0  0]  dist=[ 6.25   0.00   7.37   9.48]  neighbors=[]
+  robot_2 pos=(-0.001,-4.798) status=active
+    adj=[0  0  1  0]  dist=[ 9.60   7.37   0.00   6.75]  neighbors=[]
+  robot_3 pos=( 4.650, 0.100) status=active
+    adj=[0  0  0  1]  dist=[ 6.61   9.48   6.75   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-0.001,-4.798)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(4.650,0.100)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 1202/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-2.050,-0.200) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   2.57   6.58   1.83]  neighbors=[1, 3]
+  robot_1 pos=( 0.500,-0.550) status=active
+    adj=[1  1  0  0]  dist=[ 2.57   0.00   4.01   4.22]  neighbors=[0]
+  robot_2 pos=( 4.500,-0.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.58   4.01   0.00   8.20]  neighbors=[]
+  robot_3 pos=(-3.700,-1.000) status=active
+    adj=[1  0  0  1]  dist=[ 1.83   4.22   8.20   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(-2.050,-0.200)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.834m  n_pos=(-3.700,-1.000)  rel_pos=(-1.650,-0.800)
+    slot[1] neighbor=agent_1 dist=2.574m  n_pos=(0.500,-0.550)  rel_pos=(2.550,-0.350)
+[comm] step=   0  agent_1  my_pos=(0.500,-0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.574m  n_pos=(-2.050,-0.200)  rel_pos=(-2.550,0.350)
+[comm] step=   0  agent_2  my_pos=(4.500,-0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(-3.700,-1.000)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.834m  n_pos=(-2.050,-0.200)  rel_pos=(1.650,0.800)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-2.050,-0.200) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   2.57   6.58   1.83]  neighbors=[1, 3]
+  robot_1 pos=( 0.500,-0.550) status=active
+    adj=[1  1  0  0]  dist=[ 2.57   0.00   4.01   4.22]  neighbors=[0]
+  robot_2 pos=( 4.500,-0.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.58   4.01   0.00   8.20]  neighbors=[]
+  robot_3 pos=(-3.700,-1.000) status=active
+    adj=[1  0  0  1]  dist=[ 1.83   4.22   8.20   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(-2.050,-0.200)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.834m  n_pos=(-3.700,-1.000)  rel_pos=(-1.650,-0.800)
+    slot[1] neighbor=agent_1 dist=2.574m  n_pos=(0.500,-0.550)  rel_pos=(2.550,-0.350)
+[comm] step=   1  agent_1  my_pos=(0.500,-0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.574m  n_pos=(-2.050,-0.200)  rel_pos=(-2.550,0.350)
+[comm] step=   1  agent_2  my_pos=(4.500,-0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-3.700,-1.000)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.834m  n_pos=(-2.050,-0.200)  rel_pos=(1.650,0.800)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-2.050,-0.200) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   2.57   6.58   1.83]  neighbors=[1, 3]
+  robot_1 pos=( 0.500,-0.550) status=active
+    adj=[1  1  0  0]  dist=[ 2.57   0.00   4.01   4.22]  neighbors=[0]
+  robot_2 pos=( 4.500,-0.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.58   4.01   0.00   8.20]  neighbors=[]
+  robot_3 pos=(-3.700,-1.000) status=active
+    adj=[1  0  0  1]  dist=[ 1.83   4.22   8.20   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(-2.050,-0.200)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.834m  n_pos=(-3.700,-1.000)  rel_pos=(-1.650,-0.800)
+    slot[1] neighbor=agent_1 dist=2.574m  n_pos=(0.500,-0.550)  rel_pos=(2.550,-0.350)
+[comm] step=   2  agent_1  my_pos=(0.500,-0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.574m  n_pos=(-2.050,-0.200)  rel_pos=(-2.550,0.350)
+[comm] step=   2  agent_2  my_pos=(4.500,-0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-3.700,-1.000)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.834m  n_pos=(-2.050,-0.200)  rel_pos=(1.650,0.800)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-2.049,-0.202) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   2.57   6.57   1.83]  neighbors=[1, 3]
+  robot_1 pos=( 0.500,-0.550) status=active
+    adj=[1  1  0  0]  dist=[ 2.57   0.00   4.01   4.22]  neighbors=[0]
+  robot_2 pos=( 4.498,-0.798) status=active
+    adj=[0  0  1  0]  dist=[ 6.57   4.01   0.00   8.20]  neighbors=[]
+  robot_3 pos=(-3.700,-1.000) status=active
+    adj=[1  0  0  1]  dist=[ 1.83   4.22   8.20   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(-2.049,-0.202)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.834m  n_pos=(-3.700,-1.000)  rel_pos=(-1.651,-0.798)
+    slot[1] neighbor=agent_1 dist=2.572m  n_pos=(0.500,-0.550)  rel_pos=(2.548,-0.348)
+[comm] step=   3  agent_1  my_pos=(0.500,-0.550)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.572m  n_pos=(-2.049,-0.202)  rel_pos=(-2.548,0.348)
+[comm] step=   3  agent_2  my_pos=(4.498,-0.798)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-3.700,-1.000)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.834m  n_pos=(-2.049,-0.202)  rel_pos=(1.651,0.798)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 742/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.80,0.80) goal=(4.80,-0.80)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.43   3.97   6.70]  neighbors=[]
+  robot_1 pos=( 4.800, 0.800) status=active
+    adj=[0  1  0  0]  dist=[ 9.43   0.00   5.71   7.70]  neighbors=[]
+  robot_2 pos=(-0.700,-0.750) status=active
+    adj=[0  0  1  0]  dist=[ 3.97   5.71   0.00   4.33]  neighbors=[]
+  robot_3 pos=(-0.200,-5.050) status=active
+    adj=[0  0  0  1]  dist=[ 6.70   7.70   4.33   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(-4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-0.700,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(-0.200,-5.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.43   3.97   6.70]  neighbors=[]
+  robot_1 pos=( 4.800, 0.800) status=active
+    adj=[0  1  0  0]  dist=[ 9.43   0.00   5.71   7.70]  neighbors=[]
+  robot_2 pos=(-0.700,-0.750) status=active
+    adj=[0  0  1  0]  dist=[ 3.97   5.71   0.00   4.33]  neighbors=[]
+  robot_3 pos=(-0.200,-5.050) status=active
+    adj=[0  0  0  1]  dist=[ 6.70   7.70   4.33   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(-4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.700,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-0.200,-5.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.43   3.97   6.70]  neighbors=[]
+  robot_1 pos=( 4.800, 0.800) status=active
+    adj=[0  1  0  0]  dist=[ 9.43   0.00   5.71   7.70]  neighbors=[]
+  robot_2 pos=(-0.699,-0.749) status=active
+    adj=[0  0  1  0]  dist=[ 3.97   5.71   0.00   4.33]  neighbors=[]
+  robot_3 pos=(-0.200,-5.050) status=active
+    adj=[0  0  0  1]  dist=[ 6.70   7.70   4.33   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(-4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.699,-0.749)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-0.200,-5.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.43   3.97   6.70]  neighbors=[]
+  robot_1 pos=( 4.800, 0.800) status=active
+    adj=[0  1  0  0]  dist=[ 9.43   0.00   5.71   7.70]  neighbors=[]
+  robot_2 pos=(-0.696,-0.747) status=active
+    adj=[0  0  1  0]  dist=[ 3.97   5.71   0.00   4.34]  neighbors=[]
+  robot_3 pos=(-0.199,-5.054) status=active
+    adj=[0  0  0  1]  dist=[ 6.70   7.70   4.34   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(-4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-0.696,-0.747)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-0.199,-5.054)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 342/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.60,0.00) goal=(4.60,0.00)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.900, 0.150) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.46   5.86   6.76]  neighbors=[]
+  robot_1 pos=(-4.550,-0.350) status=active
+    adj=[0  1  0  0]  dist=[ 9.46   0.00   3.69   6.87]  neighbors=[]
+  robot_2 pos=(-0.950, 0.450) status=active
+    adj=[0  0  1  0]  dist=[ 5.86   3.69   0.00   4.45]  neighbors=[]
+  robot_3 pos=( 0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.76   6.87   4.45   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(4.900,0.150)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-4.550,-0.350)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-0.950,0.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.900, 0.150) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.46   5.86   6.76]  neighbors=[]
+  robot_1 pos=(-4.550,-0.350) status=active
+    adj=[0  1  0  0]  dist=[ 9.46   0.00   3.69   6.87]  neighbors=[]
+  robot_2 pos=(-0.950, 0.450) status=active
+    adj=[0  0  1  0]  dist=[ 5.86   3.69   0.00   4.45]  neighbors=[]
+  robot_3 pos=(-0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.76   6.87   4.45   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(4.900,0.150)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-4.550,-0.350)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.950,0.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.899, 0.149) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.46   5.86   6.76]  neighbors=[]
+  robot_1 pos=(-4.552,-0.347) status=active
+    adj=[0  1  0  0]  dist=[ 9.46   0.00   3.69   6.87]  neighbors=[]
+  robot_2 pos=(-0.950, 0.450) status=active
+    adj=[0  0  1  0]  dist=[ 5.86   3.69   0.00   4.45]  neighbors=[]
+  robot_3 pos=(-0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.76   6.87   4.45   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(4.899,0.149)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-4.552,-0.347)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.950,0.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.895, 0.146) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   9.46   5.85   6.75]  neighbors=[]
+  robot_1 pos=(-4.551,-0.349) status=active
+    adj=[0  1  0  0]  dist=[ 9.46   0.00   3.69   6.87]  neighbors=[]
+  robot_2 pos=(-0.950, 0.450) status=active
+    adj=[0  0  1  0]  dist=[ 5.85   3.69   0.00   4.45]  neighbors=[]
+  robot_3 pos=(-0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.75   6.87   4.45   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(4.895,0.146)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-4.551,-0.349)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-0.950,0.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   1.0%     5,000 / 500,000 步  回报 -362.15  ETA 15:15:02
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 558/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 1.000, 0.250) status=active
+    adj=[1  1  0  0]  dist=[ 0.00   2.38   3.84   5.21]  neighbors=[1]
+  robot_1 pos=(-1.300,-0.350) status=active
+    adj=[1  1  0  0]  dist=[ 2.38   0.00   6.21   4.79]  neighbors=[0]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.84   6.21   0.00   7.32]  neighbors=[]
+  robot_3 pos=( 0.200,-4.900) status=active
+    adj=[0  0  0  1]  dist=[ 5.21   4.79   7.32   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(1.000,0.250)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.377m  n_pos=(-1.300,-0.350)  rel_pos=(-2.300,-0.600)
+[comm] step=   0  agent_1  my_pos=(-1.300,-0.350)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.377m  n_pos=(1.000,0.250)  rel_pos=(2.300,0.600)
+[comm] step=   0  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(0.200,-4.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 1.000, 0.250) status=active
+    adj=[1  1  0  0]  dist=[ 0.00   2.38   3.84   5.21]  neighbors=[1]
+  robot_1 pos=(-1.300,-0.350) status=active
+    adj=[1  1  0  0]  dist=[ 2.38   0.00   6.21   4.79]  neighbors=[0]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.84   6.21   0.00   7.32]  neighbors=[]
+  robot_3 pos=( 0.200,-4.900) status=done
+    adj=[0  0  0  0]  dist=[ 5.21   4.79   7.32   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(1.000,0.250)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.377m  n_pos=(-1.300,-0.350)  rel_pos=(-2.300,-0.600)
+[comm] step=   1  agent_1  my_pos=(-1.300,-0.350)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.377m  n_pos=(1.000,0.250)  rel_pos=(2.300,0.600)
+[comm] step=   1  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(0.200,-4.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 1.000, 0.250) status=active
+    adj=[1  1  0  0]  dist=[ 0.00   2.38   3.84   5.21]  neighbors=[1]
+  robot_1 pos=(-1.300,-0.350) status=active
+    adj=[1  1  0  0]  dist=[ 2.38   0.00   6.21   4.79]  neighbors=[0]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.84   6.21   0.00   7.32]  neighbors=[]
+  robot_3 pos=( 0.200,-4.900) status=done
+    adj=[0  0  0  0]  dist=[ 5.21   4.79   7.32   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(1.000,0.250)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.377m  n_pos=(-1.300,-0.350)  rel_pos=(-2.300,-0.600)
+[comm] step=   2  agent_1  my_pos=(-1.300,-0.350)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.377m  n_pos=(1.000,0.250)  rel_pos=(2.300,0.600)
+[comm] step=   2  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 1.000, 0.250) status=active
+    adj=[1  1  0  0]  dist=[ 0.00   2.37   3.84   5.21]  neighbors=[1]
+  robot_1 pos=(-1.296,-0.355) status=active
+    adj=[1  1  0  0]  dist=[ 2.37   0.00   6.20   4.79]  neighbors=[0]
+  robot_2 pos=( 4.799, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 3.84   6.20   0.00   7.32]  neighbors=[]
+  robot_3 pos=( 0.200,-4.900) status=done
+    adj=[0  0  0  0]  dist=[ 5.21   4.79   7.32   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(1.000,0.250)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.374m  n_pos=(-1.296,-0.355)  rel_pos=(-2.296,-0.605)
+[comm] step=   3  agent_1  my_pos=(-1.296,-0.355)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.374m  n_pos=(1.000,0.250)  rel_pos=(2.296,0.605)
+[comm] step=   3  agent_2  my_pos=(4.799,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 87/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(4.20,-1.40) goal=(-4.20,-1.40)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-0.650, 5.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.95   7.36   5.51]  neighbors=[]
+  robot_1 pos=(-1.400,-0.900) status=active
+    adj=[0  1  1  0]  dist=[ 5.95   0.00   2.64   3.73]  neighbors=[2]
+  robot_2 pos=( 0.900,-2.200) status=active
+    adj=[0  1  1  1]  dist=[ 7.36   2.64   0.00   2.75]  neighbors=[1, 3]
+  robot_3 pos=( 2.150, 0.250) status=active
+    adj=[0  0  1  1]  dist=[ 5.51   3.73   2.75   0.00]  neighbors=[2]
+[comm] step=   0  agent_0  my_pos=(-0.650,5.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-1.400,-0.900)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.642m  n_pos=(0.900,-2.200)  rel_pos=(2.300,-1.300)
+[comm] step=   0  agent_2  my_pos=(0.900,-2.200)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_1 dist=2.642m  n_pos=(-1.400,-0.900)  rel_pos=(-2.300,1.300)
+    slot[1] neighbor=agent_3 dist=2.750m  n_pos=(2.150,0.250)  rel_pos=(1.250,2.450)
+[comm] step=   0  agent_3  my_pos=(2.150,0.250)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.750m  n_pos=(0.900,-2.200)  rel_pos=(-1.250,-2.450)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-0.650, 5.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.95   7.36   5.51]  neighbors=[]
+  robot_1 pos=(-1.400,-0.900) status=active
+    adj=[0  1  0  0]  dist=[ 5.95   0.00   2.64   3.73]  neighbors=[]
+  robot_2 pos=( 0.900,-2.200) status=done
+    adj=[0  0  0  0]  dist=[ 7.36   2.64   0.00   2.75]  neighbors=[]
+  robot_3 pos=( 2.150, 0.250) status=active
+    adj=[0  0  0  1]  dist=[ 5.51   3.73   2.75   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(-0.650,5.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-1.400,-0.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(0.900,-2.200)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(2.150,0.250)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.650, 5.000) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.95   7.36   5.51]  neighbors=[]
+  robot_1 pos=(-1.400,-0.900) status=active
+    adj=[0  1  0  0]  dist=[ 5.95   0.00   2.64   3.73]  neighbors=[]
+  robot_2 pos=( 0.900,-2.200) status=done
+    adj=[0  0  0  0]  dist=[ 7.36   2.64   0.00   2.75]  neighbors=[]
+  robot_3 pos=( 2.150, 0.250) status=active
+    adj=[0  0  0  1]  dist=[ 5.51   3.73   2.75   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(-0.650,5.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-1.400,-0.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(2.150,0.250)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-0.652, 5.004) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.95   7.37   5.52]  neighbors=[]
+  robot_1 pos=(-1.400,-0.900) status=active
+    adj=[0  1  0  0]  dist=[ 5.95   0.00   2.64   3.74]  neighbors=[]
+  robot_2 pos=( 0.900,-2.200) status=done
+    adj=[0  0  0  0]  dist=[ 7.37   2.64   0.00   2.75]  neighbors=[]
+  robot_3 pos=( 2.153, 0.253) status=active
+    adj=[0  0  0  1]  dist=[ 5.52   3.74   2.75   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(-0.652,5.004)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-1.400,-0.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(2.153,0.253)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 402/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 3.700, 0.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.92   7.01   8.16]  neighbors=[]
+  robot_1 pos=( 0.150,-2.550) status=active
+    adj=[0  1  1  0]  dist=[ 4.92   0.00   2.65   4.80]  neighbors=[2]
+  robot_2 pos=( 0.150,-5.200) status=active
+    adj=[0  1  1  0]  dist=[ 7.01   2.65   0.00   6.29]  neighbors=[1]
+  robot_3 pos=(-4.300,-0.750) status=active
+    adj=[0  0  0  1]  dist=[ 8.16   4.80   6.29   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(3.700,0.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(0.150,-2.550)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.650m  n_pos=(0.150,-5.200)  rel_pos=(0.000,-2.650)
+[comm] step=   0  agent_2  my_pos=(0.150,-5.200)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.650m  n_pos=(0.150,-2.550)  rel_pos=(0.000,2.650)
+[comm] step=   0  agent_3  my_pos=(-4.300,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 3.700, 0.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.92   7.01   8.16]  neighbors=[]
+  robot_1 pos=( 0.150,-2.550) status=active
+    adj=[0  1  1  0]  dist=[ 4.92   0.00   2.65   4.80]  neighbors=[2]
+  robot_2 pos=( 0.150,-5.200) status=active
+    adj=[0  1  1  0]  dist=[ 7.01   2.65   0.00   6.29]  neighbors=[1]
+  robot_3 pos=(-4.300,-0.750) status=active
+    adj=[0  0  0  1]  dist=[ 8.16   4.80   6.29   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(3.700,0.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(0.150,-2.550)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.650m  n_pos=(0.150,-5.200)  rel_pos=(-0.000,-2.650)
+[comm] step=   1  agent_2  my_pos=(0.150,-5.200)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.650m  n_pos=(0.150,-2.550)  rel_pos=(0.000,2.650)
+[comm] step=   1  agent_3  my_pos=(-4.300,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 3.700, 0.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.92   7.01   8.16]  neighbors=[]
+  robot_1 pos=( 0.150,-2.550) status=active
+    adj=[0  1  1  0]  dist=[ 4.92   0.00   2.65   4.80]  neighbors=[2]
+  robot_2 pos=( 0.150,-5.200) status=active
+    adj=[0  1  1  0]  dist=[ 7.01   2.65   0.00   6.29]  neighbors=[1]
+  robot_3 pos=(-4.300,-0.750) status=active
+    adj=[0  0  0  1]  dist=[ 8.16   4.80   6.29   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(3.700,0.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(0.150,-2.550)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.650m  n_pos=(0.150,-5.200)  rel_pos=(-0.000,-2.650)
+[comm] step=   2  agent_2  my_pos=(0.150,-5.200)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.650m  n_pos=(0.150,-2.550)  rel_pos=(0.000,2.650)
+[comm] step=   2  agent_3  my_pos=(-4.300,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 3.700, 0.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.92   7.01   8.16]  neighbors=[]
+  robot_1 pos=( 0.150,-2.550) status=active
+    adj=[0  1  1  0]  dist=[ 4.92   0.00   2.65   4.80]  neighbors=[2]
+  robot_2 pos=( 0.150,-5.200) status=active
+    adj=[0  1  1  0]  dist=[ 7.01   2.65   0.00   6.29]  neighbors=[1]
+  robot_3 pos=(-4.300,-0.750) status=active
+    adj=[0  0  0  1]  dist=[ 8.16   4.80   6.29   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(3.700,0.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(0.150,-2.550)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.650m  n_pos=(0.150,-5.200)  rel_pos=(-0.000,-2.650)
+[comm] step=   3  agent_2  my_pos=(0.150,-5.200)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.650m  n_pos=(0.150,-2.550)  rel_pos=(0.000,2.650)
+[comm] step=   3  agent_3  my_pos=(-4.300,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 1796/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   3.85   9.60]  neighbors=[]
+  robot_1 pos=( 0.000, 4.800) status=active
+    adj=[0  1  0  0]  dist=[ 6.25   0.00   3.97   6.25]  neighbors=[]
+  robot_2 pos=( 0.950, 0.950) status=active
+    adj=[0  0  1  0]  dist=[ 3.85   3.97   0.00   5.75]  neighbors=[]
+  robot_3 pos=(-4.800, 0.800) status=active
+    adj=[0  0  0  1]  dist=[ 9.60   6.25   5.75   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(0.950,0.950)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(-4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   3.85   9.60]  neighbors=[]
+  robot_1 pos=(-0.000, 4.800) status=active
+    adj=[0  1  0  0]  dist=[ 6.25   0.00   3.97   6.25]  neighbors=[]
+  robot_2 pos=( 0.950, 0.950) status=active
+    adj=[0  0  1  0]  dist=[ 3.85   3.97   0.00   5.75]  neighbors=[]
+  robot_3 pos=(-4.800, 0.800) status=active
+    adj=[0  0  0  1]  dist=[ 9.60   6.25   5.75   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(0.950,0.950)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.25   3.85   9.60]  neighbors=[]
+  robot_1 pos=(-0.000, 4.800) status=done
+    adj=[0  0  0  0]  dist=[ 6.25   0.00   3.97   6.25]  neighbors=[]
+  robot_2 pos=( 0.950, 0.950) status=active
+    adj=[0  0  1  0]  dist=[ 3.85   3.97   0.00   5.75]  neighbors=[]
+  robot_3 pos=(-4.800, 0.800) status=active
+    adj=[0  0  0  1]  dist=[ 9.60   6.25   5.75   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(0.950,0.950)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.799, 0.799) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.24   3.85   9.60]  neighbors=[]
+  robot_1 pos=( 0.002, 4.792) status=done
+    adj=[0  0  0  0]  dist=[ 6.24   0.00   3.97   6.25]  neighbors=[]
+  robot_2 pos=( 0.955, 0.942) status=active
+    adj=[0  0  1  0]  dist=[ 3.85   3.97   0.00   5.76]  neighbors=[]
+  robot_3 pos=(-4.801, 0.798) status=active
+    adj=[0  0  0  1]  dist=[ 9.60   6.25   5.76   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(4.799,0.799)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(0.955,0.942)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-4.801,0.798)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 965/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.70   9.86   4.40]  neighbors=[]
+  robot_1 pos=(-0.250, 3.450) status=active
+    adj=[0  1  0  1]  dist=[ 5.70   0.00   5.74   2.73]  neighbors=[3]
+  robot_2 pos=(-5.050, 0.300) status=active
+    adj=[0  0  1  0]  dist=[ 9.86   5.74   0.00   5.47]  neighbors=[]
+  robot_3 pos=( 0.400, 0.800) status=active
+    adj=[0  1  0  1]  dist=[ 4.40   2.73   5.47   0.00]  neighbors=[1]
+[comm] step=   0  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-0.250,3.450)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.729m  n_pos=(0.400,0.800)  rel_pos=(0.650,-2.650)
+[comm] step=   0  agent_2  my_pos=(-5.050,0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(0.400,0.800)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=2.729m  n_pos=(-0.250,3.450)  rel_pos=(-0.650,2.650)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.70   9.86   4.40]  neighbors=[]
+  robot_1 pos=(-0.250, 3.450) status=active
+    adj=[0  1  0  0]  dist=[ 5.70   0.00   5.74   2.73]  neighbors=[]
+  robot_2 pos=(-5.050, 0.300) status=active
+    adj=[0  0  1  0]  dist=[ 9.86   5.74   0.00   5.47]  neighbors=[]
+  robot_3 pos=( 0.400, 0.800) status=done
+    adj=[0  0  0  0]  dist=[ 4.40   2.73   5.47   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-0.250,3.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-5.050,0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(0.400,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.70   9.86   4.40]  neighbors=[]
+  robot_1 pos=(-0.250, 3.450) status=active
+    adj=[0  1  0  0]  dist=[ 5.70   0.00   5.74   2.73]  neighbors=[]
+  robot_2 pos=(-5.050, 0.300) status=active
+    adj=[0  0  1  0]  dist=[ 9.86   5.74   0.00   5.47]  neighbors=[]
+  robot_3 pos=( 0.400, 0.800) status=done
+    adj=[0  0  0  0]  dist=[ 4.40   2.73   5.47   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-0.250,3.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-5.050,0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   5.70   9.87   4.40]  neighbors=[]
+  robot_1 pos=(-0.250, 3.450) status=active
+    adj=[0  1  0  0]  dist=[ 5.70   0.00   5.74   2.73]  neighbors=[]
+  robot_2 pos=(-5.052, 0.297) status=active
+    adj=[0  0  1  0]  dist=[ 9.87   5.74   0.00   5.48]  neighbors=[]
+  robot_3 pos=( 0.400, 0.800) status=done
+    adj=[0  0  0  0]  dist=[ 4.40   2.73   5.48   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-0.250,3.450)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-5.052,0.297)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 907/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.600, 0.000) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.11   9.78   1.57]  neighbors=[3]
+  robot_1 pos=(-0.450, 0.750) status=active
+    adj=[0  1  0  0]  dist=[ 5.11   0.00   4.70   3.70]  neighbors=[]
+  robot_2 pos=(-5.150, 0.750) status=active
+    adj=[0  0  1  0]  dist=[ 9.78   4.70   0.00   8.40]  neighbors=[]
+  robot_3 pos=( 3.250, 0.800) status=active
+    adj=[1  0  0  1]  dist=[ 1.57   3.70   8.40   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(4.600,0.000)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.569m  n_pos=(3.250,0.800)  rel_pos=(-1.350,0.800)
+[comm] step=   0  agent_1  my_pos=(-0.450,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-5.150,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(3.250,0.800)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.569m  n_pos=(4.600,0.000)  rel_pos=(1.350,-0.800)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.600, 0.000) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.11   9.78   1.57]  neighbors=[3]
+  robot_1 pos=(-0.450, 0.750) status=active
+    adj=[0  1  0  0]  dist=[ 5.11   0.00   4.70   3.70]  neighbors=[]
+  robot_2 pos=(-5.150, 0.750) status=active
+    adj=[0  0  1  0]  dist=[ 9.78   4.70   0.00   8.40]  neighbors=[]
+  robot_3 pos=( 3.250, 0.800) status=active
+    adj=[1  0  0  1]  dist=[ 1.57   3.70   8.40   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(4.600,0.000)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.569m  n_pos=(3.250,0.800)  rel_pos=(-1.350,0.800)
+[comm] step=   1  agent_1  my_pos=(-0.450,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-5.150,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(3.250,0.800)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.569m  n_pos=(4.600,0.000)  rel_pos=(1.350,-0.800)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.600, 0.000) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.11   9.78   1.57]  neighbors=[3]
+  robot_1 pos=(-0.450, 0.750) status=active
+    adj=[0  1  0  0]  dist=[ 5.11   0.00   4.70   3.70]  neighbors=[]
+  robot_2 pos=(-5.150, 0.750) status=active
+    adj=[0  0  1  0]  dist=[ 9.78   4.70   0.00   8.40]  neighbors=[]
+  robot_3 pos=( 3.250, 0.800) status=active
+    adj=[1  0  0  1]  dist=[ 1.57   3.70   8.40   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(4.600,0.000)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.569m  n_pos=(3.250,0.800)  rel_pos=(-1.350,0.800)
+[comm] step=   2  agent_1  my_pos=(-0.450,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-5.150,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(3.250,0.800)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.569m  n_pos=(4.600,0.000)  rel_pos=(1.350,-0.800)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.600, 0.000) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.11   9.78   1.57]  neighbors=[3]
+  robot_1 pos=(-0.450, 0.750) status=active
+    adj=[0  1  0  0]  dist=[ 5.11   0.00   4.70   3.70]  neighbors=[]
+  robot_2 pos=(-5.150, 0.750) status=active
+    adj=[0  0  1  0]  dist=[ 9.78   4.70   0.00   8.40]  neighbors=[]
+  robot_3 pos=( 3.250, 0.800) status=active
+    adj=[1  0  0  1]  dist=[ 1.57   3.70   8.40   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(4.600,0.000)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.569m  n_pos=(3.250,0.800)  rel_pos=(-1.350,0.800)
+[comm] step=   3  agent_1  my_pos=(-0.450,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-5.150,0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(3.250,0.800)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.569m  n_pos=(4.600,0.000)  rel_pos=(1.350,-0.800)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   2.0%    10,000 / 500,000 步  回报 -339.92  ETA 15:01:53
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 2000/2000
+   完成: 4/4
+   活跃: 0  失败: 1
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.400,-4.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.94   7.16   6.71]  neighbors=[]
+  robot_1 pos=(-5.200,-0.750) status=active
+    adj=[0  1  0  0]  dist=[ 6.94   0.00  10.12   6.49]  neighbors=[]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 7.16  10.12   0.00   4.18]  neighbors=[]
+  robot_3 pos=( 0.750, 1.850) status=active
+    adj=[0  0  0  1]  dist=[ 6.71   6.49   4.18   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(0.400,-4.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-5.200,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(0.750,1.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.400,-4.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.94   7.16   6.71]  neighbors=[]
+  robot_1 pos=(-5.200,-0.750) status=active
+    adj=[0  1  0  0]  dist=[ 6.94   0.00  10.12   6.49]  neighbors=[]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 7.16  10.12   0.00   4.18]  neighbors=[]
+  robot_3 pos=( 0.750, 1.850) status=done
+    adj=[0  0  0  0]  dist=[ 6.71   6.49   4.18   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(0.400,-4.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-5.200,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(0.750,1.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.400,-4.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.94   7.16   6.71]  neighbors=[]
+  robot_1 pos=(-5.200,-0.750) status=active
+    adj=[0  1  0  0]  dist=[ 6.94   0.00  10.12   6.49]  neighbors=[]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 7.16  10.12   0.00   4.18]  neighbors=[]
+  robot_3 pos=( 0.750, 1.850) status=done
+    adj=[0  0  0  0]  dist=[ 6.71   6.49   4.18   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(0.400,-4.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-5.200,-0.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.400,-4.850) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.94   7.16   6.71]  neighbors=[]
+  robot_1 pos=(-5.200,-0.753) status=active
+    adj=[0  1  0  0]  dist=[ 6.94   0.00  10.12   6.49]  neighbors=[]
+  robot_2 pos=( 4.800, 0.799) status=active
+    adj=[0  0  1  0]  dist=[ 7.16  10.12   0.00   4.18]  neighbors=[]
+  robot_3 pos=( 0.749, 1.849) status=done
+    adj=[0  0  0  0]  dist=[ 6.71   6.49   4.18   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(0.400,-4.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-5.200,-0.753)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(4.800,0.799)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 401/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-4.80,0.80) goal=(4.80,-0.80)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-5.000, 0.650) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   9.62   5.15   1.84]  neighbors=[3]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1  0  0]  dist=[ 9.62   0.00   6.59   8.75]  neighbors=[]
+  robot_2 pos=(-0.850, 3.700) status=active
+    adj=[0  0  1  0]  dist=[ 5.15   6.59   0.00   5.67]  neighbors=[]
+  robot_3 pos=(-4.100,-0.950) status=active
+    adj=[1  0  0  1]  dist=[ 1.84   8.75   5.67   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(-5.000,0.650)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.836m  n_pos=(-4.100,-0.950)  rel_pos=(0.900,-1.600)
+[comm] step=   0  agent_1  my_pos=(4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-0.850,3.700)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(-4.100,-0.950)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.836m  n_pos=(-5.000,0.650)  rel_pos=(-0.900,1.600)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-5.000, 0.650) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   9.62   5.15   1.84]  neighbors=[3]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1  0  0]  dist=[ 9.62   0.00   6.59   8.75]  neighbors=[]
+  robot_2 pos=(-0.850, 3.700) status=active
+    adj=[0  0  1  0]  dist=[ 5.15   6.59   0.00   5.67]  neighbors=[]
+  robot_3 pos=(-4.100,-0.950) status=active
+    adj=[1  0  0  1]  dist=[ 1.84   8.75   5.67   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(-5.000,0.650)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.836m  n_pos=(-4.100,-0.950)  rel_pos=(0.900,-1.600)
+[comm] step=   1  agent_1  my_pos=(4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.850,3.700)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-4.100,-0.950)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.836m  n_pos=(-5.000,0.650)  rel_pos=(-0.900,1.600)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-5.000, 0.650) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   9.62   5.15   1.84]  neighbors=[3]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1  0  0]  dist=[ 9.62   0.00   6.59   8.75]  neighbors=[]
+  robot_2 pos=(-0.850, 3.700) status=done
+    adj=[0  0  0  0]  dist=[ 5.15   6.59   0.00   5.67]  neighbors=[]
+  robot_3 pos=(-4.100,-0.950) status=active
+    adj=[1  0  0  1]  dist=[ 1.84   8.75   5.67   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(-5.000,0.650)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.836m  n_pos=(-4.100,-0.950)  rel_pos=(0.900,-1.600)
+[comm] step=   2  agent_1  my_pos=(4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.850,3.700)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-4.100,-0.950)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.836m  n_pos=(-5.000,0.650)  rel_pos=(-0.900,1.600)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-5.006, 0.650) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   9.63   5.15   1.84]  neighbors=[3]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1  0  0]  dist=[ 9.63   0.00   6.59   8.75]  neighbors=[]
+  robot_2 pos=(-0.850, 3.700) status=done
+    adj=[0  0  0  0]  dist=[ 5.15   6.59   0.00   5.67]  neighbors=[]
+  robot_3 pos=(-4.103,-0.948) status=active
+    adj=[1  0  0  1]  dist=[ 1.84   8.75   5.67   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(-5.006,0.650)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.836m  n_pos=(-4.103,-0.948)  rel_pos=(0.903,-1.598)
+[comm] step=   3  agent_1  my_pos=(4.600,0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-4.103,-0.948)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=1.836m  n_pos=(-5.006,0.650)  rel_pos=(-0.903,1.598)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 252/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.33   4.09   5.49]  neighbors=[]
+  robot_1 pos=(-0.100,-4.650) status=active
+    adj=[0  1  0  0]  dist=[ 7.33   0.00   6.11   3.56]  neighbors=[]
+  robot_2 pos=( 0.750, 1.400) status=active
+    adj=[0  0  1  1]  dist=[ 4.09   6.11   0.00   2.73]  neighbors=[3]
+  robot_3 pos=(-0.350,-1.100) status=active
+    adj=[0  0  1  1]  dist=[ 5.49   3.56   2.73   0.00]  neighbors=[2]
+[comm] step=   0  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-0.100,-4.650)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(0.750,1.400)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.731m  n_pos=(-0.350,-1.100)  rel_pos=(-1.100,-2.500)
+[comm] step=   0  agent_3  my_pos=(-0.350,-1.100)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.731m  n_pos=(0.750,1.400)  rel_pos=(1.100,2.500)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.33   4.09   5.49]  neighbors=[]
+  robot_1 pos=(-0.100,-4.650) status=done
+    adj=[0  0  0  0]  dist=[ 7.33   0.00   6.11   3.56]  neighbors=[]
+  robot_2 pos=( 0.750, 1.400) status=active
+    adj=[0  0  1  1]  dist=[ 4.09   6.11   0.00   2.73]  neighbors=[3]
+  robot_3 pos=(-0.350,-1.100) status=active
+    adj=[0  0  1  1]  dist=[ 5.49   3.56   2.73   0.00]  neighbors=[2]
+[comm] step=   1  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-0.100,-4.650)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(0.750,1.400)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.731m  n_pos=(-0.350,-1.100)  rel_pos=(-1.100,-2.500)
+[comm] step=   1  agent_3  my_pos=(-0.350,-1.100)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.731m  n_pos=(0.750,1.400)  rel_pos=(1.100,2.500)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.800) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.33   4.09   5.49]  neighbors=[]
+  robot_1 pos=(-0.100,-4.650) status=done
+    adj=[0  0  0  0]  dist=[ 7.33   0.00   6.11   3.56]  neighbors=[]
+  robot_2 pos=( 0.750, 1.400) status=active
+    adj=[0  0  1  1]  dist=[ 4.09   6.11   0.00   2.73]  neighbors=[3]
+  robot_3 pos=(-0.350,-1.100) status=active
+    adj=[0  0  1  1]  dist=[ 5.49   3.56   2.73   0.00]  neighbors=[2]
+[comm] step=   2  agent_0  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(0.750,1.400)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.731m  n_pos=(-0.350,-1.100)  rel_pos=(-1.100,-2.500)
+[comm] step=   2  agent_3  my_pos=(-0.350,-1.100)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.731m  n_pos=(0.750,1.400)  rel_pos=(1.100,2.500)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.800, 0.802) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.33   4.09   5.49]  neighbors=[]
+  robot_1 pos=(-0.100,-4.650) status=done
+    adj=[0  0  0  0]  dist=[ 7.33   0.00   6.11   3.56]  neighbors=[]
+  robot_2 pos=( 0.749, 1.400) status=active
+    adj=[0  0  1  1]  dist=[ 4.09   6.11   0.00   2.73]  neighbors=[3]
+  robot_3 pos=(-0.354,-1.097) status=active
+    adj=[0  0  1  1]  dist=[ 5.49   3.56   2.73   0.00]  neighbors=[2]
+[comm] step=   3  agent_0  my_pos=(4.800,0.802)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(0.749,1.400)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.730m  n_pos=(-0.354,-1.097)  rel_pos=(-1.103,-2.497)
+[comm] step=   3  agent_3  my_pos=(-0.354,-1.097)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.730m  n_pos=(0.749,1.400)  rel_pos=(1.103,2.497)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 1590/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-1.100,-0.300) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.10   6.00   5.22]  neighbors=[]
+  robot_1 pos=(-5.100, 0.600) status=active
+    adj=[0  1  0  0]  dist=[ 4.10   0.00   9.90   6.61]  neighbors=[]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.00   9.90   0.00   6.25]  neighbors=[]
+  robot_3 pos=( 0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 5.22   6.61   6.25   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(-1.100,-0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-5.100,0.600)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-1.100,-0.300) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.10   6.00   5.22]  neighbors=[]
+  robot_1 pos=(-5.100, 0.600) status=active
+    adj=[0  1  0  0]  dist=[ 4.10   0.00   9.90   6.61]  neighbors=[]
+  robot_2 pos=( 4.800, 0.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.00   9.90   0.00   6.25]  neighbors=[]
+  robot_3 pos=(-0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 5.22   6.61   6.25   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(-1.100,-0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-5.100,0.600)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(4.800,0.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-1.100,-0.300) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.10   6.00   5.22]  neighbors=[]
+  robot_1 pos=(-5.098, 0.598) status=active
+    adj=[0  1  0  0]  dist=[ 4.10   0.00   9.90   6.60]  neighbors=[]
+  robot_2 pos=( 4.799, 0.803) status=active
+    adj=[0  0  1  0]  dist=[ 6.00   9.90   0.00   6.25]  neighbors=[]
+  robot_3 pos=(-0.002, 4.798) status=active
+    adj=[0  0  0  1]  dist=[ 5.22   6.60   6.25   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(-1.100,-0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-5.098,0.598)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(4.799,0.803)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-0.002,4.798)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-1.100,-0.300) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   4.09   6.00   5.21]  neighbors=[]
+  robot_1 pos=(-5.095, 0.594) status=active
+    adj=[0  1  0  0]  dist=[ 4.09   0.00   9.90   6.60]  neighbors=[]
+  robot_2 pos=( 4.798, 0.807) status=active
+    adj=[0  0  1  0]  dist=[ 6.00   9.90   0.00   6.24]  neighbors=[]
+  robot_3 pos=(-0.006, 4.795) status=active
+    adj=[0  0  0  1]  dist=[ 5.21   6.60   6.24   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(-1.100,-0.300)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-5.095,0.594)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(4.798,0.807)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-0.006,4.795)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   3.0%    15,000 / 500,000 步  回报 -340.68  ETA 14:51:37
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 2000/2000
+   完成: 4/4
+   活跃: 0  失败: 0
+============================================================
+
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-2.950,-0.900) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.42   6.82   2.28]  neighbors=[3]
+  robot_1 pos=(-0.350, 3.850) status=active
+    adj=[0  1  0  0]  dist=[ 5.42   0.00   5.36   6.35]  neighbors=[]
+  robot_2 pos=( 3.750, 0.400) status=active
+    adj=[0  0  1  0]  dist=[ 6.82   5.36   0.00   8.93]  neighbors=[]
+  robot_3 pos=(-5.150,-0.300) status=active
+    adj=[1  0  0  1]  dist=[ 2.28   6.35   8.93   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(-2.950,-0.900)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.280m  n_pos=(-5.150,-0.300)  rel_pos=(-2.200,0.600)
+[comm] step=   0  agent_1  my_pos=(-0.350,3.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(3.750,0.400)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(-5.150,-0.300)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.280m  n_pos=(-2.950,-0.900)  rel_pos=(2.200,-0.600)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-2.950,-0.900) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.42   6.83   2.28]  neighbors=[3]
+  robot_1 pos=(-0.350, 3.850) status=active
+    adj=[0  1  0  0]  dist=[ 5.42   0.00   5.36   6.35]  neighbors=[]
+  robot_2 pos=( 3.750, 0.400) status=active
+    adj=[0  0  1  0]  dist=[ 6.83   5.36   0.00   8.93]  neighbors=[]
+  robot_3 pos=(-5.150,-0.300) status=active
+    adj=[1  0  0  1]  dist=[ 2.28   6.35   8.93   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(-2.950,-0.900)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.280m  n_pos=(-5.150,-0.300)  rel_pos=(-2.200,0.600)
+[comm] step=   1  agent_1  my_pos=(-0.350,3.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(3.750,0.400)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(-5.150,-0.300)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.280m  n_pos=(-2.950,-0.900)  rel_pos=(2.200,-0.600)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-2.950,-0.900) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.42   6.83   2.28]  neighbors=[3]
+  robot_1 pos=(-0.350, 3.850) status=active
+    adj=[0  1  0  0]  dist=[ 5.42   0.00   5.36   6.35]  neighbors=[]
+  robot_2 pos=( 3.750, 0.400) status=active
+    adj=[0  0  1  0]  dist=[ 6.83   5.36   0.00   8.93]  neighbors=[]
+  robot_3 pos=(-5.150,-0.300) status=active
+    adj=[1  0  0  1]  dist=[ 2.28   6.35   8.93   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(-2.950,-0.900)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.280m  n_pos=(-5.150,-0.300)  rel_pos=(-2.200,0.600)
+[comm] step=   2  agent_1  my_pos=(-0.350,3.850)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(3.750,0.400)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(-5.150,-0.300)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.280m  n_pos=(-2.950,-0.900)  rel_pos=(2.200,-0.600)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-2.950,-0.900) status=active
+    adj=[1  0  0  1]  dist=[ 0.00   5.41   6.83   2.28]  neighbors=[3]
+  robot_1 pos=(-0.353, 3.848) status=active
+    adj=[0  1  0  0]  dist=[ 5.41   0.00   5.36   6.35]  neighbors=[]
+  robot_2 pos=( 3.751, 0.396) status=active
+    adj=[0  0  1  0]  dist=[ 6.83   5.36   0.00   8.93]  neighbors=[]
+  robot_3 pos=(-5.153,-0.303) status=active
+    adj=[1  0  0  1]  dist=[ 2.28   6.35   8.93   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(-2.950,-0.900)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.282m  n_pos=(-5.153,-0.303)  rel_pos=(-2.203,0.597)
+[comm] step=   3  agent_1  my_pos=(-0.353,3.848)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(3.751,0.396)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(-5.153,-0.303)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.282m  n_pos=(-2.950,-0.900)  rel_pos=(2.203,-0.597)
+
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 2000/2000
+   完成: 4/4
+   活跃: 0  失败: 0
+============================================================
+
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-0.550,-0.100) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   3.19   3.85   1.95]  neighbors=[1, 3]
+  robot_1 pos=(-3.650,-0.850) status=active
+    adj=[1  1  0  0]  dist=[ 3.19   0.00   7.03   4.73]  neighbors=[0]
+  robot_2 pos=( 3.200, 0.750) status=active
+    adj=[0  0  1  1]  dist=[ 3.85   7.03   0.00   2.93]  neighbors=[3]
+  robot_3 pos=( 0.400, 1.600) status=active
+    adj=[1  0  1  1]  dist=[ 1.95   4.73   2.93   0.00]  neighbors=[0, 2]
+[comm] step=   0  agent_0  my_pos=(-0.550,-0.100)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.947m  n_pos=(0.400,1.600)  rel_pos=(0.950,1.700)
+    slot[1] neighbor=agent_1 dist=3.189m  n_pos=(-3.650,-0.850)  rel_pos=(-3.100,-0.750)
+[comm] step=   0  agent_1  my_pos=(-3.650,-0.850)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=3.189m  n_pos=(-0.550,-0.100)  rel_pos=(3.100,0.750)
+[comm] step=   0  agent_2  my_pos=(3.200,0.750)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.926m  n_pos=(0.400,1.600)  rel_pos=(-2.800,0.850)
+[comm] step=   0  agent_3  my_pos=(0.400,1.600)  candidates=[np.int64(0), np.int64(2)]  received=2/2
+    slot[0] neighbor=agent_0 dist=1.947m  n_pos=(-0.550,-0.100)  rel_pos=(-0.950,-1.700)
+    slot[1] neighbor=agent_2 dist=2.926m  n_pos=(3.200,0.750)  rel_pos=(2.800,-0.850)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-0.550,-0.100) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   3.19   3.85   1.95]  neighbors=[1, 3]
+  robot_1 pos=(-3.650,-0.850) status=active
+    adj=[1  1  0  0]  dist=[ 3.19   0.00   7.03   4.73]  neighbors=[0]
+  robot_2 pos=( 3.200, 0.750) status=active
+    adj=[0  0  1  1]  dist=[ 3.85   7.03   0.00   2.93]  neighbors=[3]
+  robot_3 pos=( 0.400, 1.600) status=active
+    adj=[1  0  1  1]  dist=[ 1.95   4.73   2.93   0.00]  neighbors=[0, 2]
+[comm] step=   1  agent_0  my_pos=(-0.550,-0.100)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.947m  n_pos=(0.400,1.600)  rel_pos=(0.950,1.700)
+    slot[1] neighbor=agent_1 dist=3.189m  n_pos=(-3.650,-0.850)  rel_pos=(-3.100,-0.750)
+[comm] step=   1  agent_1  my_pos=(-3.650,-0.850)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=3.189m  n_pos=(-0.550,-0.100)  rel_pos=(3.100,0.750)
+[comm] step=   1  agent_2  my_pos=(3.200,0.750)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.926m  n_pos=(0.400,1.600)  rel_pos=(-2.800,0.850)
+[comm] step=   1  agent_3  my_pos=(0.400,1.600)  candidates=[np.int64(0), np.int64(2)]  received=2/2
+    slot[0] neighbor=agent_0 dist=1.947m  n_pos=(-0.550,-0.100)  rel_pos=(-0.950,-1.700)
+    slot[1] neighbor=agent_2 dist=2.926m  n_pos=(3.200,0.750)  rel_pos=(2.800,-0.850)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-0.550,-0.100) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   3.19   3.85   1.95]  neighbors=[1, 3]
+  robot_1 pos=(-3.650,-0.850) status=active
+    adj=[1  1  0  0]  dist=[ 3.19   0.00   7.03   4.73]  neighbors=[0]
+  robot_2 pos=( 3.200, 0.750) status=active
+    adj=[0  0  1  1]  dist=[ 3.85   7.03   0.00   2.93]  neighbors=[3]
+  robot_3 pos=( 0.400, 1.600) status=active
+    adj=[1  0  1  1]  dist=[ 1.95   4.73   2.93   0.00]  neighbors=[0, 2]
+[comm] step=   2  agent_0  my_pos=(-0.550,-0.100)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.947m  n_pos=(0.400,1.600)  rel_pos=(0.950,1.700)
+    slot[1] neighbor=agent_1 dist=3.189m  n_pos=(-3.650,-0.850)  rel_pos=(-3.100,-0.750)
+[comm] step=   2  agent_1  my_pos=(-3.650,-0.850)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=3.189m  n_pos=(-0.550,-0.100)  rel_pos=(3.100,0.750)
+[comm] step=   2  agent_2  my_pos=(3.200,0.750)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.926m  n_pos=(0.400,1.600)  rel_pos=(-2.800,0.850)
+[comm] step=   2  agent_3  my_pos=(0.400,1.600)  candidates=[np.int64(0), np.int64(2)]  received=2/2
+    slot[0] neighbor=agent_0 dist=1.947m  n_pos=(-0.550,-0.100)  rel_pos=(-0.950,-1.700)
+    slot[1] neighbor=agent_2 dist=2.926m  n_pos=(3.200,0.750)  rel_pos=(2.800,-0.850)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-0.552,-0.105) status=active
+    adj=[1  1  0  1]  dist=[ 0.00   3.19   3.85   1.95]  neighbors=[1, 3]
+  robot_1 pos=(-3.650,-0.850) status=active
+    adj=[1  1  0  0]  dist=[ 3.19   0.00   7.04   4.73]  neighbors=[0]
+  robot_2 pos=( 3.203, 0.748) status=active
+    adj=[0  0  1  1]  dist=[ 3.85   7.04   0.00   2.93]  neighbors=[3]
+  robot_3 pos=( 0.399, 1.597) status=active
+    adj=[1  0  1  1]  dist=[ 1.95   4.73   2.93   0.00]  neighbors=[0, 2]
+[comm] step=   3  agent_0  my_pos=(-0.552,-0.105)  candidates=[np.int64(1), np.int64(3)]  received=2/2
+    slot[0] neighbor=agent_3 dist=1.949m  n_pos=(0.399,1.597)  rel_pos=(0.950,1.701)
+    slot[1] neighbor=agent_1 dist=3.187m  n_pos=(-3.650,-0.850)  rel_pos=(-3.098,-0.745)
+[comm] step=   3  agent_1  my_pos=(-3.650,-0.850)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=3.187m  n_pos=(-0.552,-0.105)  rel_pos=(3.098,0.745)
+[comm] step=   3  agent_2  my_pos=(3.203,0.748)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=2.930m  n_pos=(0.399,1.597)  rel_pos=(-2.804,0.849)
+[comm] step=   3  agent_3  my_pos=(0.399,1.597)  candidates=[np.int64(0), np.int64(2)]  received=2/2
+    slot[0] neighbor=agent_0 dist=1.949m  n_pos=(-0.552,-0.105)  rel_pos=(-0.950,-1.701)
+    slot[1] neighbor=agent_2 dist=2.930m  n_pos=(3.203,0.748)  rel_pos=(2.804,-0.849)
+
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 2000/2000
+   完成: 4/4
+   活跃: 0  失败: 0
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(2.60,-3.80) goal=(-2.60,3.80)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-3.80,2.40) goal=(3.80,-2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 0.100, 1.050) status=active
+    adj=[1  0  1  0]  dist=[ 0.00   3.76   2.56   5.85]  neighbors=[2]
+  robot_1 pos=(-0.550, 4.750) status=active
+    adj=[0  1  0  0]  dist=[ 3.76   0.00   5.78   9.57]  neighbors=[]
+  robot_2 pos=(-1.500,-0.950) status=active
+    adj=[1  0  1  0]  dist=[ 2.56   5.78   0.00   4.13]  neighbors=[0]
+  robot_3 pos=( 0.000,-4.800) status=active
+    adj=[0  0  0  1]  dist=[ 5.85   9.57   4.13   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(0.100,1.050)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.561m  n_pos=(-1.500,-0.950)  rel_pos=(-1.600,-2.000)
+[comm] step=   0  agent_1  my_pos=(-0.550,4.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-1.500,-0.950)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.561m  n_pos=(0.100,1.050)  rel_pos=(1.600,2.000)
+[comm] step=   0  agent_3  my_pos=(0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 0.100, 1.050) status=active
+    adj=[1  0  1  0]  dist=[ 0.00   3.76   2.56   5.85]  neighbors=[2]
+  robot_1 pos=(-0.550, 4.750) status=active
+    adj=[0  1  0  0]  dist=[ 3.76   0.00   5.78   9.57]  neighbors=[]
+  robot_2 pos=(-1.500,-0.950) status=active
+    adj=[1  0  1  0]  dist=[ 2.56   5.78   0.00   4.13]  neighbors=[0]
+  robot_3 pos=(-0.000,-4.800) status=active
+    adj=[0  0  0  1]  dist=[ 5.85   9.57   4.13   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(0.100,1.050)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.561m  n_pos=(-1.500,-0.950)  rel_pos=(-1.600,-2.000)
+[comm] step=   1  agent_1  my_pos=(-0.550,4.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-1.500,-0.950)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.561m  n_pos=(0.100,1.050)  rel_pos=(1.600,2.000)
+[comm] step=   1  agent_3  my_pos=(-0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 0.100, 1.050) status=active
+    adj=[1  0  1  0]  dist=[ 0.00   3.76   2.56   5.85]  neighbors=[2]
+  robot_1 pos=(-0.550, 4.750) status=active
+    adj=[0  1  0  0]  dist=[ 3.76   0.00   5.78   9.57]  neighbors=[]
+  robot_2 pos=(-1.500,-0.950) status=active
+    adj=[1  0  1  0]  dist=[ 2.56   5.78   0.00   4.13]  neighbors=[0]
+  robot_3 pos=( 0.000,-4.800) status=active
+    adj=[0  0  0  1]  dist=[ 5.85   9.57   4.13   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(0.100,1.050)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.561m  n_pos=(-1.500,-0.950)  rel_pos=(-1.600,-2.000)
+[comm] step=   2  agent_1  my_pos=(-0.550,4.750)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-1.500,-0.950)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.561m  n_pos=(0.100,1.050)  rel_pos=(1.600,2.000)
+[comm] step=   2  agent_3  my_pos=(0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 0.096, 1.050) status=active
+    adj=[1  0  1  0]  dist=[ 0.00   3.76   2.55   5.85]  neighbors=[2]
+  robot_1 pos=(-0.546, 4.752) status=active
+    adj=[0  1  0  0]  dist=[ 3.76   0.00   5.78   9.57]  neighbors=[]
+  robot_2 pos=(-1.494,-0.948) status=active
+    adj=[1  0  1  0]  dist=[ 2.55   5.78   0.00   4.13]  neighbors=[0]
+  robot_3 pos=( 0.000,-4.801) status=active
+    adj=[0  0  0  1]  dist=[ 5.85   9.57   4.13   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(0.096,1.050)  candidates=[np.int64(2)]  received=1/1
+    slot[0] neighbor=agent_2 dist=2.554m  n_pos=(-1.494,-0.948)  rel_pos=(-1.590,-1.999)
+[comm] step=   3  agent_1  my_pos=(-0.546,4.752)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-1.494,-0.948)  candidates=[np.int64(0)]  received=1/1
+    slot[0] neighbor=agent_0 dist=2.554m  n_pos=(0.096,1.050)  rel_pos=(1.590,1.999)
+[comm] step=   3  agent_3  my_pos=(0.000,-4.801)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.0%    20,000 / 500,000 步  回报 -365.41  ETA 14:45:05
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 2000/2000
+   完成: 4/4
+   活跃: 0  失败: 1
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-4.20,1.40) goal=(4.20,1.40)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-4.80,0.80) goal=(4.80,-0.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.750, 0.200) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.71   6.90   9.35]  neighbors=[]
+  robot_1 pos=( 2.950, 0.600) status=active
+    adj=[0  1  0  1]  dist=[ 7.71   0.00   6.15   1.76]  neighbors=[3]
+  robot_2 pos=( 0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.90   6.15   0.00   6.65]  neighbors=[]
+  robot_3 pos=( 4.600, 0.000) status=active
+    adj=[0  1  0  1]  dist=[ 9.35   1.76   6.65   0.00]  neighbors=[1]
+[comm] step=   0  agent_0  my_pos=(-4.750,0.200)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(2.950,0.600)  candidates=[np.int64(3)]  received=1/1
+    slot[0] neighbor=agent_3 dist=1.756m  n_pos=(4.600,0.000)  rel_pos=(1.650,-0.600)
+[comm] step=   0  agent_2  my_pos=(0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(4.600,0.000)  candidates=[np.int64(1)]  received=1/1
+    slot[0] neighbor=agent_1 dist=1.756m  n_pos=(2.950,0.600)  rel_pos=(-1.650,0.600)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.750, 0.200) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.71   6.90   9.35]  neighbors=[]
+  robot_1 pos=( 2.950, 0.600) status=done
+    adj=[0  0  0  0]  dist=[ 7.71   0.00   6.15   1.76]  neighbors=[]
+  robot_2 pos=(-0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.90   6.15   0.00   6.65]  neighbors=[]
+  robot_3 pos=( 4.600,-0.000) status=active
+    adj=[0  0  0  1]  dist=[ 9.35   1.76   6.65   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(-4.750,0.200)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(2.950,0.600)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(4.600,-0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.750, 0.200) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.71   6.90   9.35]  neighbors=[]
+  robot_1 pos=( 2.950, 0.600) status=done
+    adj=[0  0  0  0]  dist=[ 7.71   0.00   6.15   1.76]  neighbors=[]
+  robot_2 pos=(-0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.90   6.15   0.00   6.65]  neighbors=[]
+  robot_3 pos=( 4.600,-0.000) status=active
+    adj=[0  0  0  1]  dist=[ 9.35   1.76   6.65   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(-4.750,0.200)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(4.600,-0.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.750, 0.200) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   7.71   6.90   9.36]  neighbors=[]
+  robot_1 pos=( 2.950, 0.600) status=done
+    adj=[0  0  0  0]  dist=[ 7.71   0.00   6.15   1.76]  neighbors=[]
+  robot_2 pos=( 0.000,-4.800) status=active
+    adj=[0  0  1  0]  dist=[ 6.90   6.15   0.00   6.65]  neighbors=[]
+  robot_3 pos=( 4.603,-0.002) status=active
+    adj=[0  0  0  1]  dist=[ 9.36   1.76   6.65   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(-4.750,0.200)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(0.000,-4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(4.603,-0.002)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+
+============================================================
+🏁 Episode 结束 (too_many_failed)
+   步数: 1536/2000
+   完成: 2/4
+   活跃: 2  失败: 2
+============================================================
+
+⚠️ Robot 0: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(-4.20,-1.40) goal=(4.20,-1.40)
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(4.20,1.40) goal=(-4.20,1.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 5.150, 0.900) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.85   8.07   6.46]  neighbors=[]
+  robot_1 pos=(-1.650, 0.050) status=active
+    adj=[0  1  0  0]  dist=[ 6.85   0.00   5.21   5.03]  neighbors=[]
+  robot_2 pos=(-0.350,-5.000) status=active
+    adj=[0  0  1  0]  dist=[ 8.07   5.21   0.00   9.81]  neighbors=[]
+  robot_3 pos=( 0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.46   5.03   9.81   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(5.150,0.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-1.650,0.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-0.350,-5.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 5.150, 0.900) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.85   8.07   6.46]  neighbors=[]
+  robot_1 pos=(-1.650, 0.050) status=active
+    adj=[0  1  0  0]  dist=[ 6.85   0.00   5.21   5.03]  neighbors=[]
+  robot_2 pos=(-0.350,-5.000) status=active
+    adj=[0  0  1  0]  dist=[ 8.07   5.21   0.00   9.81]  neighbors=[]
+  robot_3 pos=( 0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.46   5.03   9.81   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(5.150,0.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-1.650,0.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-0.350,-5.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 5.150, 0.900) status=active
+    adj=[1  0  0  0]  dist=[ 0.00   6.85   8.07   6.46]  neighbors=[]
+  robot_1 pos=(-1.650, 0.050) status=active
+    adj=[0  1  0  0]  dist=[ 6.85   0.00   5.21   5.03]  neighbors=[]
+  robot_2 pos=(-0.350,-5.000) status=active
+    adj=[0  0  1  0]  dist=[ 8.07   5.21   0.00   9.81]  neighbors=[]
+  robot_3 pos=( 0.000, 4.800) status=active
+    adj=[0  0  0  1]  dist=[ 6.46   5.03   9.81   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(5.150,0.900)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-1.650,0.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-0.350,-5.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(0.000,4.800)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)

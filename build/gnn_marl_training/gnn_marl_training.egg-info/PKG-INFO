@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: gnn-marl-training
+Version: 0.0.0
+Summary: GNN-based Multi-Agent Reinforcement Learning Training
+Home-page: UNKNOWN
+Maintainer: wj
+Maintainer-email: wj@todo.todo
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+

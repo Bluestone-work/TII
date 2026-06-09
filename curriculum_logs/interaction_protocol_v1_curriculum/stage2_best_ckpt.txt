@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/interaction_protocol_v1_curriculum/GNN_MAPPO_Stage2_Cont_interaction_protocol_v1_curriculum_EnvStage2/best

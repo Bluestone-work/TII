@@ -1,0 +1,57 @@
+[0.941s] Invoking command in '/home/wj/work/multi-robot-exploration-rl/src/sb3_training': AMENT_PREFIX_PATH=/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/wj/work/multi-robot-exploration-rl/build/sb3_training/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sb3_training build --build-base /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build install --record /home/wj/work/multi-robot-exploration-rl/build/sb3_training/install.log --single-version-externally-managed install_data
+[1.285s] running egg_info
+[1.286s] creating ../../build/sb3_training/sb3_training.egg-info
+[1.286s] writing ../../build/sb3_training/sb3_training.egg-info/PKG-INFO
+[1.286s] writing dependency_links to ../../build/sb3_training/sb3_training.egg-info/dependency_links.txt
+[1.287s] writing entry points to ../../build/sb3_training/sb3_training.egg-info/entry_points.txt
+[1.287s] writing requirements to ../../build/sb3_training/sb3_training.egg-info/requires.txt
+[1.287s] writing top-level names to ../../build/sb3_training/sb3_training.egg-info/top_level.txt
+[1.287s] writing manifest file '../../build/sb3_training/sb3_training.egg-info/SOURCES.txt'
+[1.288s] reading manifest file '../../build/sb3_training/sb3_training.egg-info/SOURCES.txt'
+[1.289s] writing manifest file '../../build/sb3_training/sb3_training.egg-info/SOURCES.txt'
+[1.290s] running build
+[1.290s] running build_py
+[1.290s] creating /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build
+[1.290s] creating /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib
+[1.290s] creating /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.290s] copying sb3_training/independent_env.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.290s] copying sb3_training/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.290s] copying sb3_training/waypoint_visualizer_OLD.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.290s] copying sb3_training/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.291s] copying sb3_training/train_ppo.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.291s] copying sb3_training/single_robot_env.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.291s] copying sb3_training/waypoint_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.291s] copying sb3_training/test_ppo.py -> /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training
+[1.291s] running install
+[1.291s] running install_lib
+[1.292s] creating /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.292s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/independent_env.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.292s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.292s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/waypoint_visualizer_OLD.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.292s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.293s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/train_ppo.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.293s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/single_robot_env.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.293s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/waypoint_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.293s] copying /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build/lib/sb3_training/test_ppo.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training
+[1.294s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/independent_env.py to independent_env.cpython-310.pyc
+[1.297s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/global_planner.py to global_planner.cpython-310.pyc
+[1.298s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/waypoint_visualizer_OLD.py to waypoint_visualizer_OLD.cpython-310.pyc
+[1.299s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/__init__.py to __init__.cpython-310.pyc
+[1.299s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/train_ppo.py to train_ppo.cpython-310.pyc
+[1.301s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/single_robot_env.py to single_robot_env.cpython-310.pyc
+[1.304s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/waypoint_visualizer.py to waypoint_visualizer.cpython-310.pyc
+[1.305s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training/test_ppo.py to test_ppo.cpython-310.pyc
+[1.306s] running install_data
+[1.306s] creating /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/ament_index
+[1.307s] creating /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/ament_index/resource_index
+[1.307s] creating /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/ament_index/resource_index/packages
+[1.307s] copying resource/sb3_training -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/ament_index/resource_index/packages
+[1.307s] copying package.xml -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/sb3_training
+[1.307s] creating /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/sb3_training/launch
+[1.307s] copying launch/train_ppo.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/sb3_training/share/sb3_training/launch
+[1.307s] running install_egg_info
+[1.311s] Copying ../../build/sb3_training/sb3_training.egg-info to /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages/sb3_training-0.0.1-py3.10.egg-info
+[1.312s] running install_scripts
+[1.335s] Installing train_ppo script to /home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/sb3_training
+[1.336s] writing list of installed files to '/home/wj/work/multi-robot-exploration-rl/build/sb3_training/install.log'
+[1.411s] Invoked command in '/home/wj/work/multi-robot-exploration-rl/src/sb3_training' returned '0': AMENT_PREFIX_PATH=/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/wj/work/multi-robot-exploration-rl/build/sb3_training/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wj/work/multi-robot-exploration-rl/install/sb3_training/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sb3_training build --build-base /home/wj/work/multi-robot-exploration-rl/build/sb3_training/build install --record /home/wj/work/multi-robot-exploration-rl/build/sb3_training/install.log --single-version-externally-managed install_data

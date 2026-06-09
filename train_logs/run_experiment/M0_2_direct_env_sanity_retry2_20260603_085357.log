@@ -1,0 +1,93 @@
+2026-06-03 08:54:04,834	INFO worker.py:2013 -- Started a local Ray instance.
+[INFO] [1780448046.231137008] [gym_env_robot_0_10137]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780448046.269331831] [gym_env_robot_1_2854]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780448046.295740518] [gym_env_robot_2_88371]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [局部风险注意力 (感知版 token)]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   3
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  0
+  采样设置:     timeout=1800s fragment=200 mode=truncate_episodes
+  训练步数:     1
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.15, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    local_risk  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=3 robot_number:=3 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.85
+================================================================================
+
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-3.80,-2.40) goal=(3.80,2.40)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-3.600,-2.600) status=active
+    adj=[1  0  0]  dist=[ 0.00   8.63   6.25]  neighbors=[]
+  robot_1 pos=( 4.800,-0.600) status=active
+    adj=[0  1  0]  dist=[ 8.63   0.00   7.61]  neighbors=[]
+  robot_2 pos=(-1.700, 3.350) status=active
+    adj=[0  0  1]  dist=[ 6.25   7.61   0.00]  neighbors=[]
+[perception] step=   0  agent_0  my_pos=(-3.600,-2.600)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   0  agent_1  my_pos=(4.800,-0.600)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   0  agent_2  my_pos=(-1.700,3.350)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-3.595,-2.580) status=active
+    adj=[1  0  0]  dist=[ 0.00   8.63   6.23]  neighbors=[]
+  robot_1 pos=( 4.800,-0.600) status=active
+    adj=[0  1  0]  dist=[ 8.63   0.00   7.61]  neighbors=[]
+  robot_2 pos=(-1.700, 3.350) status=active
+    adj=[0  0  1]  dist=[ 6.23   7.61   0.00]  neighbors=[]
+[perception] step=   1  agent_0  my_pos=(-3.595,-2.580)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   1  agent_1  my_pos=(4.800,-0.600)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   1  agent_2  my_pos=(-1.700,3.350)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-3.598,-2.564) status=active
+    adj=[1  0  0]  dist=[ 0.00   8.63   6.21]  neighbors=[]
+  robot_1 pos=( 4.800,-0.600) status=active
+    adj=[0  1  0]  dist=[ 8.63   0.00   7.61]  neighbors=[]
+  robot_2 pos=(-1.701, 3.349) status=active
+    adj=[0  0  1]  dist=[ 6.21   7.61   0.00]  neighbors=[]
+[perception] step=   2  agent_0  my_pos=(-3.598,-2.564)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   2  agent_1  my_pos=(4.800,-0.600)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   2  agent_2  my_pos=(-1.701,3.349)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-3.603,-2.556) status=active
+    adj=[1  0  0]  dist=[ 0.00   8.63   6.20]  neighbors=[]
+  robot_1 pos=( 4.802,-0.597) status=active
+    adj=[0  1  0]  dist=[ 8.63   0.00   7.61]  neighbors=[]
+  robot_2 pos=(-1.705, 3.346) status=active
+    adj=[0  0  1]  dist=[ 6.20   7.61   0.00]  neighbors=[]
+[perception] step=   3  agent_0  my_pos=(-3.603,-2.556)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   3  agent_1  my_pos=(4.802,-0.597)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   3  agent_2  my_pos=(-1.705,3.346)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+
+================================================================================
+✅ Direct env sanity completed
+  completed_steps: 20
+  episodes_started: 1
+  active_agents: 3
+================================================================================
+

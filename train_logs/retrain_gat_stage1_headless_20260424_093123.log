@@ -1,0 +1,420 @@
+
+[1m[0;36m═══ 环境检查 ═══[0m
+
+[0;32m[✓][0m 环境检查通过
+[0;36m[INFO][0m   GAZEBO_MASTER_URI: http://127.0.0.1:11345
+[0;36m[INFO][0m   渲染模式: headless
+[0;36m[INFO][0m   Ray 输出目录: /home/wj/work/multi-robot-exploration-rl/ray_results/neighbor_comm_retrain_stage1_headless_20260424_093123
+[0;36m[INFO][0m   课程日志目录: /home/wj/work/multi-robot-exploration-rl/curriculum_logs/neighbor_comm_retrain_stage1_headless_20260424_093123
+
+[0;36m[INFO][0m 正在停止当前脚本启动的 ROS2/Gazebo 进程...
+🛑 正在清理 ROS2 进程...
+🧭 清理范围: global
+🎯 目标 Gazebo 端口: 11345
+⚠️  还有 2 个进程残留，尝试强制清理...
+✅ 强制清理完成
+
+当前 ROS2 相关进程：
+wj       2106564  0.9  0.1 475892 61508 pts/3    Sl   09:28   0:01 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 71 --rmw-implementation rmw_fastrtps_cpp
+wj       2119800  0.2  0.0  14024  4136 pts/6    Ss+  09:31   0:00 bash -lc set -eo pipefail; set +u; source /home/wj/anaconda3/etc/profile.d/conda.sh; conda activate ros2; source /opt/ros/humble/setup.bash; source /home/wj/work/multi-robot-exploration-rl/install/setup.bash; set -u; cd /home/wj/work/multi-robot-exploration-rl; mkdir -p train_logs; TS=$(date +%Y%m%d_%H%M%S); LOG=/home/wj/work/multi-robot-exploration-rl/train_logs/retrain_gat_stage1_headless_${TS}.log; echo "[INFO] log=$LOG"; exec /home/wj/work/multi-robot-exploration-rl/run_curriculum.sh --model_type gat --gat_actor_graph neighbor --gat_critic_mode mlp --num_agents 4 --num_workers 1 --start_stage 1 --end_stage 1 --train_steps 700000 --train_batch_size 5000 --checkpoint_freq 5000 --action_mode continuous --ppo_profile auto --rolling_lookahead_dist 0.8 --obstacle_filter_range 1.2 --obstacle_filter_fov_deg 360 --obstacle_top_k 9 --headless_sim --disable_rviz --run_suffix neighbor_comm_retrain_stage1_headless_${TS} 2>&1 | tee "$LOG"
+
+[1m[0;36m  启动 Gazebo 环境 (Stage 1 · Stage 1 · 静态入门)[0m
+
+🛑 正在清理 ROS2 进程...
+🧭 清理范围: global
+🎯 目标 Gazebo 端口: 11345
+⚠️  还有 2 个进程残留，尝试强制清理...
+✅ 强制清理完成
+
+当前 ROS2 相关进程：
+wj       2106564  0.8  0.1 475892 61508 pts/3    Sl   09:28   0:01 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 71 --rmw-implementation rmw_fastrtps_cpp
+wj       2119800  0.1  0.0  14024  4136 pts/6    Ss+  09:31   0:00 bash -lc set -eo pipefail; set +u; source /home/wj/anaconda3/etc/profile.d/conda.sh; conda activate ros2; source /opt/ros/humble/setup.bash; source /home/wj/work/multi-robot-exploration-rl/install/setup.bash; set -u; cd /home/wj/work/multi-robot-exploration-rl; mkdir -p train_logs; TS=$(date +%Y%m%d_%H%M%S); LOG=/home/wj/work/multi-robot-exploration-rl/train_logs/retrain_gat_stage1_headless_${TS}.log; echo "[INFO] log=$LOG"; exec /home/wj/work/multi-robot-exploration-rl/run_curriculum.sh --model_type gat --gat_actor_graph neighbor --gat_critic_mode mlp --num_agents 4 --num_workers 1 --start_stage 1 --end_stage 1 --train_steps 700000 --train_batch_size 5000 --checkpoint_freq 5000 --action_mode continuous --ppo_profile auto --rolling_lookahead_dist 0.8 --obstacle_filter_range 1.2 --obstacle_filter_fov_deg 360 --obstacle_top_k 9 --headless_sim --disable_rviz --run_suffix neighbor_comm_retrain_stage1_headless_${TS} 2>&1 | tee "$LOG"
+[0;36m[INFO][0m 等待 Gazebo 就绪（最多 60s）...
+=== Stage 1: Stage 1 · 静态入门 ===
+[INFO] [launch]: All log files can be found below /home/wj/.ros/log/2026-04-24-09-31-38-847355-wj-Default-string-2121272
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] Loading world (HEADLESS): /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/warehouse_aisles.world
+[INFO] Using GAZEBO_MASTER_URI: http://127.0.0.1:11345
+[INFO] Spawning 4 TurtleBot3 robots on warehouse_aisles...
+[INFO] Using random positions
+[INFO] Using fixed positions for 4 robots
+[spawn_robots] Created modified SDF for tb3_0 at /tmp/tb3_0_o1cx7iwp.sdf
+[spawn_robots] Created modified SDF for tb3_1 at /tmp/tb3_1_ivlinsi_.sdf
+[spawn_robots] Created modified SDF for tb3_2 at /tmp/tb3_2_n6i9fc61.sdf
+[spawn_robots] Created modified SDF for tb3_3 at /tmp/tb3_3_u6m7nkxe.sdf
+[INFO] Map Server loading: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/warehouse_aisles.yaml
+[INFO] [gzserver-1]: process started with pid [2121336]
+[INFO] [robot_state_publisher-2]: process started with pid [2121338]
+[INFO] [spawn_entity.py-3]: process started with pid [2121340]
+[INFO] [static_transform_publisher-4]: process started with pid [2121342]
+[INFO] [robot_state_publisher-5]: process started with pid [2121344]
+[INFO] [spawn_entity.py-6]: process started with pid [2121346]
+[INFO] [static_transform_publisher-7]: process started with pid [2121348]
+[INFO] [robot_state_publisher-8]: process started with pid [2121350]
+[INFO] [spawn_entity.py-9]: process started with pid [2121352]
+[INFO] [static_transform_publisher-10]: process started with pid [2121354]
+[INFO] [robot_state_publisher-11]: process started with pid [2121356]
+[INFO] [spawn_entity.py-12]: process started with pid [2121358]
+[INFO] [static_transform_publisher-13]: process started with pid [2121360]
+[INFO] [map_server-14]: process started with pid [2121362]
+[INFO] [lifecycle_manager-15]: process started with pid [2121364]
+[INFO] [obstacle_mover.py-16]: process started with pid [2121367]
+[static_transform_publisher-4] [WARN] [1776994299.068392660] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-7] [WARN] [1776994299.068358046] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-10] [WARN] [1776994299.074358345] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-13] [WARN] [1776994299.075174796] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-7] [INFO] [1776994299.106585639] [static_tf_tb3_1]: Spinning until stopped - publishing transform
+[static_transform_publisher-7] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-7] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-7] from 'map' to 'tb3_1/odom'
+[static_transform_publisher-10] [INFO] [1776994299.112850706] [static_tf_tb3_2]: Spinning until stopped - publishing transform
+[static_transform_publisher-10] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-10] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-10] from 'map' to 'tb3_2/odom'
+[robot_state_publisher-5] [INFO] [1776994299.119753708] [tb3_1.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-5] [INFO] [1776994299.119916891] [tb3_1.robot_state_publisher]: got segment base_link
+[robot_state_publisher-5] [INFO] [1776994299.119940187] [tb3_1.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-5] [INFO] [1776994299.119951790] [tb3_1.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-5] [INFO] [1776994299.119962926] [tb3_1.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-5] [INFO] [1776994299.119972762] [tb3_1.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-5] [INFO] [1776994299.119982937] [tb3_1.robot_state_publisher]: got segment wheel_right_link
+[robot_state_publisher-11] [INFO] [1776994299.123948054] [tb3_3.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-11] [INFO] [1776994299.124105014] [tb3_3.robot_state_publisher]: got segment base_link
+[robot_state_publisher-11] [INFO] [1776994299.124128572] [tb3_3.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-11] [INFO] [1776994299.124142634] [tb3_3.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-11] [INFO] [1776994299.124155480] [tb3_3.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-11] [INFO] [1776994299.124166519] [tb3_3.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-11] [INFO] [1776994299.124178398] [tb3_3.robot_state_publisher]: got segment wheel_right_link
+[lifecycle_manager-15] [INFO] [1776994299.124279988] [lifecycle_manager_map]: Creating
+[static_transform_publisher-13] [INFO] [1776994299.126501565] [static_tf_tb3_3]: Spinning until stopped - publishing transform
+[static_transform_publisher-13] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-13] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-13] from 'map' to 'tb3_3/odom'
+[static_transform_publisher-4] [INFO] [1776994299.129698579] [static_tf_tb3_0]: Spinning until stopped - publishing transform
+[static_transform_publisher-4] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-4] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-4] from 'map' to 'tb3_0/odom'
+[lifecycle_manager-15] [INFO] [1776994299.132556035] [lifecycle_manager_map]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[robot_state_publisher-8] [INFO] [1776994299.133212088] [tb3_2.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-8] [INFO] [1776994299.133377641] [tb3_2.robot_state_publisher]: got segment base_link
+[robot_state_publisher-8] [INFO] [1776994299.133400597] [tb3_2.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-8] [INFO] [1776994299.133413883] [tb3_2.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-8] [INFO] [1776994299.133423840] [tb3_2.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-8] [INFO] [1776994299.133433976] [tb3_2.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-8] [INFO] [1776994299.133443082] [tb3_2.robot_state_publisher]: got segment wheel_right_link
+[lifecycle_manager-15] [INFO] [1776994299.146859461] [lifecycle_manager_map]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-15] [INFO] [1776994299.146931426] [lifecycle_manager_map]: [34m[1mConfiguring map_server[0m[0m
+[robot_state_publisher-2] [INFO] [1776994299.148106031] [tb3_0.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1776994299.148314262] [tb3_0.robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1776994299.148333947] [tb3_0.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-2] [INFO] [1776994299.148344871] [tb3_0.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-2] [INFO] [1776994299.148355291] [tb3_0.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-2] [INFO] [1776994299.148910541] [tb3_0.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-2] [INFO] [1776994299.148923465] [tb3_0.robot_state_publisher]: got segment wheel_right_link
+[map_server-14] [INFO] [1776994299.151137308] [map_server]: 
+[map_server-14] 	map_server lifecycle node launched. 
+[map_server-14] 	Waiting on external lifecycle transitions to activate
+[map_server-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-14] [INFO] [1776994299.151336653] [map_server]: Creating
+[map_server-14] [INFO] [1776994299.152078954] [map_server]: Configuring
+[map_server-14] [INFO] [1776994299.152122090] [map_io]: Loading yaml file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/warehouse_aisles.yaml
+[map_server-14] [INFO] [1776994299.152348293] [map_io]: resolution: 0.05
+[map_server-14] [INFO] [1776994299.152359288] [map_io]: origin[0]: -6
+[map_server-14] [INFO] [1776994299.152363938] [map_io]: origin[1]: -6
+[map_server-14] [INFO] [1776994299.152368181] [map_io]: origin[2]: 0
+[map_server-14] [INFO] [1776994299.152372734] [map_io]: free_thresh: 0.196
+[map_server-14] [INFO] [1776994299.152377392] [map_io]: occupied_thresh: 0.65
+[map_server-14] [INFO] [1776994299.152382349] [map_io]: mode: trinary
+[map_server-14] [INFO] [1776994299.152387770] [map_io]: negate: 0
+[map_server-14] [INFO] [1776994299.152566017] [map_io]: Loading image_file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/warehouse_aisles.pgm
+[map_server-14] [INFO] [1776994299.159600308] [map_io]: Read map /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/warehouse_aisles.pgm: 240 X 240 map @ 0.05 m/cell
+[lifecycle_manager-15] [INFO] [1776994299.164390944] [lifecycle_manager_map]: [34m[1mActivating map_server[0m[0m
+[map_server-14] [INFO] [1776994299.164516738] [map_server]: Activating
+[map_server-14] [INFO] [1776994299.164689109] [map_server]: Creating bond (map_server) to lifecycle manager.
+[lifecycle_manager-15] [INFO] [1776994299.268787895] [lifecycle_manager_map]: Server map_server connected with bond.
+[lifecycle_manager-15] [INFO] [1776994299.268852873] [lifecycle_manager_map]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-15] [INFO] [1776994299.268873568] [lifecycle_manager_map]: [34m[1mCreating bond timer...[0m[0m
+[spawn_entity.py-9] [INFO] [1776994299.618100886] [tb3_2.spawn_entity]: Spawn Entity started
+[spawn_entity.py-9] [INFO] [1776994299.618501212] [tb3_2.spawn_entity]: Loading entity XML from file /tmp/tb3_2_n6i9fc61.sdf
+[spawn_entity.py-9] [INFO] [1776994299.619414165] [tb3_2.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-9] [INFO] [1776994299.619811009] [tb3_2.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-12] [INFO] [1776994299.622361644] [tb3_3.spawn_entity]: Spawn Entity started
+[spawn_entity.py-12] [INFO] [1776994299.622888350] [tb3_3.spawn_entity]: Loading entity XML from file /tmp/tb3_3_u6m7nkxe.sdf
+[spawn_entity.py-12] [INFO] [1776994299.623922510] [tb3_3.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-12] [INFO] [1776994299.624379118] [tb3_3.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-3] [INFO] [1776994299.662160521] [tb3_0.spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1776994299.662840994] [tb3_0.spawn_entity]: Loading entity XML from file /tmp/tb3_0_o1cx7iwp.sdf
+[spawn_entity.py-3] [INFO] [1776994299.663932874] [tb3_0.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1776994299.664546597] [tb3_0.spawn_entity]: Waiting for service /spawn_entity
+[gzserver-1] Gazebo multi-robot simulator, version 11.10.2
+[gzserver-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gzserver-1] Released under the Apache 2 License.
+[gzserver-1] http://gazebosim.org
+[gzserver-1] 
+[spawn_entity.py-6] [INFO] [1776994299.773643294] [tb3_1.spawn_entity]: Spawn Entity started
+[spawn_entity.py-6] [INFO] [1776994299.774045054] [tb3_1.spawn_entity]: Loading entity XML from file /tmp/tb3_1_ivlinsi_.sdf
+[spawn_entity.py-6] [INFO] [1776994299.774877281] [tb3_1.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-6] [INFO] [1776994299.775221131] [tb3_1.spawn_entity]: Waiting for service /spawn_entity
+[gzserver-1] [1;33m[Wrn] [gazebo_ros_init.cpp:178] [0m[1;33m
+[gzserver-1] #     # ####### ####### ###  #####  #######
+[gzserver-1] ##    # #     #    #     #  #     # #
+[gzserver-1] # #   # #     #    #     #  #       #
+[gzserver-1] #  #  # #     #    #     #  #       #####
+[gzserver-1] #   # # #     #    #     #  #       #
+[gzserver-1] #    ## #     #    #     #  #     # #
+[gzserver-1] #     # #######    #    ###  #####  #######
+[gzserver-1] 
+[gzserver-1] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gzserver-1] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gzserver-1] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gzserver-1] 
+[gzserver-1] [0m[1;33m
+[gzserver-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m172.19.10.153[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/warehouse_aisles.world[0m[1;32m][0m[1;32m
+[gzserver-1] [0m[1;33m[0m[1;33m[0m[WARN] [1776994301.272844798] [rcl]: Found remap rule 'model_states:=model_states_demo'. This syntax is deprecated. Use '--ros-args --remap model_states:=model_states_demo' instead.
+[spawn_entity.py-6] [INFO] [1776994301.282945923] [tb3_1.spawn_entity]: Calling service /spawn_entity
+[gzserver-1] [INFO] [1776994301.289537201] [gazebo_ros_state]: Publishing states of gazebo models at [/model_states_demo]
+[gzserver-1] [INFO] [1776994301.290844158] [gazebo_ros_state]: Publishing states of gazebo links at [/link_states]
+[spawn_entity.py-9] [INFO] [1776994301.377645625] [tb3_2.spawn_entity]: Calling service /spawn_entity
+[obstacle_mover.py-16] [INFO] [1776994301.380535584] [obstacle_mover]: [obstacle_mover] map=5  0 个障碍物  速度=0.000 m/s (scale×0.0)  30 Hz  随机游走模式
+[spawn_entity.py-12] [INFO] [1776994301.382301299] [tb3_3.spawn_entity]: Calling service /spawn_entity
+[obstacle_mover.py-16] [INFO] [1776994301.383209547] [obstacle_mover]: [obstacle_mover] ✅ dyn_obs_0~dyn_obs_7 已下沉至 z=-10.0
+  等待中... 2s / 60s[spawn_entity.py-3] [INFO] [1776994301.421761356] [tb3_0.spawn_entity]: Calling service /spawn_entity
+[gzserver-1] [INFO] [1776994301.617921597] [tb3_1.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-6] [INFO] [1776994301.711409101] [tb3_1.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_1]
+[gzserver-1] [INFO] [1776994301.842166138] [tb3_1.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776994301.842275993] [tb3_1.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776994301.844707742] [tb3_1.turtlebot3_diff_drive]: Subscribed to [/tb3_1/cmd_vel]
+[gzserver-1] [INFO] [1776994301.847999059] [tb3_1.turtlebot3_diff_drive]: Advertise odometry on [/tb3_1/odom]
+[gzserver-1] [INFO] [1776994301.854265773] [tb3_1.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_1/odom] and [tb3_1/base_footprint]
+[gzserver-1] [INFO] [1776994301.873868298] [tb3_1.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776994301.873915274] [tb3_1.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-6]: process has finished cleanly [pid 2121346]
+[gzserver-1] [INFO] [1776994302.189459626] [tb3_2.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-9] [INFO] [1776994302.293857143] [tb3_2.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_2]
+[gzserver-1] [INFO] [1776994302.402882989] [tb3_2.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776994302.402947819] [tb3_2.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776994302.404166772] [tb3_2.turtlebot3_diff_drive]: Subscribed to [/tb3_2/cmd_vel]
+[gzserver-1] [INFO] [1776994302.405515182] [tb3_2.turtlebot3_diff_drive]: Advertise odometry on [/tb3_2/odom]
+[gzserver-1] [INFO] [1776994302.407646620] [tb3_2.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_2/odom] and [tb3_2/base_footprint]
+[gzserver-1] [INFO] [1776994302.424007944] [tb3_2.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776994302.424099052] [tb3_2.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-9]: process has finished cleanly [pid 2121352]
+[gzserver-1] [INFO] [1776994302.730937614] [tb3_3.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-12] [INFO] [1776994302.835231880] [tb3_3.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_3]
+[gzserver-1] [INFO] [1776994302.946090844] [tb3_3.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776994302.946165410] [tb3_3.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776994302.947545887] [tb3_3.turtlebot3_diff_drive]: Subscribed to [/tb3_3/cmd_vel]
+[gzserver-1] [INFO] [1776994302.949043857] [tb3_3.turtlebot3_diff_drive]: Advertise odometry on [/tb3_3/odom]
+[gzserver-1] [INFO] [1776994302.951168797] [tb3_3.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_3/odom] and [tb3_3/base_footprint]
+[gzserver-1] [INFO] [1776994302.966090960] [tb3_3.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776994302.966148055] [tb3_3.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-12]: process has finished cleanly [pid 2121358]
+[gzserver-1] [INFO] [1776994303.274900948] [tb3_0.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-3] [INFO] [1776994303.376824228] [tb3_0.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_0]
+[gzserver-1] [INFO] [1776994303.489033568] [tb3_0.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776994303.489091672] [tb3_0.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776994303.489804469] [tb3_0.turtlebot3_diff_drive]: Subscribed to [/tb3_0/cmd_vel]
+[gzserver-1] [INFO] [1776994303.490558300] [tb3_0.turtlebot3_diff_drive]: Advertise odometry on [/tb3_0/odom]
+[gzserver-1] [INFO] [1776994303.492933187] [tb3_0.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_0/odom] and [tb3_0/base_footprint]
+[gzserver-1] [INFO] [1776994303.510477040] [tb3_0.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776994303.510534354] [tb3_0.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-3]: process has finished cleanly [pid 2121340]
+  等待中... 4s / 60s[0;32m[✓][0m Gazebo 就绪！（4s，已生成 4/4 台机器人）
+
+[1m[0;36m═══ Stage 1 · Stage 1 · 静态入门 ═══[0m
+
+[0;36m[INFO][0m 当前超参 -> LR: 3e-4 | Clip: 0.20
+[0;36m[INFO][0m 训练命令: python3 /home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py --model_type gat --env_stage 1 --num_agents 4 --num_workers 1 --train_steps 700000 --train_batch_size 5000 --checkpoint_freq 5000 --hidden_dim 512 --lr 3e-4 --clip_param 0.20 --sample_timeout_s 1200 --rollout_fragment_length 1000 --batch_mode truncate_episodes --map_number 5 --action_mode continuous --ppo_profile auto --obstacle_filter_range 1.2 --obstacle_filter_fov_deg 360 --obstacle_top_k 9 --rolling_lookahead_dist 0.8 --safety_filter_enable 0 --gat_actor_graph neighbor --gat_critic_mode mlp --curriculum_stage 1
+2026-04-24 09:31:56,403	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-04-24 09:31:57,616 E 2122448 2122448] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: 'd7565ef427fcf5230df2872301000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=2124156)[0m [INFO] [1776994321.690182935] [gym_env_robot_0_87852]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2124156)[0m [INFO] [1776994321.722514708] [gym_env_robot_1_20954]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2124156)[0m [INFO] [1776994321.745529012] [gym_env_robot_2_12565]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=2124156)[0m [INFO] [1776994321.768443880] [gym_env_robot_3_72816]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776994323.477060563] [gym_env_robot_0_54964]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776994323.514247799] [gym_env_robot_1_85592]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776994323.541161809] [gym_env_robot_2_17776]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776994323.568135234] [gym_env_robot_3_74392]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-04-24 09:32:05,677	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [通信版 social-risk 图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     700,000
+  动作模式:     continuous
+  PPO配置:      continuous_baseline  (clip=0.2, ent=0.005, mb=512, epochs=10)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=5 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.75
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+[36m(RolloutWorker pid=2124156)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=2124156)[0m ✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2124156)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=2124156)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=2124156)[0m ✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2124156)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=2124156)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=2124156)[0m ✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2124156)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=2124156)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=2124156)[0m ✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+[36m(RolloutWorker pid=2124156)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 5: 预计算安全 spawn 点 13443 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(4.60,1.00) goal=(-4.60,1.00)
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-3.80,-3.50) goal=(3.80,2.80)
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(3.80,2.80) goal=(-3.80,-3.50)
+[36m(RolloutWorker pid=2124156)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=2124156)[0m   robot_0 pos=( 5.000,-1.600)
+[36m(RolloutWorker pid=2124156)[0m     adj=[1  0  0  0]  dist=[ 0.00  11.92   7.89   7.85]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_1 pos=(-5.500, 4.050)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  1  0  0]  dist=[11.92   0.00   7.09   6.02]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_2 pos=( 1.450, 5.450)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  1  0]  dist=[ 7.89   7.09   0.00   8.05]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_3 pos=(-2.850,-1.350)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  0  1]  dist=[ 7.85   6.02   8.05   0.00]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   0  agent_0  my_pos=(5.000,-1.600)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   0  agent_1  my_pos=(-5.500,4.050)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   0  agent_2  my_pos=(1.450,5.450)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   0  agent_3  my_pos=(-2.850,-1.350)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=2124156)[0m   robot_0 pos=( 5.000,-1.600)
+[36m(RolloutWorker pid=2124156)[0m     adj=[1  0  0  0]  dist=[ 0.00  11.92   7.89   7.85]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_1 pos=(-5.500, 4.050)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  1  0  0]  dist=[11.92   0.00   7.09   6.02]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_2 pos=( 1.450, 5.450)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  1  0]  dist=[ 7.89   7.09   0.00   8.05]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_3 pos=(-2.850,-1.350)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  0  1]  dist=[ 7.85   6.02   8.05   0.00]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   1  agent_0  my_pos=(5.000,-1.600)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   1  agent_1  my_pos=(-5.500,4.050)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   1  agent_2  my_pos=(1.450,5.450)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   1  agent_3  my_pos=(-2.850,-1.350)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=2124156)[0m   robot_0 pos=( 5.000,-1.600)
+[36m(RolloutWorker pid=2124156)[0m     adj=[1  0  0  0]  dist=[ 0.00  11.92   7.89   7.85]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_1 pos=(-5.500, 4.050)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  1  0  0]  dist=[11.92   0.00   7.09   6.01]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_2 pos=( 1.450, 5.450)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  1  0]  dist=[ 7.89   7.09   0.00   8.05]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_3 pos=(-2.851,-1.350)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  0  1]  dist=[ 7.85   6.01   8.05   0.00]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   2  agent_0  my_pos=(5.000,-1.600)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   2  agent_1  my_pos=(-5.500,4.050)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   2  agent_2  my_pos=(1.450,5.450)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   2  agent_3  my_pos=(-2.851,-1.350)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=2124156)[0m   robot_0 pos=( 4.999,-1.601)
+[36m(RolloutWorker pid=2124156)[0m     adj=[1  0  0  0]  dist=[ 0.00  11.92   7.88   7.85]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_1 pos=(-5.499, 4.048)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  1  0  0]  dist=[11.92   0.00   7.09   6.01]  neighbors=[]
+2026-04-24 09:34:32,185	ERROR actor_manager.py:973 -- Ray error (The actor died unexpectedly before finishing this task.
+	class_name: RolloutWorker
+	actor_id: d7565ef427fcf5230df2872301000000
+	pid: 2124156
+	namespace: 967950c2-87a3-43fe-9125-e3b1537d1c1d
+	ip: 172.19.10.153
+The actor is dead because its owner has died. Owner Id: 01000000ffffffffffffffffffffffffffffffffffffffffffffffff Owner Ip address: 172.19.10.153 Owner worker exit type: SYSTEM_ERROR Worker exit detail: Owner's node has crashed.), taking actor 1 out of service.
+2026-04-24 09:34:32,185	ERROR actor_manager.py:771 -- The actor died unexpectedly before finishing this task.
+	class_name: RolloutWorker
+	actor_id: d7565ef427fcf5230df2872301000000
+	pid: 2124156
+	namespace: 967950c2-87a3-43fe-9125-e3b1537d1c1d
+	ip: 172.19.10.153
+The actor is dead because its owner has died. Owner Id: 01000000ffffffffffffffffffffffffffffffffffffffffffffffff Owner Ip address: 172.19.10.153 Owner worker exit type: SYSTEM_ERROR Worker exit detail: Owner's node has crashed.
+NoneType: None
+2026-04-24 09:34:32,185	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+*** SIGTERM received at time=1776994472 on cpu 14 ***
+PC: @     0x74c3f6fa0c5b  (unknown)  (unknown)
+    @     0x74c2b83aae62  (unknown)  (unknown)
+    @          0x3da74f0  (unknown)  (unknown)
+[2026-04-24 09:34:32,222 E 2122448 2122448] logging.cc:474: *** SIGTERM received at time=1776994472 on cpu 14 ***
+[2026-04-24 09:34:32,227 E 2122448 2122448] logging.cc:474: PC: @     0x74c3f6fa0c5b  (unknown)  (unknown)
+[2026-04-24 09:34:32,227 E 2122448 2122448] logging.cc:474:     @     0x74c2b83aae62  (unknown)  (unknown)
+[2026-04-24 09:34:32,235 E 2122448 2122448] logging.cc:474:     @          0x3da74f0  (unknown)  (unknown)
+[36m(RolloutWorker pid=2124156)[0m   robot_2 pos=( 1.451, 5.438)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  1  0]  dist=[ 7.88   7.09   0.00   8.04]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m   robot_3 pos=(-2.851,-1.350)
+[36m(RolloutWorker pid=2124156)[0m     adj=[0  0  0  1]  dist=[ 7.85   6.01   8.04   0.00]  neighbors=[]
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   3  agent_0  my_pos=(4.999,-1.601)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   3  agent_1  my_pos=(-5.499,4.048)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   3  agent_2  my_pos=(1.451,5.438)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m [comm] step=   3  agent_3  my_pos=(-2.851,-1.350)  received=0
+[36m(RolloutWorker pid=2124156)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(5.00,-1.60) goal=(-5.00,-1.60)
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-5.00,-2.80) goal=(5.00,-2.80)
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(-3.80,-3.50) goal=(3.80,2.80)
+[36m(RolloutWorker pid=2124156)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(2.00,3.80) goal=(-2.00,-3.80)
+[33m(raylet)[0m The autoscaler failed with the following error:
+Terminated with signal 15
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/autoscaler/_private/monitor.py", line 736, in <module>
+    monitor.run()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/autoscaler/_private/monitor.py", line 593, in run
+    self._run()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/autoscaler/_private/monitor.py", line 448, in _run
+    time.sleep(AUTOSCALER_UPDATE_INTERVAL_S)
+
+[2026-04-24 09:34:32,238 E 2122448 2123324] core_worker.cc:472: :info_message: Attempting to recover 1 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).
+[0;31m[✗][0m Stage 1 训练异常退出 (code=1)，检查日志: /home/wj/work/multi-robot-exploration-rl/curriculum_logs/neighbor_comm_retrain_stage1_headless_20260424_093123/stage1_train.log
+[0;31m[✗][0m Stage 1 训练失败，停止当前 ROS/Gazebo 环境。
+[0;36m[INFO][0m 正在停止当前脚本启动的 ROS2/Gazebo 进程...
+🛑 正在清理 ROS2 进程...
+🧭 清理范围: global
+🎯 目标 Gazebo 端口: 11345
+🎯 检测到 Gazebo 端口 11345 残留监听进程: 2121336 
+⚠️  还有 3 个进程残留，尝试强制清理...
+✅ 强制清理完成
+
+当前 ROS2 相关进程：
+wj       2106564  0.4  0.1 475892 61552 pts/3    Sl   09:28   0:01 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 71 --rmw-implementation rmw_fastrtps_cpp
+wj       2119800  0.0  0.0  14024  4136 pts/6    Ss+  09:31   0:00 bash -lc set -eo pipefail; set +u; source /home/wj/anaconda3/etc/profile.d/conda.sh; conda activate ros2; source /opt/ros/humble/setup.bash; source /home/wj/work/multi-robot-exploration-rl/install/setup.bash; set -u; cd /home/wj/work/multi-robot-exploration-rl; mkdir -p train_logs; TS=$(date +%Y%m%d_%H%M%S); LOG=/home/wj/work/multi-robot-exploration-rl/train_logs/retrain_gat_stage1_headless_${TS}.log; echo "[INFO] log=$LOG"; exec /home/wj/work/multi-robot-exploration-rl/run_curriculum.sh --model_type gat --gat_actor_graph neighbor --gat_critic_mode mlp --num_agents 4 --num_workers 1 --start_stage 1 --end_stage 1 --train_steps 700000 --train_batch_size 5000 --checkpoint_freq 5000 --action_mode continuous --ppo_profile auto --rolling_lookahead_dist 0.8 --obstacle_filter_range 1.2 --obstacle_filter_fov_deg 360 --obstacle_top_k 9 --headless_sim --disable_rviz --run_suffix neighbor_comm_retrain_stage1_headless_${TS} 2>&1 | tee "$LOG"
+wj       2121297  0.3  0.1 476236 58308 pts/6    Sl   09:31   0:00 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 0 --rmw-implementation rmw_fastrtps_cpp

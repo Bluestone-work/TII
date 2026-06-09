@@ -1,0 +1,156 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<world name="corridor_swap">
+  <!-- Gazebo ROS State Plugin - provides /set_entity_state service -->
+  <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+    <ros>
+      <argument>model_states:=model_states_demo</argument>
+    </ros>
+    <update_rate>1.0</update_rate>
+  </plugin>
+
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+
+  <model name="b_north">
+    <static>true</static>
+    <pose>0 10.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>20.0 0.2 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>20.0 0.2 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_south">
+    <static>true</static>
+    <pose>0 -10.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>20.0 0.2 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>20.0 0.2 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_east">
+    <static>true</static>
+    <pose>10.0 0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 20.0 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 20.0 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_west">
+    <static>true</static>
+    <pose>-10.0 0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 20.0 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 20.0 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="divider_lower">
+    <static>true</static>
+    <pose>0 -5.525 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 8.55 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 8.55 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="divider_upper">
+    <static>true</static>
+    <pose>0 5.525 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 8.55 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 8.55 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="pillar_left">
+    <static>true</static>
+    <pose>-1.5 -0.8 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="pillar_right">
+    <static>true</static>
+    <pose>1.8 0.9 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+</world>
+</sdf>

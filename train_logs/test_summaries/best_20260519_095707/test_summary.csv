@@ -1,0 +1,2 @@
+stage,repeat,num_episodes,total_success,total_collision,avg_reward,avg_steps,avg_min_dist,avg_social_risk,avg_front_risk,reached_agents,collided_agents,truncated_episodes,exit_code,log_path,checkpoint
+1,1,5,0,11,48.69,2500.0,0.234,0.009,0.123,0,11,5,0,/home/wj/work/multi-robot-exploration-rl/train_logs/test_summaries/best_20260519_095707/test_stage1_run1.log,/home/wj/work/multi-robot-exploration-rl/ray_results/interaction_potential_smoke/GNN_MAPPO_Stage1_Interact_interaction_potential_smoke_EnvStage1/best

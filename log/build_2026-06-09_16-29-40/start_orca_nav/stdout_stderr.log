@@ -1,0 +1,55 @@
+running egg_info
+creating ../../build/start_orca_nav/start_orca_nav.egg-info
+writing ../../build/start_orca_nav/start_orca_nav.egg-info/PKG-INFO
+writing dependency_links to ../../build/start_orca_nav/start_orca_nav.egg-info/dependency_links.txt
+writing entry points to ../../build/start_orca_nav/start_orca_nav.egg-info/entry_points.txt
+writing requirements to ../../build/start_orca_nav/start_orca_nav.egg-info/requires.txt
+writing top-level names to ../../build/start_orca_nav/start_orca_nav.egg-info/top_level.txt
+writing manifest file '../../build/start_orca_nav/start_orca_nav.egg-info/SOURCES.txt'
+reading manifest file '../../build/start_orca_nav/start_orca_nav.egg-info/SOURCES.txt'
+writing manifest file '../../build/start_orca_nav/start_orca_nav.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build
+creating /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib
+creating /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+copying start_orca_nav/dwa_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+copying start_orca_nav/orca_algorithm.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+copying start_orca_nav/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+copying start_orca_nav/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+copying start_orca_nav/orca_nav_node_nav2.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+copying start_orca_nav/orca_nav_node.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+running install
+running install_lib
+creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/dwa_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/orca_algorithm.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/orca_nav_node_nav2.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/orca_nav_node.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/dwa_planner.py to dwa_planner.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/orca_algorithm.py to orca_algorithm.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/global_planner.py to global_planner.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/orca_nav_node_nav2.py to orca_nav_node_nav2.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/orca_nav_node.py to orca_nav_node.cpython-310.pyc
+running install_data
+creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index
+creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index/resource_index
+creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index/resource_index/packages
+copying resource/start_orca_nav -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index/resource_index/packages
+copying package.xml -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav
+creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+copying launch/orca_nav2_simple.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+copying launch/nav2_multi_robot.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+copying launch/orca_nav2.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+copying launch/start_orca_nav.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/rviz
+copying rviz/multi_robot_nav.rviz -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/rviz
+running install_egg_info
+Copying ../../build/start_orca_nav/start_orca_nav.egg-info to /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav-0.0.1-py3.10.egg-info
+running install_scripts
+Installing orca_nav_node script to /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/start_orca_nav
+Installing orca_nav_node_nav2 script to /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/start_orca_nav
+writing list of installed files to '/home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/install.log'

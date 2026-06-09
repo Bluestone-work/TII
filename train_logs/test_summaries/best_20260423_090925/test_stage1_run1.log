@@ -1,0 +1,167 @@
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/client_mode_hook.py:104: FutureWarning: `local_mode` is an experimental feature that is no longer maintained and will be removed in the near future. For debugging consider using the Ray distributed debugger.
+  return func(*args, **kwargs)
+2026-04-23 09:09:47,464	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+:job_id:01000000
+:actor_name:RolloutWorker
+[INFO] [1776906588.779276698] [gym_env_robot_0_28368]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906588.844983058] [gym_env_robot_1_85997]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906588.886617633] [gym_env_robot_2_53456]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906588.922858941] [gym_env_robot_3_51918]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906590.878961488] [gym_env_robot_0_73826]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906590.915117985] [gym_env_robot_1_44002]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906590.953131911] [gym_env_robot_2_34765]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906590.997511858] [gym_env_robot_3_65975]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-04-23 09:09:51,003	WARNING rollout_worker.py:507 -- You are running ray with `local_mode=True`, but have configured 1 GPUs to be used! In local mode, Policies are placed on the CPU and the `num_gpus` setting is ignored.
+2026-04-23 09:09:51,049	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+[INFO] [1776906591.186387377] [gym_env_robot_0_69555]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906591.221466314] [gym_env_robot_1_62705]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906591.263439109] [gym_env_robot_2_79075]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776906591.307909518] [gym_env_robot_3_40777]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+================================================================================
+正在读取 Checkpoint 配置...
+================================================================================
+:job_id:01000000
+:actor_name:RolloutWorker
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+✅ 成功克隆训练架构:
+   - 模型结构: gat_model
+   - 机器人数量: 4
+   - 动作模式: continuous
+================================================================================
+
+测试环境关键参数:
+   - map_number: 3
+   - num_dynamic_obstacles: 4
+   - obs_speed: 0.3
+创建测试环境...
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+================================================================================
+Episode 1/10
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 1.700, 3.050)
+    adj=[1  0  0  0]  dist=[ 0.00   6.44   7.33   6.74]  neighbors=[]
+  robot_1 pos=(-2.750,-1.600)
+    adj=[0  1  1  0]  dist=[ 6.44   0.00   2.22   6.34]  neighbors=[2]
+  robot_2 pos=(-1.600,-3.500)
+    adj=[0  1  1  0]  dist=[ 7.33   2.22   0.00   4.90]  neighbors=[1]
+  robot_3 pos=( 3.300,-3.500)
+    adj=[0  0  0  1]  dist=[ 6.74   6.34   4.90   0.00]  neighbors=[]
+[comm] step=   0  agent_0  my_pos=(1.700,3.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-2.750,-1.600)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-1.600,-3.500)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(3.300,-3.500)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.96 left=3.50 right=1.63 social_risk=0.000 front_risk=0.000 | raw=[0.879, -0.386] -> v=0.193, w=-0.463
+  [diag] agent_1 front=3.50 left=1.17 right=3.14 social_risk=0.000 front_risk=0.000 | raw=[0.740, -0.788] -> v=0.163, w=-0.945
+  [diag] agent_2 front=1.73 left=1.55 right=2.56 social_risk=0.033 front_risk=0.000 | raw=[-0.405, 0.521] -> v=-0.049, w=0.625
+  [diag] agent_3 front=2.75 left=3.50 right=2.40 social_risk=0.000 front_risk=0.000 | raw=[0.789, -0.254] -> v=0.174, w=-0.305
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 1.700, 3.050)
+    adj=[1  0  0  0]  dist=[ 0.00   6.44   7.33   6.74]  neighbors=[]
+  robot_1 pos=(-2.750,-1.600)
+    adj=[0  1  1  0]  dist=[ 6.44   0.00   2.22   6.34]  neighbors=[2]
+  robot_2 pos=(-1.600,-3.500)
+    adj=[0  1  1  0]  dist=[ 7.33   2.22   0.00   4.90]  neighbors=[1]
+  robot_3 pos=( 3.300,-3.500)
+    adj=[0  0  0  1]  dist=[ 6.74   6.34   4.90   0.00]  neighbors=[]
+[comm] step=   1  agent_0  my_pos=(1.700,3.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-2.750,-1.600)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-1.600,-3.500)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(3.300,-3.500)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.95 left=3.50 right=1.63 social_risk=0.000 front_risk=0.000 | raw=[0.888, -0.175] -> v=0.195, w=-0.210
+  [diag] agent_1 front=3.50 left=1.17 right=3.14 social_risk=0.033 front_risk=0.000 | raw=[0.581, -1.164] -> v=0.128, w=-1.200
+  [diag] agent_2 front=1.73 left=1.55 right=2.56 social_risk=0.033 front_risk=0.000 | raw=[-0.694, 0.605] -> v=-0.083, w=0.726
+  [diag] agent_3 front=2.75 left=3.50 right=2.40 social_risk=0.000 front_risk=0.000 | raw=[0.751, -0.036] -> v=0.165, w=-0.043
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 1.700, 3.050)
+    adj=[1  0  0  0]  dist=[ 0.00   6.44   7.33   6.74]  neighbors=[]
+  robot_1 pos=(-2.750,-1.600)
+    adj=[0  1  1  0]  dist=[ 6.44   0.00   2.22   6.34]  neighbors=[2]
+  robot_2 pos=(-1.600,-3.500)
+    adj=[0  1  1  0]  dist=[ 7.33   2.22   0.00   4.90]  neighbors=[1]
+  robot_3 pos=( 3.300,-3.500)
+    adj=[0  0  0  1]  dist=[ 6.74   6.34   4.90   0.00]  neighbors=[]
+[comm] step=   2  agent_0  my_pos=(1.700,3.050)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-2.750,-1.600)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-1.600,-3.500)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(3.300,-3.500)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.96 left=3.50 right=1.62 social_risk=0.000 front_risk=0.000 | raw=[1.027, -0.062] -> v=0.220, w=-0.074
+  [diag] agent_1 front=3.50 left=1.17 right=3.14 social_risk=0.033 front_risk=0.000 | raw=[0.619, -0.959] -> v=0.136, w=-1.151
+  [diag] agent_2 front=1.72 left=1.56 right=2.55 social_risk=0.033 front_risk=0.000 | raw=[-0.675, 0.772] -> v=-0.081, w=0.927
+  [diag] agent_3 front=2.74 left=3.50 right=2.39 social_risk=0.000 front_risk=0.000 | raw=[0.940, 0.171] -> v=0.207, w=0.205
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 1.693, 3.041)
+    adj=[1  0  0  0]  dist=[ 0.00   6.43   7.32   6.73]  neighbors=[]
+  robot_1 pos=(-2.751,-1.605)
+    adj=[0  1  1  0]  dist=[ 6.43   0.00   2.21   6.34]  neighbors=[2]
+  robot_2 pos=(-1.603,-3.497)
+    adj=[0  1  1  0]  dist=[ 7.32   2.21   0.00   4.91]  neighbors=[1]
+  robot_3 pos=( 3.305,-3.496)
+    adj=[0  0  0  1]  dist=[ 6.73   6.34   4.91   0.00]  neighbors=[]
+[comm] step=   3  agent_0  my_pos=(1.693,3.041)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-2.751,-1.605)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-1.603,-3.497)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(3.305,-3.496)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)

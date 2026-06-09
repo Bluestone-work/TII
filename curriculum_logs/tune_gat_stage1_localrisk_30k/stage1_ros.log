@@ -1,0 +1,131 @@
+[INFO] [launch]: All log files can be found below /home/wj/.ros/log/2026-06-04-21-47-44-451598-wj-Default-string-3632704
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] Loading world (HEADLESS): /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/interaction_hub.world
+[INFO] Using GAZEBO_MASTER_URI: http://127.0.0.1:11345
+[INFO] Spawning 2 TurtleBot3 robots on interaction_hub...
+[INFO] Using random positions
+[INFO] Using fixed positions for 2 robots
+[INFO]   Robot 0: Robot 0 - west lower at (-5.10, -0.85)
+[INFO]   Robot 1: Robot 1 - west upper at (-5.10, 0.85)
+[spawn_robots] Created modified SDF for tb3_0 at /tmp/claude-1000/tb3_0_7yihm7u8.sdf
+[spawn_robots] Created modified SDF for tb3_1 at /tmp/claude-1000/tb3_1_p74gv419.sdf
+[INFO] Map Server loading: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/interaction_hub.yaml
+[INFO] [gzserver-1]: process started with pid [3632798]
+[INFO] [robot_state_publisher-2]: process started with pid [3632800]
+[INFO] [spawn_entity.py-3]: process started with pid [3632802]
+[INFO] [static_transform_publisher-4]: process started with pid [3632804]
+[INFO] [robot_state_publisher-5]: process started with pid [3632806]
+[INFO] [spawn_entity.py-6]: process started with pid [3632808]
+[INFO] [static_transform_publisher-7]: process started with pid [3632810]
+[INFO] [map_server-8]: process started with pid [3632812]
+[INFO] [lifecycle_manager-9]: process started with pid [3632814]
+[INFO] [obstacle_mover.py-10]: process started with pid [3632816]
+[static_transform_publisher-4] [WARN] [1780580864.650641656] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-7] [WARN] [1780580864.656553787] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-4] [INFO] [1780580864.680949080] [static_tf_tb3_0]: Spinning until stopped - publishing transform
+[static_transform_publisher-4] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-4] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-4] from 'map' to 'tb3_0/odom'
+[static_transform_publisher-7] [INFO] [1780580864.682602822] [static_tf_tb3_1]: Spinning until stopped - publishing transform
+[static_transform_publisher-7] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-7] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-7] from 'map' to 'tb3_1/odom'
+[robot_state_publisher-5] [INFO] [1780580864.687649671] [tb3_1.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-5] [INFO] [1780580864.688589258] [tb3_1.robot_state_publisher]: got segment base_link
+[robot_state_publisher-5] [INFO] [1780580864.689089998] [tb3_1.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-5] [INFO] [1780580864.689106856] [tb3_1.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-5] [INFO] [1780580864.689119436] [tb3_1.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-5] [INFO] [1780580864.689129510] [tb3_1.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-5] [INFO] [1780580864.689139418] [tb3_1.robot_state_publisher]: got segment wheel_right_link
+[lifecycle_manager-9] [INFO] [1780580864.692240733] [lifecycle_manager_map]: Creating
+[robot_state_publisher-2] [INFO] [1780580864.697750181] [tb3_0.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1780580864.697913790] [tb3_0.robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1780580864.697929869] [tb3_0.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-2] [INFO] [1780580864.697935997] [tb3_0.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-2] [INFO] [1780580864.697941649] [tb3_0.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-2] [INFO] [1780580864.697946660] [tb3_0.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-2] [INFO] [1780580864.697951996] [tb3_0.robot_state_publisher]: got segment wheel_right_link
+[lifecycle_manager-9] [INFO] [1780580864.697861212] [lifecycle_manager_map]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-9] [INFO] [1780580864.702333245] [lifecycle_manager_map]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-9] [INFO] [1780580864.702396160] [lifecycle_manager_map]: [34m[1mConfiguring map_server[0m[0m
+[map_server-8] [INFO] [1780580864.702721966] [map_server]: 
+[map_server-8] 	map_server lifecycle node launched. 
+[map_server-8] 	Waiting on external lifecycle transitions to activate
+[map_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-8] [INFO] [1780580864.702906703] [map_server]: Creating
+[map_server-8] [INFO] [1780580864.703334193] [map_server]: Configuring
+[map_server-8] [INFO] [1780580864.703387634] [map_io]: Loading yaml file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/interaction_hub.yaml
+[map_server-8] [INFO] [1780580864.703708422] [map_io]: resolution: 0.05
+[map_server-8] [INFO] [1780580864.703723197] [map_io]: origin[0]: -6
+[map_server-8] [INFO] [1780580864.703731405] [map_io]: origin[1]: -6
+[map_server-8] [INFO] [1780580864.703739062] [map_io]: origin[2]: 0
+[map_server-8] [INFO] [1780580864.703746308] [map_io]: free_thresh: 0.196
+[map_server-8] [INFO] [1780580864.703753436] [map_io]: occupied_thresh: 0.65
+[map_server-8] [INFO] [1780580864.703761188] [map_io]: mode: trinary
+[map_server-8] [INFO] [1780580864.703769353] [map_io]: negate: 0
+[map_server-8] [INFO] [1780580864.704023608] [map_io]: Loading image_file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/interaction_hub.pgm
+[map_server-8] [INFO] [1780580864.716798870] [map_io]: Read map /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/interaction_hub.pgm: 240 X 240 map @ 0.05 m/cell
+[lifecycle_manager-9] [INFO] [1780580864.721912988] [lifecycle_manager_map]: [34m[1mActivating map_server[0m[0m
+[map_server-8] [INFO] [1780580864.722058156] [map_server]: Activating
+[map_server-8] [INFO] [1780580864.722242139] [map_server]: Creating bond (map_server) to lifecycle manager.
+[lifecycle_manager-9] [INFO] [1780580864.827572310] [lifecycle_manager_map]: Server map_server connected with bond.
+[lifecycle_manager-9] [INFO] [1780580864.827668450] [lifecycle_manager_map]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-9] [INFO] [1780580864.827685849] [lifecycle_manager_map]: [34m[1mCreating bond timer...[0m[0m
+[gzserver-1] Gazebo multi-robot simulator, version 11.10.2
+[gzserver-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gzserver-1] Released under the Apache 2 License.
+[gzserver-1] http://gazebosim.org
+[gzserver-1] 
+[spawn_entity.py-3] [INFO] [1780580865.244011748] [tb3_0.spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1780580865.244749101] [tb3_0.spawn_entity]: Loading entity XML from file /tmp/claude-1000/tb3_0_7yihm7u8.sdf
+[spawn_entity.py-3] [INFO] [1780580865.245890542] [tb3_0.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1780580865.246529935] [tb3_0.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-6] [INFO] [1780580865.257799132] [tb3_1.spawn_entity]: Spawn Entity started
+[spawn_entity.py-6] [INFO] [1780580865.258274090] [tb3_1.spawn_entity]: Loading entity XML from file /tmp/claude-1000/tb3_1_p74gv419.sdf
+[spawn_entity.py-6] [INFO] [1780580865.259310802] [tb3_1.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-6] [INFO] [1780580865.259963335] [tb3_1.spawn_entity]: Waiting for service /spawn_entity
+[gzserver-1] [1;33m[Wrn] [gazebo_ros_init.cpp:178] [0m[1;33m
+[gzserver-1] #     # ####### ####### ###  #####  #######
+[gzserver-1] ##    # #     #    #     #  #     # #
+[gzserver-1] # #   # #     #    #     #  #       #
+[gzserver-1] #  #  # #     #    #     #  #       #####
+[gzserver-1] #   # # #     #    #     #  #       #
+[gzserver-1] #    ## #     #    #     #  #     # #
+[gzserver-1] #     # #######    #    ###  #####  #######
+[gzserver-1] 
+[gzserver-1] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gzserver-1] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gzserver-1] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gzserver-1] 
+[gzserver-1] [0m[1;33m
+[gzserver-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m172.19.10.153[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/interaction_hub.world[0m[1;32m][0m[1;32m
+[gzserver-1] [0m[1;33m[0m[1;33m[0m[WARN] [1780580866.721281610] [rcl]: Found remap rule 'model_states:=model_states_demo'. This syntax is deprecated. Use '--ros-args --remap model_states:=model_states_demo' instead.
+[gzserver-1] [INFO] [1780580866.731577702] [gazebo_ros_state]: Publishing states of gazebo models at [/model_states_demo]
+[gzserver-1] [INFO] [1780580866.732340921] [gazebo_ros_state]: Publishing states of gazebo links at [/link_states]
+[spawn_entity.py-3] [INFO] [1780580866.753269088] [tb3_0.spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-6] [INFO] [1780580866.770059981] [tb3_1.spawn_entity]: Calling service /spawn_entity
+[obstacle_mover.py-10] [INFO] [1780580866.941332862] [obstacle_mover]: [obstacle_mover] map=6  0 个障碍物  速度=0.000 m/s (scale×0.0)  30 Hz  随机游走模式
+[obstacle_mover.py-10] [INFO] [1780580866.944424017] [obstacle_mover]: [obstacle_mover] ✅ dyn_obs_0~dyn_obs_7 已下沉至 z=-10.0
+[gzserver-1] [INFO] [1780580867.036559193] [tb3_0.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-3] [INFO] [1780580867.155899565] [tb3_0.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_0]
+[gzserver-1] [INFO] [1780580867.283237416] [tb3_0.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1780580867.283297909] [tb3_0.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1780580867.284975263] [tb3_0.turtlebot3_diff_drive]: Subscribed to [/tb3_0/cmd_vel]
+[gzserver-1] [INFO] [1780580867.287845638] [tb3_0.turtlebot3_diff_drive]: Advertise odometry on [/tb3_0/odom]
+[gzserver-1] [INFO] [1780580867.291109665] [tb3_0.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_0/odom] and [tb3_0/base_footprint]
+[gzserver-1] [INFO] [1780580867.305059503] [tb3_0.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1780580867.305115387] [tb3_0.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-3]: process has finished cleanly [pid 3632802]
+[gzserver-1] [INFO] [1780580867.619706218] [tb3_1.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-6] [INFO] [1780580867.789914273] [tb3_1.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_1]
+[gzserver-1] [INFO] [1780580867.895649282] [tb3_1.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1780580867.895711987] [tb3_1.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1780580867.896078770] [tb3_1.turtlebot3_diff_drive]: Subscribed to [/tb3_1/cmd_vel]
+[gzserver-1] [INFO] [1780580867.896525278] [tb3_1.turtlebot3_diff_drive]: Advertise odometry on [/tb3_1/odom]
+[gzserver-1] [INFO] [1780580867.897554838] [tb3_1.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_1/odom] and [tb3_1/base_footprint]
+[gzserver-1] [INFO] [1780580867.903836147] [tb3_1.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1780580867.903885639] [tb3_1.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-6]: process has finished cleanly [pid 3632808]

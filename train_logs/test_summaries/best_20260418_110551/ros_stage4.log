@@ -1,0 +1,224 @@
+[INFO] [launch]: All log files can be found below /home/wj/.ros/log/2026-04-18-11-05-57-744680-wj-Default-string-2928548
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] Loading world for TurtleBot3: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/corridor_swap.world
+[INFO] Spawning 4 TurtleBot3 robots on corridor_swap...
+[INFO] Using random positions
+[INFO] Using fixed positions for 4 robots
+[INFO]   Robot 0: Robot 0 - 左侧中间 at (-4.50, 0.00)
+[INFO]   Robot 1: Robot 1 - 右侧中间 at (4.50, 0.00)
+[INFO]   Robot 2: Robot 2 - 左下 at (-4.50, -3.00)
+[INFO]   Robot 3: Robot 3 - 左上 at (-4.50, 3.00)
+[spawn_robots] Created modified SDF for tb3_0 at /tmp/tb3_0_ijqvuyy9.sdf
+[spawn_robots] Created modified SDF for tb3_1 at /tmp/tb3_1_drex7lae.sdf
+[spawn_robots] Created modified SDF for tb3_2 at /tmp/tb3_2_v2wpuob3.sdf
+[spawn_robots] Created modified SDF for tb3_3 at /tmp/tb3_3_oq56mzn1.sdf
+[INFO] Map Server loading: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.yaml
+[INFO] [gzserver-1]: process started with pid [2928638]
+[INFO] [gzclient-2]: process started with pid [2928640]
+[INFO] [robot_state_publisher-3]: process started with pid [2928642]
+[INFO] [spawn_entity.py-4]: process started with pid [2928644]
+[INFO] [static_transform_publisher-5]: process started with pid [2928646]
+[INFO] [robot_state_publisher-6]: process started with pid [2928648]
+[INFO] [spawn_entity.py-7]: process started with pid [2928650]
+[INFO] [static_transform_publisher-8]: process started with pid [2928652]
+[INFO] [robot_state_publisher-9]: process started with pid [2928654]
+[INFO] [spawn_entity.py-10]: process started with pid [2928656]
+[INFO] [static_transform_publisher-11]: process started with pid [2928658]
+[INFO] [robot_state_publisher-12]: process started with pid [2928660]
+[INFO] [spawn_entity.py-13]: process started with pid [2928662]
+[INFO] [static_transform_publisher-14]: process started with pid [2928665]
+[INFO] [map_server-15]: process started with pid [2928673]
+[INFO] [lifecycle_manager-16]: process started with pid [2928676]
+[INFO] [rviz2-17]: process started with pid [2928696]
+[INFO] [obstacle_mover.py-18]: process started with pid [2928710]
+[static_transform_publisher-5] [WARN] [1776481558.592171268] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-8] [WARN] [1776481558.594593250] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-11] [WARN] [1776481558.602664354] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-5] [INFO] [1776481558.624759224] [static_tf_tb3_0]: Spinning until stopped - publishing transform
+[static_transform_publisher-5] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-5] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-5] from 'map' to 'tb3_0/odom'
+[static_transform_publisher-14] [WARN] [1776481558.627356360] []: Old-style arguments are deprecated; see --help for new-style arguments
+[robot_state_publisher-3] [INFO] [1776481558.648593668] [tb3_0.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-3] [INFO] [1776481558.648756866] [tb3_0.robot_state_publisher]: got segment base_link
+[robot_state_publisher-3] [INFO] [1776481558.648779958] [tb3_0.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-3] [INFO] [1776481558.648792348] [tb3_0.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-3] [INFO] [1776481558.648803033] [tb3_0.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-3] [INFO] [1776481558.648812808] [tb3_0.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-3] [INFO] [1776481558.648823189] [tb3_0.robot_state_publisher]: got segment wheel_right_link
+[static_transform_publisher-8] [INFO] [1776481558.654969150] [static_tf_tb3_1]: Spinning until stopped - publishing transform
+[static_transform_publisher-8] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-8] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-8] from 'map' to 'tb3_1/odom'
+[robot_state_publisher-9] [INFO] [1776481558.659945976] [tb3_2.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-12] [INFO] [1776481558.663083821] [tb3_3.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-12] [INFO] [1776481558.663348024] [tb3_3.robot_state_publisher]: got segment base_link
+[robot_state_publisher-12] [INFO] [1776481558.663371388] [tb3_3.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-12] [INFO] [1776481558.663383356] [tb3_3.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-12] [INFO] [1776481558.663394772] [tb3_3.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-12] [INFO] [1776481558.663405822] [tb3_3.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-12] [INFO] [1776481558.663416599] [tb3_3.robot_state_publisher]: got segment wheel_right_link
+[robot_state_publisher-9] [INFO] [1776481558.669797591] [tb3_2.robot_state_publisher]: got segment base_link
+[robot_state_publisher-9] [INFO] [1776481558.669849021] [tb3_2.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-9] [INFO] [1776481558.669863792] [tb3_2.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-9] [INFO] [1776481558.669874822] [tb3_2.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-9] [INFO] [1776481558.669884831] [tb3_2.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-9] [INFO] [1776481558.669895411] [tb3_2.robot_state_publisher]: got segment wheel_right_link
+[robot_state_publisher-6] [INFO] [1776481558.669858428] [tb3_1.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-6] [INFO] [1776481558.670049486] [tb3_1.robot_state_publisher]: got segment base_link
+[robot_state_publisher-6] [INFO] [1776481558.670071341] [tb3_1.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-6] [INFO] [1776481558.670766148] [tb3_1.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-6] [INFO] [1776481558.670780600] [tb3_1.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-6] [INFO] [1776481558.670791896] [tb3_1.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-6] [INFO] [1776481558.670802740] [tb3_1.robot_state_publisher]: got segment wheel_right_link
+[static_transform_publisher-11] [INFO] [1776481558.676078892] [static_tf_tb3_2]: Spinning until stopped - publishing transform
+[static_transform_publisher-11] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-11] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-11] from 'map' to 'tb3_2/odom'
+[map_server-15] [INFO] [1776481558.689395284] [map_server]: 
+[map_server-15] 	map_server lifecycle node launched. 
+[map_server-15] 	Waiting on external lifecycle transitions to activate
+[map_server-15] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-15] [INFO] [1776481558.689699200] [map_server]: Creating
+[static_transform_publisher-14] [INFO] [1776481558.699942584] [static_tf_tb3_3]: Spinning until stopped - publishing transform
+[static_transform_publisher-14] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-14] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-14] from 'map' to 'tb3_3/odom'
+[lifecycle_manager-16] [INFO] [1776481558.728467344] [lifecycle_manager_map]: Creating
+[lifecycle_manager-16] [INFO] [1776481558.737706944] [lifecycle_manager_map]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-16] [INFO] [1776481558.746371867] [lifecycle_manager_map]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-16] [INFO] [1776481558.746454709] [lifecycle_manager_map]: [34m[1mConfiguring map_server[0m[0m
+[map_server-15] [INFO] [1776481558.746866199] [map_server]: Configuring
+[map_server-15] [INFO] [1776481558.746956885] [map_io]: Loading yaml file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.yaml
+[map_server-15] [INFO] [1776481558.747372686] [map_io]: resolution: 0.05
+[map_server-15] [INFO] [1776481558.747392360] [map_io]: origin[0]: -6
+[map_server-15] [INFO] [1776481558.747402712] [map_io]: origin[1]: -6
+[map_server-15] [INFO] [1776481558.747411461] [map_io]: origin[2]: 0
+[map_server-15] [INFO] [1776481558.747421105] [map_io]: free_thresh: 0.196
+[map_server-15] [INFO] [1776481558.747430708] [map_io]: occupied_thresh: 0.65
+[map_server-15] [INFO] [1776481558.747440327] [map_io]: mode: trinary
+[map_server-15] [INFO] [1776481558.747449864] [map_io]: negate: 0
+[map_server-15] [INFO] [1776481558.747718298] [map_io]: Loading image_file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.pgm
+[map_server-15] [INFO] [1776481558.762845280] [map_io]: Read map /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.pgm: 240 X 240 map @ 0.05 m/cell
+[lifecycle_manager-16] [INFO] [1776481558.771528129] [lifecycle_manager_map]: [34m[1mActivating map_server[0m[0m
+[map_server-15] [INFO] [1776481558.771687119] [map_server]: Activating
+[map_server-15] [INFO] [1776481558.771909182] [map_server]: Creating bond (map_server) to lifecycle manager.
+[lifecycle_manager-16] [INFO] [1776481558.878657571] [lifecycle_manager_map]: Server map_server connected with bond.
+[lifecycle_manager-16] [INFO] [1776481558.878713019] [lifecycle_manager_map]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-16] [INFO] [1776481558.878732464] [lifecycle_manager_map]: [34m[1mCreating bond timer...[0m[0m
+[spawn_entity.py-7] [INFO] [1776481559.246882569] [tb3_1.spawn_entity]: Spawn Entity started
+[spawn_entity.py-7] [INFO] [1776481559.248562169] [tb3_1.spawn_entity]: Loading entity XML from file /tmp/tb3_1_drex7lae.sdf
+[spawn_entity.py-7] [INFO] [1776481559.250050145] [tb3_1.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-7] [INFO] [1776481559.250736419] [tb3_1.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-13] [INFO] [1776481559.267785204] [tb3_3.spawn_entity]: Spawn Entity started
+[spawn_entity.py-13] [INFO] [1776481559.268374833] [tb3_3.spawn_entity]: Loading entity XML from file /tmp/tb3_3_oq56mzn1.sdf
+[spawn_entity.py-13] [INFO] [1776481559.269529468] [tb3_3.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-13] [INFO] [1776481559.270020828] [tb3_3.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-10] [INFO] [1776481559.306495704] [tb3_2.spawn_entity]: Spawn Entity started
+[spawn_entity.py-10] [INFO] [1776481559.306918980] [tb3_2.spawn_entity]: Loading entity XML from file /tmp/tb3_2_v2wpuob3.sdf
+[spawn_entity.py-10] [INFO] [1776481559.308101377] [tb3_2.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-10] [INFO] [1776481559.308609636] [tb3_2.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-4] [INFO] [1776481559.339963060] [tb3_0.spawn_entity]: Spawn Entity started
+[spawn_entity.py-4] [INFO] [1776481559.340382795] [tb3_0.spawn_entity]: Loading entity XML from file /tmp/tb3_0_ijqvuyy9.sdf
+[spawn_entity.py-4] [INFO] [1776481559.341240039] [tb3_0.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-4] [INFO] [1776481559.341618531] [tb3_0.spawn_entity]: Waiting for service /spawn_entity
+[rviz2-17] [INFO] [1776481559.617503959] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-17] [INFO] [1776481559.617729612] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-17] [INFO] [1776481559.677422724] [rviz2]: Stereo is NOT SUPPORTED
+[gzserver-1] [WARN] [1776481561.214268780] [rcl]: Found remap rule 'model_states:=model_states_demo'. This syntax is deprecated. Use '--ros-args --remap model_states:=model_states_demo' instead.
+[gzserver-1] [INFO] [1776481561.232743744] [gazebo_ros_state]: Publishing states of gazebo models at [/model_states_demo]
+[gzserver-1] [INFO] [1776481561.233768057] [gazebo_ros_state]: Publishing states of gazebo links at [/link_states]
+[spawn_entity.py-7] [INFO] [1776481561.263832999] [tb3_1.spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-13] [INFO] [1776481561.279389015] [tb3_3.spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-10] [INFO] [1776481561.318513413] [tb3_2.spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-4] [INFO] [1776481561.350132152] [tb3_0.spawn_entity]: Calling service /spawn_entity
+[obstacle_mover.py-18] [INFO] [1776481561.479924625] [obstacle_mover]: [obstacle_mover] map=3  8 个障碍物  速度=0.110 m/s (scale×1.0)  30 Hz  随机游走模式
+[gzserver-1] [INFO] [1776481561.552649740] [tb3_1.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-7] [INFO] [1776481561.662933164] [tb3_1.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_1]
+[gzserver-1] [INFO] [1776481561.794379241] [tb3_1.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776481561.794445689] [tb3_1.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776481561.796563297] [tb3_1.turtlebot3_diff_drive]: Subscribed to [/tb3_1/cmd_vel]
+[gzserver-1] [INFO] [1776481561.799753661] [tb3_1.turtlebot3_diff_drive]: Advertise odometry on [/tb3_1/odom]
+[gzserver-1] [INFO] [1776481561.805915528] [tb3_1.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_1/odom] and [tb3_1/base_footprint]
+[gzserver-1] [INFO] [1776481561.825282360] [tb3_1.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776481561.825343530] [tb3_1.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-7]: process has finished cleanly [pid 2928650]
+[gzserver-1] [INFO] [1776481562.150492219] [tb3_3.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-13] [INFO] [1776481562.278668264] [tb3_3.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_3]
+[gzserver-1] [INFO] [1776481562.390499451] [tb3_3.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776481562.390631520] [tb3_3.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776481562.391730720] [tb3_3.turtlebot3_diff_drive]: Subscribed to [/tb3_3/cmd_vel]
+[gzserver-1] [INFO] [1776481562.393149940] [tb3_3.turtlebot3_diff_drive]: Advertise odometry on [/tb3_3/odom]
+[gzserver-1] [INFO] [1776481562.395720580] [tb3_3.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_3/odom] and [tb3_3/base_footprint]
+[gzserver-1] [INFO] [1776481562.410377815] [tb3_3.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776481562.410435361] [tb3_3.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-13]: process has finished cleanly [pid 2928662]
+[gzserver-1] [INFO] [1776481562.720112149] [tb3_2.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-10] [INFO] [1776481562.860736068] [tb3_2.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_2]
+[gzserver-1] [INFO] [1776481562.972765815] [tb3_2.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776481562.972825367] [tb3_2.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776481562.973823314] [tb3_2.turtlebot3_diff_drive]: Subscribed to [/tb3_2/cmd_vel]
+[gzserver-1] [INFO] [1776481562.974908950] [tb3_2.turtlebot3_diff_drive]: Advertise odometry on [/tb3_2/odom]
+[gzserver-1] [INFO] [1776481562.977519383] [tb3_2.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_2/odom] and [tb3_2/base_footprint]
+[gzserver-1] [INFO] [1776481562.995253546] [tb3_2.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776481562.995311793] [tb3_2.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-10]: process has finished cleanly [pid 2928656]
+[gzserver-1] [INFO] [1776481563.305944752] [tb3_0.turtlebot3_imu]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[spawn_entity.py-4] [INFO] [1776481563.422499000] [tb3_0.spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [tb3_0]
+[gzserver-1] [INFO] [1776481563.535045429] [tb3_0.turtlebot3_diff_drive]: Wheel pair 1 separation set to [0.160000m]
+[gzserver-1] [INFO] [1776481563.535107792] [tb3_0.turtlebot3_diff_drive]: Wheel pair 1 diameter set to [0.066000m]
+[gzserver-1] [INFO] [1776481563.536028246] [tb3_0.turtlebot3_diff_drive]: Subscribed to [/tb3_0/cmd_vel]
+[gzserver-1] [INFO] [1776481563.536863878] [tb3_0.turtlebot3_diff_drive]: Advertise odometry on [/tb3_0/odom]
+[gzserver-1] [INFO] [1776481563.539139925] [tb3_0.turtlebot3_diff_drive]: Publishing odom transforms between [tb3_0/odom] and [tb3_0/base_footprint]
+[gzserver-1] [INFO] [1776481563.556977922] [tb3_0.turtlebot3_joint_state]: Going to publish joint [wheel_left_joint]
+[gzserver-1] [INFO] [1776481563.557037201] [tb3_0.turtlebot3_joint_state]: Going to publish joint [wheel_right_joint]
+[INFO] [spawn_entity.py-4]: process has finished cleanly [pid 2928644]
+[rviz2-17] [INFO] [1776481573.366965394] [rviz2]: Message Filter dropping message: frame 'tb3_3/base_scan' at time 0.360 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-17] [INFO] [1776481573.722879639] [rviz2]: Message Filter dropping message: frame 'tb3_2/base_scan' at time 0.560 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-17] [INFO] [1776481574.176319490] [rviz2]: Message Filter dropping message: frame 'tb3_0/base_scan' at time 0.760 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[rviz2-17] [INFO] [1776481646.478397796] [rclcpp]: signal_handler(signum=2)
+[robot_state_publisher-9] [INFO] [1776481646.478412015] [rclcpp]: signal_handler(signum=2)
+[static_transform_publisher-14] [INFO] [1776481646.478412429] [rclcpp]: signal_handler(signum=2)
+[static_transform_publisher-5] [INFO] [1776481646.478431469] [rclcpp]: signal_handler(signum=2)
+[robot_state_publisher-6] [INFO] [1776481646.478562578] [rclcpp]: signal_handler(signum=2)
+[static_transform_publisher-8] [INFO] [1776481646.478626308] [rclcpp]: signal_handler(signum=2)
+[robot_state_publisher-12] [INFO] [1776481646.478676981] [rclcpp]: signal_handler(signum=2)
+[lifecycle_manager-16] [INFO] [1776481646.478952463] [rclcpp]: signal_handler(signum=2)
+[lifecycle_manager-16] [INFO] [1776481646.479056138] [lifecycle_manager_map]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_map)
+[lifecycle_manager-16] [INFO] [1776481646.479114817] [lifecycle_manager_map]: [34m[1mTerminating bond timer...[0m[0m
+[robot_state_publisher-3] [INFO] [1776481646.479012063] [rclcpp]: signal_handler(signum=2)
+[map_server-15] [INFO] [1776481646.479505879] [rclcpp]: signal_handler(signum=2)
+[map_server-15] [INFO] [1776481646.480626389] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-15] [INFO] [1776481646.480710553] [map_server]: Deactivating
+[map_server-15] [INFO] [1776481646.480733431] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[static_transform_publisher-11] [INFO] [1776481646.480711896] [rclcpp]: signal_handler(signum=2)
+[map_server-15] [INFO] [1776481646.490961698] [map_server]: Cleaning up
+[map_server-15] [INFO] [1776481646.491012883] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[map_server-15] [INFO] [1776481646.505613858] [map_server]: Destroying
+[lifecycle_manager-16] [INFO] [1776481646.510618589] [lifecycle_manager_map]: Destroying lifecycle_manager_map
+[obstacle_mover.py-18] Traceback (most recent call last):
+[obstacle_mover.py-18]   File "/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/lib/start_rl_environment_tb3/obstacle_mover.py", line 382, in <module>
+[obstacle_mover.py-18]     main()
+[obstacle_mover.py-18]   File "/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/lib/start_rl_environment_tb3/obstacle_mover.py", line 378, in main
+[obstacle_mover.py-18]     rclpy.shutdown()
+[obstacle_mover.py-18]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+[obstacle_mover.py-18]     _shutdown(context=context)
+[obstacle_mover.py-18]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[obstacle_mover.py-18]     return context.shutdown()
+[obstacle_mover.py-18]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[obstacle_mover.py-18]     self.__context.shutdown()
+[obstacle_mover.py-18] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[INFO] [static_transform_publisher-8]: process has finished cleanly [pid 2928652]
+[INFO] [static_transform_publisher-14]: process has finished cleanly [pid 2928665]
+[INFO] [static_transform_publisher-5]: process has finished cleanly [pid 2928646]
+[INFO] [static_transform_publisher-11]: process has finished cleanly [pid 2928658]
+[INFO] [robot_state_publisher-3]: process has finished cleanly [pid 2928642]
+[INFO] [robot_state_publisher-12]: process has finished cleanly [pid 2928660]
+[INFO] [robot_state_publisher-9]: process has finished cleanly [pid 2928654]
+[INFO] [lifecycle_manager-16]: process has finished cleanly [pid 2928676]
+[INFO] [map_server-15]: process has finished cleanly [pid 2928673]
+[INFO] [robot_state_publisher-6]: process has finished cleanly [pid 2928648]
+[ERROR] [obstacle_mover.py-18]: process has died [pid 2928710, exit code 1, cmd '/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/lib/start_rl_environment_tb3/obstacle_mover.py --ros-args -r __node:=obstacle_mover --params-file /tmp/launch_params_n9rzhbw6'].
+[INFO] [gzclient-2]: process has finished cleanly [pid 2928640]
+[INFO] [rviz2-17]: process has finished cleanly [pid 2928696]
+[INFO] [gzserver-1]: process has finished cleanly [pid 2928638]

@@ -1,0 +1,4 @@
+[console_scripts]
+test_mappo = marl_training.test_mappo:main
+train_mapppo = marl_training.train_mappo:main
+

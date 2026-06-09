@@ -1,0 +1,100 @@
+2026-05-16 20:45:37,471	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-05-16 20:45:38,789 E 4157079 4157079] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: 'c710c4d5fff619302ad2572c01000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=4158897)[0m [INFO] [1778935543.345938927] [gym_env_robot_0_35679]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=4158897)[0m [INFO] [1778935543.384211893] [gym_env_robot_1_24944]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=4158897)[0m [INFO] [1778935543.412037681] [gym_env_robot_2_61416]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-05-16 20:45:47,551	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  2
+  采样设置:     timeout=1200s fragment=2500 mode=truncate_episodes
+  采样对齐:     fragment 1000 -> 2500  train_batch 5000 -> 5000  sample_batch=5000
+  训练步数:     50,000
+  动作模式:     option_mode
+  Option源:     rl  replan=on  hold=[1, 30]  topk=3
+  PPO配置:      option_discrete  (clip=0.2, ent=0.01, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.75
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+[36m(RolloutWorker pid=4158897)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=4158897)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=4158897)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=4158897)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=4158897)[0m   robot_0 pos=( 0.950,-5.150) status=active
+[36m(RolloutWorker pid=4158897)[0m     adj=[1  0  0  0]  dist=[ 0.00   7.88   6.56  10.42]  neighbors=[]
+[36m(RolloutWorker pid=4158897)[0m   robot_1 pos=(-4.650, 0.400) status=active
+[36m(RolloutWorker pid=4158897)[0m     adj=[0  1  0  0]  dist=[ 7.88   0.00   9.25   5.98]  neighbors=[]
+[36m(RolloutWorker pid=4158897)[0m   robot_2 pos=( 4.600, 0.300) status=active
+[36m(RolloutWorker pid=4158897)[0m     adj=[0  0  1  0]  dist=[ 6.56   9.25   0.00   7.34]  neighbors=[]
+[36m(RolloutWorker pid=4158897)[0m   robot_3 pos=(-0.950, 5.100) status=active
+[36m(RolloutWorker pid=4158897)[0m     adj=[0  0  0  1]  dist=[10.42   5.98   7.34   0.00]  neighbors=[]
+[36m(RolloutWorker pid=4158897)[0m [comm] step=   0  agent_0  my_pos=(0.950,-5.150)  candidates=[]  received=0/0
+[36m(RolloutWorker pid=4158897)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=4158897)[0m [comm] step=   0  agent_1  my_pos=(-4.650,0.400)  candidates=[]  received=0/0
+[36m(RolloutWorker pid=4158897)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=4158897)[0m [comm] step=   0  agent_2  my_pos=(4.600,0.300)  candidates=[]  received=0/0
+[36m(RolloutWorker pid=4158897)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=4158897)[0m [comm] step=   0  agent_3  my_pos=(-0.950,5.100)  candidates=[]  received=0/0
+[36m(RolloutWorker pid=4158897)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=4158897)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'[32m [repeated 7x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(RolloutWorker pid=4158897)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)[32m [repeated 7x across cluster][0m
+[36m(RolloutWorker pid=4158897)[0m ✅ Robot 3: A*规划器初始化完成[32m [repeated 7x across cluster][0m
+[36m(RolloutWorker pid=4158904)[0m     adj=[1  0  1  1]  dist=[ 0.00   4.38   2.21   1.60]  neighbors=[2, 3]
+[36m(RolloutWorker pid=4158904)[0m     adj=[0  1  0  1]  dist=[ 4.38   0.00   4.47   2.96]  neighbors=[3]
+[36m(RolloutWorker pid=4158904)[0m     adj=[1  0  1  1]  dist=[ 2.21   4.47   0.00   2.95]  neighbors=[0, 3]
+[36m(RolloutWorker pid=4158904)[0m     adj=[1  1  1  1]  dist=[ 1.60   2.96   2.95   0.00]  neighbors=[0, 1, 2]
+[36m(RolloutWorker pid=4158904)[0m [comm] step=   0  agent_0  my_pos=(-0.350,-0.900)  candidates=[np.int64(2), np.int64(3)]  received=2/2
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_3 dist=1.603m  n_pos=(1.250,-1.000)  rel_pos=(1.600,-0.100)
+[36m(RolloutWorker pid=4158904)[0m     slot[1] neighbor=agent_2 dist=2.214m  n_pos=(-0.600,1.300)  rel_pos=(-0.250,2.200)
+[36m(RolloutWorker pid=4158904)[0m [comm] step=   0  agent_1  my_pos=(3.800,0.500)  candidates=[np.int64(3)]  received=1/1
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_3 dist=2.958m  n_pos=(1.250,-1.000)  rel_pos=(-2.550,-1.500)
+[36m(RolloutWorker pid=4158904)[0m [comm] step=   0  agent_2  my_pos=(-0.600,1.300)  candidates=[np.int64(0), np.int64(3)]  received=2/2
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_0 dist=2.214m  n_pos=(-0.350,-0.900)  rel_pos=(0.250,-2.200)
+[36m(RolloutWorker pid=4158904)[0m     slot[1] neighbor=agent_3 dist=2.952m  n_pos=(1.250,-1.000)  rel_pos=(1.850,-2.300)
+[36m(RolloutWorker pid=4158904)[0m [comm] step=   0  agent_3  my_pos=(1.250,-1.000)  candidates=[np.int64(0), np.int64(1), np.int64(2)]  received=3/3
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_0 dist=1.603m  n_pos=(-0.350,-0.900)  rel_pos=(-1.600,0.100)
+[36m(RolloutWorker pid=4158904)[0m     slot[1] neighbor=agent_2 dist=2.952m  n_pos=(-0.600,1.300)  rel_pos=(-1.850,2.300)
+[36m(RolloutWorker pid=4158904)[0m     slot[2] neighbor=agent_1 dist=2.958m  n_pos=(3.800,0.500)  rel_pos=(2.550,1.500)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_3 dist=1.603m  n_pos=(1.250,-1.000)  rel_pos=(1.600,-0.100)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_2 dist=0.825m  n_pos=(4.600,0.300)  rel_pos=(0.800,-0.200)
+[36m(RolloutWorker pid=4158897)[0m     slot[1] neighbor=agent_3 dist=2.958m  n_pos=(1.250,-1.000)  rel_pos=(-2.550,-1.500)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_1 dist=0.825m  n_pos=(3.800,0.500)  rel_pos=(-0.800,0.200)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_0 dist=1.603m  n_pos=(-0.350,-0.900)  rel_pos=(-1.600,0.100)
+[36m(RolloutWorker pid=4158897)[0m     slot[1] neighbor=agent_1 dist=2.958m  n_pos=(3.800,0.500)  rel_pos=(2.550,1.500)
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_3 dist=1.603m  n_pos=(1.250,-1.000)  rel_pos=(1.600,-0.100)
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_2 dist=0.825m  n_pos=(4.600,0.300)  rel_pos=(0.800,-0.200)
+[36m(RolloutWorker pid=4158904)[0m     slot[1] neighbor=agent_3 dist=2.958m  n_pos=(1.250,-1.000)  rel_pos=(-2.550,-1.500)
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_1 dist=0.825m  n_pos=(3.800,0.500)  rel_pos=(-0.800,0.200)
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_0 dist=1.603m  n_pos=(-0.350,-0.900)  rel_pos=(-1.600,0.100)
+[36m(RolloutWorker pid=4158904)[0m     slot[1] neighbor=agent_1 dist=2.958m  n_pos=(3.800,0.500)  rel_pos=(2.550,1.500)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_3 dist=1.603m  n_pos=(1.250,-1.000)  rel_pos=(1.600,-0.100)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_2 dist=0.826m  n_pos=(4.600,0.300)  rel_pos=(0.802,-0.197)
+[36m(RolloutWorker pid=4158897)[0m     slot[1] neighbor=agent_3 dist=2.955m  n_pos=(1.250,-1.000)  rel_pos=(-2.548,-1.497)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_1 dist=0.826m  n_pos=(3.798,0.497)  rel_pos=(-0.802,0.197)
+[36m(RolloutWorker pid=4158897)[0m     slot[0] neighbor=agent_0 dist=1.603m  n_pos=(-0.350,-0.900)  rel_pos=(-1.600,0.100)
+[36m(RolloutWorker pid=4158897)[0m     slot[1] neighbor=agent_1 dist=2.955m  n_pos=(3.798,0.497)  rel_pos=(2.548,1.497)
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_3 dist=1.603m  n_pos=(1.250,-1.000)  rel_pos=(1.600,-0.100)
+[36m(RolloutWorker pid=4158904)[0m     slot[0] neighbor=agent_2 dist=0.826m  n_pos=(4.600,0.300)  rel_pos=(0.802,-0.197)

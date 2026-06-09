@@ -1,8 +1,8 @@
-# Install script for directory: /home/unruly/testcm30082ros/src/start_rl_environment
+# Install script for directory: /home/wj/work/multi-robot-exploration-rl/src/start_rl_environment
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/unruly/testcm30082ros/install/start_rl_environment")
+  set(CMAKE_INSTALL_PREFIX "/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,74 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/unruly/testcm30082ros/build/start_rl_environment/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE DIRECTORY FILES
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/description"
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/launch"
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/worlds"
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/models"
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/maps"
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/rviz"
+    "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/config"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/start_rl_environment")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/start_rl_environment")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment/environment" TYPE FILE FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment/environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment/environment" TYPE FILE FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment/environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/path.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/local_setup.bash")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/local_setup.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/local_setup.zsh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/local_setup.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_environment_hooks/package.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_index/share/ament_index/resource_index/packages/start_rl_environment")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment/cmake" TYPE FILE FILES
+    "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_core/start_rl_environmentConfig.cmake"
+    "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/ament_cmake_core/start_rl_environmentConfig-version.cmake"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/start_rl_environment" TYPE FILE FILES "/home/wj/work/multi-robot-exploration-rl/src/start_rl_environment/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +121,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/unruly/testcm30082ros/build/start_rl_environment/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/wj/work/multi-robot-exploration-rl/build/start_rl_environment/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

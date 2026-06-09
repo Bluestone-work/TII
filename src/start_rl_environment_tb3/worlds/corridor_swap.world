@@ -1,0 +1,364 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<world name="corridor_swap">
+  <!-- Gazebo ROS State Plugin - provides /set_entity_state service -->
+  <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+    <ros>
+      <argument>model_states:=model_states_demo</argument>
+    </ros>
+    <update_rate>1.0</update_rate>
+  </plugin>
+
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  <light name="studio_sun" type="directional">
+    <cast_shadows>1</cast_shadows>
+    <pose>0 0 18 0 -0.35 0.2</pose>
+    <diffuse>0.96 0.94 0.90 1</diffuse>
+    <specular>0.16 0.16 0.16 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.82</constant>
+      <linear>0.006</linear>
+      <quadratic>0.0008</quadratic>
+    </attenuation>
+    <direction>-0.35 0.18 -0.92</direction>
+  </light>
+  <light name="fill_light" type="point">
+    <pose>0 0 8 0 0 0</pose>
+    <diffuse>0.40 0.45 0.50 1</diffuse>
+    <specular>0.03 0.03 0.03 1</specular>
+    <attenuation>
+      <range>28</range>
+      <constant>0.72</constant>
+      <linear>0.02</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+  </light>
+  <scene>
+    <ambient>0.56 0.58 0.62 1</ambient>
+    <background>0.90 0.93 0.98 1</background>
+    <shadows>1</shadows>
+  </scene>
+
+  <model name="b_north">
+    <static>true</static>
+    <pose>0 6.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>12.0 0.2 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>12.0 0.2 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_south">
+    <static>true</static>
+    <pose>0 -6.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>12.0 0.2 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>12.0 0.2 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_east">
+    <static>true</static>
+    <pose>6.0 0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 12.0 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 12.0 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_west">
+    <static>true</static>
+    <pose>-6.0 0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 12.0 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 12.0 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="divider_lower">
+    <static>true</static>
+    <pose>0 -3.415 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 4.97 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 4.97 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="divider_upper">
+    <static>true</static>
+    <pose>0 3.415 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.2 4.97 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.2 4.97 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="pillar_left">
+    <static>true</static>
+    <pose>-1.5 -0.8 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="pillar_right">
+    <static>true</static>
+    <pose>1.8 0.9 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box><size>0.6 0.6 1.5</size></box>
+        </geometry>
+        <cast_shadows>true</cast_shadows>
+        <material>
+          <ambient>0.88 0.90 0.94 1</ambient>
+          <diffuse>0.96 0.97 0.99 1</diffuse>
+          <specular>0.08 0.08 0.09 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+
+<!-- Actor 1: E-W y=-3.5, 0.8 m/s -->
+  <!-- Actor 2: N-S x=-6,   0.75 m/s -->
+  <!-- Actor 3: N-S x=+6,   0.75 m/s -->
+  <!-- Actor 4: N-S x=-1,   0.73 m/s -->
+  <!-- Actor 5: N-S x=+2,   0.73 m/s -->
+  <!-- Actor 6: Diagonal /, 0.72 m/s -->
+  <!-- Actor 7: Diagonal \, 0.72 m/s -->
+
+  <!-- ════════════════════════════════════════════════════════════
+       动态障碍物 dyn_obs_0~7  —  由 obstacle_mover 节点驱动
+       初始停放在地图南侧边缘，obstacle_mover 以 10 Hz 定时器移动它们。
+       LiDAR 对这些 static model 完全有效（碰撞几何体正常）。
+       ════════════════════════════════════════════════════════════ -->
+  <model name="dyn_obs_0">
+    <static>true</static>
+    <pose>-4.5 -4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_1">
+    <static>true</static>
+    <pose>-4.5 4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_2">
+    <static>true</static>
+    <pose>-2.0 -4.5 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_3">
+    <static>true</static>
+    <pose>-2.0 4.5 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_4">
+    <static>true</static>
+    <pose>2.0 -4.5 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_5">
+    <static>true</static>
+    <pose>2.0 4.5 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_6">
+    <static>true</static>
+    <pose>4.5 -4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+  <model name="dyn_obs_7">
+    <static>true</static>
+    <pose>4.5 4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <cast_shadows>true</cast_shadows>
+        <material><ambient>0.52 0.30 0.10 1</ambient><diffuse>0.86 0.52 0.18 1</diffuse><specular>0.08 0.06 0.04 1</specular><emissive>0 0 0 1</emissive></material>
+      </visual>
+    </link>
+  </model>
+</world>
+</sdf>

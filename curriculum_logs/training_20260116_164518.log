@@ -1,0 +1,207 @@
+[INFO] [launch]: All log files can be found below /home/wj/.ros/log/2026-01-16-16-45-18-427541-wj-Default-string-1055480
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [run_matd3-1]: process started with pid [1055502]
+[run_matd3-1] [INFO] [1768553119.683373116] [matd3_ns.matd3_node]: Map number: 1 (map1)
+[run_matd3-1] [INFO] [1768553119.683840832] [matd3_ns.matd3_node]: Robot number: 1
+[run_matd3-1] [INFO] [1768553119.684291465] [matd3_ns.matd3_node]: Position mode: Random Mode
+[run_matd3-1] [WARN] [1768553119.717981799] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [WARN] [1768553119.725593077] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [WARN] [1768553119.736648360] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [WARN] [1768553119.746535267] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [WARN] [1768553119.756166434] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [WARN] [1768553119.761184937] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [WARN] [1768553119.766217672] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [INFO] [1768553119.775150196] [matd3_ns.matd3_node]: MapSubscriber initialized, waiting for /map topic...
+[run_matd3-1] 
+[run_matd3-1] ================================================================================
+[run_matd3-1] [INFO] 📝 交互数据将记录到: /home/wj/work/multi-robot-exploration-rl/interaction_logs/interaction_log_map1_robots1_20260116_164519.jsonl
+[run_matd3-1] ================================================================================
+[run_matd3-1] 
+[run_matd3-1] [INFO] Loaded map map1: 400x400, resolution=0.05
+[run_matd3-1] [INFO] Loaded spawn presets for map1
+[run_matd3-1] [DEBUG] Generated pose 0: x=-0.42, y=-1.92, yaw=2.19
+[run_matd3-1] [INFO] Random mode: generating random goal positions
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.33, y=-6.21, yaw=-2.90
+[run_matd3-1] [DEBUG] Generated 1 random goal positions:
+[run_matd3-1]   Goal 0: x=1.33, y=-6.21
+[run_matd3-1] [DEBUG] Final current_goal_poses (1 goals):
+[run_matd3-1]   Robot 0 goal: x=1.33, y=-6.21
+[run_matd3-1] 
+[run_matd3-1] ================================================================================
+[run_matd3-1] [INFO] 正在初始化距离场功能...
+[run_matd3-1] [INFO] 等待地图数据发布到 /map 话题...
+[run_matd3-1] ================================================================================
+[run_matd3-1] 
+[run_matd3-1] [INFO] [1768553119.785653155] [matd3_ns.matd3_node]: 🎉 Map callback triggered! Processing map data...
+[run_matd3-1] [INFO] [1768553119.786172775] [matd3_ns.matd3_node]: ✅ Map received successfully:
+[run_matd3-1]    Size: 400x400
+[run_matd3-1]    Resolution: 0.05000000074505806m
+[run_matd3-1]    Origin: (-10.00, -10.00)
+[run_matd3-1]    Data length: 160000
+[run_matd3-1] 
+[run_matd3-1] ================================================================================
+[run_matd3-1] [INFO] ✅ 地图数据已接收成功！
+[run_matd3-1] [INFO]    尺寸: 400x400
+[run_matd3-1] [INFO]    分辨率: 0.05000000074505806m
+[run_matd3-1] [INFO]    原点: (-10.00, -10.00)
+[run_matd3-1] [INFO]    数据长度: 160000
+[run_matd3-1] [INFO] 距离场功能已启用 ✓
+[run_matd3-1] ================================================================================
+[run_matd3-1] 
+[run_matd3-1] [WARN] [1768553119.814162255] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[run_matd3-1] [INFO] [1768553120.778200083] [matd3_ns.matd3_node]: %%%%%%%%%% Goal Spawned Successfully %%%%%%%%%%
+[run_matd3-1] 
+[run_matd3-1] [INFO] 🚀 开始训练: 5000 episodes
+[run_matd3-1] 
+[run_matd3-1] [DEBUG] Episode 0: 调用 env.reset()...
+[run_matd3-1] [DEBUG] First reset - calling spawn_goals()
+[run_matd3-1] [DEBUG] spawn_goals() called, spawning 1 goals
+[run_matd3-1] [DEBUG] current_goal_poses has 1 poses
+[run_matd3-1] [DEBUG] Spawning goal_box_0 at x=1.33, y=-6.21
+[run_matd3-1] [DEBUG] spawn_goals() completed, returning 1 locations
+[run_matd3-1] [DEBUG] spawn_goals() returned 1 locations
+[run_matd3-1] [DEBUG]   Goal 0: (1.33, -6.21)
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (1.33, -6.21):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=19.752, mean=9.667
+[run_matd3-1]   - 目标栅格: (226, 75)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [DEBUG] Episode 0: reset完成，obs维度: (98,)
+[run_matd3-1] [DEBUG] Episode 0: 进入while循环...
+[run_matd3-1] [DEBUG] Episode 0 Step 0: 调用 choose_action()...
+[run_matd3-1] [DEBUG] Episode 0 Step 0: 动作生成完成，调用 env.step()...
+[run_matd3-1] 
+[run_matd3-1] ================================================================================
+[run_matd3-1] [DEBUG] 🎯 第一次step()调用！
+[run_matd3-1] [DEBUG] 日志文件: /home/wj/work/multi-robot-exploration-rl/interaction_logs/interaction_log_map1_robots1_20260116_164519.jsonl
+[run_matd3-1] [DEBUG] enable_interaction_logging: True
+[run_matd3-1] ================================================================================
+[run_matd3-1] 
+[run_matd3-1] [INFO] [1768553144.507921215] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: 0.08 = Act: -0.03 + Head: 0.12 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [DEBUG] Episode 0 Step 0: step完成!
+[run_matd3-1] [Robot 0] Total: -0.01 = Act: -0.14 + Head: 0.14 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=0.68, y=-2.24, yaw=1.50
+[run_matd3-1] [INFO] Resetting my_bot0 to (0.68, -2.24)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.48, y=-9.56, yaw=-1.03
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (1.48, -9.56):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=22.656, mean=11.867
+[run_matd3-1]   - 目标栅格: (229, 8)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553244.685437438] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: -0.81 = Act: -0.11 + Head: -0.20 + Obs: 0.00 + Goal: -0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: -0.40 = Act: -0.46 + Head: 0.07 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.07 = Act: -0.12 + Head: 0.19 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.25 = Act: 0.08 + Head: 0.18 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.38 = Act: 0.09 + Head: 0.19 + Obs: 0.00 + Goal: 0.11 + Time: -0.01
+[run_matd3-1] ... saving checkpoint ...
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=-0.88, y=-5.86, yaw=-0.74
+[run_matd3-1] [INFO] Resetting my_bot0 to (-0.88, -5.86)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.90, y=-3.84, yaw=1.49
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (1.90, -3.84):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=18.190, mean=8.695
+[run_matd3-1]   - 目标栅格: (237, 123)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553338.854394855] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: -1.13 = Act: -0.02 + Head: 0.04 + Obs: -0.64 + Goal: -0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.02 = Act: -0.06 + Head: 0.15 + Obs: -0.05 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.38 = Act: 0.19 + Head: 0.20 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.06 = Act: -0.05 + Head: 0.12 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.22 = Act: 0.09 + Head: 0.14 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.55, y=-1.21, yaw=2.46
+[run_matd3-1] [INFO] Resetting my_bot0 to (1.55, -1.21)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=0.65, y=-5.97, yaw=-1.91
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (0.65, -5.97):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=19.151, mean=9.479
+[run_matd3-1]   - 目标栅格: (212, 80)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553384.537114271] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: -0.58 = Act: 0.03 + Head: -0.09 + Obs: 0.00 + Goal: -0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.14 = Act: -0.02 + Head: 0.17 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.05 = Act: -0.12 + Head: 0.18 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=0.83, y=-7.09, yaw=1.95
+[run_matd3-1] [INFO] Resetting my_bot0 to (0.83, -7.09)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=-0.47, y=-4.48, yaw=1.80
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (-0.47, -4.48):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=17.833, mean=8.786
+[run_matd3-1]   - 目标栅格: (190, 110)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553432.641840614] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: 0.62 = Act: -0.07 + Head: 0.20 + Obs: 0.00 + Goal: 0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: -0.02 = Act: -0.17 + Head: 0.17 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.00 = Act: -0.18 + Head: 0.19 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] ... saving checkpoint ...
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.68, y=-5.46, yaw=2.28
+[run_matd3-1] [INFO] Resetting my_bot0 to (1.68, -5.46)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.52, y=-4.34, yaw=2.28
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (1.52, -4.34):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=18.350, mean=8.824
+[run_matd3-1]   - 目标栅格: (230, 113)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553457.076516072] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: 0.66 = Act: 0.00 + Head: 0.17 + Obs: 0.00 + Goal: 0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: -0.18 = Act: -0.01 + Head: -0.16 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=-0.54, y=-3.61, yaw=-1.31
+[run_matd3-1] [INFO] Resetting my_bot0 to (-0.54, -3.61)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=0.80, y=-7.31, yaw=2.23
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (0.80, -7.31):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=20.368, mean=10.251
+[run_matd3-1]   - 目标栅格: (215, 53)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553481.128207479] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: -0.33 = Act: -0.02 + Head: 0.20 + Obs: 0.00 + Goal: -0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.01 = Act: -0.08 + Head: 0.10 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=1.83, y=-4.54, yaw=-0.18
+[run_matd3-1] [INFO] Resetting my_bot0 to (1.83, -4.54)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=-0.46, y=-7.98, yaw=-1.79
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (-0.46, -7.98):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=20.770, mean=10.647
+[run_matd3-1]   - 目标栅格: (190, 40)
+[run_matd3-1]   - 目标处地图值: 0
+[run_matd3-1] [INFO] [1768553726.966108331] [matd3_ns.matd3_node]: %%%%%%%%% Moving Goal 0 %%%%%%%%%
+[run_matd3-1] [Robot 0] Total: -0.14 = Act: -0.07 + Head: -0.08 + Obs: -0.26 + Goal: 0.27 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.02 = Act: -0.12 + Head: 0.15 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.38 = Act: 0.19 + Head: 0.20 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: 0.26 = Act: 0.09 + Head: 0.18 + Obs: 0.00 + Goal: 0.00 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: -1.67 = Act: -1.02 + Head: -0.14 + Obs: 0.00 + Goal: -0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: -0.40 = Act: -0.00 + Head: 0.12 + Obs: 0.00 + Goal: -0.50 + Time: -0.01
+[run_matd3-1] [Robot 0] Total: -1.90 = Act: -1.26 + Head: -0.18 + Obs: -0.38 + Goal: -0.06 + Time: -0.01
+[run_matd3-1] [INFO] Regenerating random robot positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=0.40, y=-2.32, yaw=-2.74
+[run_matd3-1] [INFO] Resetting my_bot0 to (0.40, -2.32)
+[run_matd3-1] [DEBUG] Random mode - calling move_goals()
+[run_matd3-1] [INFO] Regenerating random goal positions...
+[run_matd3-1] [DEBUG] Generated pose 0: x=-0.05, y=-4.03, yaw=0.29
+[run_matd3-1] [DEBUG] 地图统计: 自由=150718/160000 (94.2%), 障碍=9282/160000 (5.8%)
+[run_matd3-1] [DEBUG] 目标 (-0.05, -4.03):
+[run_matd3-1]   - 自由空间距离: min=0.000, max=17.234, mean=8.610
+[run_matd3-1]   - 目标栅格: (198, 119)
+[run_matd3-1]   - 目标处地图值: 0

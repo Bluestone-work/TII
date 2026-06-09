@@ -1,0 +1,290 @@
+2026-05-01 14:11:09,211	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-05-01 14:11:10,416 E 202882 202882] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: '1caa9036ba69c10bbeaded9301000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=204629)[0m [INFO] [1777615875.027279642] [gym_env_robot_0_2247]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=204629)[0m [INFO] [1777615875.065330048] [gym_env_robot_1_47352]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=204629)[0m [INFO] [1777615875.093560370] [gym_env_robot_2_74810]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=204629)[0m [INFO] [1777615875.119821918] [gym_env_robot_3_43222]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1777615877.144249486] [gym_env_robot_0_82526]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1777615877.192021647] [gym_env_robot_1_63847]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1777615877.226645931] [gym_env_robot_2_36471]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1777615877.271319792] [gym_env_robot_3_1746]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-05-01 14:11:19,818	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [局部风险注意力 (通信版 token)]
+================================================================================
+  环境阶段:     3 · Stage 3 · 慢速动态障碍
+  机器人数量:   4
+  通信范围:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     900,000
+  动作模式:     continuous
+  PPO配置:      continuous_baseline  (clip=0.05, ent=0.002, mb=1024, epochs=5)
+  GAT Actor:    local_risk  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=3 robot_number:=4 num_obstacles:=6 obs_speed_scale:=0.7
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.85
+================================================================================
+
+🎯 局部风险图注意力：不依赖通信，直接训练 actor 的风险关注模式...
+
+[36m(RolloutWorker pid=204629)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=204629)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=204629)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=204629)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=204629)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=204629)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=204629)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=204629)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=204629)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=204629)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=204629)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=204629)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+[36m(RolloutWorker pid=204629)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-4.80,0.00) goal=(4.80,0.00)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_0  my_pos=(-4.800,0.600)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.332m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.000)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.000,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.332m  n_pos=(-4.800,0.600)  rel_pos=(-1.200,-2.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.600)  rel_pos=(-1.000,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_3  my_pos=(4.000,-5.500)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_0  my_pos=(-4.800,0.600)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.332m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.000)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.000,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.332m  n_pos=(-4.800,0.600)  rel_pos=(-1.200,-2.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.600)  rel_pos=(-1.000,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_3  my_pos=(4.000,-5.500)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.799, 0.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.599) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.001,-5.499) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_0  my_pos=(-4.799,0.600)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.331m  n_pos=(-3.600,2.599)  rel_pos=(1.199,1.998)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(0.999,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_1  my_pos=(-3.600,2.599)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.331m  n_pos=(-4.799,0.600)  rel_pos=(-1.199,-1.998)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.799,0.600)  rel_pos=(-0.999,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_3  my_pos=(4.001,-5.499)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.802, 0.599) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.34   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.602) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.34   0.00   5.01  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.799,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.01   0.00   8.40]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.008,-5.495) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.40   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_0  my_pos=(-4.802,0.599)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.336m  n_pos=(-3.600,2.602)  rel_pos=(1.202,2.003)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.163m  n_pos=(-3.799,-2.400)  rel_pos=(1.003,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_1  my_pos=(-3.600,2.602)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.336m  n_pos=(-4.802,0.599)  rel_pos=(-1.202,-2.003)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_2  my_pos=(-3.799,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.163m  n_pos=(-4.802,0.599)  rel_pos=(-1.003,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_3  my_pos=(4.008,-5.495)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m 
+[36m(RolloutWorker pid=204629)[0m ============================================================
+[36m(RolloutWorker pid=204629)[0m 🏁 Episode 结束 (too_many_failed)
+[36m(RolloutWorker pid=204629)[0m    步数: 1164/2500
+[36m(RolloutWorker pid=204629)[0m    完成: 2/4
+[36m(RolloutWorker pid=204629)[0m    活跃: 2  失败: 2
+[36m(RolloutWorker pid=204629)[0m ============================================================
+[36m(RolloutWorker pid=204629)[0m 
+[36m(RolloutWorker pid=204629)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_0  my_pos=(-4.800,0.600)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.332m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.000)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.000,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.332m  n_pos=(-4.800,0.600)  rel_pos=(-1.200,-2.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.600)  rel_pos=(-1.000,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_3  my_pos=(4.000,-5.500)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_0  my_pos=(-4.800,0.600)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.332m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.000)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.000,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.332m  n_pos=(-4.800,0.600)  rel_pos=(-1.200,-2.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.600)  rel_pos=(-1.000,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_3  my_pos=(4.000,-5.500)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.801, 0.599) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.40]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.002,-5.498) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.40   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_0  my_pos=(-4.801,0.599)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.334m  n_pos=(-3.600,2.600)  rel_pos=(1.201,2.001)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.001,-2.999)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.334m  n_pos=(-4.801,0.599)  rel_pos=(-1.201,-2.001)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.801,0.599)  rel_pos=(-1.001,2.999)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_3  my_pos=(4.002,-5.498)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.809, 0.593) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.34   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.601, 2.602) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.34   0.00   5.01  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.809,-2.402) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.01   0.00   8.40]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.004,-5.497) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.40   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_0  my_pos=(-4.809,0.593)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.344m  n_pos=(-3.601,2.602)  rel_pos=(1.208,2.008)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.158m  n_pos=(-3.809,-2.402)  rel_pos=(1.000,-2.996)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_1  my_pos=(-3.601,2.602)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.344m  n_pos=(-4.809,0.593)  rel_pos=(-1.208,-2.008)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_2  my_pos=(-3.809,-2.402)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.158m  n_pos=(-4.809,0.593)  rel_pos=(-1.000,2.996)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   3  agent_3  my_pos=(4.004,-5.497)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m 
+[36m(RolloutWorker pid=204629)[0m ============================================================
+[36m(RolloutWorker pid=204629)[0m 🏁 Episode 结束 (too_many_failed)
+[36m(RolloutWorker pid=204629)[0m    步数: 603/2500
+[36m(RolloutWorker pid=204629)[0m    完成: 2/4
+[36m(RolloutWorker pid=204629)[0m    活跃: 2  失败: 2
+[36m(RolloutWorker pid=204629)[0m ============================================================
+[36m(RolloutWorker pid=204629)[0m 
+[36m(RolloutWorker pid=204629)[0m [graph] step=   0  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_0  my_pos=(-4.800,0.600)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.332m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.000)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.000,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.332m  n_pos=(-4.800,0.600)  rel_pos=(-1.200,-2.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.600)  rel_pos=(-1.000,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   0  agent_3  my_pos=(4.000,-5.500)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   1  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.599) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.00  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.00   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_0  my_pos=(-4.800,0.599)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.333m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.001)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.400)  rel_pos=(1.000,-2.999)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.333m  n_pos=(-4.800,0.599)  rel_pos=(-1.200,-2.001)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_2  my_pos=(-3.800,-2.400)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.599)  rel_pos=(-1.000,2.999)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   1  agent_3  my_pos=(4.000,-5.500)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   2  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.599) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.33   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.600, 2.600) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.33   0.00   5.01  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.401) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.01   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.499) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[0  0  0  1]  dist=[10.71  11.11   8.39   0.00]  neighbors=[]
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_0  my_pos=(-4.800,0.599)  received=2
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_1 dist=2.333m  n_pos=(-3.600,2.600)  rel_pos=(1.200,2.001)
+[36m(RolloutWorker pid=204629)[0m     slot[1] neighbor=agent_2 dist=3.162m  n_pos=(-3.800,-2.401)  rel_pos=(1.000,-3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_1  my_pos=(-3.600,2.600)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=2.333m  n_pos=(-4.800,0.599)  rel_pos=(-1.200,-2.001)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_2  my_pos=(-3.800,-2.401)  received=1
+[36m(RolloutWorker pid=204629)[0m     slot[0] neighbor=agent_0 dist=3.162m  n_pos=(-4.800,0.599)  rel_pos=(-1.000,3.000)
+[36m(RolloutWorker pid=204629)[0m [comm] step=   2  agent_3  my_pos=(4.000,-5.499)  received=0
+[36m(RolloutWorker pid=204629)[0m     (无有效邻居: 范围外/丢包/延迟填零)
+[36m(RolloutWorker pid=204629)[0m [graph] step=   3  comm_range=3.5m
+[36m(RolloutWorker pid=204629)[0m   robot_0 pos=(-4.800, 0.601) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  1  0]  dist=[ 0.00   2.34   3.16  10.71]  neighbors=[1, 2]
+[36m(RolloutWorker pid=204629)[0m   robot_1 pos=(-3.594, 2.604) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  1  0  0]  dist=[ 2.34   0.00   5.01  11.11]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_2 pos=(-3.800,-2.400) status=active
+[36m(RolloutWorker pid=204629)[0m     adj=[1  0  1  0]  dist=[ 3.16   5.01   0.00   8.39]  neighbors=[0]
+[36m(RolloutWorker pid=204629)[0m   robot_3 pos=( 4.000,-5.500) status=active

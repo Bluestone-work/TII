@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/method3_ego_perception_stage2_v2/GNN_MAPPO_Stage1_Interact_method3_ego_perception_stage2_v2_EnvStage2/best

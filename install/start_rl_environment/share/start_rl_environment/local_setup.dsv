@@ -1,1 +1,2 @@
-/home/unruly/testcm30082ros/build/start_rl_environment/ament_cmake_environment_hooks/local_setup.dsv
+source;share/start_rl_environment/environment/ament_prefix_path.sh
+source;share/start_rl_environment/environment/path.sh

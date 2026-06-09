@@ -1,0 +1,148 @@
+2026-04-15 16:45:24,248	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-04-15 16:45:25,079 E 109761 109761] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: '0d7a7a0e6c020224553644ba01000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=110889)[0m [INFO] [1776242729.927699205] [gym_env_robot_0_73137]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=110889)[0m [INFO] [1776242729.960918637] [gym_env_robot_1_59043]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=110889)[0m [INFO] [1776242729.987345571] [gym_env_robot_2_19283]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=110889)[0m [INFO] [1776242730.013562213] [gym_env_robot_3_38352]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242732.484616437] [gym_env_robot_0_93288]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242732.537097042] [gym_env_robot_1_14387]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242732.565644082] [gym_env_robot_2_95742]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242732.601909890] [gym_env_robot_3_58500]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-04-15 16:45:35,513	INFO trainable.py:161 -- Trainable.setup took 10.514 seconds. If your trainable is slow to initialize, consider setting reuse_actors=True to reduce actor creation overheads.
+2026-04-15 16:45:35,513	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+2026-04-15 16:45:35,514	WARNING checkpoints.py:813 -- No `rllib_checkpoint.json` file found in checkpoint directory /home/wj/work/multi-robot-exploration-rl/ray_results! Trying to extract checkpoint info from other files found in that dir.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[36m(RolloutWorker pid=111701)[0m [INFO] [1776242740.561773431] [gym_env_robot_0_7793]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=111701)[0m [INFO] [1776242740.614366130] [gym_env_robot_1_99766]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=111701)[0m [INFO] [1776242740.656062173] [gym_env_robot_2_92591]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=111701)[0m [INFO] [1776242740.701261482] [gym_env_robot_3_90911]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242742.788675242] [gym_env_robot_0_12806]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242742.822351501] [gym_env_robot_1_70310]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242742.858810851] [gym_env_robot_2_34687]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776242742.900911444] [gym_env_robot_3_42828]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-04-15 16:45:43,078	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+⚠️ 当前 obstacle_top_k=9 -> local_obs_dim=83，与旧版默认 47 维不同；resume checkpoint 可能维度不匹配。
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [社交风险图注意力 (真值式 agent-agent risk)]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     955,000
+  动作模式:     continuous
+  PPO配置:      continuous_baseline_gat_social_risk  (clip=0.1, ent=0.002, mb=512, epochs=6)
+  Counterfactual Advantage: λ=0.050 clip=2.50
+  GAT Actor:    social_risk  bias=1.00
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=3 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  comm_dropout: 100%  ← Actor 不读通信邻居槽位，强制100%丢包
+  冲突路线:     mode=mixed prob=0.75
+  恢复自:       /home/wj/work/multi-robot-exploration-rl/ray_results
+================================================================================
+
+🧭 社交风险 GAT：MLP 主干负责导航，本分支只学习 agent-agent risk 关系...
+
+[36m(RolloutWorker pid=110889)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=110889)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=110889)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=110889)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=110889)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=110889)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=110889)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=110889)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=110889)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=110889)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=110889)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=110889)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+尝试从 Checkpoint 恢复: /home/wj/work/multi-robot-exploration-rl/ray_results
+完整恢复失败，退化为仅迁移网络权重 (Donor Mode): Given checkpoint does not seem to be valid! No file with the name `algorithm_state.[pkl|msgpack|msgpck]` (or `checkpoint-[0-9]+`) found.
+[36m(RolloutWorker pid=111701)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=111701)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=111701)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=111701)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=111701)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=111701)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=111701)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=111701)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=111701)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=111701)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=111701)[0m ✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+[36m(RolloutWorker pid=111701)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+Traceback (most recent call last):
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 618, in _run_training
+    algo.restore(init_checkpoint)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 570, in restore
+    self.load_checkpoint(checkpoint_dir)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py", line 3102, in load_checkpoint
+    checkpoint_info = get_checkpoint_info(checkpoint_dir)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/checkpoints.py", line 846, in get_checkpoint_info
+    raise ValueError(
+ValueError: Given checkpoint does not seem to be valid! No file with the name `algorithm_state.[pkl|msgpack|msgpck]` (or `checkpoint-[0-9]+`) found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 1757, in <module>
+    main()
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 1672, in main
+    ckpt = _run_tune(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 1074, in _run_tune
+    return _run_training(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 624, in _run_training
+    donor.restore(init_checkpoint)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 570, in restore
+    self.load_checkpoint(checkpoint_dir)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py", line 3102, in load_checkpoint
+    checkpoint_info = get_checkpoint_info(checkpoint_dir)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/checkpoints.py", line 846, in get_checkpoint_info
+    raise ValueError(
+ValueError: Given checkpoint does not seem to be valid! No file with the name `algorithm_state.[pkl|msgpack|msgpck]` (or `checkpoint-[0-9]+`) found.

@@ -1,0 +1,57 @@
+[2.483s] Invoking command in '/home/wj/work/multi-robot-exploration-rl/src/start_orca_nav': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_orca_nav build --build-base /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build install --record /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/install.log --single-version-externally-managed install_data
+[2.887s] running egg_info
+[2.889s] creating ../../build/start_orca_nav/start_orca_nav.egg-info
+[2.889s] writing ../../build/start_orca_nav/start_orca_nav.egg-info/PKG-INFO
+[2.890s] writing dependency_links to ../../build/start_orca_nav/start_orca_nav.egg-info/dependency_links.txt
+[2.890s] writing entry points to ../../build/start_orca_nav/start_orca_nav.egg-info/entry_points.txt
+[2.891s] writing requirements to ../../build/start_orca_nav/start_orca_nav.egg-info/requires.txt
+[2.891s] writing top-level names to ../../build/start_orca_nav/start_orca_nav.egg-info/top_level.txt
+[2.891s] writing manifest file '../../build/start_orca_nav/start_orca_nav.egg-info/SOURCES.txt'
+[2.893s] reading manifest file '../../build/start_orca_nav/start_orca_nav.egg-info/SOURCES.txt'
+[2.894s] writing manifest file '../../build/start_orca_nav/start_orca_nav.egg-info/SOURCES.txt'
+[2.894s] running build
+[2.894s] running build_py
+[2.894s] creating /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build
+[2.895s] creating /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib
+[2.895s] creating /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.895s] copying start_orca_nav/dwa_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.896s] copying start_orca_nav/orca_algorithm.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.896s] copying start_orca_nav/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.896s] copying start_orca_nav/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.896s] copying start_orca_nav/orca_nav_node_nav2.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.897s] copying start_orca_nav/orca_nav_node.py -> /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav
+[2.897s] running install
+[2.899s] running install_lib
+[2.901s] creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.901s] copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/dwa_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.901s] copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/orca_algorithm.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.901s] copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.901s] copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.902s] copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/orca_nav_node_nav2.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.902s] copying /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build/lib/start_orca_nav/orca_nav_node.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav
+[2.902s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/dwa_planner.py to dwa_planner.cpython-310.pyc
+[2.903s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/orca_algorithm.py to orca_algorithm.cpython-310.pyc
+[2.903s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/global_planner.py to global_planner.cpython-310.pyc
+[2.905s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/__init__.py to __init__.cpython-310.pyc
+[2.906s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/orca_nav_node_nav2.py to orca_nav_node_nav2.cpython-310.pyc
+[2.914s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav/orca_nav_node.py to orca_nav_node.cpython-310.pyc
+[2.926s] running install_data
+[2.926s] creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index
+[2.927s] creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index/resource_index
+[2.927s] creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index/resource_index/packages
+[2.928s] copying resource/start_orca_nav -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/ament_index/resource_index/packages
+[2.928s] copying package.xml -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav
+[2.928s] creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+[2.928s] copying launch/orca_nav2_simple.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+[2.929s] copying launch/nav2_multi_robot.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+[2.929s] copying launch/orca_nav2.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+[2.929s] copying launch/start_orca_nav.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/launch
+[2.929s] creating /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/rviz
+[2.929s] copying rviz/multi_robot_nav.rviz -> /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/share/start_orca_nav/rviz
+[2.929s] running install_egg_info
+[2.931s] Copying ../../build/start_orca_nav/start_orca_nav.egg-info to /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages/start_orca_nav-0.0.1-py3.10.egg-info
+[2.932s] running install_scripts
+[2.963s] Installing orca_nav_node script to /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/start_orca_nav
+[2.963s] Installing orca_nav_node_nav2 script to /home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/start_orca_nav
+[2.963s] writing list of installed files to '/home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/install.log'
+[3.033s] Invoked command in '/home/wj/work/multi-robot-exploration-rl/src/start_orca_nav' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wj/work/multi-robot-exploration-rl/install/start_orca_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_orca_nav build --build-base /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/build install --record /home/wj/work/multi-robot-exploration-rl/build/start_orca_nav/install.log --single-version-externally-managed install_data

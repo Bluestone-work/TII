@@ -1,0 +1,34 @@
+digraph G {
+"my_bot2/base_link" -> "my_bot2/left_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 81.746\nOldest transform: 76.796\n"];
+"my_bot2/odom" -> "my_bot2/base_link"[label=" Broadcaster: default_authority\nAverage rate: 100.322\nBuffer length: 3.11\nMost recent transform: 81.776\nOldest transform: 78.666\n"];
+"my_bot2/base_link" -> "my_bot2/right_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 81.746\nOldest transform: 76.796\n"];
+"map" -> "my_bot0/odom"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot0/base_link" -> "my_bot0/left_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 81.747\nOldest transform: 76.797\n"];
+"my_bot0/odom" -> "my_bot0/base_link"[label=" Broadcaster: default_authority\nAverage rate: 100.322\nBuffer length: 3.11\nMost recent transform: 81.777\nOldest transform: 78.667\n"];
+"my_bot0/base_link" -> "my_bot0/right_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 81.747\nOldest transform: 76.797\n"];
+"map" -> "my_bot3/odom"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot0/chassis" -> "my_bot0/caster_wheel"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot0/base_link" -> "my_bot0/chassis"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot0/chassis" -> "my_bot0/laser_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot2/chassis" -> "my_bot2/caster_wheel"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot2/base_link" -> "my_bot2/chassis"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot2/chassis" -> "my_bot2/laser_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"map" -> "my_bot2/odom"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot1/odom" -> "my_bot1/base_link"[label=" Broadcaster: default_authority\nAverage rate: 100.323\nBuffer length: 3.1\nMost recent transform: 81.767\nOldest transform: 78.667\n"];
+"map" -> "my_bot1/odom"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot3/base_link" -> "my_bot3/left_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 81.747\nOldest transform: 76.797\n"];
+"my_bot3/odom" -> "my_bot3/base_link"[label=" Broadcaster: default_authority\nAverage rate: 100.323\nBuffer length: 3.1\nMost recent transform: 81.767\nOldest transform: 78.667\n"];
+"my_bot3/base_link" -> "my_bot3/right_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.202\nBuffer length: 4.95\nMost recent transform: 81.747\nOldest transform: 76.797\n"];
+"my_bot3/chassis" -> "my_bot3/caster_wheel"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot3/base_link" -> "my_bot3/chassis"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot3/chassis" -> "my_bot3/laser_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot1/chassis" -> "my_bot1/caster_wheel"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot1/base_link" -> "my_bot1/chassis"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot1/chassis" -> "my_bot1/laser_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"my_bot1/base_link" -> "my_bot1/left_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.328\nBuffer length: 3.05\nMost recent transform: 81.747\nOldest transform: 78.697\n"];
+"my_bot1/base_link" -> "my_bot1/right_wheel"[label=" Broadcaster: default_authority\nAverage rate: 20.328\nBuffer length: 3.05\nMost recent transform: 81.747\nOldest transform: 78.697\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1768833194.8515878"[ shape=plaintext ] ;
+}->"map";
+}

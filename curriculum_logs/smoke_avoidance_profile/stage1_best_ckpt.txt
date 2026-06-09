@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/smoke_avoidance_profile/GNN_MAPPO_Stage1_Interact_smoke_avoidance_profile_EnvStage1

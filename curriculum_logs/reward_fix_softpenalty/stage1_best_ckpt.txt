@@ -1,0 +1,1 @@
+/home/wj/work/multi-robot-exploration-rl/ray_results/reward_fix_softpenalty/GNN_MAPPO_Stage1_Interact_reward_fix_softpenalty_EnvStage1/best

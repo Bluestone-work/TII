@@ -1,0 +1,3 @@
+[console_scripts]
+train_sfl_ippo = sfl_nav_training.train_sfl_ippo:main
+

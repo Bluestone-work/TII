@@ -1,0 +1,2 @@
+stage,repeat,num_episodes,total_success,total_collision,avg_reward,avg_steps,avg_min_dist,avg_social_risk,avg_front_risk,reached_agents,collided_agents,truncated_episodes,exit_code,log_path,checkpoint
+4,1,5,,,,,,,,,,,1,/home/wj/work/multi-robot-exploration-rl/train_logs/test_summaries/ray_results_20260424_092735/test_stage4_run1.log,/home/wj/work/multi-robot-exploration-rl/ray_results

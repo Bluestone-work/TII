@@ -1,0 +1,3 @@
+source;share/marl_training/hook/pythonpath.ps1
+source;share/marl_training/hook/pythonpath.dsv
+source;share/marl_training/hook/pythonpath.sh

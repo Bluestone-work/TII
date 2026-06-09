@@ -1,0 +1,116 @@
+2026-06-06 17:52:03,042	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[INFO] [1780739524.081932852] [gym_env_robot_0_85577]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780739524.115101715] [gym_env_robot_1_42933]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-06-06 17:52:04,119	WARNING rollout_worker.py:507 -- You are running ray with `local_mode=True`, but have configured 1 GPUs to be used! In local mode, Policies are placed on the CPU and the `num_gpus` setting is ignored.
+2026-06-06 17:52:05,879	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+*** SIGTERM received at time=1780739742 on cpu 15 ***
+PC: @           0x4ee921  (unknown)  _PyEval_EvalFrameDefault
+    @     0x70520cdaae62  (unknown)  (unknown)
+    @ ... and at least 6 more frames
+[2026-06-06 17:55:42,076 E 3383038 3383038] logging.cc:474: *** SIGTERM received at time=1780739742 on cpu 15 ***
+[2026-06-06 17:55:42,077 E 3383038 3383038] logging.cc:474: PC: @           0x4ee921  (unknown)  _PyEval_EvalFrameDefault
+[2026-06-06 17:55:42,077 E 3383038 3383038] logging.cc:474:     @     0x70520cdaae62  (unknown)  (unknown)
+[2026-06-06 17:55:42,077 E 3383038 3383038] logging.cc:474:     @ ... and at least 6 more frames
+ℹ️ Method3 + map6(interaction_hub) 自动启用交互专项默认值: num_obstacles=0, obs_speed_scale=0.0
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [局部风险注意力 (感知版 token)]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   2
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  0
+  采样设置:     timeout=1200s fragment=100 mode=truncate_episodes
+  训练步数:     20,000
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.2, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    local_risk  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=2 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=off prob=0.75
+================================================================================
+
+🎯 局部风险图注意力：不依赖通信，直接训练 actor 的风险关注模式...
+
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   0  agent_0  my_pos=(-4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   0  agent_1  my_pos=(4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   1  agent_0  my_pos=(-4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   1  agent_1  my_pos=(4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.600, 0.000) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   2  agent_0  my_pos=(-4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   2  agent_1  my_pos=(4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.602, 0.003) status=active
+    adj=[1  0]  dist=[ 0.00   9.20]  neighbors=[]
+  robot_1 pos=( 4.599, 0.002) status=active
+    adj=[0  1]  dist=[ 9.20   0.00]  neighbors=[]
+[perception] step=   3  agent_0  my_pos=(-4.602,0.003)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   3  agent_1  my_pos=(4.599,0.002)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+
+============================================================
+🏁 Episode 结束 (timeout)
+   步数: 2000/2000
+   完成: 0/2
+   活跃: 2  失败: 0
+============================================================
+
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.600, 0.000) status=active
+    adj=[1  0]  dist=[ 0.00   6.65]  neighbors=[]
+  robot_1 pos=( 0.000,-4.800) status=active
+    adj=[0  1]  dist=[ 6.65   0.00]  neighbors=[]
+[perception] step=   0  agent_0  my_pos=(-4.600,0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   0  agent_1  my_pos=(0.000,-4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.600,-0.000) status=active
+    adj=[1  0]  dist=[ 0.00   6.65]  neighbors=[]
+  robot_1 pos=( 0.000,-4.800) status=active
+    adj=[0  1]  dist=[ 6.65   0.00]  neighbors=[]
+[perception] step=   1  agent_0  my_pos=(-4.600,-0.000)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[perception] step=   1  agent_1  my_pos=(0.000,-4.800)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+[2026-06-06 17:55:42,099 E 3383038 3384613] core_worker.cc:472: :info_message: Attempting to recover 1 lost objects by resubmitting their tasks or setting a new primary location from existing copies. To disable object reconstruction, set @ray.remote(max_retries=0).

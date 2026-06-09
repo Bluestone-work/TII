@@ -1,0 +1,59 @@
+2026-06-03 08:51:08,234	INFO worker.py:2013 -- Started a local Ray instance.
+[INFO] [1780447869.022856120] [gym_env_robot_0_70812]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780447869.061103316] [gym_env_robot_1_87886]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780447869.092033982] [gym_env_robot_2_24288]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [局部风险注意力 (感知版 token)]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   3
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  0
+  采样设置:     timeout=1800s fragment=200 mode=truncate_episodes
+  训练步数:     1
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.15, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    local_risk  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=3 robot_number:=3 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     perfect_comm  (dropout=0%, latency=0, jitter=0, noise=0.00)
+  冲突路线:     mode=mixed prob=0.85
+================================================================================
+
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 5.200,-3.050) status=active
+    adj=[1  1  0]  dist=[ 0.00   2.52   9.72]  neighbors=[1]
+  robot_1 pos=( 3.100,-1.650) status=active
+    adj=[1  1  0]  dist=[ 2.52   0.00   7.20]  neighbors=[0]
+  robot_2 pos=(-2.600, 2.750) status=active
+    adj=[0  0  1]  dist=[ 9.72   7.20   0.00]  neighbors=[]
+[perception] step=   0  agent_0  my_pos=(5.200,-3.050)  received=1
+    slot[0] neighbor=agent_1 dist=2.524m  n_pos=(3.100,-1.650)  rel_pos=(-2.100,1.400)
+[perception] step=   0  agent_1  my_pos=(3.100,-1.650)  received=1
+    slot[0] neighbor=agent_0 dist=2.524m  n_pos=(5.200,-3.050)  rel_pos=(2.100,-1.400)
+[perception] step=   0  agent_2  my_pos=(-2.600,2.750)  received=0
+    (无有效近邻: 超出局部感知半径，回退 ego-guidance)
+Traceback (most recent call last):
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 2199, in <module>
+    main()
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 2087, in main
+    summary = _run_direct_env_sanity(env_config, sanity_steps=args.direct_env_sanity_steps)
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 1296, in _run_direct_env_sanity
+    observations, rewards, terminateds, truncateds, infos = env.step(action_dict)
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 1176, in step
+    obs, rew, done, truncated, info = self.agents[aid].get_step_result()
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 5733, in get_step_result
+    potential_terms = compute_interaction_potential_reward(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/env_space_reward_utils.py", line 581, in compute_interaction_potential_reward
+    corner_escape_active = bool(float(info.get('corner_escape_active', 0.0)) > 0.5)
+NameError: name 'info' is not defined

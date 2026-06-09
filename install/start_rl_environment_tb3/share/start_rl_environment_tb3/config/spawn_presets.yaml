@@ -1,0 +1,516 @@
+map1:
+  description: 原仓库 Map1（×0.6，走廊/房间组合）
+  fixed_starts:
+  - x: -0.6
+    y: -3.0
+    yaw: 0.0
+  - x: -0.6
+    y: -4.8
+    yaw: 0.0
+  - x: 1.2
+    y: -3.0
+    yaw: 0.0
+  - x: 1.2
+    y: -4.8
+    yaw: 3.141592653589793
+  fixed_goals:
+  - x: 1.2
+    y: -1.8
+    yaw: 0.0
+  - x: 1.2
+    y: -5.7
+    yaw: 0.0
+  - x: -0.6
+    y: -1.8
+    yaw: 3.141592653589793
+  - x: -0.6
+    y: -5.7
+    yaw: 3.141592653589793
+  start_regions:
+  - - -0.9
+    - -6.2
+    - 1.6
+    - -2.1
+  - - -0.9
+    - -4.2
+    - 1.6
+    - -0.4
+  goal_regions:
+  - - -0.9
+    - -6.2
+    - 1.6
+    - -2.1
+  - - -0.9
+    - -4.2
+    - 1.6
+    - -0.4
+map2:
+  description: 原仓库 Map2（×0.6，L型/走廊）
+  fixed_starts:
+  - x: -0.6
+    y: -3.0
+    yaw: 0.0
+  - x: -0.6
+    y: -1.2
+    yaw: 0.0
+  - x: 2.4
+    y: -4.8
+    yaw: 1.5707963267948966
+  - x: 4.2
+    y: -3.0
+    yaw: 0.0
+  fixed_goals:
+  - x: 4.2
+    y: -1.2
+    yaw: 0.0
+  - x: 2.4
+    y: -3.0
+    yaw: -1.5707963267948966
+  - x: -0.6
+    y: -4.8
+    yaw: 3.141592653589793
+  - x: 4.2
+    y: -4.8
+    yaw: 3.141592653589793
+  start_regions:
+  - - -0.7
+    - -6.4
+    - 5.7
+    - -3.6
+  - - -0.7
+    - -3.3
+    - 5.7
+    - -0.4
+  goal_regions:
+  - - -0.7
+    - -6.4
+    - 5.7
+    - -3.6
+  - - -0.7
+    - -3.3
+    - 5.7
+    - -0.4
+corridor_swap:
+  description: 新地图 Corridor Swap（12×12m）：两侧+中间隔断，专测会车/死锁
+  fixed_starts:
+  - x: -4.5
+    y: 0.0
+    yaw: 0.0
+    description: Robot 0 - 左侧中间
+  - x: 4.5
+    y: 0.0
+    yaw: 3.141592653589793
+    description: Robot 1 - 右侧中间
+  - x: -4.5
+    y: -3.0
+    yaw: 0.0
+    description: Robot 2 - 左下
+  - x: -4.5
+    y: 3.0
+    yaw: 0.0
+    description: Robot 3 - 左上
+  - x: 4.5
+    y: 3.0
+    yaw: 3.141592653589793
+    description: Robot 4 - 右上
+  - x: 4.5
+    y: -3.0
+    yaw: 3.141592653589793
+    description: Robot 5 - 右下
+  fixed_goals:
+  - x: 4.5
+    y: 0.0
+    yaw: 0.0
+    description: Goal 0 - 右侧中间
+  - x: -4.5
+    y: 0.0
+    yaw: 3.141592653589793
+    description: Goal 1 - 左侧中间
+  - x: 4.5
+    y: -3.0
+    yaw: 0.0
+    description: Goal 2 - 右下
+  - x: 4.5
+    y: 3.0
+    yaw: 0.0
+    description: Goal 3 - 右上
+  - x: -4.5
+    y: -3.0
+    yaw: 3.141592653589793
+    description: Goal 4 - 左下
+  - x: -4.5
+    y: 3.0
+    yaw: 3.141592653589793
+    description: Goal 5 - 左上
+  start_regions:
+  - - -5.5
+    - -5.0
+    - -2.0
+    - 5.0
+  - - 2.0
+    - -5.0
+    - 5.5
+    - 5.0
+  goal_regions:
+  - - 2.0
+    - -5.0
+    - 5.5
+    - 5.0
+  - - -5.5
+    - -5.0
+    - -2.0
+    - 5.0
+intersection:
+  description: 新地图 Intersection（×0.6，12×12m）：十字路口，专测通过效率
+  fixed_starts:
+  - x: -4.2
+    y: 0.0
+    yaw: 0.0
+    description: Robot 0 - 左侧
+  - x: 4.2
+    y: 0.0
+    yaw: 3.141592653589793
+    description: Robot 1 - 右侧
+  - x: 0.0
+    y: -4.2
+    yaw: 1.5707963267948966
+    description: Robot 2 - 下方
+  - x: 0.0
+    y: 4.2
+    yaw: -1.5707963267948966
+    description: Robot 3 - 上方
+  - x: -4.2
+    y: -0.7
+    yaw: 0.0
+    description: Robot 4 - 左下
+  - x: 4.2
+    y: 0.7
+    yaw: 3.141592653589793
+    description: Robot 5 - 右上
+  fixed_goals:
+  - x: 4.2
+    y: 0.0
+    yaw: 3.141592653589793
+    description: Goal 0 - 右侧
+  - x: -4.2
+    y: 0.0
+    yaw: 0.0
+    description: Goal 1 - 左侧
+  - x: 0.0
+    y: 4.2
+    yaw: -1.5707963267948966
+    description: Goal 2 - 上方
+  - x: 0.0
+    y: -4.2
+    yaw: 1.5707963267948966
+    description: Goal 3 - 下方
+  - x: 4.2
+    y: -0.7
+    yaw: 3.141592653589793
+    description: Goal 4
+  - x: -4.2
+    y: 0.7
+    yaw: 0.0
+    description: Goal 5
+  start_regions:
+  - - -5.7
+    - -1.2
+    - -3.6
+    - 1.2
+  - - 3.6
+    - -1.2
+    - 5.7
+    - 1.2
+  - - -1.2
+    - -5.7
+    - 1.2
+    - -3.6
+  - - -1.2
+    - 3.6
+    - 1.2
+    - 5.7
+  goal_regions:
+  - - 3.6
+    - -1.2
+    - 5.7
+    - 1.2
+  - - -5.7
+    - -1.2
+    - -3.6
+    - 1.2
+  - - -1.2
+    - 3.6
+    - 1.2
+    - 5.7
+  - - -1.2
+    - -5.7
+    - 1.2
+    - -3.6
+warehouse_aisles:
+  description: 新地图 Warehouse Aisles（×0.6，12×12m）：货架通道+瓶颈
+  fixed_starts:
+  - x: -5.1
+    y: -3.6
+    yaw: 0.0
+  - x: -5.1
+    y: -1.8
+    yaw: 0.0
+  - x: -5.1
+    y: 0.0
+    yaw: 0.0
+  - x: -5.1
+    y: 1.8
+    yaw: 0.0
+  - x: -5.1
+    y: 3.6
+    yaw: 0.0
+  - x: 5.1
+    y: -2.7
+    yaw: 3.141592653589793
+  - x: 5.1
+    y: 2.7
+    yaw: 3.141592653589793
+  fixed_goals:
+  - x: 5.1
+    y: -3.6
+    yaw: 3.141592653589793
+  - x: 5.1
+    y: -1.8
+    yaw: 3.141592653589793
+  - x: 5.1
+    y: 0.0
+    yaw: 3.141592653589793
+  - x: 5.1
+    y: 1.8
+    yaw: 3.141592653589793
+  - x: 5.1
+    y: 3.6
+    yaw: 3.141592653589793
+  - x: -5.1
+    y: -2.7
+    yaw: 0.0
+  - x: -5.1
+    y: 2.7
+    yaw: 0.0
+  start_regions:
+  - - -5.7
+    - -5.1
+    - -3.9
+    - 5.1
+  - - 3.9
+    - -5.1
+    - 5.7
+    - 5.1
+  goal_regions:
+  - - 3.9
+    - -5.1
+    - 5.7
+    - 5.1
+  - - -5.7
+    - -5.1
+    - -3.9
+    - 5.1
+interaction_hub:
+  description: 新地图 Interaction Hub（12x12m）：十字主路 + 错位窄门，覆盖会车/交叉/汇入/贴障碍拐弯
+  fixed_starts:
+  - x: -5.1
+    y: -0.85
+    yaw: 0.0
+    description: Robot 0 - west lower
+  - x: -5.1
+    y: 0.85
+    yaw: 0.0
+    description: Robot 1 - west upper
+  - x: 5.1
+    y: 0.85
+    yaw: 3.141592653589793
+    description: Robot 2 - east upper
+  - x: 5.1
+    y: -0.85
+    yaw: 3.141592653589793
+    description: Robot 3 - east lower
+  - x: 0.85
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Robot 4 - south right
+  - x: -0.85
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Robot 5 - south left
+  - x: -0.85
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Robot 6 - north left
+  - x: 0.85
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Robot 7 - north right
+  fixed_goals:
+  - x: 5.1
+    y: 0.85
+    yaw: 3.141592653589793
+    description: Goal 0 - east upper
+  - x: 0.85
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Goal 1 - north right
+  - x: -5.1
+    y: -0.85
+    yaw: 0.0
+    description: Goal 2 - west lower
+  - x: -0.85
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Goal 3 - south left
+  - x: -0.85
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Goal 4 - north left
+  - x: 5.1
+    y: -0.85
+    yaw: 3.141592653589793
+    description: Goal 5 - east lower
+  - x: -5.1
+    y: 0.85
+    yaw: 0.0
+    description: Goal 6 - west upper
+  - x: 0.85
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Goal 7 - south right
+interaction_hub_mini:
+  description: 小尺度交互避碰场景（12x12m）：十字主路 + 四个中央柱，专门放大会车/交叉/汇入冲突
+  fixed_starts:
+  - x: -5.1
+    y: -0.6
+    yaw: 0.0
+    description: Robot 0 - west lower lane
+  - x: -5.1
+    y: 0.6
+    yaw: 0.0
+    description: Robot 1 - west upper lane
+  - x: 5.1
+    y: 0.6
+    yaw: 3.141592653589793
+    description: Robot 2 - east upper lane
+  - x: 5.1
+    y: -0.6
+    yaw: 3.141592653589793
+    description: Robot 3 - east lower lane
+  - x: -0.6
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Robot 4 - south left lane
+  - x: 0.6
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Robot 5 - south right lane
+  - x: 0.6
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Robot 6 - north right lane
+  - x: -0.6
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Robot 7 - north left lane
+  fixed_goals:
+  - x: 5.1
+    y: -0.6
+    yaw: 3.141592653589793
+    description: Goal 0 - east lower lane
+  - x: 0.6
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Goal 1 - north right lane
+  - x: -5.1
+    y: 0.6
+    yaw: 0.0
+    description: Goal 2 - west upper lane
+  - x: -0.6
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Goal 3 - south left lane
+  - x: -0.6
+    y: 5.1
+    yaw: -1.5707963267948966
+    description: Goal 4 - north left lane
+  - x: 5.1
+    y: 0.6
+    yaw: 3.141592653589793
+    description: Goal 5 - east upper lane
+  - x: -5.1
+    y: -0.6
+    yaw: 0.0
+    description: Goal 6 - west lower lane
+  - x: 0.6
+    y: -5.1
+    yaw: 1.5707963267948966
+    description: Goal 7 - south right lane
+  start_regions:
+  - - -5.4
+    - -1.0
+    - -4.2
+    - 1.0
+  - - 4.2
+    - -1.0
+    - 5.4
+    - 1.0
+  - - -1.0
+    - -5.4
+    - 1.0
+    - -4.2
+  - - -1.0
+    - 4.2
+    - 1.0
+    - 5.4
+  goal_regions:
+  - - 4.2
+    - -1.0
+    - 5.4
+    - 1.0
+  - - -5.4
+    - -1.0
+    - -4.2
+    - 1.0
+  - - -1.0
+    - -5.4
+    - 1.0
+    - -4.2
+  - - -1.0
+    - 4.2
+    - 1.0
+    - 5.4
+  start_regions:
+  - - -5.7
+    - -1.4
+    - -4.3
+    - 1.4
+  - - 4.3
+    - -1.4
+    - 5.7
+    - 1.4
+  - - -1.4
+    - -5.7
+    - 1.4
+    - -4.3
+  - - -1.4
+    - 4.3
+    - 1.4
+    - 5.7
+  goal_regions:
+  - - 4.3
+    - -1.4
+    - 5.7
+    - 1.4
+  - - -5.7
+    - -1.4
+    - -4.3
+    - 1.4
+  - - -1.4
+    - 4.3
+    - 1.4
+    - 5.7
+  - - -1.4
+    - -5.7
+    - 1.4
+    - -4.3

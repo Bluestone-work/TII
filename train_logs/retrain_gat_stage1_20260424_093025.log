@@ -1,0 +1,13 @@
+
+[1m[0;36m═══ 环境检查 ═══[0m
+
+[0;32m[✓][0m 环境检查通过
+[0;36m[INFO][0m   GAZEBO_MASTER_URI: http://127.0.0.1:11345
+[0;36m[INFO][0m   渲染模式: gui
+[0;36m[INFO][0m   DISPLAY: :1
+[0;36m[INFO][0m   XAUTHORITY: /run/user/1000/gdm/Xauthority
+[0;36m[INFO][0m   Ray 输出目录: /home/wj/work/multi-robot-exploration-rl/ray_results/neighbor_comm_retrain_stage1_20260424_093025
+[0;36m[INFO][0m   课程日志目录: /home/wj/work/multi-robot-exploration-rl/curriculum_logs/neighbor_comm_retrain_stage1_20260424_093025
+[0;31m[✗][0m GUI 模式无法连接显示服务器 DISPLAY=:1
+[0;31m[✗][0m 当前 XAUTHORITY=/run/user/1000/gdm/Xauthority
+[0;31m[✗][0m 请先确保 'xdpyinfo' 能成功连接当前桌面会话，再启动 Gazebo/RViz。

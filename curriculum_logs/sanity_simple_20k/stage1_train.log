@@ -1,0 +1,399 @@
+2026-06-08 15:34:56,990	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-06-08 15:34:57,728 E 1722326 1722326] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: '674e00f24a8b7372968e6a9f01000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=1723969)[0m [INFO] [1780904102.597758023] [gym_env_robot_0_63796]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1723969)[0m [INFO] [1780904102.643622324] [gym_env_robot_1_76257]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1723969)[0m [INFO] [1780904102.670255738] [gym_env_robot_2_79250]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1723969)[0m [INFO] [1780904102.699017187] [gym_env_robot_3_43111]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1723969)[0m /home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+[36m(RolloutWorker pid=1723969)[0m   init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+2026-06-08 15:35:04,369	ERROR actor_manager.py:973 -- Ray error (The actor died because of an error raised in its creation task, [36mray::RolloutWorker.__init__()[39m (pid=1723969, ip=198.18.0.1, actor_id=674e00f24a8b7372968e6a9f01000000, repr=<ray.rllib.evaluation.rollout_worker.RolloutWorker object at 0x74bb659be080>)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 519, in __init__
+    self._update_policy_map(policy_dict=self.policy_dict)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1729, in _update_policy_map
+    self._build_policy_map(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1833, in _build_policy_map
+    new_policy = create_policy_for_framework(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/policy.py", line 108, in create_policy_for_framework
+    return policy_class(observation_space, action_space, merged_config)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/ppo/ppo_torch_policy.py", line 64, in __init__
+    self._initialize_loss_from_dummy_batch()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/policy.py", line 1354, in _initialize_loss_from_dummy_batch
+    actions, state_outs, extra_outs = self.compute_actions_from_input_dict(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/torch_policy_v2.py", line 505, in compute_actions_from_input_dict
+    return self._compute_action_helper(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/threading.py", line 24, in wrapper
+    return func(self, *a, **k)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1075, in _compute_action_helper
+    dist_inputs, state_out = self.model(input_dict, state_batches, seq_lens)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/models/modelv2.py", line 257, in __call__
+    res = self.forward(restored, state or [], seq_lens)
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gat_rllib_model.py", line 580, in forward
+    actor_obs = self.actor_input_norm(actor_obs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 229, in forward
+    return F.layer_norm(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/functional.py", line 2935, in layer_norm
+    return torch.layer_norm(
+RuntimeError: Given normalized_shape=[50], expected input with shape [*, 50], but got input of size[32, 63]), taking actor 1 out of service.
+2026-06-08 15:35:04,369	ERROR env_runner_group.py:791 -- Validation of EnvRunner failed! Error=The actor died because of an error raised in its creation task, [36mray::RolloutWorker.__init__()[39m (pid=1723969, ip=198.18.0.1, actor_id=674e00f24a8b7372968e6a9f01000000, repr=<ray.rllib.evaluation.rollout_worker.RolloutWorker object at 0x74bb659be080>)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 519, in __init__
+    self._update_policy_map(policy_dict=self.policy_dict)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1729, in _update_policy_map
+    self._build_policy_map(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1833, in _build_policy_map
+    new_policy = create_policy_for_framework(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/policy.py", line 108, in create_policy_for_framework
+    return policy_class(observation_space, action_space, merged_config)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/ppo/ppo_torch_policy.py", line 64, in __init__
+    self._initialize_loss_from_dummy_batch()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/policy.py", line 1354, in _initialize_loss_from_dummy_batch
+    actions, state_outs, extra_outs = self.compute_actions_from_input_dict(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/torch_policy_v2.py", line 505, in compute_actions_from_input_dict
+    return self._compute_action_helper(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/threading.py", line 24, in wrapper
+    return func(self, *a, **k)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1075, in _compute_action_helper
+    dist_inputs, state_out = self.model(input_dict, state_batches, seq_lens)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/models/modelv2.py", line 257, in __call__
+    res = self.forward(restored, state or [], seq_lens)
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gat_rllib_model.py", line 580, in forward
+    actor_obs = self.actor_input_norm(actor_obs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 229, in forward
+    return F.layer_norm(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/functional.py", line 2935, in layer_norm
+    return torch.layer_norm(
+RuntimeError: Given normalized_shape=[50], expected input with shape [*, 50], but got input of size[32, 63]
+ℹ️ Method3 + map6(interaction_hub) 自动启用交互专项默认值: num_obstacles=0, obs_speed_scale=0.0
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     20,000
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.2, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     mode=decentralized graph_source=comm_only  (dropout=5%, latency=1, jitter=1, noise=0.05, max_age=0.30s)
+  冲突路线:     mode=mixed prob=0.25
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+[36m(RolloutWorker pid=1723969)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=1723969)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1723969)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=1723969)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=1723969)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1723969)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=1723969)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=1723969)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1723969)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=1723969)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=1723969)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1723969)[0m ✅ Robot 3: A*规划器初始化完成
+Traceback (most recent call last):
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 2296, in <module>
+    main()
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 2231, in main
+    ckpt = _run_tune(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 1402, in _run_tune
+    return _run_training(
+  File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/train_gnn_mappo_full.py", line 852, in _run_training
+    algo = config.build()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_common/deprecation.py", line 169, in _ctor
+    return obj(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm_config.py", line 5906, in build
+    return self.build_algo(*args, **kwargs)
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm_config.py", line 1007, in build_algo
+    return algo_class(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py", line 583, in __init__
+    super().__init__(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 158, in __init__
+    self.setup(copy.deepcopy(self.config))
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py", line 849, in setup
+    self.env_runner_group = EnvRunnerGroup(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/env_runner_group.py", line 197, in __init__
+    self._setup(
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/env_runner_group.py", line 285, in _setup
+    spaces = self.get_spaces()
+  File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/env_runner_group.py", line 313, in get_spaces
+    spaces = self.foreach_env_runner(
+IndexError: list index out of range
+[36m(RolloutWorker pid=1723969)[0m Exception raised in creation task: The actor died because of an error raised in its creation task, [36mray::RolloutWorker.__init__()[39m (pid=1723969, ip=198.18.0.1, actor_id=674e00f24a8b7372968e6a9f01000000, repr=<ray.rllib.evaluation.rollout_worker.RolloutWorker object at 0x74bb659be080>)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 519, in __init__
+[36m(RolloutWorker pid=1723969)[0m     self._update_policy_map(policy_dict=self.policy_dict)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1729, in _update_policy_map
+[36m(RolloutWorker pid=1723969)[0m     self._build_policy_map(
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1833, in _build_policy_map
+[36m(RolloutWorker pid=1723969)[0m     new_policy = create_policy_for_framework(
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/policy.py", line 108, in create_policy_for_framework
+[36m(RolloutWorker pid=1723969)[0m     return policy_class(observation_space, action_space, merged_config)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/ppo/ppo_torch_policy.py", line 64, in __init__
+[36m(RolloutWorker pid=1723969)[0m     self._initialize_loss_from_dummy_batch()
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/policy.py", line 1354, in _initialize_loss_from_dummy_batch
+[36m(RolloutWorker pid=1723969)[0m     actions, state_outs, extra_outs = self.compute_actions_from_input_dict(
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/torch_policy_v2.py", line 505, in compute_actions_from_input_dict
+[36m(RolloutWorker pid=1723969)[0m     return self._compute_action_helper(
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/threading.py", line 24, in wrapper
+[36m(RolloutWorker pid=1723969)[0m     return func(self, *a, **k)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1075, in _compute_action_helper
+[36m(RolloutWorker pid=1723969)[0m     dist_inputs, state_out = self.model(input_dict, state_batches, seq_lens)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/models/modelv2.py", line 257, in __call__
+[36m(RolloutWorker pid=1723969)[0m     res = self.forward(restored, state or [], seq_lens)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gat_rllib_model.py", line 580, in forward
+[36m(RolloutWorker pid=1723969)[0m     actor_obs = self.actor_input_norm(actor_obs)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+[36m(RolloutWorker pid=1723969)[0m     return self._call_impl(*args, **kwargs)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+[36m(RolloutWorker pid=1723969)[0m     return forward_call(*args, **kwargs)
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/normalization.py", line 229, in forward
+[36m(RolloutWorker pid=1723969)[0m     return F.layer_norm(
+[36m(RolloutWorker pid=1723969)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/functional.py", line 2935, in layer_norm
+[36m(RolloutWorker pid=1723969)[0m     return torch.layer_norm(
+[36m(RolloutWorker pid=1723969)[0m RuntimeError: Given normalized_shape=[50], expected input with shape [*, 50], but got input of size[32, 63]
+
+===== RESUME 2026-06-08 15:38:01 | stage=1 =====
+resume_checkpoint=<none>
+2026-06-08 15:38:08,816	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+[2026-06-08 15:38:09,572 E 1745738 1745738] core_worker.cc:2232: Actor with class name: 'RolloutWorker' and ID: '78cb5a13b05002b36477cb7601000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
+[36m(RolloutWorker pid=1747232)[0m [INFO] [1780904294.083564978] [gym_env_robot_0_28759]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1747232)[0m [INFO] [1780904294.114194354] [gym_env_robot_1_42097]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1747232)[0m [INFO] [1780904294.131930919] [gym_env_robot_2_35733]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1747232)[0m [INFO] [1780904294.150820210] [gym_env_robot_3_64201]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1747232)[0m /home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+[36m(RolloutWorker pid=1747232)[0m   init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+[INFO] [1780904296.373007283] [gym_env_robot_0_13516]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780904296.409585655] [gym_env_robot_1_40188]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780904296.436828757] [gym_env_robot_2_78924]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1780904296.484232765] [gym_env_robot_3_62580]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+  init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+2026-06-08 15:38:19,375	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+[36m(RolloutWorker pid=1747232)[0m 2026-06-08 15:38:20,269	ERROR actor_manager.py:186 -- Worker exception caught during `apply()`: compute_pairwise_local_rewards() missing 1 required positional argument: 'robot_velocities'
+[36m(RolloutWorker pid=1747232)[0m Traceback (most recent call last):
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/utils/actor_manager.py", line 182, in apply
+[36m(RolloutWorker pid=1747232)[0m     return func(self, *args, **kwargs)
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/execution/rollout_ops.py", line 109, in <lambda>
+[36m(RolloutWorker pid=1747232)[0m     (lambda w: w.sample(**random_action_kwargs))
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/util/tracing/tracing_helper.py", line 461, in _resume_span
+[36m(RolloutWorker pid=1747232)[0m     return method(self, *_args, **_kwargs)
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/rollout_worker.py", line 679, in sample
+[36m(RolloutWorker pid=1747232)[0m     batches = [self.input_reader.next()]
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 59, in next
+[36m(RolloutWorker pid=1747232)[0m     batches = [self.get_data()]
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/sampler.py", line 225, in get_data
+[36m(RolloutWorker pid=1747232)[0m     item = next(self._env_runner)
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 330, in run
+[36m(RolloutWorker pid=1747232)[0m     outputs = self.step()
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 386, in step
+[36m(RolloutWorker pid=1747232)[0m     self._base_env.send_actions(actions_to_send)
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 552, in send_actions
+[36m(RolloutWorker pid=1747232)[0m     raise e
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/env/multi_agent_env.py", line 541, in send_actions
+[36m(RolloutWorker pid=1747232)[0m     obs, rewards, terminateds, truncateds, infos = env.step(agent_dict)
+[36m(RolloutWorker pid=1747232)[0m   File "/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training/gnn_marl_training/gnn_marl_env.py", line 1312, in step
+[36m(RolloutWorker pid=1747232)[0m     pair_summary = compute_pairwise_local_rewards(self, info_dict) if info_dict else None
+[36m(RolloutWorker pid=1747232)[0m TypeError: compute_pairwise_local_rewards() missing 1 required positional argument: 'robot_velocities'
+2026-06-08 15:39:22,370	ERROR actor_manager.py:973 -- Ray error (The actor 78cb5a13b05002b36477cb7601000000 is unavailable: The actor is temporarily unavailable: UnexpectedSystemExit: Worker exits with an exit code 1.. The task may or may not have been executed on the actor.), taking actor 1 out of service.
+2026-06-08 15:39:22,371	ERROR actor_manager.py:771 -- The actor 78cb5a13b05002b36477cb7601000000 is unavailable: The actor is temporarily unavailable: UnexpectedSystemExit: Worker exits with an exit code 1.. The task may or may not have been executed on the actor.
+NoneType: None
+2026-06-08 15:39:22,371	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+ℹ️ Method3 + map6(interaction_hub) 自动启用交互专项默认值: num_obstacles=0, obs_speed_scale=0.0
+================================================================================
+🚀 GNN-MAPPO 课程学习训练  [最近邻感知图]
+================================================================================
+  环境阶段:     1 · Stage 1 · 静态入门
+  机器人数量:   4
+  通信范围:     3.5 m
+  感知邻域:     3.5 m
+  并行Workers:  1
+  采样设置:     timeout=1200s fragment=1000 mode=truncate_episodes
+  训练步数:     20,000
+  动作模式:     interaction_mode
+  PPO配置:      interaction_mode  (clip=0.2, ent=0.008, mb=1024, epochs=8)
+  GAT Actor:    neighbor  bias=2.50
+  GAT Critic:   mlp
+  需要环境:     ros2 launch start_rl_environment_tb3 main.launch.py map_number:=6 robot_number:=4 num_obstacles:=0 obs_speed_scale:=0.0
+  通信设置:     mode=decentralized graph_source=comm_only  (dropout=5%, latency=1, jitter=1, noise=0.05, max_age=0.30s)
+  冲突路线:     mode=mixed prob=0.25
+================================================================================
+
+📚 阶段1：保持完美通信，直接学习通信版 social-risk 图...
+
+[36m(RolloutWorker pid=1747232)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=1747232)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1747232)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=1747232)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=1747232)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1747232)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=1747232)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=1747232)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1747232)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=1747232)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=1747232)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1747232)[0m ✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+[36m(RolloutWorker pid=1747232)[0m [graph] step=   0 source=comm_only comm_range=3.5m
+[36m(RolloutWorker pid=1747232)[0m   robot_0 pos=(-0.900, 3.650) status=active
+[36m(RolloutWorker pid=1747232)[0m     adj=[1  0  0  0]  dist=[ 0.00   8.25   5.53   4.65]  quality=[1.00  0.00  0.00  0.00]  neighbors=[]
+[36m(RolloutWorker pid=1747232)[0m   robot_1 pos=(-0.750,-4.600) status=active
+[36m(RolloutWorker pid=1747232)[0m     adj=[0  1  1  0]  dist=[ 8.25   0.00   2.91   6.74]  quality=[0.00  1.00  1.00  0.00]  neighbors=[2]
+[36m(RolloutWorker pid=1747232)[0m   robot_2 pos=( 0.050,-1.800) status=active
+[36m(RolloutWorker pid=1747232)[0m     adj=[0  1  1  0]  dist=[ 5.53   2.91   0.00   5.42]  quality=[0.00  1.00  1.00  0.00]  neighbors=[1]
+[36m(RolloutWorker pid=1747232)[0m   robot_3 pos=(-4.650, 0.900) status=active
+[36m(RolloutWorker pid=1747232)[0m     adj=[0  0  0  1]  dist=[ 4.65   6.74   5.42   0.00]  quality=[0.00  0.00  0.00  1.00]  neighbors=[]
+[36m(RolloutWorker pid=1747232)[0m [comm_only] step=   0  agent_0  my_pos=(-0.900,3.650)  received=0 fallback=0
+[36m(RolloutWorker pid=1747232)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1747232)[0m [comm_only] step=   0  agent_1  my_pos=(-0.750,-4.600)  received=1 fallback=0
+[36m(RolloutWorker pid=1747232)[0m     slot[0] neighbor=agent_2 dist=2.912m age=0.150s quality=1.00  n_pos=(0.028,-1.742)  rel_pos=(0.778,2.858)
+[36m(RolloutWorker pid=1747232)[0m [comm_only] step=   0  agent_2  my_pos=(0.050,-1.800)  received=1 fallback=0
+[36m(RolloutWorker pid=1747232)[0m     slot[0] neighbor=agent_1 dist=2.912m age=0.150s quality=1.00  n_pos=(-0.817,-4.607)  rel_pos=(-0.867,-2.807)
+[36m(RolloutWorker pid=1747232)[0m [comm_only] step=   0  agent_3  my_pos=(-4.650,0.900)  received=0 fallback=0
+[36m(RolloutWorker pid=1747232)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[33m(raylet)[0m A worker died or was killed while executing a task by an unexpected system error. To troubleshoot the problem, check the logs for the dead worker. Lease ID: 00000000befc2c53c930454af34508cfc5a49e9eaf2bcfac48abd5cbaefb971d Worker ID: e9a4b80d4c2723361b003a1453a41bedd917077f907e81a8ba77932f Node ID: e9b012bd98b0019bc330ca9e6203e7b2c8c9ee00df4fd6baa2c59712 Worker IP address: 198.18.0.1 Worker port: 42441 Worker PID: 1747232 Worker exit type: SYSTEM_ERROR Worker exit detail: Worker exits unexpectedly. Worker exits with an exit code 1.
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=1 steps=0/20,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 15:39:24,371	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+
+  [debug] timesteps未增长，关键字段: {'timesteps_total': 0, 'num_env_steps_sampled_lifetime': 0, 'num_env_steps_sampled': 0, 'timesteps_this_iter': None, 'num_env_steps_sampled_this_iter': 0, 'lifetime_steps': 0, 'episodes_total': None, 'episodes_this_iter': 0, 'env_max_steps': 2000}
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=2 steps=0/20,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--[36m(RolloutWorker pid=1755035)[0m [INFO] [1780904365.712221743] [gym_env_robot_0_36072]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1755035)[0m [INFO] [1780904365.749598785] [gym_env_robot_1_45475]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1755035)[0m [INFO] [1780904365.789842023] [gym_env_robot_2_47161]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1755035)[0m [INFO] [1780904365.830841095] [gym_env_robot_3_96474]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[36m(RolloutWorker pid=1755035)[0m /home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/torch/nn/modules/linear.py:124: UserWarning: Initializing zero-element tensors is a no-op
+[36m(RolloutWorker pid=1755035)[0m   init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+2026-06-08 15:39:26,373	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+
+  [debug] timesteps未增长，关键字段: {'timesteps_total': 0, 'num_env_steps_sampled_lifetime': 0, 'num_env_steps_sampled': 0, 'timesteps_this_iter': None, 'num_env_steps_sampled_this_iter': 0, 'lifetime_steps': 0, 'episodes_total': None, 'episodes_this_iter': 0, 'env_max_steps': 2000}
+[36m(RolloutWorker pid=1755035)[0m 🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+[36m(RolloutWorker pid=1755035)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1755035)[0m ✅ Robot 0: A*规划器初始化完成
+[36m(RolloutWorker pid=1755035)[0m 🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+[36m(RolloutWorker pid=1755035)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1755035)[0m ✅ Robot 1: A*规划器初始化完成
+[36m(RolloutWorker pid=1755035)[0m 🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+[36m(RolloutWorker pid=1755035)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1755035)[0m ✅ Robot 2: A*规划器初始化完成
+[36m(RolloutWorker pid=1755035)[0m 🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+[36m(RolloutWorker pid=1755035)[0m ✅ Map 6: 预计算安全 spawn 点 11100 个 (clearance=0.40m)
+[36m(RolloutWorker pid=1755035)[0m ✅ Robot 3: A*规划器初始化完成
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=3 steps=0/20,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 15:39:28,373	WARNING rollout_ops.py:122 -- No samples returned from remote workers. If you have a slow environment or model, consider increasing the `sample_timeout_s` or decreasing the `rollout_fragment_length` in `AlgorithmConfig.env_runners().
+
+  [debug] timesteps未增长，关键字段: {'timesteps_total': 0, 'num_env_steps_sampled_lifetime': 0, 'num_env_steps_sampled': 0, 'timesteps_this_iter': None, 'num_env_steps_sampled_this_iter': 0, 'lifetime_steps': 0, 'episodes_total': None, 'episodes_this_iter': 0, 'env_max_steps': 2000}
+  [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0.0% iter=4 steps=0/20,000 reward=0.00 best=0.00 len=NA ent=0.008 ETA --:--:--2026-06-08 15:39:28,412	WARNING actor_manager.py:986 -- Bringing previously unhealthy, now-healthy actor 1 back into service.
+[36m(RolloutWorker pid=1755035)[0m ⚠️ Robot 1: 强制路线非法，回退随机安全采样 start=(3.80,2.40) goal=(-3.80,-2.40)
+[36m(RolloutWorker pid=1755035)[0m ⚠️ Robot 3: 强制路线非法，回退随机安全采样 start=(-2.60,-3.80) goal=(2.60,3.80)
+[36m(RolloutWorker pid=1755035)[0m [graph] step=   0 source=comm_only comm_range=3.5m
+[36m(RolloutWorker pid=1755035)[0m   robot_0 pos=(-4.600, 0.000) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 0.00   2.93   6.65   8.66]  quality=[1.00  1.00  0.00  0.00]  neighbors=[1]
+[36m(RolloutWorker pid=1755035)[0m   robot_1 pos=(-1.700, 0.450) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 2.93   0.00   5.52   5.75]  quality=[1.00  1.00  0.00  0.00]  neighbors=[0]
+[36m(RolloutWorker pid=1755035)[0m   robot_2 pos=( 0.000,-4.800) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  1  0]  dist=[ 6.65   5.52   0.00   6.63]  quality=[0.00  0.00  1.00  0.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m   robot_3 pos=( 4.050, 0.450) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  0  1]  dist=[ 8.66   5.75   6.63   0.00]  quality=[0.00  0.00  0.00  1.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   0  agent_0  my_pos=(-4.600,0.000)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_1 dist=2.935m age=0.150s quality=1.00  n_pos=(-1.676,0.425)  rel_pos=(2.924,0.425)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   0  agent_1  my_pos=(-1.700,0.450)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_0 dist=2.935m age=0.150s quality=1.00  n_pos=(-4.613,0.046)  rel_pos=(-2.913,-0.404)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   0  agent_2  my_pos=(0.000,-4.800)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   0  agent_3  my_pos=(4.050,0.450)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [graph] step=   1 source=comm_only comm_range=3.5m
+[36m(RolloutWorker pid=1755035)[0m   robot_0 pos=(-4.600,-0.000) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 0.00   2.93   6.65   8.66]  quality=[1.00  1.00  0.00  0.00]  neighbors=[1]
+[36m(RolloutWorker pid=1755035)[0m   robot_1 pos=(-1.700, 0.450) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 2.93   0.00   5.52   5.75]  quality=[1.00  1.00  0.00  0.00]  neighbors=[0]
+[36m(RolloutWorker pid=1755035)[0m   robot_2 pos=(-0.000,-4.800) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  1  0]  dist=[ 6.65   5.52   0.00   6.63]  quality=[0.00  0.00  1.00  0.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m   robot_3 pos=( 4.050, 0.450) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  0  1]  dist=[ 8.66   5.75   6.63   0.00]  quality=[0.00  0.00  0.00  1.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   1  agent_0  my_pos=(-4.600,-0.000)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_1 dist=2.935m age=0.150s quality=1.00  n_pos=(-1.755,0.443)  rel_pos=(2.845,0.443)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   1  agent_1  my_pos=(-1.700,0.450)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_0 dist=2.935m age=0.150s quality=1.00  n_pos=(-4.571,-0.134)  rel_pos=(-2.871,-0.584)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   1  agent_2  my_pos=(-0.000,-4.800)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   1  agent_3  my_pos=(4.050,0.450)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [graph] step=   2 source=comm_only comm_range=3.5m
+[36m(RolloutWorker pid=1755035)[0m   robot_0 pos=(-4.600,-0.001) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 0.00   2.94   6.65   8.66]  quality=[1.00  1.00  0.00  0.00]  neighbors=[1]
+[36m(RolloutWorker pid=1755035)[0m   robot_1 pos=(-1.699, 0.451) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 2.94   0.00   5.52   5.75]  quality=[1.00  1.00  0.00  0.00]  neighbors=[0]
+[36m(RolloutWorker pid=1755035)[0m   robot_2 pos=(-0.001,-4.798) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  1  0]  dist=[ 6.65   5.52   0.00   6.63]  quality=[0.00  0.00  1.00  0.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m   robot_3 pos=( 4.049, 0.450) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  0  1]  dist=[ 8.66   5.75   6.63   0.00]  quality=[0.00  0.00  0.00  1.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   2  agent_0  my_pos=(-4.600,-0.001)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_1 dist=2.935m age=0.150s quality=1.00  n_pos=(-1.704,0.418)  rel_pos=(2.896,0.419)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   2  agent_1  my_pos=(-1.699,0.451)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_0 dist=2.936m age=0.150s quality=1.00  n_pos=(-4.622,0.098)  rel_pos=(-2.922,-0.353)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   2  agent_2  my_pos=(-0.001,-4.798)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   2  agent_3  my_pos=(4.049,0.450)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [graph] step=   3 source=comm_only comm_range=3.5m
+[36m(RolloutWorker pid=1755035)[0m   robot_0 pos=(-4.603,-0.006) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 0.00   2.94   6.64   8.66]  quality=[1.00  1.00  0.00  0.00]  neighbors=[1]
+[36m(RolloutWorker pid=1755035)[0m   robot_1 pos=(-1.695, 0.456) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[1  1  0  0]  dist=[ 2.94   0.00   5.51   5.74]  quality=[1.00  1.00  0.00  0.00]  neighbors=[0]
+[36m(RolloutWorker pid=1755035)[0m   robot_2 pos=(-0.003,-4.792) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  1  0]  dist=[ 6.64   5.51   0.00   6.63]  quality=[0.00  0.00  1.00  0.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m   robot_3 pos=( 4.050, 0.450) status=active
+[36m(RolloutWorker pid=1755035)[0m     adj=[0  0  0  1]  dist=[ 8.66   5.74   6.63   0.00]  quality=[0.00  0.00  0.00  1.00]  neighbors=[]
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   3  agent_0  my_pos=(-4.603,-0.006)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_1 dist=2.940m age=0.150s quality=1.00  n_pos=(-1.718,0.551)  rel_pos=(2.884,0.557)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   3  agent_1  my_pos=(-1.695,0.456)  received=1 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     slot[0] neighbor=agent_0 dist=2.941m age=0.150s quality=1.00  n_pos=(-4.724,0.015)  rel_pos=(-3.029,-0.441)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   3  agent_2  my_pos=(-0.003,-4.792)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)
+[36m(RolloutWorker pid=1755035)[0m [comm_only] step=   3  agent_3  my_pos=(4.050,0.450)  received=0 fallback=0
+[36m(RolloutWorker pid=1755035)[0m     (无有效邻居: 范围外/丢包/延迟/消息过期，slot 填零)

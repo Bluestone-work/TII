@@ -1,0 +1,101 @@
+[2.497s] Invoking command in '/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gnn_marl_training build --build-base /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build install --record /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/install.log --single-version-externally-managed install_data
+[2.833s] running egg_info
+[2.833s] creating ../../build/gnn_marl_training/gnn_marl_training.egg-info
+[2.836s] writing ../../build/gnn_marl_training/gnn_marl_training.egg-info/PKG-INFO
+[2.837s] writing dependency_links to ../../build/gnn_marl_training/gnn_marl_training.egg-info/dependency_links.txt
+[2.837s] writing entry points to ../../build/gnn_marl_training/gnn_marl_training.egg-info/entry_points.txt
+[2.837s] writing requirements to ../../build/gnn_marl_training/gnn_marl_training.egg-info/requires.txt
+[2.837s] writing top-level names to ../../build/gnn_marl_training/gnn_marl_training.egg-info/top_level.txt
+[2.837s] writing manifest file '../../build/gnn_marl_training/gnn_marl_training.egg-info/SOURCES.txt'
+[2.837s] reading manifest file '../../build/gnn_marl_training/gnn_marl_training.egg-info/SOURCES.txt'
+[2.839s] writing manifest file '../../build/gnn_marl_training/gnn_marl_training.egg-info/SOURCES.txt'
+[2.839s] running build
+[2.839s] running build_py
+[2.840s] creating /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build
+[2.840s] creating /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib
+[2.840s] creating /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.840s] copying gnn_marl_training/train_gnn_mappo_full.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.841s] copying gnn_marl_training/option_tester.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.841s] copying gnn_marl_training/option_test_scenarios.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.841s] copying gnn_marl_training/option_feasibility.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.841s] copying gnn_marl_training/interaction_observation_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.841s] copying gnn_marl_training/gat_policy.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.842s] copying gnn_marl_training/env_space_reward_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.842s] copying gnn_marl_training/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.842s] copying gnn_marl_training/option_primitives.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.842s] copying gnn_marl_training/interaction_mode_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.842s] copying gnn_marl_training/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.843s] copying gnn_marl_training/gat_rllib_model.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.843s] copying gnn_marl_training/mappo_mlp_model.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.843s] copying gnn_marl_training/interaction_reward_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.843s] copying gnn_marl_training/fixed_benchmark_scenarios.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.843s] copying gnn_marl_training/robot_policy_node.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.843s] copying gnn_marl_training/waypoint_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.844s] copying gnn_marl_training/interaction_execution_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.844s] copying gnn_marl_training/interaction_option_definitions.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.844s] copying gnn_marl_training/gnn_marl_env.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.845s] copying gnn_marl_training/test_gnn_mappo.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.845s] copying gnn_marl_training/counterfactual_ppo_policy.py -> /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training
+[2.847s] running install
+[2.847s] running install_lib
+[2.852s] creating /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/train_gnn_mappo_full.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/option_tester.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/option_test_scenarios.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/option_feasibility.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/interaction_observation_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/gat_policy.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.853s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/env_space_reward_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/option_primitives.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/interaction_mode_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/gat_rllib_model.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/mappo_mlp_model.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.854s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/interaction_reward_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/fixed_benchmark_scenarios.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/robot_policy_node.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/waypoint_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/interaction_execution_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/interaction_option_definitions.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/gnn_marl_env.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/test_gnn_mappo.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] copying /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build/lib/gnn_marl_training/counterfactual_ppo_policy.py -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training
+[2.855s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/train_gnn_mappo_full.py to train_gnn_mappo_full.cpython-310.pyc
+[2.876s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/option_tester.py to option_tester.cpython-310.pyc
+[2.881s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/option_test_scenarios.py to option_test_scenarios.cpython-310.pyc
+[2.882s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/option_feasibility.py to option_feasibility.cpython-310.pyc
+[2.886s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/interaction_observation_utils.py to interaction_observation_utils.cpython-310.pyc
+[2.889s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/gat_policy.py to gat_policy.cpython-310.pyc
+[2.891s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/env_space_reward_utils.py to env_space_reward_utils.cpython-310.pyc
+[2.896s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/global_planner.py to global_planner.cpython-310.pyc
+[2.903s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/option_primitives.py to option_primitives.cpython-310.pyc
+[2.909s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/interaction_mode_utils.py to interaction_mode_utils.cpython-310.pyc
+[2.910s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/__init__.py to __init__.cpython-310.pyc
+[2.910s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/gat_rllib_model.py to gat_rllib_model.cpython-310.pyc
+[2.913s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/mappo_mlp_model.py to mappo_mlp_model.cpython-310.pyc
+[2.916s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/interaction_reward_utils.py to interaction_reward_utils.cpython-310.pyc
+[2.921s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/fixed_benchmark_scenarios.py to fixed_benchmark_scenarios.cpython-310.pyc
+[2.924s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/robot_policy_node.py to robot_policy_node.cpython-310.pyc
+[2.942s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/waypoint_visualizer.py to waypoint_visualizer.cpython-310.pyc
+[2.944s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/interaction_execution_utils.py to interaction_execution_utils.cpython-310.pyc
+[2.946s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/interaction_option_definitions.py to interaction_option_definitions.cpython-310.pyc
+[2.947s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/gnn_marl_env.py to gnn_marl_env.cpython-310.pyc
+[3.023s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/test_gnn_mappo.py to test_gnn_mappo.cpython-310.pyc
+[3.031s] byte-compiling /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training/counterfactual_ppo_policy.py to counterfactual_ppo_policy.cpython-310.pyc
+[3.034s] running install_data
+[3.034s] creating /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/share/ament_index
+[3.034s] creating /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/share/ament_index/resource_index
+[3.035s] creating /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/share/ament_index/resource_index/packages
+[3.035s] copying resource/gnn_marl_training -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/share/ament_index/resource_index/packages
+[3.035s] copying package.xml -> /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/share/gnn_marl_training
+[3.035s] running install_egg_info
+[3.036s] Copying ../../build/gnn_marl_training/gnn_marl_training.egg-info to /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages/gnn_marl_training-0.0.0-py3.10.egg-info
+[3.037s] running install_scripts
+[3.064s] Installing option_tester script to /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/gnn_marl_training
+[3.064s] Installing robot_policy_node script to /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/gnn_marl_training
+[3.064s] Installing test_gnn_mappo script to /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/gnn_marl_training
+[3.064s] Installing train_gnn_mappo script to /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/gnn_marl_training
+[3.064s] Installing train_gnn_mappo_full script to /home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/gnn_marl_training
+[3.066s] writing list of installed files to '/home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/install.log'
+[3.106s] Invoked command in '/home/wj/work/multi-robot-exploration-rl/src/gnn_marl_training' returned '0': CONDA_PROMPT_MODIFIER=(ros2) PYTHONPATH=/home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wj/work/multi-robot-exploration-rl/install/gnn_marl_training/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/gnn_marl_training build --build-base /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/build install --record /home/wj/work/multi-robot-exploration-rl/build/gnn_marl_training/install.log --single-version-externally-managed install_data

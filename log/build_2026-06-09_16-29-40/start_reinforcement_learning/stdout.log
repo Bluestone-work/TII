@@ -1,0 +1,85 @@
+running egg_info
+creating ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info
+writing ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/PKG-INFO
+writing dependency_links to ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/dependency_links.txt
+writing entry points to ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/entry_points.txt
+writing requirements to ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/requires.txt
+writing top-level names to ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/top_level.txt
+writing manifest file '../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/SOURCES.txt'
+reading manifest file '../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/SOURCES.txt'
+writing manifest file '../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build
+creating /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib
+creating /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning
+copying start_reinforcement_learning/matd3_main.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning
+copying start_reinforcement_learning/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning
+creating /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/restart_environment.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/logic.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/__init__.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/map_utils.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/sync_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/waypoint_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+copying start_reinforcement_learning/env_logic/tf_monitor.py -> /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic
+running install
+running install_lib
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/matd3_main.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/restart_environment.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/global_planner.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/logic.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/__init__.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/map_utils.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/sync_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/waypoint_visualizer.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+copying /home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/build/lib/start_reinforcement_learning/env_logic/tf_monitor.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/matd3_main.py to matd3_main.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/restart_environment.py to restart_environment.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/global_planner.py to global_planner.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/logic.py to logic.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/map_utils.py to map_utils.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/sync_visualizer.py to sync_visualizer.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/waypoint_visualizer.py to waypoint_visualizer.cpython-310.pyc
+byte-compiling /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning/env_logic/tf_monitor.py to tf_monitor.cpython-310.pyc
+running install_data
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/ament_index
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/ament_index/resource_index
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/ament_index/resource_index/packages
+copying resource/start_reinforcement_learning -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/ament_index/resource_index/packages
+copying package.xml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/launch
+copying launch/start_learning.launch.py -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/launch
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/warehouse_aisles.png -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/map2.png -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/map1.yaml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/map1.png -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/map2.pgm -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/warehouse_aisles.yaml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/map1.pgm -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/intersection.yaml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/corridor_swap.png -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/intersection.pgm -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/corridor_swap.pgm -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/warehouse_aisles.pgm -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/intersection.png -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/corridor_swap.yaml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+copying maps/map2.yaml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/maps
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/config
+copying config/spawn_presets.yaml -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/config
+copying config/multi_robot_rewards.rviz -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/config
+creating /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/scripts
+copying scripts/launch_rviz.sh -> /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/share/start_reinforcement_learning/scripts
+running install_egg_info
+Copying ../../build/start_reinforcement_learning/start_reinforcement_learning.egg-info to /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/python3.10/site-packages/start_reinforcement_learning-0.0.0-py3.10.egg-info
+running install_scripts
+Installing run_maddpg script to /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/start_reinforcement_learning
+Installing run_matd3 script to /home/wj/work/multi-robot-exploration-rl/install/start_reinforcement_learning/lib/start_reinforcement_learning
+writing list of installed files to '/home/wj/work/multi-robot-exploration-rl/build/start_reinforcement_learning/install.log'

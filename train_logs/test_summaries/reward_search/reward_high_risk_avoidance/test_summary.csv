@@ -1,0 +1,2 @@
+stage,repeat,num_episodes,total_success,total_collision,avg_reward,avg_steps,avg_min_dist,avg_social_risk,avg_front_risk,reached_agents,collided_agents,truncated_episodes,exit_code,log_path,checkpoint
+1,1,3,7,3,-5.19,1125.7,0.252,0.048,0.074,7,3,2,0,/home/wj/work/multi-robot-exploration-rl/train_logs/test_summaries/reward_search/reward_high_risk_avoidance/test_stage1_run1.log,/home/wj/work/multi-robot-exploration-rl/ray_results/reward_search/reward_high_risk_avoidance/GNN_MAPPO_Stage1_Interact_reward_high_risk_avoidance_EnvStage1/best

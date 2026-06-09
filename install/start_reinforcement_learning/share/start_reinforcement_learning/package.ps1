@@ -111,6 +111,6 @@ function colcon_package_source_powershell_script {
 $env:COLCON_CURRENT_PREFIX=(Get-Item $PSCommandPath).Directory.Parent.Parent.FullName
 
 colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\share/start_reinforcement_learning/hook/pythonpath.ps1"
-colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\../../build/start_reinforcement_learning/share/start_reinforcement_learning/hook/pythonpath_develop.ps1"
+colcon_package_source_powershell_script "$env:COLCON_CURRENT_PREFIX\share/start_reinforcement_learning/hook/ament_prefix_path.ps1"
 
 Remove-Item Env:\COLCON_CURRENT_PREFIX

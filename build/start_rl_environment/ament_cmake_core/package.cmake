@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "start_rl_environment")
 set(start_rl_environment_VERSION "0.0.0")
-set(start_rl_environment_MAINTAINER "unruly <unruly@todo.todo>")
+set(start_rl_environment_MAINTAINER "Theo Moore-Calters <nohacks2701@gmail.com>")
 set(start_rl_environment_BUILD_DEPENDS "simple_launch" "gazebo_ros_pkgs")
 set(start_rl_environment_BUILDTOOL_DEPENDS "ament_cmake")
 set(start_rl_environment_BUILD_EXPORT_DEPENDS "simple_launch" "gazebo_ros_pkgs")

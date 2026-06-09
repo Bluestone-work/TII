@@ -1,0 +1,6 @@
+[console_scripts]
+collect_orca_dwa_bc = gnn_bc_tools.collect_orca_dwa_bc:main
+pretrain_mappo_bc = gnn_bc_tools.pretrain_mappo_bc:main
+run_orca_dwa_bc_pipeline = gnn_bc_tools.run_orca_dwa_bc_pipeline:main
+tune_orca_dwa_map1 = gnn_bc_tools.tune_orca_dwa_map1:main
+

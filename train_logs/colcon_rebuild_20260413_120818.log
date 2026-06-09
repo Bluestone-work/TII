@@ -1,0 +1,20 @@
+Starting >>> gnn_marl_training
+Starting >>> start_orca_nav
+Starting >>> start_rl_environment
+Starting >>> marl_training
+Starting >>> sfl_nav_training
+Starting >>> start_reinforcement_learning
+Starting >>> start_rl_environment_tb3
+Finished <<< start_rl_environment [1.76s]
+Starting >>> sb3_training
+Finished <<< start_rl_environment_tb3 [2.10s]
+Finished <<< marl_training [2.32s]
+Finished <<< start_orca_nav [2.72s]
+Finished <<< sfl_nav_training [2.75s]
+Finished <<< start_reinforcement_learning [2.76s]
+Finished <<< gnn_marl_training [2.90s]
+Starting >>> gnn_bc_tools
+Finished <<< sb3_training [1.49s]
+Finished <<< gnn_bc_tools [1.36s]
+
+Summary: 9 packages finished [5.35s]

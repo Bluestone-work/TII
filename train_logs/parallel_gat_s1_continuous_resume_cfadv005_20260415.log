@@ -1,0 +1,194 @@
+
+[1m[0;36m═══ 环境检查 ═══[0m
+
+[0;32m[✓][0m 环境检查通过
+[0;36m[INFO][0m   导入权重自: /home/wj/work/multi-robot-exploration-rl/ray_results/gat_s1_continuous_cfadv005/GNN_MAPPO_Stage1_Cont_gat_s1_continuous_cfadv005_EnvStage1/best
+[0;36m[INFO][0m   ROS_DOMAIN_ID: 41
+[0;36m[INFO][0m   GAZEBO_MASTER_URI: http://127.0.0.1:11645
+[0;36m[INFO][0m   Ray 输出目录: /home/wj/work/multi-robot-exploration-rl/ray_results/gat_s1_continuous_resume_cfadv005_20260415
+[0;36m[INFO][0m   课程日志目录: /home/wj/work/multi-robot-exploration-rl/curriculum_logs/gat_s1_continuous_resume_cfadv005_20260415
+
+[0;36m[INFO][0m 正在停止当前脚本启动的 ROS2/Gazebo 进程...
+🛑 正在清理 ROS2 进程...
+🧭 清理范围: port_only
+🎯 目标 Gazebo 端口: 11645
+✅ 目标 Gazebo 端口 11645 已清理完毕
+
+[1m[0;36m  启动 Gazebo 环境 (Stage 1 · Stage 1 · 静态入门)[0m
+
+🛑 正在清理 ROS2 进程...
+🧭 清理范围: port_only
+🎯 目标 Gazebo 端口: 11645
+✅ 目标 Gazebo 端口 11645 已清理完毕
+[0;36m[INFO][0m 等待 Gazebo 就绪（最多 60s）...
+🛑 正在清理 ROS2 进程...
+🧭 清理范围: port_only
+🎯 目标 Gazebo 端口: 11645
+=== Stage 1: Stage 1 · 静态入门 ===
+[INFO] [launch]: All log files can be found below /home/wj/.ros/log/2026-04-16-10-31-32-581326-wj-Default-string-1418590
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] Loading world (HEADLESS): /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/corridor_swap.world
+[INFO] Using GAZEBO_MASTER_URI: http://127.0.0.1:11645
+[INFO] Spawning 4 TurtleBot3 robots on corridor_swap...
+[INFO] Using random positions
+[INFO] Using fixed positions for 4 robots
+[INFO]   Robot 0: Robot 0 - 左侧中间 at (-4.50, 0.00)
+[INFO]   Robot 1: Robot 1 - 右侧中间 at (4.50, 0.00)
+[INFO]   Robot 2: Robot 2 - 左下 at (-4.50, -3.00)
+[INFO]   Robot 3: Robot 3 - 左上 at (-4.50, 3.00)
+[spawn_robots] Created modified SDF for tb3_0 at /tmp/tb3_0_rz_sa9mx.sdf
+[spawn_robots] Created modified SDF for tb3_1 at /tmp/tb3_1_fm29kot2.sdf
+[spawn_robots] Created modified SDF for tb3_2 at /tmp/tb3_2_5kuiichm.sdf
+[spawn_robots] Created modified SDF for tb3_3 at /tmp/tb3_3_t4boyf82.sdf
+[INFO] Map Server loading: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.yaml
+[INFO] [gzserver-1]: process started with pid [1418640]
+[INFO] [robot_state_publisher-2]: process started with pid [1418642]
+[INFO] [spawn_entity.py-3]: process started with pid [1418644]
+[INFO] [static_transform_publisher-4]: process started with pid [1418646]
+[INFO] [robot_state_publisher-5]: process started with pid [1418648]
+[INFO] [spawn_entity.py-6]: process started with pid [1418650]
+[INFO] [static_transform_publisher-7]: process started with pid [1418652]
+[INFO] [robot_state_publisher-8]: process started with pid [1418654]
+[INFO] [spawn_entity.py-9]: process started with pid [1418656]
+[INFO] [static_transform_publisher-10]: process started with pid [1418658]
+[INFO] [robot_state_publisher-11]: process started with pid [1418660]
+[INFO] [spawn_entity.py-12]: process started with pid [1418662]
+[INFO] [static_transform_publisher-13]: process started with pid [1418664]
+[INFO] [map_server-14]: process started with pid [1418666]
+[INFO] [lifecycle_manager-15]: process started with pid [1418680]
+[INFO] [obstacle_mover.py-16]: process started with pid [1418685]
+[static_transform_publisher-4] [WARN] [1776306692.793892169] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-7] [WARN] [1776306692.798488817] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-10] [WARN] [1776306692.799990141] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-13] [WARN] [1776306692.805480456] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-4] [INFO] [1776306692.830682521] [static_tf_tb3_0]: Spinning until stopped - publishing transform
+[static_transform_publisher-4] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-4] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-4] from 'map' to 'tb3_0/odom'
+[static_transform_publisher-10] [INFO] [1776306692.852619302] [static_tf_tb3_2]: Spinning until stopped - publishing transform
+[static_transform_publisher-10] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-10] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-10] from 'map' to 'tb3_2/odom'
+[robot_state_publisher-2] [INFO] [1776306692.861247426] [tb3_0.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1776306692.861412135] [tb3_0.robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1776306692.861434097] [tb3_0.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-2] [INFO] [1776306692.861446062] [tb3_0.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-2] [INFO] [1776306692.861457103] [tb3_0.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-2] [INFO] [1776306692.861467287] [tb3_0.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-2] [INFO] [1776306692.861477955] [tb3_0.robot_state_publisher]: got segment wheel_right_link
+[static_transform_publisher-7] [INFO] [1776306692.864908000] [static_tf_tb3_1]: Spinning until stopped - publishing transform
+[static_transform_publisher-7] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-7] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-7] from 'map' to 'tb3_1/odom'
+[robot_state_publisher-8] [INFO] [1776306692.866785084] [tb3_2.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-8] [INFO] [1776306692.866905177] [tb3_2.robot_state_publisher]: got segment base_link
+[robot_state_publisher-8] [INFO] [1776306692.866918244] [tb3_2.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-8] [INFO] [1776306692.866924438] [tb3_2.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-8] [INFO] [1776306692.866930196] [tb3_2.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-8] [INFO] [1776306692.866935857] [tb3_2.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-8] [INFO] [1776306692.866941481] [tb3_2.robot_state_publisher]: got segment wheel_right_link
+[robot_state_publisher-5] [INFO] [1776306692.868870761] [tb3_1.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-5] [INFO] [1776306692.869009795] [tb3_1.robot_state_publisher]: got segment base_link
+[robot_state_publisher-5] [INFO] [1776306692.869033795] [tb3_1.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-5] [INFO] [1776306692.869048239] [tb3_1.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-5] [INFO] [1776306692.869059660] [tb3_1.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-5] [INFO] [1776306692.869070358] [tb3_1.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-5] [INFO] [1776306692.869082174] [tb3_1.robot_state_publisher]: got segment wheel_right_link
+[robot_state_publisher-11] [INFO] [1776306692.875604053] [tb3_3.robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-11] [INFO] [1776306692.876497312] [tb3_3.robot_state_publisher]: got segment base_link
+[robot_state_publisher-11] [INFO] [1776306692.876519482] [tb3_3.robot_state_publisher]: got segment base_scan
+[robot_state_publisher-11] [INFO] [1776306692.876533159] [tb3_3.robot_state_publisher]: got segment caster_back_link
+[robot_state_publisher-11] [INFO] [1776306692.876544365] [tb3_3.robot_state_publisher]: got segment imu_link
+[robot_state_publisher-11] [INFO] [1776306692.876555001] [tb3_3.robot_state_publisher]: got segment wheel_left_link
+[robot_state_publisher-11] [INFO] [1776306692.876565947] [tb3_3.robot_state_publisher]: got segment wheel_right_link
+[static_transform_publisher-13] [INFO] [1776306692.877286255] [static_tf_tb3_3]: Spinning until stopped - publishing transform
+[static_transform_publisher-13] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-13] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-13] from 'map' to 'tb3_3/odom'
+[map_server-14] [INFO] [1776306692.887350581] [map_server]: 
+[map_server-14] 	map_server lifecycle node launched. 
+[map_server-14] 	Waiting on external lifecycle transitions to activate
+[map_server-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-14] [INFO] [1776306692.887662640] [map_server]: Creating
+[lifecycle_manager-15] [INFO] [1776306692.890222800] [lifecycle_manager_map]: Creating
+[lifecycle_manager-15] [INFO] [1776306692.895925213] [lifecycle_manager_map]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[lifecycle_manager-15] [INFO] [1776306692.899976448] [lifecycle_manager_map]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-15] [INFO] [1776306692.900017549] [lifecycle_manager_map]: [34m[1mConfiguring map_server[0m[0m
+[map_server-14] [INFO] [1776306692.900353031] [map_server]: Configuring
+[map_server-14] [INFO] [1776306692.900431819] [map_io]: Loading yaml file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.yaml
+[map_server-14] [INFO] [1776306692.900820392] [map_io]: resolution: 0.05
+[map_server-14] [INFO] [1776306692.900839564] [map_io]: origin[0]: -6
+[map_server-14] [INFO] [1776306692.900849162] [map_io]: origin[1]: -6
+[map_server-14] [INFO] [1776306692.900858064] [map_io]: origin[2]: 0
+[map_server-14] [INFO] [1776306692.900867258] [map_io]: free_thresh: 0.196
+[map_server-14] [INFO] [1776306692.900876418] [map_io]: occupied_thresh: 0.65
+[map_server-14] [INFO] [1776306692.900886510] [map_io]: mode: trinary
+[map_server-14] [INFO] [1776306692.900896438] [map_io]: negate: 0
+[map_server-14] [INFO] [1776306692.901162285] [map_io]: Loading image_file: /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.pgm
+[map_server-14] [INFO] [1776306692.910277592] [map_io]: Read map /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/maps/corridor_swap.pgm: 240 X 240 map @ 0.05 m/cell
+[lifecycle_manager-15] [INFO] [1776306692.918599742] [lifecycle_manager_map]: [34m[1mActivating map_server[0m[0m
+[map_server-14] [INFO] [1776306692.918753216] [map_server]: Activating
+[map_server-14] [INFO] [1776306692.918977929] [map_server]: Creating bond (map_server) to lifecycle manager.
+[lifecycle_manager-15] [INFO] [1776306693.024175898] [lifecycle_manager_map]: Server map_server connected with bond.
+[lifecycle_manager-15] [INFO] [1776306693.024235418] [lifecycle_manager_map]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-15] [INFO] [1776306693.024252704] [lifecycle_manager_map]: [34m[1mCreating bond timer...[0m[0m
+[gzserver-1] Gazebo multi-robot simulator, version 11.10.2
+[gzserver-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gzserver-1] Released under the Apache 2 License.
+[gzserver-1] http://gazebosim.org
+[gzserver-1] 
+[spawn_entity.py-12] [INFO] [1776306693.350480528] [tb3_3.spawn_entity]: Spawn Entity started
+[spawn_entity.py-12] [INFO] [1776306693.351320790] [tb3_3.spawn_entity]: Loading entity XML from file /tmp/tb3_3_t4boyf82.sdf
+[spawn_entity.py-12] [INFO] [1776306693.352963623] [tb3_3.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-12] [INFO] [1776306693.353658575] [tb3_3.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-3] [INFO] [1776306693.380143978] [tb3_0.spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1776306693.380570024] [tb3_0.spawn_entity]: Loading entity XML from file /tmp/tb3_0_rz_sa9mx.sdf
+[spawn_entity.py-6] [INFO] [1776306693.380781006] [tb3_1.spawn_entity]: Spawn Entity started
+[spawn_entity.py-6] [INFO] [1776306693.381179255] [tb3_1.spawn_entity]: Loading entity XML from file /tmp/tb3_1_fm29kot2.sdf
+[spawn_entity.py-3] [INFO] [1776306693.381434158] [tb3_0.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1776306693.381772115] [tb3_0.spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-6] [INFO] [1776306693.382021252] [tb3_1.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-6] [INFO] [1776306693.382367579] [tb3_1.spawn_entity]: Waiting for service /spawn_entity
+[gzserver-1] [1;33m[Wrn] [gazebo_ros_init.cpp:178] [0m[1;33m
+[gzserver-1] #     # ####### ####### ###  #####  #######
+[gzserver-1] ##    # #     #    #     #  #     # #
+[gzserver-1] # #   # #     #    #     #  #       #
+[gzserver-1] #  #  # #     #    #     #  #       #####
+[gzserver-1] #   # # #     #    #     #  #       #
+[gzserver-1] #    ## #     #    #     #  #     # #
+[gzserver-1] #     # #######    #    ###  #####  #######
+[gzserver-1] 
+[gzserver-1] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gzserver-1] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gzserver-1] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gzserver-1] 
+[gzserver-1] [0m[1;33m
+[spawn_entity.py-9] [INFO] [1776306693.469727765] [tb3_2.spawn_entity]: Spawn Entity started
+[spawn_entity.py-9] [INFO] [1776306693.470260620] [tb3_2.spawn_entity]: Loading entity XML from file /tmp/tb3_2_5kuiichm.sdf
+[spawn_entity.py-9] [INFO] [1776306693.471114869] [tb3_2.spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-9] [INFO] [1776306693.471481174] [tb3_2.spawn_entity]: Waiting for service /spawn_entity
+[gzserver-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11645[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m172.19.10.153[0m[1;32m
+🎯 检测到 Gazebo 端口 11645 残留监听进程: 1418640 
+[gzserver-1] [0m[1;33m[0m[1;33m[0m[INFO] [1776306694.025016455] [rclcpp]: signal_handler(signum=15)
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/corridor_swap.world[0m[1;32m][0m[1;32m
+[gzserver-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[gzserver-1]   what():  could not create service: rcl node's context is invalid, at ./src/rcl/node.c:428
+[ERROR] [gzserver-1]: process has died [pid 1418640, exit code -9, cmd 'gzserver /home/wj/work/multi-robot-exploration-rl/install/start_rl_environment_tb3/share/start_rl_environment_tb3/worlds/corridor_swap.world --seed=0 -s libgazebo_ros_init.so -s libgazebo_ros_factory.so -s libgazebo_ros_force_system.so --verbose'].
+✅ 目标 Gazebo 端口 11645 已清理完毕
+[0;31m[✗][0m Gazebo 端口冲突：http://127.0.0.1:11645 已被占用。
+[obstacle_mover.py-16] [WARN] [1776306713.541144563] [obstacle_mover]: /set_entity_state 20 s 内未上线，将在首次 tick 时重试
+[obstacle_mover.py-16] [INFO] [1776306713.542233777] [obstacle_mover]: [obstacle_mover] map=3  4 个障碍物  速度=0.110 m/s (scale×1.0)  30 Hz  随机游走模式
+[spawn_entity.py-12] [ERROR] [1776306723.401564172] [tb3_3.spawn_entity]: Service /spawn_entity unavailable. Was Gazebo started with GazeboRosFactory?
+[spawn_entity.py-12] [ERROR] [1776306723.402571860] [tb3_3.spawn_entity]: Spawn service failed. Exiting.
+[spawn_entity.py-6] [ERROR] [1776306723.430739251] [tb3_1.spawn_entity]: Service /spawn_entity unavailable. Was Gazebo started with GazeboRosFactory?
+[spawn_entity.py-6] [ERROR] [1776306723.431267566] [tb3_1.spawn_entity]: Spawn service failed. Exiting.
+[spawn_entity.py-3] [ERROR] [1776306723.431753712] [tb3_0.spawn_entity]: Service /spawn_entity unavailable. Was Gazebo started with GazeboRosFactory?
+[spawn_entity.py-3] [ERROR] [1776306723.433531812] [tb3_0.spawn_entity]: Spawn service failed. Exiting.
+[spawn_entity.py-9] [ERROR] [1776306723.516871800] [tb3_2.spawn_entity]: Service /spawn_entity unavailable. Was Gazebo started with GazeboRosFactory?
+[spawn_entity.py-9] [ERROR] [1776306723.517814674] [tb3_2.spawn_entity]: Spawn service failed. Exiting.
+[ERROR] [spawn_entity.py-12]: process has died [pid 1418662, exit code 1, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -file /tmp/tb3_3_t4boyf82.sdf -entity tb3_3 -robot_namespace tb3_3 -x -4.5 -y 3.0 -z 0.01 -Y 0.0 --ros-args -r __node:=spawn_entity -r __ns:=/tb3_3'].
+[ERROR] [spawn_entity.py-6]: process has died [pid 1418650, exit code 1, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -file /tmp/tb3_1_fm29kot2.sdf -entity tb3_1 -robot_namespace tb3_1 -x 4.5 -y 0.0 -z 0.01 -Y 3.141592653589793 --ros-args -r __node:=spawn_entity -r __ns:=/tb3_1'].
+[ERROR] [spawn_entity.py-3]: process has died [pid 1418644, exit code 1, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -file /tmp/tb3_0_rz_sa9mx.sdf -entity tb3_0 -robot_namespace tb3_0 -x -4.5 -y 0.0 -z 0.01 -Y 0.0 --ros-args -r __node:=spawn_entity -r __ns:=/tb3_0'].
+[ERROR] [spawn_entity.py-9]: process has died [pid 1418656, exit code 1, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -file /tmp/tb3_2_5kuiichm.sdf -entity tb3_2 -robot_namespace tb3_2 -x -4.5 -y -3.0 -z 0.01 -Y 0.0 --ros-args -r __node:=spawn_entity -r __ns:=/tb3_2'].

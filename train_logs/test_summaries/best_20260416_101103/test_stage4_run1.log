@@ -1,0 +1,616 @@
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/client_mode_hook.py:104: FutureWarning: `local_mode` is an experimental feature that is no longer maintained and will be removed in the near future. For debugging consider using the Ray distributed debugger.
+  return func(*args, **kwargs)
+2026-04-16 10:11:24,850	INFO worker.py:2013 -- Started a local Ray instance.
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/rllib/algorithms/algorithm.py:527: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+`UnifiedLogger` will be removed in Ray 2.7.
+  return UnifiedLogger(config, logdir, loggers=None)
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `JsonLogger interface is deprecated in favor of the `ray.tune.json.JsonLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `CSVLogger interface is deprecated in favor of the `ray.tune.csv.CSVLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+/home/wj/anaconda3/envs/ros2/lib/python3.10/site-packages/ray/tune/logger/unified.py:53: RayDeprecationWarning: This API is deprecated and may be removed in future Ray releases. You could suppress this warning by setting env variable PYTHONWARNINGS="ignore::DeprecationWarning"
+The `TBXLogger interface is deprecated in favor of the `ray.tune.tensorboardx.TBXLoggerCallback` interface and will be removed in Ray 2.7.
+  self._loggers.append(cls(self.config, self.logdir, self.trial))
+:job_id:01000000
+:actor_name:RolloutWorker
+[INFO] [1776305486.505075696] [gym_env_robot_0_40075]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305486.539226701] [gym_env_robot_1_12039]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305486.563719946] [gym_env_robot_2_62061]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305486.603750025] [gym_env_robot_3_2144]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305488.357288654] [gym_env_robot_0_36382]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305488.393165159] [gym_env_robot_1_98011]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305488.426018821] [gym_env_robot_2_45730]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305488.458916288] [gym_env_robot_3_51201]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+2026-04-16 10:11:28,463	WARNING rollout_worker.py:507 -- You are running ray with `local_mode=True`, but have configured 1.0 GPUs to be used! In local mode, Policies are placed on the CPU and the `num_gpus` setting is ignored.
+2026-04-16 10:11:28,589	WARNING util.py:62 -- Install gputil for GPU system monitoring.
+[INFO] [1776305489.208724693] [gym_env_robot_0_47634]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305489.276321072] [gym_env_robot_1_66089]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305489.333852722] [gym_env_robot_2_62038]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+[INFO] [1776305489.372223744] [gym_env_robot_3_70071]: ✅ 路径可视化器已启动，路径话题: /waypoint_markers, tracking话题: /rolling_subgoal_markers
+================================================================================
+正在读取 Checkpoint 配置...
+================================================================================
+:job_id:01000000
+:actor_name:RolloutWorker
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+✅ 成功克隆训练架构:
+   - 模型结构: gat_model
+   - 机器人数量: 4
+   - 动作模式: continuous
+================================================================================
+
+   - 测试Shield: ON (front_slow=0.60, front_stop=0.26, neighbor_slow=0.45)
+创建测试环境...
+🤖 环境初始化: Namespace='/tb3_0', ModelName='tb3_0'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 0: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_1', ModelName='tb3_1'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 1: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_2', ModelName='tb3_2'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 2: A*规划器初始化完成
+🤖 环境初始化: Namespace='/tb3_3', ModelName='tb3_3'
+✅ Map 3: 预计算安全 spawn 点 42748 个 (clearance=0.40m)
+✅ Robot 3: A*规划器初始化完成
+================================================================================
+Episode 1/10
+⚠️ Robot 2: 强制路线非法，回退随机安全采样 start=(4.50,-1.80) goal=(-4.50,1.80)
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.200, 1.000)
+    adj=[1  0  0  0]  dist=[ 0.00   8.63  11.04   8.12]  neighbors=[]
+  robot_1 pos=( 4.200,-1.000)
+    adj=[0  1  0  1]  dist=[ 8.63   0.00   4.05   3.42]  neighbors=[3]
+  robot_2 pos=( 5.100,-4.950)
+    adj=[0  0  1  0]  dist=[11.04   4.05   0.00   7.46]  neighbors=[]
+  robot_3 pos=( 3.800, 2.400)
+    adj=[0  1  0  1]  dist=[ 8.12   3.42   7.46   0.00]  neighbors=[1]
+[comm] step=   0  agent_0  my_pos=(-4.200,1.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(4.200,-1.000)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(5.100,-4.950)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(3.800,2.400)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.94 left=2.84 right=1.76 social_risk=0.000 front_risk=0.000 | raw=[-0.175, 0.696] -> v=-0.021, w=0.835
+  [diag] agent_1 front=1.84 left=1.69 right=2.81 social_risk=0.000 front_risk=0.000 | raw=[-0.245, -0.044] -> v=-0.029, w=-0.053
+  [diag] agent_2 front=3.50 left=0.96 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[1.703, -0.948] -> v=0.220, w=-1.138
+  [diag] agent_3 front=2.12 left=2.11 right=3.03 social_risk=0.000 front_risk=0.000 | raw=[0.440, -0.232] -> v=0.097, w=-0.278
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.200, 1.000)
+    adj=[1  0  0  0]  dist=[ 0.00   8.63  11.04   8.12]  neighbors=[]
+  robot_1 pos=( 4.200,-1.000)
+    adj=[0  1  0  1]  dist=[ 8.63   0.00   4.05   3.42]  neighbors=[3]
+  robot_2 pos=( 5.100,-4.950)
+    adj=[0  0  1  0]  dist=[11.04   4.05   0.00   7.46]  neighbors=[]
+  robot_3 pos=( 3.800, 2.400)
+    adj=[0  1  0  1]  dist=[ 8.12   3.42   7.46   0.00]  neighbors=[1]
+[comm] step=   1  agent_0  my_pos=(-4.200,1.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(4.200,-1.000)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(5.100,-4.950)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(3.800,2.400)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.93 left=2.83 right=1.77 social_risk=0.000 front_risk=0.000 | raw=[-0.154, 1.612] -> v=-0.019, w=1.200
+  [diag] agent_1 front=1.84 left=1.69 right=2.81 social_risk=0.000 front_risk=0.000 | raw=[-0.442, 0.256] -> v=-0.053, w=0.307
+  [diag] agent_2 front=3.50 left=0.96 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[1.481, -0.229] -> v=0.220, w=-0.274
+  [diag] agent_3 front=2.12 left=2.11 right=3.03 social_risk=0.000 front_risk=0.000 | raw=[0.392, 0.046] -> v=0.086, w=0.055
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.200, 1.000)
+    adj=[1  0  0  0]  dist=[ 0.00   8.63  11.04   8.12]  neighbors=[]
+  robot_1 pos=( 4.200,-1.000)
+    adj=[0  1  0  1]  dist=[ 8.63   0.00   4.05   3.42]  neighbors=[3]
+  robot_2 pos=( 5.100,-4.950)
+    adj=[0  0  1  0]  dist=[11.04   4.05   0.00   7.46]  neighbors=[]
+  robot_3 pos=( 3.800, 2.400)
+    adj=[0  1  0  1]  dist=[ 8.12   3.42   7.46   0.00]  neighbors=[1]
+[comm] step=   2  agent_0  my_pos=(-4.200,1.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(4.200,-1.000)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(5.100,-4.950)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(3.800,2.400)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.94 left=2.81 right=1.77 social_risk=0.000 front_risk=0.000 | raw=[-0.152, 1.669] -> v=-0.018, w=1.200
+  [diag] agent_1 front=1.83 left=1.68 right=2.81 social_risk=0.000 front_risk=0.000 | raw=[-0.572, 0.332] -> v=-0.069, w=0.399
+  [diag] agent_2 front=3.50 left=0.96 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[1.412, -0.156] -> v=0.220, w=-0.187
+  [diag] agent_3 front=2.12 left=2.11 right=3.03 social_risk=0.000 front_risk=0.000 | raw=[0.434, 0.022] -> v=0.095, w=0.026
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.199, 1.001)
+    adj=[1  0  0  0]  dist=[ 0.00   8.63  11.03   8.11]  neighbors=[]
+  robot_1 pos=( 4.200,-0.995)
+    adj=[0  1  0  1]  dist=[ 8.63   0.00   4.05   3.41]  neighbors=[3]
+  robot_2 pos=( 5.095,-4.945)
+    adj=[0  0  1  0]  dist=[11.03   4.05   0.00   7.45]  neighbors=[]
+  robot_3 pos=( 3.794, 2.393)
+    adj=[0  1  0  1]  dist=[ 8.11   3.41   7.45   0.00]  neighbors=[1]
+[comm] step=   3  agent_0  my_pos=(-4.199,1.001)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(4.200,-0.995)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(5.095,-4.945)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(3.794,2.393)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=2.06 left=2.84 right=1.73 social_risk=0.000 front_risk=0.000 | raw=[-0.041, 2.138] -> v=-0.005, w=1.200
+  [diag] agent_1 front=1.89 left=1.68 right=2.85 social_risk=0.000 front_risk=0.000 | raw=[-0.627, 0.367] -> v=-0.075, w=0.441
+  [diag] agent_2 front=3.50 left=0.98 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[1.368, -0.361] -> v=0.220, w=-0.433
+  [diag] agent_3 front=2.11 left=2.11 right=3.01 social_risk=0.000 front_risk=0.000 | raw=[0.508, -0.101] -> v=0.112, w=-0.121
+  [diag] agent_0 front=2.06 left=2.84 right=1.73 social_risk=0.000 front_risk=0.000 | raw=[-0.061, 1.447] -> v=-0.007, w=1.200
+  [diag] agent_1 front=1.89 left=1.68 right=2.85 social_risk=0.000 front_risk=0.000 | raw=[-0.654, 0.451] -> v=-0.078, w=0.541
+  [diag] agent_2 front=3.50 left=0.98 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[1.378, -0.515] -> v=0.220, w=-0.618
+  [diag] agent_3 front=2.11 left=2.11 right=3.01 social_risk=0.000 front_risk=0.000 | raw=[0.586, -0.213] -> v=0.129, w=-0.255
+  [diag] agent_0 front=2.54 left=2.84 right=1.69 social_risk=0.000 front_risk=0.000 | raw=[0.092, 1.633] -> v=0.020, w=1.200
+  [diag] agent_1 front=1.91 left=1.69 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.658, 0.500] -> v=-0.079, w=0.600
+  [diag] agent_2 front=3.50 left=1.01 right=0.83 social_risk=0.000 front_risk=0.000 | raw=[1.395, -0.092] -> v=0.220, w=-0.111
+  [diag] agent_3 front=2.06 left=2.13 right=2.98 social_risk=0.000 front_risk=0.000 | raw=[0.619, -0.259] -> v=0.136, w=-0.311
+  [diag] agent_0 front=2.54 left=2.84 right=1.69 social_risk=0.000 front_risk=0.000 | raw=[0.240, 1.465] -> v=0.053, w=1.200
+  [diag] agent_1 front=1.91 left=1.69 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.656, 0.596] -> v=-0.079, w=0.716
+  [diag] agent_2 front=3.50 left=1.01 right=0.83 social_risk=0.000 front_risk=0.000 | raw=[1.353, 0.082] -> v=0.220, w=0.099
+  [diag] agent_3 front=2.06 left=2.13 right=2.98 social_risk=0.000 front_risk=0.000 | raw=[0.672, -0.288] -> v=0.148, w=-0.345
+  [diag] agent_0 front=3.50 left=2.86 right=1.70 social_risk=0.000 front_risk=0.000 | raw=[0.189, 1.108] -> v=0.042, w=1.200
+  [diag] agent_1 front=1.93 left=1.69 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.664, 0.641] -> v=-0.080, w=0.770
+  [diag] agent_2 front=1.73 left=1.05 right=0.84 social_risk=0.000 front_risk=1.000 | raw=[0.952, 0.176] -> v=0.209, w=0.211
+  [diag] agent_3 front=2.06 left=2.20 right=2.96 social_risk=0.000 front_risk=0.000 | raw=[0.699, -0.305] -> v=0.154, w=-0.366
+  [diag] agent_0 front=3.50 left=2.86 right=1.70 social_risk=0.000 front_risk=0.000 | raw=[0.352, 0.838] -> v=0.078, w=1.006
+  [diag] agent_1 front=1.93 left=1.69 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.657, 0.743] -> v=-0.079, w=0.891
+  [diag] agent_2 front=1.73 left=1.05 right=0.84 social_risk=0.000 front_risk=1.000 | raw=[0.938, 0.020] -> v=0.206, w=0.024
+  [diag] agent_3 front=2.06 left=2.20 right=2.96 social_risk=0.000 front_risk=0.000 | raw=[0.740, -0.319] -> v=0.163, w=-0.382
+  [diag] agent_0 front=3.50 left=3.50 right=1.68 social_risk=0.000 front_risk=0.000 | raw=[0.334, 0.743] -> v=0.073, w=0.892
+  [diag] agent_1 front=1.96 left=1.70 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.547, 1.058] -> v=-0.066, w=1.200
+  [diag] agent_2 front=1.71 left=1.09 right=0.88 social_risk=0.000 front_risk=1.000 | raw=[0.965, -0.209] -> v=0.212, w=-0.251
+  [diag] agent_3 front=2.03 left=2.25 right=2.93 social_risk=0.000 front_risk=0.000 | raw=[0.738, -0.312] -> v=0.162, w=-0.375
+  [diag] agent_0 front=3.50 left=3.50 right=1.68 social_risk=0.000 front_risk=0.000 | raw=[0.374, 0.756] -> v=0.082, w=0.907
+  [diag] agent_1 front=1.96 left=1.70 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.478, 0.928] -> v=-0.057, w=1.113
+  [diag] agent_2 front=1.71 left=1.09 right=0.88 social_risk=0.000 front_risk=0.000 | raw=[0.987, -0.456] -> v=0.217, w=-0.547
+  [diag] agent_3 front=2.03 left=2.25 right=2.93 social_risk=0.000 front_risk=0.000 | raw=[0.750, -0.287] -> v=0.165, w=-0.345
+  [diag] agent_0 front=3.50 left=3.50 right=1.69 social_risk=0.000 front_risk=0.000 | raw=[0.268, 0.575] -> v=0.059, w=0.690
+  [diag] agent_1 front=2.00 left=1.72 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.406, 0.995] -> v=-0.049, w=1.194
+  [diag] agent_2 front=1.61 left=1.13 right=0.90 social_risk=0.000 front_risk=0.000 | raw=[0.871, -0.290] -> v=0.192, w=-0.348
+  [diag] agent_3 front=2.00 left=2.36 right=2.92 social_risk=0.000 front_risk=0.000 | raw=[0.743, -0.260] -> v=0.163, w=-0.312
+  [diag] agent_0 front=3.50 left=3.50 right=1.69 social_risk=0.000 front_risk=0.000 | raw=[0.363, 0.639] -> v=0.080, w=0.767
+  [diag] agent_1 front=2.00 left=1.72 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.404, 0.684] -> v=-0.048, w=0.821
+  [diag] agent_2 front=1.61 left=1.13 right=0.90 social_risk=0.000 front_risk=0.000 | raw=[0.887, -0.075] -> v=0.195, w=-0.090
+  [diag] agent_3 front=2.00 left=2.36 right=2.92 social_risk=0.000 front_risk=0.000 | raw=[0.760, -0.245] -> v=0.167, w=-0.294
+  [diag] agent_0 front=3.50 left=3.50 right=1.69 social_risk=0.000 front_risk=0.000 | raw=[0.370, 0.231] -> v=0.081, w=0.277
+  [diag] agent_1 front=2.00 left=1.77 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.421, 0.998] -> v=-0.051, w=1.198
+  [diag] agent_2 front=1.55 left=1.21 right=0.92 social_risk=0.000 front_risk=0.000 | raw=[0.809, -0.200] -> v=0.178, w=-0.240
+  [diag] agent_3 front=1.95 left=2.46 right=2.92 social_risk=0.000 front_risk=0.000 | raw=[0.748, -0.225] -> v=0.165, w=-0.269
+  [diag] agent_0 front=3.50 left=3.50 right=1.69 social_risk=0.000 front_risk=0.000 | raw=[0.386, 0.098] -> v=0.085, w=0.117
+  [diag] agent_1 front=2.00 left=1.77 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.431, 0.873] -> v=-0.052, w=1.048
+  [diag] agent_2 front=1.55 left=1.21 right=0.92 social_risk=0.000 front_risk=0.000 | raw=[0.884, -0.192] -> v=0.194, w=-0.230
+  [diag] agent_3 front=1.95 left=2.46 right=2.92 social_risk=0.000 front_risk=0.000 | raw=[0.767, -0.212] -> v=0.169, w=-0.254
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...Step 450...✅ agent_3 到达目标 (step=500)
+Step 500...Step 550...✅ agent_1 到达目标 (step=562)
+Step 600...✅ agent_0 到达目标 (step=601)
+Step 650...Step 700...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 737/2000
+   完成: 4/4
+============================================================
+
+✅ agent_2 到达目标 (step=737)
+  [episode-summary] steps=737 avg_reward=84.66 success=4 collision=0 reached_agents=4 collided_agents=0 min_dist=0.259 avg_social_risk=0.040 avg_front_risk=0.046 truncated=False
+================================================================================
+Episode 2/10
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=( 4.200,-1.000)
+    adj=[1  0  0  1]  dist=[ 0.00   9.06   8.63   1.34]  neighbors=[3]
+  robot_1 pos=(-4.800, 0.000)
+    adj=[0  1  1  0]  dist=[ 9.06   0.00   1.17   9.60]  neighbors=[2]
+  robot_2 pos=(-4.200, 1.000)
+    adj=[0  1  1  0]  dist=[ 8.63   1.17   0.00   9.04]  neighbors=[1]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[1  0  0  1]  dist=[ 1.34   9.60   9.04   0.00]  neighbors=[0]
+[comm] step=   0  agent_0  my_pos=(4.200,-1.000)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(-4.800,0.000)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(-4.200,1.000)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(0)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[0.165, -0.167] -> v=0.036, w=-0.201
+  [diag] agent_1 front=3.50 left=3.50 right=3.50 social_risk=0.019 front_risk=0.000 | raw=[-0.063, 0.169] -> v=-0.008, w=0.203
+  [diag] agent_2 front=3.50 left=3.50 right=3.50 social_risk=0.107 front_risk=0.000 | raw=[-0.225, 0.272] -> v=-0.027, w=0.327
+  [diag] agent_3 front=3.50 left=3.50 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[0.043, -0.201] -> v=0.009, w=-0.241
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=( 4.200,-1.000)
+    adj=[1  0  0  1]  dist=[ 0.00   9.06   8.63   1.34]  neighbors=[3]
+  robot_1 pos=(-4.800,-0.000)
+    adj=[0  1  1  0]  dist=[ 9.06   0.00   1.17   9.60]  neighbors=[2]
+  robot_2 pos=(-4.200, 1.000)
+    adj=[0  1  1  0]  dist=[ 8.63   1.17   0.00   9.04]  neighbors=[1]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[1  0  0  1]  dist=[ 1.34   9.60   9.04   0.00]  neighbors=[0]
+[comm] step=   1  agent_0  my_pos=(4.200,-1.000)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(-4.800,-0.000)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(-4.200,1.000)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(0)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=2.68 left=2.37 right=1.76 social_risk=0.093 front_risk=1.000 | raw=[0.230, 0.474] -> v=0.051, w=0.569
+  [diag] agent_1 front=3.50 left=3.50 right=3.50 social_risk=0.107 front_risk=0.000 | raw=[-0.264, 0.652] -> v=-0.032, w=0.783
+  [diag] agent_2 front=3.50 left=3.50 right=3.50 social_risk=0.107 front_risk=0.000 | raw=[-0.422, 0.680] -> v=-0.051, w=0.816
+  [diag] agent_3 front=3.50 left=3.50 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[-0.075, 0.123] -> v=-0.009, w=0.147
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=( 4.200,-1.000)
+    adj=[1  0  0  1]  dist=[ 0.00   9.06   8.63   1.34]  neighbors=[3]
+  robot_1 pos=(-4.800,-0.000)
+    adj=[0  1  1  0]  dist=[ 9.06   0.00   1.17   9.60]  neighbors=[2]
+  robot_2 pos=(-4.200, 1.000)
+    adj=[0  1  1  0]  dist=[ 8.63   1.17   0.00   9.04]  neighbors=[1]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[1  0  0  1]  dist=[ 1.34   9.60   9.04   0.00]  neighbors=[0]
+[comm] step=   2  agent_0  my_pos=(4.200,-1.000)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(-4.800,-0.000)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(-4.200,1.000)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(0)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=2.69 left=2.33 right=1.76 social_risk=0.093 front_risk=1.000 | raw=[0.522, 0.089] -> v=0.115, w=0.107
+  [diag] agent_1 front=3.50 left=3.50 right=3.50 social_risk=0.107 front_risk=0.000 | raw=[-0.384, 0.775] -> v=-0.046, w=0.930
+  [diag] agent_2 front=3.50 left=3.50 right=3.50 social_risk=0.107 front_risk=0.000 | raw=[-0.557, 0.857] -> v=-0.067, w=1.029
+  [diag] agent_3 front=3.50 left=3.50 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[-0.141, 0.176] -> v=-0.017, w=0.212
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=( 4.197,-0.998)
+    adj=[1  0  0  1]  dist=[ 0.00   9.05   8.63   1.34]  neighbors=[3]
+  robot_1 pos=(-4.801, 0.001)
+    adj=[0  1  1  0]  dist=[ 9.05   0.00   1.17   9.60]  neighbors=[2]
+  robot_2 pos=(-4.196, 1.000)
+    adj=[0  1  1  0]  dist=[ 8.63   1.17   0.00   9.03]  neighbors=[1]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[1  0  0  1]  dist=[ 1.34   9.60   9.03   0.00]  neighbors=[0]
+[comm] step=   3  agent_0  my_pos=(4.197,-0.998)  candidates=[np.int64(3)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(-4.801,0.001)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(-4.196,1.000)  candidates=[np.int64(1)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(0)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=2.68 left=2.29 right=1.31 social_risk=0.093 front_risk=1.000 | raw=[0.721, -0.002] -> v=0.159, w=-0.003
+  [diag] agent_1 front=3.50 left=1.11 right=1.08 social_risk=0.107 front_risk=0.000 | raw=[-0.300, 0.783] -> v=-0.036, w=0.940
+  [diag] agent_2 front=1.71 left=3.50 right=2.83 social_risk=0.107 front_risk=1.000 | raw=[-0.497, 1.778] -> v=-0.060, w=1.200
+  [diag] agent_3 front=3.50 left=1.34 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[-0.105, -0.053] -> v=-0.013, w=-0.064
+  [diag] agent_0 front=2.68 left=2.27 right=1.29 social_risk=0.093 front_risk=0.000 | raw=[0.740, -0.649] -> v=0.163, w=-0.779
+  [diag] agent_1 front=3.50 left=1.12 right=1.09 social_risk=0.107 front_risk=0.000 | raw=[-0.057, 0.421] -> v=-0.007, w=0.506
+  [diag] agent_2 front=1.72 left=3.50 right=2.82 social_risk=0.106 front_risk=1.000 | raw=[-0.136, 1.820] -> v=-0.016, w=1.200
+  [diag] agent_3 front=3.50 left=1.35 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[0.079, -0.376] -> v=0.017, w=-0.452
+  [diag] agent_0 front=2.68 left=2.27 right=1.29 social_risk=0.093 front_risk=0.000 | raw=[0.675, -0.486] -> v=0.148, w=-0.583
+  [diag] agent_1 front=3.50 left=1.12 right=1.09 social_risk=0.106 front_risk=0.000 | raw=[0.158, 0.280] -> v=0.035, w=0.336
+  [diag] agent_2 front=1.72 left=3.50 right=2.82 social_risk=0.106 front_risk=1.000 | raw=[0.146, 1.724] -> v=0.032, w=1.200
+  [diag] agent_3 front=3.50 left=1.35 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[0.174, -0.528] -> v=0.038, w=-0.633
+  [diag] agent_0 front=2.65 left=2.26 right=1.30 social_risk=0.093 front_risk=0.000 | raw=[0.632, -0.263] -> v=0.139, w=-0.316
+  [diag] agent_1 front=3.50 left=1.12 right=1.14 social_risk=0.106 front_risk=0.000 | raw=[0.312, 0.192] -> v=0.069, w=0.230
+  [diag] agent_2 front=1.73 left=3.15 right=2.31 social_risk=0.106 front_risk=0.000 | raw=[0.215, 1.864] -> v=0.047, w=1.200
+  [diag] agent_3 front=3.50 left=1.33 right=3.50 social_risk=0.093 front_risk=0.000 | raw=[0.428, -0.585] -> v=0.094, w=-0.702
+  [diag] agent_0 front=2.65 left=2.26 right=1.30 social_risk=0.094 front_risk=0.000 | raw=[0.625, -0.229] -> v=0.138, w=-0.275
+  [diag] agent_1 front=3.50 left=1.12 right=1.14 social_risk=0.106 front_risk=0.000 | raw=[0.296, 0.336] -> v=0.065, w=0.403
+  [diag] agent_2 front=1.73 left=3.15 right=2.31 social_risk=0.106 front_risk=0.000 | raw=[0.200, 1.647] -> v=0.044, w=1.200
+  [diag] agent_3 front=3.50 left=1.33 right=3.50 social_risk=0.094 front_risk=0.000 | raw=[0.455, -0.482] -> v=0.100, w=-0.578
+  [diag] agent_0 front=2.62 left=2.27 right=1.30 social_risk=0.094 front_risk=0.000 | raw=[0.612, -0.235] -> v=0.135, w=-0.282
+  [diag] agent_1 front=3.18 left=1.15 right=1.17 social_risk=0.106 front_risk=0.000 | raw=[0.390, 0.462] -> v=0.086, w=0.554
+  [diag] agent_2 front=1.79 left=2.80 right=1.95 social_risk=0.106 front_risk=0.000 | raw=[0.263, 1.577] -> v=0.058, w=1.200
+  [diag] agent_3 front=3.50 left=1.48 right=3.50 social_risk=0.095 front_risk=0.000 | raw=[0.423, -0.230] -> v=0.093, w=-0.277
+  [diag] agent_0 front=2.62 left=2.27 right=1.30 social_risk=0.095 front_risk=0.000 | raw=[0.637, -0.194] -> v=0.140, w=-0.233
+  [diag] agent_1 front=3.18 left=1.15 right=1.17 social_risk=0.106 front_risk=0.000 | raw=[0.376, 0.274] -> v=0.083, w=0.329
+  [diag] agent_2 front=1.79 left=2.80 right=1.95 social_risk=0.107 front_risk=0.000 | raw=[0.175, 1.755] -> v=0.038, w=1.200
+  [diag] agent_3 front=3.50 left=1.48 right=3.50 social_risk=0.096 front_risk=0.000 | raw=[0.452, -0.377] -> v=0.099, w=-0.453
+  [diag] agent_0 front=2.60 left=2.29 right=1.26 social_risk=0.096 front_risk=0.000 | raw=[0.569, -0.098] -> v=0.125, w=-0.118
+  [diag] agent_1 front=3.10 left=1.13 right=1.23 social_risk=0.107 front_risk=0.000 | raw=[0.418, 0.188] -> v=0.092, w=0.226
+  [diag] agent_2 front=1.14 left=2.83 right=1.78 social_risk=0.107 front_risk=1.000 | raw=[0.619, 1.685] -> v=0.136, w=1.200
+  [diag] agent_3 front=2.74 left=1.72 right=3.36 social_risk=0.097 front_risk=1.000 | raw=[0.513, -0.443] -> v=0.113, w=-0.532
+  [diag] agent_0 front=2.60 left=2.29 right=1.26 social_risk=0.097 front_risk=0.000 | raw=[0.615, -0.048] -> v=0.135, w=-0.057
+  [diag] agent_1 front=3.10 left=1.13 right=1.23 social_risk=0.107 front_risk=0.000 | raw=[0.581, 0.202] -> v=0.128, w=0.242
+  [diag] agent_2 front=1.14 left=2.83 right=1.78 social_risk=0.108 front_risk=1.000 | raw=[0.483, 2.041] -> v=0.106, w=1.200
+  [diag] agent_3 front=2.74 left=1.72 right=3.36 social_risk=0.098 front_risk=1.000 | raw=[0.601, -0.291] -> v=0.132, w=-0.349
+  [diag] agent_0 front=2.55 left=2.37 right=1.24 social_risk=0.098 front_risk=0.000 | raw=[0.618, -0.042] -> v=0.136, w=-0.050
+  [diag] agent_1 front=3.05 left=1.11 right=1.29 social_risk=0.108 front_risk=0.000 | raw=[0.401, 0.040] -> v=0.088, w=0.048
+  [diag] agent_2 front=1.13 left=2.85 right=1.70 social_risk=0.108 front_risk=1.000 | raw=[0.543, 1.844] -> v=0.119, w=1.200
+  [diag] agent_3 front=2.72 left=1.91 right=2.79 social_risk=0.099 front_risk=1.000 | raw=[0.710, -0.568] -> v=0.156, w=-0.682
+  [diag] agent_0 front=2.55 left=2.37 right=1.24 social_risk=0.099 front_risk=0.000 | raw=[0.722, -0.090] -> v=0.159, w=-0.107
+  [diag] agent_1 front=3.05 left=1.11 right=1.29 social_risk=0.108 front_risk=0.000 | raw=[0.531, 0.090] -> v=0.117, w=0.108
+  [diag] agent_2 front=1.13 left=2.85 right=1.70 social_risk=0.109 front_risk=0.000 | raw=[0.514, 1.696] -> v=0.113, w=1.200
+  [diag] agent_3 front=2.72 left=1.91 right=2.79 social_risk=0.100 front_risk=0.000 | raw=[0.686, -0.788] -> v=0.151, w=-0.946
+  [diag] agent_0 front=2.53 left=3.50 right=1.21 social_risk=0.100 front_risk=0.000 | raw=[0.732, -0.084] -> v=0.161, w=-0.101
+  [diag] agent_1 front=3.04 left=1.10 right=1.37 social_risk=0.109 front_risk=0.000 | raw=[0.456, 0.044] -> v=0.100, w=0.052
+  [diag] agent_2 front=1.10 left=2.83 right=1.69 social_risk=0.110 front_risk=0.000 | raw=[0.618, 1.652] -> v=0.136, w=1.200
+  [diag] agent_3 front=2.70 left=1.27 right=2.42 social_risk=0.101 front_risk=0.000 | raw=[0.640, -0.365] -> v=0.141, w=-0.439
+Step 50...Step 100...Step 150...Step 200...Step 250...Step 300...Step 350...Step 400...碰撞: agent_0 (step=433)
+Step 450...Step 500...Step 550...Step 600...Step 650...✅ agent_3 到达目标 (step=668)
+Step 700...Step 750...Step 800...Step 850...✅ agent_2 到达目标 (step=862)
+Step 900...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 939/2000
+   完成: 4/4
+============================================================
+
+✅ agent_1 到达目标 (step=939)
+  [episode-summary] steps=939 avg_reward=52.93 success=3 collision=1 reached_agents=3 collided_agents=1 min_dist=0.220 avg_social_risk=0.143 avg_front_risk=0.107 truncated=False
+================================================================================
+Episode 3/10
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-5.450,-4.400)
+    adj=[1  0  0  0]  dist=[ 0.00   8.03  11.00  11.85]  neighbors=[]
+  robot_1 pos=( 1.200, 0.100)
+    adj=[0  1  1  0]  dist=[ 8.03   0.00   3.48   3.85]  neighbors=[2]
+  robot_2 pos=( 2.300, 3.400)
+    adj=[0  1  1  1]  dist=[11.00   3.48   0.00   2.84]  neighbors=[1, 3]
+  robot_3 pos=( 4.650, 1.800)
+    adj=[0  0  1  1]  dist=[11.85   3.85   2.84   0.00]  neighbors=[2]
+[comm] step=   0  agent_0  my_pos=(-5.450,-4.400)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(1.200,0.100)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(2.300,3.400)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(4.650,1.800)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=0.47 left=1.49 right=0.70 social_risk=0.000 front_risk=0.148 | raw=[-2.589, 2.373] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.73 left=1.35 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.598, 0.145] -> v=-0.072, w=0.175
+  [diag] agent_2 front=1.69 left=2.19 right=2.79 social_risk=0.000 front_risk=0.000 | raw=[-0.269, 0.705] -> v=-0.032, w=0.846
+  [diag] agent_3 front=2.65 left=2.24 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[0.262, -0.076] -> v=0.058, w=-0.091
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-5.450,-4.400)
+    adj=[1  0  0  0]  dist=[ 0.00   8.03  11.00  11.85]  neighbors=[]
+  robot_1 pos=( 1.200, 0.100)
+    adj=[0  1  1  0]  dist=[ 8.03   0.00   3.48   3.85]  neighbors=[2]
+  robot_2 pos=( 2.300, 3.400)
+    adj=[0  1  1  1]  dist=[11.00   3.48   0.00   2.84]  neighbors=[1, 3]
+  robot_3 pos=( 4.650, 1.800)
+    adj=[0  0  1  1]  dist=[11.85   3.85   2.84   0.00]  neighbors=[2]
+[comm] step=   1  agent_0  my_pos=(-5.450,-4.400)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(1.200,0.100)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(2.300,3.400)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(4.650,1.800)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=0.46 left=1.49 right=0.69 social_risk=0.000 front_risk=0.442 | raw=[-3.272, 3.047] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.73 left=1.35 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.662, 0.427] -> v=-0.079, w=0.512
+  [diag] agent_2 front=1.69 left=2.19 right=2.79 social_risk=0.000 front_risk=0.000 | raw=[-0.460, 1.066] -> v=-0.055, w=1.200
+  [diag] agent_3 front=2.65 left=2.24 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[0.138, 0.260] -> v=0.030, w=0.312
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-5.450,-4.400)
+    adj=[1  0  0  0]  dist=[ 0.00   8.03  11.00  11.85]  neighbors=[]
+  robot_1 pos=( 1.200, 0.100)
+    adj=[0  1  1  0]  dist=[ 8.03   0.00   3.48   3.85]  neighbors=[2]
+  robot_2 pos=( 2.300, 3.400)
+    adj=[0  1  1  1]  dist=[11.00   3.48   0.00   2.84]  neighbors=[1, 3]
+  robot_3 pos=( 4.650, 1.800)
+    adj=[0  0  1  1]  dist=[11.85   3.85   2.84   0.00]  neighbors=[2]
+[comm] step=   2  agent_0  my_pos=(-5.450,-4.400)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(1.200,0.100)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(2.300,3.400)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(4.650,1.800)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=0.46 left=1.50 right=0.70 social_risk=0.000 front_risk=0.295 | raw=[-3.135, 2.627] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.73 left=1.35 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.680, 0.420] -> v=-0.082, w=0.504
+  [diag] agent_2 front=1.69 left=2.19 right=2.79 social_risk=0.000 front_risk=0.000 | raw=[-0.574, 1.217] -> v=-0.069, w=1.200
+  [diag] agent_3 front=2.65 left=2.24 right=0.81 social_risk=0.000 front_risk=0.000 | raw=[0.111, 0.270] -> v=0.024, w=0.323
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-5.446,-4.399)
+    adj=[1  0  0  0]  dist=[ 0.00   8.02  10.99  11.84]  neighbors=[]
+  robot_1 pos=( 1.193, 0.096)
+    adj=[0  1  1  0]  dist=[ 8.02   0.00   3.48   3.85]  neighbors=[2]
+  robot_2 pos=( 2.301, 3.397)
+    adj=[0  1  1  1]  dist=[10.99   3.48   0.00   2.84]  neighbors=[1, 3]
+  robot_3 pos=( 4.644, 1.800)
+    adj=[0  0  1  1]  dist=[11.84   3.85   2.84   0.00]  neighbors=[2]
+[comm] step=   3  agent_0  my_pos=(-5.446,-4.399)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(1.193,0.096)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(2.301,3.397)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(4.644,1.800)  candidates=[np.int64(2)]  received=0/1
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=0.47 left=1.49 right=0.69 social_risk=0.000 front_risk=0.229 | raw=[-3.124, 2.284] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.74 left=1.38 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.685, 0.225] -> v=-0.082, w=0.271
+  [diag] agent_2 front=1.68 left=2.20 right=2.84 social_risk=0.000 front_risk=0.000 | raw=[-0.556, 1.626] -> v=-0.067, w=1.200
+  [diag] agent_3 front=2.65 left=2.26 right=0.79 social_risk=0.000 front_risk=0.000 | raw=[0.076, 0.133] -> v=0.017, w=0.160
+  [diag] agent_0 front=0.47 left=1.49 right=0.69 social_risk=0.000 front_risk=0.138 | raw=[-3.284, 2.276] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.74 left=1.38 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.636, 0.244] -> v=-0.076, w=0.293
+  [diag] agent_2 front=1.68 left=2.20 right=2.84 social_risk=0.000 front_risk=0.000 | raw=[-0.488, 1.835] -> v=-0.059, w=1.200
+  [diag] agent_3 front=2.65 left=2.26 right=0.79 social_risk=0.000 front_risk=0.000 | raw=[0.103, 0.066] -> v=0.023, w=0.079
+  [diag] agent_0 front=0.49 left=1.50 right=0.62 social_risk=0.000 front_risk=0.113 | raw=[-2.003, 3.384] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.67 left=1.37 right=3.50 social_risk=0.000 front_risk=0.268 | raw=[-1.106, 0.868] -> v=-0.120, w=1.042
+  [diag] agent_2 front=1.68 left=2.20 right=2.87 social_risk=0.000 front_risk=0.000 | raw=[-0.501, 1.609] -> v=-0.060, w=1.200
+  [diag] agent_3 front=2.64 left=2.07 right=0.79 social_risk=0.000 front_risk=0.000 | raw=[0.011, 0.382] -> v=0.002, w=0.459
+  [diag] agent_0 front=0.49 left=1.50 right=0.62 social_risk=0.000 front_risk=0.113 | raw=[-1.070, 3.250] -> v=-0.120, w=1.200
+  [diag] agent_1 front=0.67 left=1.37 right=3.50 social_risk=0.000 front_risk=0.268 | raw=[-1.094, 0.871] -> v=-0.120, w=1.045
+  [diag] agent_2 front=1.68 left=2.20 right=2.87 social_risk=0.000 front_risk=0.000 | raw=[-0.236, 1.368] -> v=-0.028, w=1.200
+  [diag] agent_3 front=2.64 left=2.07 right=0.79 social_risk=0.000 front_risk=0.000 | raw=[0.200, -0.219] -> v=0.044, w=-0.262
+  [diag] agent_0 front=0.54 left=1.56 right=0.54 social_risk=0.000 front_risk=0.014 | raw=[-0.540, 1.900] -> v=-0.065, w=1.200
+  [diag] agent_1 front=0.67 left=1.38 right=3.50 social_risk=0.000 front_risk=0.321 | raw=[-0.997, 1.016] -> v=-0.120, w=1.200
+  [diag] agent_2 front=1.67 left=2.22 right=2.61 social_risk=0.000 front_risk=0.000 | raw=[0.042, 1.366] -> v=0.009, w=1.200
+  [diag] agent_3 front=2.65 left=2.02 right=0.76 social_risk=0.000 front_risk=0.000 | raw=[0.377, -0.407] -> v=0.083, w=-0.489
+  [diag] agent_0 front=0.54 left=1.56 right=0.54 social_risk=0.000 front_risk=0.014 | raw=[-0.187, 1.785] -> v=-0.022, w=1.200
+  [diag] agent_1 front=0.67 left=1.38 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.348, 0.286] -> v=-0.042, w=0.344
+  [diag] agent_2 front=1.67 left=2.22 right=2.61 social_risk=0.000 front_risk=0.000 | raw=[0.260, 1.577] -> v=0.057, w=1.200
+  [diag] agent_3 front=2.65 left=2.02 right=0.76 social_risk=0.000 front_risk=0.000 | raw=[0.266, -0.096] -> v=0.059, w=-0.116
+  [diag] agent_0 front=0.61 left=1.67 right=0.53 social_risk=0.000 front_risk=0.000 | raw=[-0.018, 1.451] -> v=-0.002, w=1.200
+  [diag] agent_1 front=0.66 left=1.35 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.694, 0.629] -> v=-0.083, w=0.755
+  [diag] agent_2 front=2.27 left=2.18 right=2.53 social_risk=0.000 front_risk=0.000 | raw=[0.357, 0.913] -> v=0.078, w=1.096
+  [diag] agent_3 front=2.65 left=2.08 right=0.74 social_risk=0.000 front_risk=0.000 | raw=[0.417, -0.685] -> v=0.092, w=-0.822
+  [diag] agent_0 front=0.61 left=1.67 right=0.53 social_risk=0.000 front_risk=0.000 | raw=[-0.161, 1.639] -> v=-0.019, w=1.200
+  [diag] agent_1 front=0.66 left=1.35 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.617, 0.635] -> v=-0.074, w=0.762
+  [diag] agent_2 front=2.27 left=2.18 right=2.53 social_risk=0.000 front_risk=0.000 | raw=[0.371, 0.954] -> v=0.082, w=1.145
+  [diag] agent_3 front=2.65 left=2.08 right=0.74 social_risk=0.000 front_risk=0.000 | raw=[0.531, -0.722] -> v=0.117, w=-0.866
+  [diag] agent_0 front=0.77 left=1.93 right=0.51 social_risk=0.000 front_risk=0.000 | raw=[-0.721, 1.936] -> v=-0.087, w=1.200
+  [diag] agent_1 front=0.69 left=1.37 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.612, 1.037] -> v=-0.073, w=1.200
+  [diag] agent_2 front=2.23 left=2.18 right=2.52 social_risk=0.000 front_risk=0.000 | raw=[0.456, 0.873] -> v=0.100, w=1.047
+  [diag] agent_3 front=2.62 left=2.22 right=0.72 social_risk=0.000 front_risk=0.000 | raw=[0.487, -0.358] -> v=0.107, w=-0.429
+  [diag] agent_0 front=0.77 left=1.93 right=0.51 social_risk=0.000 front_risk=0.000 | raw=[-0.268, 2.052] -> v=-0.032, w=1.200
+  [diag] agent_1 front=0.69 left=1.37 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.446, 0.761] -> v=-0.053, w=0.913
+  [diag] agent_2 front=2.23 left=2.18 right=2.52 social_risk=0.000 front_risk=0.000 | raw=[0.371, 0.943] -> v=0.082, w=1.132
+  [diag] agent_3 front=2.62 left=2.22 right=0.72 social_risk=0.000 front_risk=0.000 | raw=[0.384, -0.395] -> v=0.084, w=-0.474
+  [diag] agent_0 front=1.02 left=1.97 right=0.50 social_risk=0.000 front_risk=0.000 | raw=[-0.169, 2.131] -> v=-0.020, w=1.200
+  [diag] agent_1 front=0.70 left=1.39 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.522, 1.050] -> v=-0.063, w=1.200
+  [diag] agent_2 front=2.20 left=2.20 right=1.66 social_risk=0.000 front_risk=0.000 | raw=[0.211, 1.132] -> v=0.046, w=1.200
+  [diag] agent_3 front=2.58 left=3.13 right=0.68 social_risk=0.000 front_risk=0.000 | raw=[0.456, -0.351] -> v=0.100, w=-0.421
+  [diag] agent_0 front=1.02 left=1.97 right=0.50 social_risk=0.000 front_risk=0.000 | raw=[0.138, 1.104] -> v=0.030, w=1.200
+  [diag] agent_1 front=0.70 left=1.39 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.457, 0.623] -> v=-0.055, w=0.748
+  [diag] agent_2 front=2.20 left=2.20 right=1.66 social_risk=0.000 front_risk=0.000 | raw=[0.305, 0.943] -> v=0.067, w=1.132
+  [diag] agent_3 front=2.58 left=3.13 right=0.68 social_risk=0.000 front_risk=0.000 | raw=[0.619, -0.256] -> v=0.136, w=-0.307
+Step 50...Step 100...Step 150...碰撞: agent_2 (step=192)
+Step 200...Step 250...Step 300...Step 350...Step 400...✅ agent_3 到达目标 (step=445)
+Step 450...✅ agent_0 到达目标 (step=467)
+Step 500...Step 550...Step 600...Step 650...
+============================================================
+🏁 Episode 结束 (all_done)
+   步数: 680/2000
+   完成: 4/4
+============================================================
+
+碰撞: agent_1 (step=680)
+  [episode-summary] steps=680 avg_reward=22.92 success=2 collision=2 reached_agents=2 collided_agents=2 min_dist=0.228 avg_social_risk=0.038 avg_front_risk=0.099 truncated=False
+================================================================================
+Episode 4/10
+[graph] step=   0  comm_range=3.5m
+  robot_0 pos=(-4.200, 1.000)
+    adj=[1  0  0  0]  dist=[ 0.00   8.12   8.63   9.04]  neighbors=[]
+  robot_1 pos=( 3.800, 2.400)
+    adj=[0  1  1  1]  dist=[ 8.12   0.00   3.42   2.42]  neighbors=[2, 3]
+  robot_2 pos=( 4.200,-1.000)
+    adj=[0  1  1  1]  dist=[ 8.63   3.42   0.00   1.34]  neighbors=[1, 3]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[0  1  1  1]  dist=[ 9.04   2.42   1.34   0.00]  neighbors=[1, 2]
+[comm] step=   0  agent_0  my_pos=(-4.200,1.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_1  my_pos=(3.800,2.400)  candidates=[np.int64(2), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_2  my_pos=(4.200,-1.000)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   0  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(1), np.int64(2)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[-0.175, 0.217] -> v=-0.021, w=0.260
+  [diag] agent_1 front=3.50 left=3.50 right=3.50 social_risk=0.000 front_risk=0.000 | raw=[0.120, 0.026] -> v=0.026, w=0.031
+  [diag] agent_2 front=3.50 left=1.67 right=0.23 social_risk=0.000 front_risk=0.000 | raw=[0.433, 2.608] -> v=0.095, w=1.200
+  [diag] agent_3 front=3.50 left=1.49 right=3.47 social_risk=0.093 front_risk=0.000 | raw=[0.792, -0.670] -> v=0.174, w=-0.804
+[graph] step=   1  comm_range=3.5m
+  robot_0 pos=(-4.200, 1.000)
+    adj=[1  0  0  0]  dist=[ 0.00   8.12   8.63   9.04]  neighbors=[]
+  robot_1 pos=( 3.800, 2.400)
+    adj=[0  1  1  1]  dist=[ 8.12   0.00   3.42   2.42]  neighbors=[2, 3]
+  robot_2 pos=( 4.200,-1.000)
+    adj=[0  1  1  1]  dist=[ 8.63   3.42   0.00   1.34]  neighbors=[1, 3]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[0  1  1  1]  dist=[ 9.04   2.42   1.34   0.00]  neighbors=[1, 2]
+[comm] step=   1  agent_0  my_pos=(-4.200,1.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_1  my_pos=(3.800,2.400)  candidates=[np.int64(2), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_2  my_pos=(4.200,-1.000)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   1  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(1), np.int64(2)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.79 left=2.83 right=1.91 social_risk=0.000 front_risk=1.000 | raw=[-0.106, 1.421] -> v=-0.013, w=1.200
+  [diag] agent_1 front=3.50 left=3.50 right=3.50 social_risk=0.007 front_risk=0.000 | raw=[0.025, 0.485] -> v=0.005, w=0.581
+  [diag] agent_2 front=3.50 left=1.67 right=0.23 social_risk=0.093 front_risk=0.000 | raw=[0.514, 2.883] -> v=0.113, w=1.200
+  [diag] agent_3 front=3.50 left=1.49 right=3.47 social_risk=0.093 front_risk=0.000 | raw=[0.657, -0.349] -> v=0.145, w=-0.419
+[graph] step=   2  comm_range=3.5m
+  robot_0 pos=(-4.200, 1.000)
+    adj=[1  0  0  0]  dist=[ 0.00   8.12   8.63   9.04]  neighbors=[]
+  robot_1 pos=( 3.800, 2.400)
+    adj=[0  1  1  1]  dist=[ 8.12   0.00   3.42   2.42]  neighbors=[2, 3]
+  robot_2 pos=( 4.200,-1.000)
+    adj=[0  1  1  1]  dist=[ 8.63   3.42   0.00   1.34]  neighbors=[1, 3]
+  robot_3 pos=( 4.800, 0.200)
+    adj=[0  1  1  1]  dist=[ 9.04   2.42   1.34   0.00]  neighbors=[1, 2]
+[comm] step=   2  agent_0  my_pos=(-4.200,1.000)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_1  my_pos=(3.800,2.400)  candidates=[np.int64(2), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_2  my_pos=(4.200,-1.000)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   2  agent_3  my_pos=(4.800,0.200)  candidates=[np.int64(1), np.int64(2)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.80 left=2.83 right=1.89 social_risk=0.000 front_risk=1.000 | raw=[0.205, 0.952] -> v=0.045, w=1.143
+  [diag] agent_1 front=2.13 left=2.34 right=2.73 social_risk=0.007 front_risk=1.000 | raw=[0.235, 0.874] -> v=0.052, w=1.049
+  [diag] agent_2 front=3.50 left=1.68 right=0.28 social_risk=0.093 front_risk=0.000 | raw=[0.080, 1.297] -> v=0.018, w=1.200
+  [diag] agent_3 front=3.50 left=1.49 right=2.36 social_risk=0.093 front_risk=0.000 | raw=[0.609, -0.338] -> v=0.134, w=-0.406
+[graph] step=   3  comm_range=3.5m
+  robot_0 pos=(-4.199, 1.001)
+    adj=[1  0  0  0]  dist=[ 0.00   8.12   8.63   9.03]  neighbors=[]
+  robot_1 pos=( 3.797, 2.399)
+    adj=[0  1  1  1]  dist=[ 8.12   0.00   3.43   2.42]  neighbors=[2, 3]
+  robot_2 pos=( 4.198,-1.006)
+    adj=[0  1  1  1]  dist=[ 8.63   3.43   0.00   1.34]  neighbors=[1, 3]
+  robot_3 pos=( 4.793, 0.198)
+    adj=[0  1  1  1]  dist=[ 9.03   2.42   1.34   0.00]  neighbors=[1, 2]
+[comm] step=   3  agent_0  my_pos=(-4.199,1.001)  candidates=[]  received=0/0
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_1  my_pos=(3.797,2.399)  candidates=[np.int64(2), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_2  my_pos=(4.198,-1.006)  candidates=[np.int64(1), np.int64(3)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+[comm] step=   3  agent_3  my_pos=(4.793,0.198)  candidates=[np.int64(1), np.int64(2)]  received=0/2
+    (无有效邻居: 范围外/丢包/延迟填零)
+  [diag] agent_0 front=1.79 left=2.82 right=1.88 social_risk=0.000 front_risk=1.000 | raw=[0.637, 0.937] -> v=0.140, w=1.125
+  [diag] agent_1 front=2.13 left=2.34 right=2.73 social_risk=0.007 front_risk=1.000 | raw=[0.485, 0.378] -> v=0.107, w=0.453
+  [diag] agent_2 front=3.50 left=1.68 right=0.28 social_risk=0.092 front_risk=0.000 | raw=[-0.054, 0.282] -> v=-0.006, w=0.338
+  [diag] agent_3 front=3.50 left=1.49 right=2.36 social_risk=0.093 front_risk=0.000 | raw=[0.651, -0.412] -> v=0.143, w=-0.494
+  [diag] agent_0 front=1.87 left=2.82 right=1.80 social_risk=0.000 front_risk=0.000 | raw=[0.335, 0.564] -> v=0.074, w=0.676
+  [diag] agent_1 front=2.11 left=2.36 right=2.70 social_risk=0.007 front_risk=1.000 | raw=[0.697, 0.115] -> v=0.153, w=0.138
+  [diag] agent_2 front=2.83 left=1.68 right=0.30 social_risk=0.092 front_risk=0.683 | raw=[0.135, 1.250] -> v=0.030, w=1.200
+  [diag] agent_3 front=3.50 left=1.55 right=2.36 social_risk=0.093 front_risk=0.000 | raw=[0.694, -0.390] -> v=0.153, w=-0.468
+  [diag] agent_0 front=1.87 left=2.82 right=1.80 social_risk=0.000 front_risk=0.000 | raw=[0.065, 0.936] -> v=0.014, w=1.123
+  [diag] agent_1 front=2.11 left=2.36 right=2.70 social_risk=0.007 front_risk=0.000 | raw=[0.686, -0.325] -> v=0.151, w=-0.389
+  [diag] agent_2 front=2.83 left=1.68 right=0.30 social_risk=0.093 front_risk=0.683 | raw=[-0.291, 3.209] -> v=-0.035, w=1.200
+  [diag] agent_3 front=3.50 left=1.55 right=2.36 social_risk=0.094 front_risk=0.000 | raw=[0.723, -0.400] -> v=0.159, w=-0.481
+  [diag] agent_0 front=2.12 left=2.84 right=1.72 social_risk=0.000 front_risk=0.000 | raw=[0.146, 1.583] -> v=0.032, w=1.200
+  [diag] agent_1 front=2.10 left=2.29 right=2.72 social_risk=0.008 front_risk=0.000 | raw=[0.691, -0.121] -> v=0.152, w=-0.145
+  [diag] agent_2 front=2.80 left=1.69 right=0.31 social_risk=0.094 front_risk=0.987 | raw=[-1.360, 2.365] -> v=-0.120, w=1.200
+  [diag] agent_3 front=2.72 left=1.80 right=2.35 social_risk=0.094 front_risk=1.000 | raw=[0.635, 0.019] -> v=0.140, w=0.023
+  [diag] agent_0 front=2.12 left=2.84 right=1.72 social_risk=0.000 front_risk=0.000 | raw=[0.186, 1.654] -> v=0.041, w=1.200
+  [diag] agent_1 front=2.10 left=2.29 right=2.72 social_risk=0.008 front_risk=0.000 | raw=[0.652, -0.207] -> v=0.143, w=-0.248
+  [diag] agent_2 front=2.80 left=1.69 right=0.31 social_risk=0.095 front_risk=0.000 | raw=[-0.619, 0.933] -> v=-0.074, w=1.119
+  [diag] agent_3 front=2.72 left=1.80 right=2.35 social_risk=0.095 front_risk=1.000 | raw=[0.594, -0.145] -> v=0.131, w=-0.174
+  [diag] agent_0 front=2.55 left=2.85 right=1.68 social_risk=0.000 front_risk=0.000 | raw=[0.194, 1.202] -> v=0.043, w=1.200
+  [diag] agent_1 front=2.05 left=2.34 right=3.50 social_risk=0.009 front_risk=0.000 | raw=[0.662, -0.252] -> v=0.146, w=-0.302
+  [diag] agent_2 front=2.80 left=1.70 right=3.50 social_risk=0.096 front_risk=0.000 | raw=[-0.644, -0.366] -> v=-0.077, w=-0.439
+  [diag] agent_3 front=2.70 left=1.24 right=2.34 social_risk=0.097 front_risk=1.000 | raw=[0.769, -0.208] -> v=0.169, w=-0.250
+  [diag] agent_0 front=2.55 left=2.85 right=1.68 social_risk=0.000 front_risk=0.000 | raw=[0.376, 1.158] -> v=0.083, w=1.200

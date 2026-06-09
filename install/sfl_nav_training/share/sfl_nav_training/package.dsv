@@ -1,0 +1,12 @@
+source;share/sfl_nav_training/hook/path.ps1
+source;share/sfl_nav_training/hook/path.dsv
+source;share/sfl_nav_training/hook/path.sh
+source;share/sfl_nav_training/hook/pythonpath.ps1
+source;share/sfl_nav_training/hook/pythonpath.dsv
+source;share/sfl_nav_training/hook/pythonpath.sh
+source;share/sfl_nav_training/hook/pythonscriptspath.ps1
+source;share/sfl_nav_training/hook/pythonscriptspath.dsv
+source;share/sfl_nav_training/hook/pythonscriptspath.sh
+source;share/sfl_nav_training/hook/ament_prefix_path.ps1
+source;share/sfl_nav_training/hook/ament_prefix_path.dsv
+source;share/sfl_nav_training/hook/ament_prefix_path.sh
