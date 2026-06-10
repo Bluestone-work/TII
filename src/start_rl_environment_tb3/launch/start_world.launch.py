@@ -47,8 +47,8 @@ def launch_setup(context, *args, **kwargs):
             PythonLaunchDescriptionSource(gazebo_launch),
             launch_arguments=list({
                 'world': world_path,
-                # 强制加载 gazebo_ros_factory 插件，并开启详细日志
-                'extra_gazebo_args': '--verbose -s libgazebo_ros_factory.so' 
+                # 仅保留详细日志；factory 插件由 gazebo_ros 启动链自身处理，避免重复加载导致 gzserver 崩溃
+                'extra_gazebo_args': '--verbose'
             }.items())
         )
     ]

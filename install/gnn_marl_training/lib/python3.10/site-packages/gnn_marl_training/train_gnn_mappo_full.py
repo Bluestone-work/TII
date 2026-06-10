@@ -1219,7 +1219,7 @@ def _build_ppo_config(args, env_config, model_name, model_cfg):
         .callbacks(MARLMetricsCallback)
         .framework("torch")
         .env_runners(
-            num_env_runners=args.num_workers,
+            num_env_runners=max(1, int(args.num_workers)),
             num_envs_per_env_runner=1,
             sample_timeout_s=max(60, int(args.sample_timeout_s)),
             rollout_fragment_length=max(20, int(args.rollout_fragment_length)),
@@ -1658,24 +1658,19 @@ def main():
             parser.error(f"--resume_checkpoint 路径不存在: {resume_path}")
 
     obs_top_k = max(1, min(int(args.obstacle_top_k), 64))
-    predictive_feature_dim = 6
-    gap_feature_dim = 3 if bool(int(args.gap_feature_enable)) else 0
-    neighbor_prediction_top_k = 2
+    predictive_feature_dim = 0
+    gap_feature_dim = 0
+    neighbor_prediction_top_k = 0
     neighbor_prediction_feature_dim = 6
-    obstacle_motion_top_k = 3
+    obstacle_motion_top_k = 0
     obstacle_motion_feature_dim = 6
-    obstacle_motion_dim = 0 if args.disable_obstacle_motion_features else (
-        obstacle_motion_top_k * obstacle_motion_feature_dim
-    )
+    obstacle_motion_dim = 0
     local_obs_dim = (
         obs_top_k * 4
         + 2
         + 2
-        + 7
-        + predictive_feature_dim
-        + gap_feature_dim
-        + neighbor_prediction_top_k * neighbor_prediction_feature_dim
-        + obstacle_motion_dim
+        + 8
+        + 4
     )
     if resume_path and local_obs_dim != 47:
         print(
@@ -1704,8 +1699,8 @@ def main():
         include_dashboard=False,
         ignore_reinit_error=True,
         num_cpus=max(1, int(args.num_workers) + 1),
-        local_mode=bool(int(args.num_workers) == 0),
-        object_store_memory=256 * 1024 * 1024,
+        local_mode=False,
+        object_store_memory=512 * 1024 * 1024,
         runtime_env={
             "env_vars": {
                 "PYTHONPATH": WORKSPACE_PYTHONPATH,
@@ -1791,10 +1786,10 @@ def main():
             "predictive_front_ttc_safe": args.predictive_front_ttc_safe,
             "predictive_min_sep": args.predictive_min_sep,
             "predictive_social_range": args.predictive_social_range,
-            "predictive_social_penalty_scale": args.predictive_social_penalty_scale,
-            "predictive_front_penalty_scale": args.predictive_front_penalty_scale,
-            "social_proximity_risk_scale": args.social_proximity_risk_scale,
-            "gap_feature_enable": bool(int(args.gap_feature_enable)),
+            "predictive_social_penalty_scale": max(args.predictive_social_penalty_scale, 0.28),
+            "predictive_front_penalty_scale": max(args.predictive_front_penalty_scale, 0.24),
+            "social_proximity_risk_scale": max(args.social_proximity_risk_scale, 0.40),
+            "gap_feature_enable": False,
             "yielding_enable": bool(int(args.yielding_enable)),
             "yielding_soft_dist": args.yielding_soft_dist,
             "yielding_stop_dist": args.yielding_stop_dist,
@@ -1807,9 +1802,9 @@ def main():
             "replan_time_budget_sec": args.replan_time_budget_sec,
             "replan_window_steps": args.replan_window_steps,
             "method3_reward_window_steps": args.method3_reward_window_steps,
-            "neighbor_prediction_top_k": neighbor_prediction_top_k,
-            "obstacle_motion_feature_enable": not args.disable_obstacle_motion_features,
-            "obstacle_motion_top_k": obstacle_motion_top_k,
+            "neighbor_prediction_top_k": 0,
+            "obstacle_motion_feature_enable": False,
+            "obstacle_motion_top_k": 0,
             "obs_target_dist_clip": 6.0,
             "obs_target_filter_alpha": 0.35,
             "obs_target_max_step": 0.45,
@@ -1878,14 +1873,14 @@ def main():
                 "obstacle_top_k": obs_top_k,
                 "angular_bins": int(args.angular_bins),
                 "scan_emb_dim": 128,
-                "base_safety_feature_dim": 14,
-                "predictive_feature_dim": 6,
-                "gap_feature_dim": gap_feature_dim,
-                "neighbor_prediction_dim": neighbor_prediction_top_k * neighbor_prediction_feature_dim,
-                "obstacle_motion_dim": obstacle_motion_dim,
+                "base_safety_feature_dim": 8,
+                "predictive_feature_dim": 0,
+                "gap_feature_dim": 0,
+                "neighbor_prediction_dim": 0,
+                "obstacle_motion_dim": 0,
                 "interaction_base_ego_dim": 8,
-                "interaction_ego_state_dim": 27,
-                "option_state_dim": 11,
+                "interaction_ego_state_dim": 8,
+                "option_state_dim": 0,
             },
             # 策略级 LSTM：每条轨迹被切成长度 20 的序列送入训练
             # 20 步 × ~0.1s/步 ≈ 2 秒，足以覆盖动态障碍物一次穿越过程
@@ -2107,19 +2102,19 @@ def main():
                 "critic_mode": args.gat_critic_mode,
                 "risk_bias_scale": args.gat_risk_bias_scale,
                 "scan_history_len": 4,
-                "base_safety_feature_dim": 14,
-                "predictive_feature_dim": 6,
-                "gap_feature_dim": gap_feature_dim,
-                "neighbor_prediction_dim": neighbor_prediction_top_k * neighbor_prediction_feature_dim,
+                "base_safety_feature_dim": 8,
+                "predictive_feature_dim": 0,
+                "gap_feature_dim": 0,
+                "neighbor_prediction_dim": 0,
                 "neighbor_prediction_feature_dim": neighbor_prediction_feature_dim,
-                "obstacle_motion_dim": obstacle_motion_dim,
+                "obstacle_motion_dim": 0,
                 "obstacle_motion_feature_dim": obstacle_motion_feature_dim,
                 "obstacle_top_k": obs_top_k,
                 "angular_bins": int(args.angular_bins),
                 "scan_emb_dim": 128,
                 "interaction_base_ego_dim": 8,
-                "interaction_ego_state_dim": 27,
-                "option_state_dim": 11,
+                "interaction_ego_state_dim": 8,
+                "option_state_dim": 0,
             },
             "max_seq_len": 32,
         }

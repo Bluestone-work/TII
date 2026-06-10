@@ -1,1 +1,0 @@
-{"type": "Algorithm", "checkpoint_version": "1.1", "format": "cloudpickle", "state_file": "/home/wj/work/multi-robot-exploration-rl/ray_results/MAPPO_MLP_LSTM_Stage1_Interact/best/algorithm_state.pkl", "policy_ids": ["shared_policy"], "ray_version": "2.54.0", "ray_commit": "48bd1f8fa43d0e8222b0f57357b99b48c7437ed3"}

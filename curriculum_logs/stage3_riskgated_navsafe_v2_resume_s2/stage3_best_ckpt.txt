@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/stage3_riskgated_navsafe_v2_resume_s2/GNN_MAPPO_Stage1_Cont_stage3_riskgated_navsafe_v2_resume_s2_EnvStage3/best

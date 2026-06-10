@@ -49,53 +49,25 @@ class GATRLlibModel(TorchModelV2, nn.Module):
         self.use_feature_norm = bool(custom_cfg.get("use_feature_norm", True))
         self.dropout_p = float(custom_cfg.get("dropout", 0.0))
         self.use_max_pool_critic = bool(custom_cfg.get("use_max_pool_critic", True))
-        self.actor_graph_mode = str(custom_cfg.get("actor_graph_mode", "social_risk")).strip().lower()
+        self.actor_graph_mode = str(custom_cfg.get("actor_graph_mode", "neighbor")).strip().lower()
         self.critic_mode = str(custom_cfg.get("critic_mode", "mlp")).strip().lower()
         self.risk_bias_scale = float(custom_cfg.get("risk_bias_scale", 2.5))
         self.scan_history_len = int(custom_cfg.get("scan_history_len", 4))
-        self.option_state_dim = int(custom_cfg.get("option_state_dim", 11))
+        self.option_state_dim = 0
         self.interaction_base_ego_dim = int(custom_cfg.get("interaction_base_ego_dim", 8))
-        self.action_mask_dim = int(
-            custom_cfg.get(
-                "action_mask_dim",
-                int(getattr(action_space, "n", 0)) if hasattr(action_space, "n") else 0,
-            )
-        )
-        self.tracking_target_dim = int(custom_cfg.get("tracking_target_dim", 2))
-        self.interaction_ego_state_dim = int(
-            custom_cfg.get(
-                "interaction_ego_state_dim",
-                self.interaction_base_ego_dim
-                + self.option_state_dim
-                + self.action_mask_dim
-                + self.tracking_target_dim,
-            )
-        )
-        self.base_safety_feature_dim = int(custom_cfg.get("base_safety_feature_dim", 14))
-        self.predictive_feature_dim = int(custom_cfg.get("predictive_feature_dim", 6))
-        self.gap_feature_dim = int(custom_cfg.get("gap_feature_dim", 0))
-        self.neighbor_prediction_dim = int(custom_cfg.get("neighbor_prediction_dim", 0))
-        self.neighbor_prediction_feature_dim = int(
-            custom_cfg.get("neighbor_prediction_feature_dim", 6)
-        )
-        self.obstacle_motion_dim = int(custom_cfg.get("obstacle_motion_dim", 0))
-        self.obstacle_motion_feature_dim = int(
-            custom_cfg.get("obstacle_motion_feature_dim", 6)
-        )
-        interaction_extra_dim = (
-            self.option_state_dim + self.action_mask_dim + self.tracking_target_dim
-            if self.use_high_level_branch else 0
-        )
-        self.non_scan_feature_dim = (
-            2
-            + 2
-            + self.base_safety_feature_dim
-            + self.predictive_feature_dim
-            + self.gap_feature_dim
-            + self.neighbor_prediction_dim
-            + self.obstacle_motion_dim
-            + interaction_extra_dim
-        )
+        self.action_mask_dim = 0
+        self.tracking_target_dim = 0
+        self.interaction_ego_state_dim = int(custom_cfg.get("interaction_ego_state_dim", 8))
+        self.base_safety_feature_dim = int(custom_cfg.get("base_safety_feature_dim", 8))
+        self.predictive_feature_dim = 0
+        self.gap_feature_dim = 0
+        self.temporal_delta_dim = int(custom_cfg.get("temporal_delta_dim", 4))
+        self.neighbor_prediction_dim = 0
+        self.neighbor_prediction_feature_dim = int(custom_cfg.get("neighbor_prediction_feature_dim", 6))
+        self.obstacle_motion_dim = 0
+        self.obstacle_motion_feature_dim = int(custom_cfg.get("obstacle_motion_feature_dim", 6))
+        self.interaction_actor_feature_dim = self.base_safety_feature_dim + self.temporal_delta_dim
+        self.non_scan_feature_dim = 2 + 2 + self.base_safety_feature_dim + self.temporal_delta_dim
         self.scan_dim = int(custom_cfg.get("obstacle_top_k", 0))
         self._orig_obstacle_top_k = self.scan_dim  # preserve for CNN decision
         self.angular_bins = int(custom_cfg.get("angular_bins", 0))
@@ -154,18 +126,14 @@ class GATRLlibModel(TorchModelV2, nn.Module):
         self.safety_end = self.safety_start + self.base_safety_feature_dim
         self.ego_state_start = self.safety_start
         self.ego_state_end = self.ego_state_start + self.interaction_base_ego_dim
-        self.option_state_start = (
-            self.safety_end
-            + self.predictive_feature_dim
-            + self.gap_feature_dim
-            + self.neighbor_prediction_dim
-            + self.obstacle_motion_dim
-        )
-        self.option_state_end = self.option_state_start + self.option_state_dim
+        self.temporal_delta_start = self.safety_end
+        self.temporal_delta_end = self.temporal_delta_start + self.temporal_delta_dim
+        self.option_state_start = self.temporal_delta_end
+        self.option_state_end = self.option_state_start
         self.action_mask_start = self.option_state_end
-        self.action_mask_end = self.action_mask_start + self.action_mask_dim
+        self.action_mask_end = self.action_mask_start
         self.tracking_target_start = self.action_mask_end
-        self.tracking_target_end = self.tracking_target_start + self.tracking_target_dim
+        self.tracking_target_end = self.tracking_target_start
 
         if self.neighbor_prediction_dim > 0:
             if self.neighbor_prediction_dim % self.neighbor_prediction_feature_dim != 0:
@@ -194,27 +162,10 @@ class GATRLlibModel(TorchModelV2, nn.Module):
             self.obstacle_graph_top_k = 0
         self.graph_token_top_k = self.social_graph_top_k + self.obstacle_graph_top_k
 
-        self.social_token_start = (
-            self.scan_slot_dim
-            + 2
-            + 2
-            + self.base_safety_feature_dim
-            + self.predictive_feature_dim
-            + self.gap_feature_dim
-        )
-        self.social_token_end = self.social_token_start + self.neighbor_prediction_dim
-        if self.social_token_end > self.base_obs_dim:
-            raise ValueError(
-                "[GATRLlibModel] 社交风险 token 切片越界: "
-                f"social_token_end={self.social_token_end}, base_obs_dim={self.base_obs_dim}"
-            )
+        self.social_token_start = self.temporal_delta_end
+        self.social_token_end = self.social_token_start
         self.obstacle_token_start = self.social_token_end
-        self.obstacle_token_end = self.obstacle_token_start + self.obstacle_motion_dim
-        if self.obstacle_token_end > self.base_obs_dim:
-            raise ValueError(
-                "[GATRLlibModel] 动态障碍 token 切片越界: "
-                f"obstacle_token_end={self.obstacle_token_end}, base_obs_dim={self.base_obs_dim}"
-            )
+        self.obstacle_token_end = self.obstacle_token_start
 
         hidden_dim = int(custom_cfg.get("hidden_dim", 128))
         gat_hidden_dim = int(custom_cfg.get("gat_hidden_dim", 128))
@@ -238,7 +189,7 @@ class GATRLlibModel(TorchModelV2, nn.Module):
 
         # Actor trunk: same structure as the MLP baseline.
         self.actor_source_dim = (
-            self.interaction_ego_state_dim + self.neighbor_dim
+            self.interaction_actor_feature_dim + self.neighbor_dim
             if self.use_high_level_branch else (
                 self.eff_actor_obs_dim if self._use_scan_cnn else self.actor_obs_dim
             )
@@ -260,7 +211,7 @@ class GATRLlibModel(TorchModelV2, nn.Module):
             nn.LayerNorm(self.eff_base_obs_dim) if self.use_feature_norm else nn.Identity()
         )
         self.ego_input_norm = (
-            nn.LayerNorm(self.interaction_ego_state_dim)
+            nn.LayerNorm(self.interaction_actor_feature_dim)
             if self.use_high_level_branch and self.use_feature_norm else nn.Identity()
         )
         self.neighbor_input_norm = (
@@ -271,7 +222,7 @@ class GATRLlibModel(TorchModelV2, nn.Module):
         self.lstm_hidden_dim = lstm_hidden_dim
 
         # Social GAT side branch.
-        ego_encoder_in_dim = self.interaction_ego_state_dim if self.use_high_level_branch else self.eff_base_obs_dim
+        ego_encoder_in_dim = self.interaction_actor_feature_dim if self.use_high_level_branch else self.eff_base_obs_dim
         self.social_ego_encoder = nn.Sequential(
             nn.Linear(ego_encoder_in_dim, hidden_dim),
             nn.GELU(),
@@ -650,12 +601,10 @@ class GATRLlibModel(TorchModelV2, nn.Module):
         return action_out, new_state
 
     def _extract_interaction_actor_features(self, local_obs: torch.Tensor) -> torch.Tensor:
-        """Build the high-level actor input from explicit local-observation slots."""
-        ego_state = local_obs[:, self.ego_state_start:self.ego_state_end]
-        option_state = local_obs[:, self.option_state_start:self.option_state_end]
-        action_mask = local_obs[:, self.action_mask_start:self.action_mask_end]
-        tracking_target = local_obs[:, self.tracking_target_start:self.tracking_target_end]
-        return torch.cat([ego_state, option_state, action_mask, tracking_target], dim=-1)
+        """Build the minimal actor input from risk summary and temporal deltas."""
+        risk_summary = local_obs[:, self.safety_start:self.safety_end]
+        temporal_delta = local_obs[:, self.temporal_delta_start:self.temporal_delta_end]
+        return torch.cat([risk_summary, temporal_delta], dim=-1)
 
     def _extract_action_mask(self, local_obs: torch.Tensor) -> torch.Tensor:
         """Extract the high-level action mask from local observation."""

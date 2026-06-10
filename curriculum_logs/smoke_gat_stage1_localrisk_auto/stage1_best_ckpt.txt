@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/smoke_gat_stage1_localrisk_auto/GNN_MAPPO_Stage1_Interact_smoke_gat_stage1_localrisk_auto_EnvStage1/best

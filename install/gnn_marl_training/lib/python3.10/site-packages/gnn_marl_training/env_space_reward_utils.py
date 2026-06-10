@@ -14,6 +14,10 @@ from gnn_marl_training.interaction_option_definitions import (
     TRAINING_OPTION_INDEX,
     TRAINING_OPTION_NAMES,
 )
+from gnn_marl_training.interaction_observation_utils import (
+    build_minimal_risk_summary,
+    build_temporal_delta_summary,
+)
 
 
 @dataclass(frozen=True)
@@ -48,6 +52,80 @@ class PotentialRewardTerms:
     stuck_long: float
     progress_positive: float
 
+
+
+
+@dataclass(frozen=True)
+class ClassicNavigationRewardTerms:
+    progress_reward: float
+    heading_reward: float
+    obstacle_penalty: float
+    predictive_penalty: float
+    time_penalty: float
+    terminal_reward: float
+    total_reward: float
+
+
+def compute_classic_navigation_reward(
+    *,
+    path_projection_progress_delta: float,
+    target_angle: float,
+    forward_speed: float,
+    front_potential_penalty: float,
+    side_wall_penalty: float,
+    close_obstacle_penalty: float,
+    predictive_social_penalty: float,
+    predictive_front_penalty: float,
+    time_penalty: float,
+    goal_reached: bool,
+    collision: bool,
+    timeout: bool,
+    goal_reward: float,
+    collision_penalty: float,
+    timeout_penalty: float = 0.0,
+    progress_weight: float = 1.0,
+    heading_weight: float = 0.08,
+    obstacle_weight: float = 1.35,
+    predictive_weight: float = 1.50,
+) -> ClassicNavigationRewardTerms:
+    clipped_progress = float(np.clip(float(path_projection_progress_delta), -0.10, 0.10))
+    progress_reward = float(progress_weight * clipped_progress)
+
+    heading_reward = 0.0
+    if float(forward_speed) > 0.02 and abs(float(target_angle)) <= math.pi / 2.0:
+        heading_reward = float(heading_weight * math.cos(float(target_angle)))
+
+    obstacle_penalty = float(obstacle_weight * (
+        front_potential_penalty + side_wall_penalty + close_obstacle_penalty
+    ))
+    predictive_penalty = float(predictive_weight * (predictive_social_penalty + predictive_front_penalty))
+    time_penalty_term = -float(time_penalty)
+
+    terminal_reward = 0.0
+    if goal_reached:
+        terminal_reward += float(goal_reward)
+    if collision:
+        terminal_reward -= float(collision_penalty)
+    if timeout:
+        terminal_reward -= float(timeout_penalty)
+
+    total_reward = float(
+        progress_reward
+        + heading_reward
+        + obstacle_penalty
+        + predictive_penalty
+        + time_penalty_term
+        + terminal_reward
+    )
+    return ClassicNavigationRewardTerms(
+        progress_reward=float(progress_reward),
+        heading_reward=float(heading_reward),
+        obstacle_penalty=float(obstacle_penalty),
+        predictive_penalty=float(predictive_penalty),
+        time_penalty=float(time_penalty_term),
+        terminal_reward=float(terminal_reward),
+        total_reward=float(total_reward),
+    )
 
 @dataclass(frozen=True)
 class PairRewardSummary:
@@ -187,10 +265,11 @@ def configure_independent_env_action_observation_spaces(
     env.scan_dim = env.angular_bins
 
     env.interaction_ego_state_dim = 8
-    env.base_safety_feature_dim = 14
-    env.option_state_dim = 11
-    env.action_mask_dim = NUM_TRAINING_OPTIONS
-    env.tracking_target_dim = 2
+    env.base_safety_feature_dim = 8
+    env.temporal_delta_dim = 4
+    env.option_state_dim = 0
+    env.action_mask_dim = 0
+    env.tracking_target_dim = 0
 
     env.predictive_feature_enable = bool(predictive_feature_enable)
     env.predictive_feature_dim = 6 if env.predictive_feature_enable else 0
@@ -225,42 +304,24 @@ def configure_independent_env_action_observation_spaces(
         0.0,
         float(social_proximity_risk_scale),
     )
-    env.gap_feature_enable = bool(gap_feature_enable)
-    env.gap_feature_dim = 3 if env.gap_feature_enable else 0
-    env.neighbor_prediction_top_k = max(0, int(neighbor_prediction_top_k))
+    env.gap_feature_enable = False
+    env.gap_feature_dim = 0
+    env.neighbor_prediction_top_k = 0
     env.neighbor_prediction_feature_dim = 6
-    env.neighbor_prediction_dim = (
-        env.neighbor_prediction_top_k * env.neighbor_prediction_feature_dim
-    )
+    env.neighbor_prediction_dim = 0
 
-    env.obstacle_motion_feature_enable = bool(obstacle_motion_feature_enable)
-    env.obstacle_motion_top_k = max(0, int(obstacle_motion_top_k))
+    env.obstacle_motion_feature_enable = False
+    env.obstacle_motion_top_k = 0
     env.obstacle_motion_feature_dim = 6
-    env.obstacle_motion_dim = (
-        env.obstacle_motion_top_k * env.obstacle_motion_feature_dim
-        if env.obstacle_motion_feature_enable
-        else 0
-    )
+    env.obstacle_motion_dim = 0
 
-    env.safety_feature_dim = (
-        env.base_safety_feature_dim
-        + env.predictive_feature_dim
-        + env.gap_feature_dim
-    )
-    interaction_extra_dim = (
-        env.option_state_dim
-        + env.action_mask_dim
-        + env.tracking_target_dim
-    )
-
+    env.safety_feature_dim = env.base_safety_feature_dim
     env.obs_dim = (
         env.scan_dim * env.scan_history_len
         + 2
         + 2
         + env.safety_feature_dim
-        + env.neighbor_prediction_dim
-        + env.obstacle_motion_dim
-        + interaction_extra_dim
+        + env.temporal_delta_dim
     )
 
     env.observation_space = spaces.Box(
@@ -273,54 +334,15 @@ def configure_independent_env_action_observation_spaces(
 
 
 def build_option_state_features(env: Any) -> np.ndarray:
-    option_onehot = np.zeros(NUM_TRAINING_OPTIONS, dtype=np.float32)
-    option_mode = str(getattr(env, "_active_option_name", "go"))
-    if option_mode in TRAINING_OPTION_INDEX:
-        option_onehot[TRAINING_OPTION_INDEX[option_mode]] = 1.0
-
-    option_total = max(1, int(getattr(env, "_active_option_duration_steps", 1)))
-    hold_remaining_frac = 0.0
-    elapsed = max(
-        0,
-        int(env.current_step) - int(getattr(env, "_active_option_start_step", 0)),
-    )
-    option_elapsed_frac = float(np.clip(float(elapsed) / float(option_total), 0.0, 1.0))
-
-    detour_phase_feat = np.zeros(3, dtype=np.float32)
-    if option_mode in ("detour_left", "detour_right"):
-        phase = str(getattr(env, "_option_phase", DetourPhase.DONE))
-        if phase in DETOUR_PHASE_INDEX:
-            detour_phase_feat[DETOUR_PHASE_INDEX[phase]] = 1.0
-
-    return np.concatenate(
-        [
-            option_onehot,
-            [hold_remaining_frac, option_elapsed_frac],
-            detour_phase_feat,
-        ]
-    ).astype(np.float32)
+    return np.zeros(0, dtype=np.float32)
 
 
 def build_action_mask_features(env: Any) -> np.ndarray:
-    # The old feasibility mask is no longer part of policy control.
-    # Keep this slot all-ones for observation-layout compatibility.
-    return np.ones(NUM_TRAINING_OPTIONS, dtype=np.float32)
+    return np.zeros(0, dtype=np.float32)
 
 
 def build_tracking_target_features(env: Any) -> np.ndarray:
-    target = getattr(env, "_cached_step_tracking_target", None)
-    if target is None:
-        target = env._get_tracking_target()
-    tx, ty = float(target[0]), float(target[1])
-    cx, cy = float(env.current_pose["x"]), float(env.current_pose["y"])
-    yaw = float(env.current_pose["yaw"])
-    dx, dy = tx - cx, ty - cy
-    body_x = dx * math.cos(-yaw) - dy * math.sin(-yaw)
-    body_y = dx * math.sin(-yaw) + dy * math.cos(-yaw)
-    dist = math.hypot(dx, dy)
-    dist_norm = float(np.clip(dist / 6.0, 0.0, 1.0))
-    angle_norm = float(np.clip(math.atan2(body_y, body_x) / math.pi, -1.0, 1.0))
-    return np.array([dist_norm, angle_norm], dtype=np.float32)
+    return np.zeros(0, dtype=np.float32)
 
 
 def build_independent_env_observation(
@@ -382,34 +404,60 @@ def build_independent_env_observation(
 
     sectors = env._scan_sector_metrics()
     front_min = float(sectors["front_min"])
+    left_min = float(sectors.get("left_min", front_min))
+    right_min = float(sectors.get("right_min", front_min))
     predictive_features = env._get_predictive_obs_features(front_min)
-    gap_features = env._get_gap_features(sector_dists, nominal_target_angle=rel_angle)
-    neighbor_prediction_features = env._get_neighbor_prediction_features()
-    obstacle_motion_features = env._get_obstacle_motion_features(sector_dists)
-
-    ego_state = env._build_high_level_policy_features(
-        sectors,
-        target_x_body,
-        target_y_body,
+    predictive_social_risk = float(env._last_predictive_metrics.get('social_risk', 0.0))
+    predictive_front_risk = float(env._last_predictive_metrics.get('front_risk', 0.0))
+    interaction_ctx = env._get_interaction_context()
+    ttc_min = float(interaction_ctx.get('ttc', float('inf')))
+    front_close_ratio = float(np.clip(
+        (env.close_obstacle_dist - front_min) / max(env.close_obstacle_dist, 1e-6),
+        0.0,
+        1.0,
+    ))
+    side_min = float(min(left_min, right_min))
+    side_close_ratio = float(np.clip(
+        (env.side_close_dist - side_min) / max(env.side_close_dist, 1e-6),
+        0.0,
+        1.0,
+    ))
+    risk_summary = build_minimal_risk_summary(
+        front_min=front_min,
+        left_min=left_min,
+        right_min=right_min,
+        front_close_ratio=front_close_ratio,
+        side_close_ratio=side_close_ratio,
+        predictive_social_risk=predictive_social_risk,
+        predictive_front_risk=predictive_front_risk,
+        ttc_min=ttc_min,
+        predictive_social_ttc_safe=float(env.predictive_social_ttc_safe),
     )
-    safety_features = np.zeros(env.base_safety_feature_dim, dtype=np.float32)
-    safety_features[: env.interaction_ego_state_dim] = ego_state
-    option_state_feat = build_option_state_features(env)
-    action_mask_feat = build_action_mask_features(env)
-    tracking_target_feat = build_tracking_target_features(env)
+
+    prev_front = float(getattr(env, '_prev_obs_front_min', front_min))
+    prev_ttc = float(getattr(env, '_prev_obs_ttc_min', ttc_min))
+    prev_social = float(getattr(env, '_prev_obs_social_risk', predictive_social_risk))
+    delta_front_min = float(front_min - prev_front)
+    delta_ttc = 0.0 if not (math.isfinite(prev_ttc) and math.isfinite(ttc_min)) else float(ttc_min - prev_ttc)
+    delta_social_risk = float(predictive_social_risk - prev_social)
+    delta_path_progress = float(getattr(env, '_path_projection_progress_delta', 0.0))
+    temporal_delta = build_temporal_delta_summary(
+        delta_front_min=delta_front_min,
+        delta_ttc=delta_ttc,
+        delta_social_risk=delta_social_risk,
+        delta_path_progress=delta_path_progress,
+    )
+    env._prev_obs_front_min = float(front_min)
+    env._prev_obs_ttc_min = float(ttc_min if math.isfinite(ttc_min) else prev_ttc)
+    env._prev_obs_social_risk = float(predictive_social_risk)
+
     obs = np.concatenate(
         [
             stacked_scan,
             [target_x_body, target_y_body],
             [env.current_vel_x, env.current_vel_w],
-            safety_features,
-            predictive_features,
-            gap_features,
-            neighbor_prediction_features,
-            obstacle_motion_features,
-            option_state_feat,
-            action_mask_feat,
-            tracking_target_feat,
+            risk_summary,
+            temporal_delta,
         ]
     ).astype(np.float32)
 

@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940">
+  <defs>
+    <style>
+      .title { font: 700 30px 'DejaVu Sans', Arial, sans-serif; fill: #12263f; }
+      .subtitle { font: 600 18px 'DejaVu Sans', Arial, sans-serif; fill: #3c536f; }
+      .label { font: 700 20px 'DejaVu Sans', Arial, sans-serif; fill: #172c45; }
+      .small { font: 500 16px 'DejaVu Sans', Arial, sans-serif; fill: #2f4865; }
+      .tiny { font: 500 14px 'DejaVu Sans', Arial, sans-serif; fill: #48627f; }
+      .box { fill: #f8fbff; stroke: #26445f; stroke-width: 2.5; rx: 20; ry: 20; }
+      .blue { fill: #dceeff; stroke: #2b6cb0; }
+      .green { fill: #dff5e8; stroke: #2f855a; }
+      .orange { fill: #fff0d9; stroke: #c47a19; }
+      .red { fill: #fde4e4; stroke: #c05656; }
+      .gray { fill: #eef3f8; stroke: #657b93; }
+      .arrow { stroke: #17324d; stroke-width: 3.5; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 z" fill="#17324d"/>
+    </marker>
+  </defs>
+
+  <rect x="18" y="18" width="1564" height="904" rx="28" ry="28" fill="#ffffff" stroke="#d6e0ea" stroke-width="2"/>
+  <text x="58" y="72" class="title">Fig. 2. Network architecture aligned with the current codebase.</text>
+  <text x="58" y="104" class="subtitle">The actor keeps the MAPPO-MLP-LSTM trunk and adds a risk-biased GAT side branch with residual gating.</text>
+
+  <rect x="60" y="150" width="320" height="720" class="box gray"/>
+  <text x="88" y="192" class="label">Observation Layout</text>
+  <rect x="88" y="222" width="264" height="86" class="box blue"/>
+  <text x="108" y="254" class="small">scan history tokens</text>
+  <text x="108" y="280" class="small">obstacle_top_k x 4 frames</text>
+
+  <rect x="88" y="326" width="264" height="86" class="box green"/>
+  <text x="108" y="358" class="small">goal and ego motion</text>
+  <text x="108" y="384" class="small">relative goal, linear and angular velocity</text>
+
+  <rect x="88" y="430" width="264" height="98" class="box orange"/>
+  <text x="108" y="462" class="small">base safety and predictive risk</text>
+  <text x="108" y="488" class="small">front risk, social risk, TTC proxies</text>
+  <text x="108" y="514" class="small">close-obstacle awareness</text>
+
+  <rect x="88" y="546" width="264" height="84" class="box red"/>
+  <text x="108" y="578" class="small">gap features</text>
+  <text x="108" y="604" class="small">angle, width, clearance</text>
+
+  <rect x="88" y="648" width="264" height="110" class="box blue"/>
+  <text x="108" y="680" class="small">neighbor prediction tokens</text>
+  <text x="108" y="706" class="small">relative position, approach, TTC, risk</text>
+  <text x="108" y="732" class="small">communication-consistent graph inputs</text>
+
+  <rect x="88" y="776" width="264" height="66" class="box gray"/>
+  <text x="108" y="818" class="small">neighbor slots + reset flag + global state</text>
+
+  <rect x="440" y="150" width="520" height="720" class="box"/>
+  <text x="468" y="192" class="label">Decentralized Actor</text>
+
+  <rect x="468" y="226" width="212" height="120" class="box blue"/>
+  <text x="490" y="260" class="small">Actor trunk</text>
+  <text x="490" y="286" class="small">LayerNorm</text>
+  <text x="490" y="312" class="small">LSTMCell (hidden 256)</text>
+  <text x="490" y="338" class="small">policy feature h_i</text>
+
+  <rect x="720" y="226" width="212" height="120" class="box green"/>
+  <text x="742" y="260" class="small">Ego encoder</text>
+  <text x="742" y="286" class="small">local observation to ego context</text>
+  <text x="742" y="312" class="small">MLP with GELU</text>
+
+  <rect x="720" y="382" width="212" height="140" class="box orange"/>
+  <text x="742" y="416" class="small">Token encoder</text>
+  <text x="742" y="442" class="small">neighbor prediction tokens</text>
+  <text x="742" y="468" class="small">or fallback neighbor slots</text>
+  <text x="742" y="494" class="small">shared MLP</text>
+
+  <rect x="720" y="558" width="212" height="126" class="box red"/>
+  <text x="742" y="592" class="small">Risk-biased GAT encoder</text>
+  <text x="742" y="618" class="small">ego-centric graph</text>
+  <text x="742" y="644" class="small">4 heads, hidden 128</text>
+  <text x="742" y="670" class="small">social feature g_i</text>
+
+  <rect x="468" y="430" width="212" height="152" class="box gray"/>
+  <text x="490" y="464" class="small">Residual fusion</text>
+  <text x="490" y="490" class="small">gate = sigmoid([h_i ; g_i])</text>
+  <text x="490" y="516" class="small">fused = LN(h_i + gate * delta(g_i))</text>
+  <text x="490" y="542" class="small">post-LSTM modulation only</text>
+  <text x="490" y="568" class="small">graph branch does not replace trunk</text>
+
+  <rect x="468" y="620" width="212" height="94" class="box blue"/>
+  <text x="490" y="654" class="small">Actor head</text>
+  <text x="490" y="680" class="small">continuous or discrete action logits</text>
+  <text x="490" y="706" class="small">clamped output</text>
+
+  <rect x="468" y="748" width="464" height="92" class="box green"/>
+  <text x="490" y="782" class="small">Graph branch semantics in the current version</text>
+  <text x="490" y="808" class="small">neighbor mode consumes communication-version social-risk tokens under perfect communication training.</text>
+
+  <rect x="1020" y="150" width="520" height="720" class="box"/>
+  <text x="1048" y="192" class="label">Centralized Critic and Training Protocol</text>
+
+  <rect x="1048" y="226" width="216" height="114" class="box blue"/>
+  <text x="1070" y="260" class="small">Global state</text>
+  <text x="1070" y="286" class="small">N x local observation</text>
+  <text x="1070" y="312" class="small">available during training only</text>
+
+  <rect x="1296" y="226" width="216" height="114" class="box green"/>
+  <text x="1318" y="260" class="small">Default critic</text>
+  <text x="1318" y="286" class="small">two-layer MLP critic</text>
+  <text x="1318" y="312" class="small">optional GAT critic in ablations</text>
+
+  <rect x="1048" y="376" width="464" height="126" class="box orange"/>
+  <text x="1070" y="410" class="small">PPO optimization</text>
+  <text x="1070" y="436" class="small">shared policy, centralized value, curriculum stage scheduling</text>
+  <text x="1070" y="462" class="small">conservative clip, entropy, minibatch, and epoch settings</text>
+  <text x="1070" y="488" class="small">checkpoint selection by stage</text>
+
+  <rect x="1048" y="538" width="464" height="160" class="box red"/>
+  <text x="1070" y="572" class="small">Reward terms emphasized by the current environment</text>
+  <text x="1070" y="598" class="small">goal progress, collision penalty, time penalty</text>
+  <text x="1070" y="624" class="small">subgoal progress, yield compliance</text>
+  <text x="1070" y="650" class="small">risk-aware forward penalty, safe-turn reward</text>
+  <text x="1070" y="676" class="small">team reward shaping</text>
+
+  <rect x="1048" y="728" width="464" height="112" class="box gray"/>
+  <text x="1070" y="762" class="small">Test-time semantics</text>
+  <text x="1070" y="788" class="small">run_test.sh restores checkpoint env_config and only overrides stage map and obstacle settings.</text>
+  <text x="1070" y="814" class="small">This reduces train-test protocol drift.</text>
+
+  <path d="M380 510 L440 510" class="arrow"/>
+  <path d="M680 286 L720 286" class="arrow"/>
+  <path d="M826 346 L826 382" class="arrow"/>
+  <path d="M826 522 L826 558" class="arrow"/>
+  <path d="M720 621 L680 621 L680 506" class="arrow"/>
+  <path d="M680 668 L720 668" class="arrow"/>
+  <path d="M960 450 L1020 450" class="arrow"/>
+  <path d="M1264 283 L1296 283" class="arrow"/>
+
+  <text x="612" y="404" class="tiny">ego branch</text>
+  <text x="850" y="706" class="tiny">risk-aware relation aggregation</text>
+</svg>

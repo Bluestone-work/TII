@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/v29_stage_partialdone_cf015/GNN_MAPPO_Stage1_Cont_v29_stage_partialdone_cf015_EnvStage3/best

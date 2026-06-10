@@ -126,7 +126,6 @@ class MARLMetricsCallback(DefaultCallbacks):
                     'phi_path_prev', 'phi_path_curr', 'phi_path_drop',
                     'front_obstacle_potential', 'side_obstacle_potential', 'corner_obstacle_potential',
                     'r_potential', 'r_event', 'r_pair', 'r_terminal', 'final_reward',
-                    'success_flag', 'collision_flag', 'timeout_flag',
                     'time_penalty_step', 'spin_without_progress', 'stuck_long',
                     'stuck_long_penalty', 'detour_success_bonus', 'corner_clear_bonus',
                     'no_progress', 'progress_positive_simple', 'local_head_on_pass_event',
@@ -206,7 +205,6 @@ from gnn_marl_training.counterfactual_ppo_policy import (
     CounterfactualPPOTorchPolicy,
     register_counterfactual_policy,
 )
-from gnn_marl_training.interaction_option_definitions import NUM_TRAINING_OPTIONS
 register_counterfactual_policy()
 
 
@@ -667,9 +665,6 @@ def _load_monitor_history(jsonl_path):
             if isinstance(item, dict):
                 if not isinstance(item.get("custom_metrics_mean"), dict):
                     item["custom_metrics_mean"] = {}
-                item["custom_metrics_mean"].setdefault("success_flag_mean", item.get("success_flag_mean"))
-                item["custom_metrics_mean"].setdefault("collision_flag_mean", item.get("collision_flag_mean"))
-                item["custom_metrics_mean"].setdefault("timeout_flag_mean", item.get("timeout_flag_mean"))
                 history.append(item)
     return history
 
@@ -843,7 +838,6 @@ def _run_training(
             k: v for k, v in _extract_custom_metrics_dict(result).items()
             if str(k).endswith("_mean")
         }
-        ablation_metrics = _extract_goal_collision_timeout_metrics(result)
         log_iteration = iteration_offset + iteration
         log_timesteps = timesteps_offset + done_steps
 
@@ -858,7 +852,6 @@ def _run_training(
             "total_loss": learner_stats.get("total_loss"),
             "kl": learner_stats.get("kl"),
             "custom_metrics_mean": custom_metrics,
-            **ablation_metrics,
         }
         monitor_history.append(monitor_record)
         with open(monitor_jsonl, "a", encoding="utf-8") as f:
@@ -937,9 +930,6 @@ def _run_training(
                 top_items = sorted(custom_metrics.items())[:6]
                 custom_line = " | ".join([f"{k}={v:.4f}" for k, v in top_items])
                 print(f"  [monitor] custom_metrics -> {custom_line}")
-            if ablation_metrics:
-                ablation_line = " | ".join([f"{k}={v:.4f}" for k, v in sorted(ablation_metrics.items())])
-                print(f"  [monitor] ablation_metrics -> {ablation_line}")
 
         if iteration % max(1, int(monitor_plot_every)) == 0:
             _save_training_plot(monitor_history, monitor_plot)
@@ -1040,34 +1030,6 @@ def _run_training(
     return ckpt
 
 
-def _extract_goal_collision_timeout_metrics(result):
-    custom_metrics = _extract_custom_metrics_dict(result)
-    metrics = {}
-    for name in ("success_flag_mean", "collision_flag_mean", "timeout_flag_mean"):
-        value = custom_metrics.get(name)
-        if value is None:
-            alt = _deep_get(result, ("custom_metrics", name))
-            value = alt
-        value = _to_finite_float(value)
-        if value is not None:
-            metrics[name] = value
-    return metrics
-
-
-def _resolve_ablation_tags(args):
-    schema_mode = str(getattr(args, "observation_schema_mode", "legacy")).strip().lower() or "legacy"
-    reward_profile = str(getattr(args, "reward_profile", "legacy")).strip().lower() or "legacy"
-    schema_flags = [schema_mode]
-    if not bool(int(getattr(args, "include_tracking_target_block", 1))):
-        schema_flags.append("no_track")
-    if not bool(int(getattr(args, "include_action_mask_block", 1))):
-        schema_flags.append("no_mask")
-    return {
-        "observation_schema": "+".join(schema_flags),
-        "reward_profile": reward_profile,
-    }
-
-
 def _resolve_ppo_training_kwargs(args):
     """返回 interaction_mode 专用 PPO 超参数。"""
     profile = str(getattr(args, "ppo_profile", "auto")).strip().lower()
@@ -1085,6 +1047,7 @@ def _resolve_ppo_training_kwargs(args):
     }
     resolved_profile = "interaction_mode"
 
+    # 显式 CLI 覆盖优先
     overrides = {
         "clip_param": getattr(args, "clip_param", None),
         "entropy_coeff": getattr(args, "entropy_coeff", None),
@@ -1256,10 +1219,10 @@ def _build_ppo_config(args, env_config, model_name, model_cfg):
         .callbacks(MARLMetricsCallback)
         .framework("torch")
         .env_runners(
-            num_env_runners=0,
+            num_env_runners=max(1, int(args.num_workers)),
             num_envs_per_env_runner=1,
             sample_timeout_s=max(60, int(args.sample_timeout_s)),
-            rollout_fragment_length=max(5, int(args.rollout_fragment_length)),
+            rollout_fragment_length=max(20, int(args.rollout_fragment_length)),
             batch_mode=args.batch_mode,
         )
         .training(
@@ -1292,7 +1255,7 @@ def _build_ppo_config(args, env_config, model_name, model_cfg):
             policies_to_train=[policy_name],
         )
         .resources(
-            num_gpus=0 if bool(int(getattr(args, "num_workers", 0)) == 0) else int(__import__('torch').cuda.is_available())
+            num_gpus=int(__import__('torch').cuda.is_available())
         )
         .api_stack(
             enable_rl_module_and_learner=False,
@@ -1306,9 +1269,6 @@ def _run_direct_env_sanity(env_config, sanity_steps: int = 20) -> dict:
     env = env_creator(env_config)
     completed_steps = 0
     episodes_started = 0
-    reward_acc = {}
-    reward_count = {}
-    event_counts = {}
     try:
         observations, _ = env.reset()
         episodes_started += 1
@@ -1335,36 +1295,14 @@ def _run_direct_env_sanity(env_config, sanity_steps: int = 20) -> dict:
                 action_dict[agent_id] = sampled
             observations, rewards, terminateds, truncateds, infos = env.step(action_dict)
             completed_steps += 1
-            for agent_id, info in infos.items():
-                if not isinstance(info, dict):
-                    continue
-                for key in (
-                    "classic_progress_reward",
-                    "classic_heading_reward",
-                    "classic_obstacle_penalty",
-                    "classic_predictive_penalty",
-                    "classic_time_penalty",
-                    "classic_terminal_reward",
-                    "reward_total",
-                ):
-                    value = info.get(key)
-                    if isinstance(value, (int, float, np.floating, np.integer)) and np.isfinite(float(value)):
-                        reward_acc[key] = reward_acc.get(key, 0.0) + float(value)
-                        reward_count[key] = reward_count.get(key, 0) + 1
-                event = str(info.get("event", "")).strip()
-                if event:
-                    event_counts[event] = event_counts.get(event, 0) + 1
             episode_done = bool(terminateds.get("__all__", False) or truncateds.get("__all__", False))
             if episode_done and completed_steps < int(sanity_steps):
                 observations, _ = env.reset()
                 episodes_started += 1
-        reward_breakdown_mean = {k: reward_acc[k] / max(1, reward_count.get(k, 1)) for k in reward_acc}
         return {
             "completed_steps": completed_steps,
             "episodes_started": episodes_started,
             "active_agents": len(observations),
-            "reward_breakdown_mean": reward_breakdown_mean,
-            "event_counts": event_counts,
         }
     finally:
         env.close()
@@ -1485,15 +1423,6 @@ def main():
                         help="每帧保留最近障碍点数量 Top-K（定长编码）")
     parser.add_argument("--angular_bins", type=int, default=64,
                         help="LiDAR 全向角分辨率 bins 数（用于 1D CNN 扫描编码器；≤0 时回退到 obstacle_top_k）")
-    parser.add_argument("--observation_schema_mode", type=str, default="legacy",
-                        choices=["legacy", "phase1"],
-                        help="Observation schema profile used for ablation planning/tracking.")
-    parser.add_argument("--include_tracking_target_block", type=int, default=1,
-                        help="Whether to keep the tracking_target feature block in the observation.")
-    parser.add_argument("--include_action_mask_block", type=int, default=1,
-                        help="Whether to keep the legacy action-mask feature block in the observation.")
-    parser.add_argument("--reward_profile", type=str, default="legacy",
-                        help="Reward profile tag for staged ablation experiments.")
     parser.add_argument("--disable_obstacle_motion_features", action="store_true",
                         help="关闭基于 LiDAR 扇区历史构建的动态障碍 motion token")
     parser.add_argument("--progress_reward_scale", type=float, default=1.2,
@@ -1729,25 +1658,19 @@ def main():
             parser.error(f"--resume_checkpoint 路径不存在: {resume_path}")
 
     obs_top_k = max(1, min(int(args.obstacle_top_k), 64))
-    predictive_feature_dim = 6
-    gap_feature_dim = 3 if bool(int(args.gap_feature_enable)) else 0
-    neighbor_prediction_top_k = 2
+    predictive_feature_dim = 0
+    gap_feature_dim = 0
+    neighbor_prediction_top_k = 0
     neighbor_prediction_feature_dim = 6
-    obstacle_motion_top_k = 3
+    obstacle_motion_top_k = 0
     obstacle_motion_feature_dim = 6
-    obstacle_motion_dim = 0 if args.disable_obstacle_motion_features else (
-        obstacle_motion_top_k * obstacle_motion_feature_dim
-    )
-    ablation_tags = _resolve_ablation_tags(args)
+    obstacle_motion_dim = 0
     local_obs_dim = (
         obs_top_k * 4
         + 2
         + 2
-        + 7
-        + predictive_feature_dim
-        + gap_feature_dim
-        + neighbor_prediction_top_k * neighbor_prediction_feature_dim
-        + obstacle_motion_dim
+        + 8
+        + 4
     )
     if resume_path and local_obs_dim != 47:
         print(
@@ -1863,10 +1786,10 @@ def main():
             "predictive_front_ttc_safe": args.predictive_front_ttc_safe,
             "predictive_min_sep": args.predictive_min_sep,
             "predictive_social_range": args.predictive_social_range,
-            "predictive_social_penalty_scale": args.predictive_social_penalty_scale,
-            "predictive_front_penalty_scale": args.predictive_front_penalty_scale,
-            "social_proximity_risk_scale": args.social_proximity_risk_scale,
-            "gap_feature_enable": bool(int(args.gap_feature_enable)),
+            "predictive_social_penalty_scale": max(args.predictive_social_penalty_scale, 0.28),
+            "predictive_front_penalty_scale": max(args.predictive_front_penalty_scale, 0.24),
+            "social_proximity_risk_scale": max(args.social_proximity_risk_scale, 0.40),
+            "gap_feature_enable": False,
             "yielding_enable": bool(int(args.yielding_enable)),
             "yielding_soft_dist": args.yielding_soft_dist,
             "yielding_stop_dist": args.yielding_stop_dist,
@@ -1879,12 +1802,9 @@ def main():
             "replan_time_budget_sec": args.replan_time_budget_sec,
             "replan_window_steps": args.replan_window_steps,
             "method3_reward_window_steps": args.method3_reward_window_steps,
-            "neighbor_prediction_top_k": neighbor_prediction_top_k,
-            "obstacle_motion_feature_enable": not args.disable_obstacle_motion_features,
-            "obstacle_motion_top_k": obstacle_motion_top_k,
-            "observation_schema_mode": args.observation_schema_mode,
-            "include_tracking_target_block": bool(int(args.include_tracking_target_block)),
-            "include_action_mask_block": bool(int(args.include_action_mask_block)),
+            "neighbor_prediction_top_k": 0,
+            "obstacle_motion_feature_enable": False,
+            "obstacle_motion_top_k": 0,
             "obs_target_dist_clip": 6.0,
             "obs_target_filter_alpha": 0.35,
             "obs_target_max_step": 0.45,
@@ -1921,8 +1841,8 @@ def main():
             "auto_reset_agents":   True,
             "min_active_agents_to_continue": 0,
             "max_failed_agents_before_cutoff": 0,
-            "high_conflict_mode": "off",
-            "high_conflict_prob": 0.0,
+            "high_conflict_mode": args.high_conflict_mode,
+            "high_conflict_prob": float(np.clip(args.high_conflict_prob, 0.0, 1.0)),
             "failure_replay_enable": bool(int(args.failure_replay_enable)),
             "failure_replay_buffer_size": int(args.failure_replay_buffer_size),
             "failure_replay_base_prob": float(args.failure_replay_base_prob),
@@ -1953,16 +1873,14 @@ def main():
                 "obstacle_top_k": obs_top_k,
                 "angular_bins": int(args.angular_bins),
                 "scan_emb_dim": 128,
-                "base_safety_feature_dim": 14,
-                "predictive_feature_dim": 6,
-                "gap_feature_dim": gap_feature_dim,
-                "neighbor_prediction_dim": neighbor_prediction_top_k * neighbor_prediction_feature_dim,
-                "obstacle_motion_dim": obstacle_motion_dim,
+                "base_safety_feature_dim": 8,
+                "predictive_feature_dim": 0,
+                "gap_feature_dim": 0,
+                "neighbor_prediction_dim": 0,
+                "obstacle_motion_dim": 0,
                 "interaction_base_ego_dim": 8,
-                "interaction_ego_state_dim": 27,
-                "option_state_dim": 11,
-                "action_mask_dim": (NUM_TRAINING_OPTIONS if bool(int(args.include_action_mask_block)) else 0),
-                "tracking_target_dim": (2 if bool(int(args.include_tracking_target_block)) else 0),
+                "interaction_ego_state_dim": 8,
+                "option_state_dim": 0,
             },
             # 策略级 LSTM：每条轨迹被切成长度 20 的序列送入训练
             # 20 步 × ~0.1s/步 ≈ 2 秒，足以覆盖动态障碍物一次穿越过程
@@ -2105,9 +2023,6 @@ def main():
             "neighbor_prediction_top_k": neighbor_prediction_top_k,
             "obstacle_motion_feature_enable": not args.disable_obstacle_motion_features,
             "obstacle_motion_top_k": obstacle_motion_top_k,
-            "observation_schema_mode": args.observation_schema_mode,
-            "include_tracking_target_block": bool(int(args.include_tracking_target_block)),
-            "include_action_mask_block": bool(int(args.include_action_mask_block)),
             "obs_target_dist_clip": 6.0,
             "obs_target_filter_alpha": 0.35,
             "obs_target_max_step": 0.45,
@@ -2144,8 +2059,8 @@ def main():
             "auto_reset_agents":   True,
             "min_active_agents_to_continue": 0,
             "max_failed_agents_before_cutoff": 0,
-            "high_conflict_mode": "off",
-            "high_conflict_prob": 0.0,
+            "high_conflict_mode": args.high_conflict_mode,
+            "high_conflict_prob": float(np.clip(args.high_conflict_prob, 0.0, 1.0)),
             "failure_replay_enable": bool(int(args.failure_replay_enable)),
             "failure_replay_buffer_size": int(args.failure_replay_buffer_size),
             "failure_replay_base_prob": float(args.failure_replay_base_prob),
@@ -2170,14 +2085,6 @@ def main():
             print(f"  completed_steps: {summary['completed_steps']}")
             print(f"  episodes_started: {summary['episodes_started']}")
             print(f"  active_agents: {summary['active_agents']}")
-            if summary.get('reward_breakdown_mean'):
-                print("  reward_breakdown_mean:")
-                for k, v in sorted(summary['reward_breakdown_mean'].items()):
-                    print(f"    {k}: {v:.6f}")
-            if summary.get('event_counts'):
-                print("  event_counts:")
-                for k, v in sorted(summary['event_counts'].items()):
-                    print(f"    {k}: {v}")
             print("=" * 80 + "\n")
             return
         model_cfg = {
@@ -2195,21 +2102,19 @@ def main():
                 "critic_mode": args.gat_critic_mode,
                 "risk_bias_scale": args.gat_risk_bias_scale,
                 "scan_history_len": 4,
-                "base_safety_feature_dim": 14,
-                "predictive_feature_dim": 6,
-                "gap_feature_dim": gap_feature_dim,
-                "neighbor_prediction_dim": neighbor_prediction_top_k * neighbor_prediction_feature_dim,
+                "base_safety_feature_dim": 8,
+                "predictive_feature_dim": 0,
+                "gap_feature_dim": 0,
+                "neighbor_prediction_dim": 0,
                 "neighbor_prediction_feature_dim": neighbor_prediction_feature_dim,
-                "obstacle_motion_dim": obstacle_motion_dim,
+                "obstacle_motion_dim": 0,
                 "obstacle_motion_feature_dim": obstacle_motion_feature_dim,
                 "obstacle_top_k": obs_top_k,
                 "angular_bins": int(args.angular_bins),
                 "scan_emb_dim": 128,
                 "interaction_base_ego_dim": 8,
-                "interaction_ego_state_dim": 27,
-                "option_state_dim": 11,
-                "action_mask_dim": (NUM_TRAINING_OPTIONS if bool(int(args.include_action_mask_block)) else 0),
-                "tracking_target_dim": (2 if bool(int(args.include_tracking_target_block)) else 0),
+                "interaction_ego_state_dim": 8,
+                "option_state_dim": 0,
             },
             "max_seq_len": 32,
         }

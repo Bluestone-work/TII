@@ -37,6 +37,8 @@ from gnn_marl_training.interaction_execution_utils import (
 from gnn_marl_training.interaction_observation_utils import (
     build_high_level_policy_features,
     build_interaction_neighbor_token,
+    build_minimal_risk_summary,
+    build_temporal_delta_summary,
     compute_progress_delta_signal,
     compute_social_risk_summary,
     compute_stuck_score,
@@ -66,7 +68,6 @@ from gnn_marl_training.env_space_reward_utils import (
     RewardAggregationOverrides,
     build_action_mask_features,
     build_independent_env_observation,
-    build_observation_schema_spec,
     build_option_state_features,
     build_tracking_target_features,
     compute_classic_navigation_reward,
@@ -274,9 +275,9 @@ class GNNMARLEnv(MultiAgentEnv):
                 'predictive_front_ttc_safe': float(config.get('predictive_front_ttc_safe', 1.2)),
                 'predictive_min_sep': float(config.get('predictive_min_sep', 0.55)),
                 'predictive_social_range': float(config.get('predictive_social_range', 2.5)),
-                'predictive_social_penalty_scale': float(config.get('predictive_social_penalty_scale', 0.17)),
-                'predictive_front_penalty_scale': float(config.get('predictive_front_penalty_scale', 0.16)),
-                'social_proximity_risk_scale': float(config.get('social_proximity_risk_scale', 0.34)),
+                'predictive_social_penalty_scale': float(config.get('predictive_social_penalty_scale', 0.28)),
+                'predictive_front_penalty_scale': float(config.get('predictive_front_penalty_scale', 0.24)),
+                'social_proximity_risk_scale': float(config.get('social_proximity_risk_scale', 0.40)),
                 'neighbor_prediction_top_k': int(config.get('neighbor_prediction_top_k', 2)),
                 'gap_feature_enable': bool(config.get('gap_feature_enable', True)),
                 'yielding_enable': bool(config.get('yielding_enable', True)),
@@ -2019,10 +2020,7 @@ class IndependentRobotEnv(gym.Env):
                  time_penalty_risk_relax=0.65,
                  reward_aggregation_overrides=None,
                  interaction_potential_overrides=None,
-                 action_mode='interaction_mode',
-                 observation_schema_mode='legacy',
-                 include_tracking_target_block=True,
-                 include_action_mask_block=True):
+                 action_mode='interaction_mode'):
         """
         Args:
             collision_ends_episode: 如果为 True，碰撞会结束episode；
@@ -2121,9 +2119,6 @@ class IndependentRobotEnv(gym.Env):
 
         self.scan_history_len = 4
         self._scan_history: deque = deque(maxlen=self.scan_history_len)
-        self.observation_schema_mode = str(observation_schema_mode).strip().lower() or 'legacy'
-        self.include_tracking_target_block = bool(include_tracking_target_block)
-        self.include_action_mask_block = bool(include_action_mask_block)
         configure_independent_env_action_observation_spaces(
             self,
             obstacle_top_k=obstacle_top_k,
@@ -2158,7 +2153,6 @@ class IndependentRobotEnv(gym.Env):
         self.interaction_potential_overrides = PotentialRewardConfig(
             **dict(interaction_potential_overrides or {})
         )
-        self.observation_schema_spec = build_observation_schema_spec(self)
         # Closed-loop option tracking; policy output is applied every env step.
         self._active_option_name: str = 'go'
         self._active_option_start_step: int = 0
@@ -2321,8 +2315,14 @@ class IndependentRobotEnv(gym.Env):
         self.time_penalty = float(time_penalty)
         self.close_obstacle_penalty_scale = float(close_obstacle_penalty_scale)
         self.close_obstacle_dist = float(close_obstacle_dist)
+        self.predictive_social_penalty_scale = float(predictive_social_penalty_scale)
+        self.predictive_front_penalty_scale = float(predictive_front_penalty_scale)
+        self.social_proximity_risk_scale = float(social_proximity_risk_scale)
         self.team_reward_lambda = float(team_reward_lambda)
         self.robot_radius = 0.10
+        self._prev_obs_front_min = float('inf')
+        self._prev_obs_ttc_min = float('inf')
+        self._prev_obs_social_risk = 0.0
 
         self.side_close_dist = max(0.14, min(self.close_obstacle_dist * 0.55, self.subgoal_block_front_dist))
         self.side_close_penalty_scale = 0.35 * self.close_obstacle_penalty_scale
@@ -2398,6 +2398,9 @@ class IndependentRobotEnv(gym.Env):
         self._path_projection_progress_window = 0.0
         self._guide_target_progress_delta = 0.0
         self._prev_dist_to_guide_target = float("inf")
+        self._prev_obs_front_min = float('inf')
+        self._prev_obs_ttc_min = float('inf')
+        self._prev_obs_social_risk = 0.0
         self._last_progress_source = "none"
         self._last_progress_source_id = 0.0
         self._last_progress_positive = False
@@ -3697,6 +3700,12 @@ class IndependentRobotEnv(gym.Env):
         info['subgoal'] = tuple(info['subgoal'])
         info['projection'] = tuple(info['projection'])
         info['adaptive_lookahead'] = float(adaptive)
+        guarded_subgoal, target_source = self._ensure_forward_progress_target(
+            tuple(info['subgoal']),
+            front_min=front_min,
+        )
+        info['subgoal'] = tuple(guarded_subgoal)
+        info['target_source'] = str(target_source)
         return info
 
     def _apply_nominal_tracking_info(self, info: Dict[str, Any]):
@@ -3712,6 +3721,44 @@ class IndependentRobotEnv(gym.Env):
         self.path_progress = arc_progress
         self.current_lateral_error = lateral_error
         self.current_waypoint_index = int(np.clip(seg_idx + 1, 0, max(len(path_points) - 1, 0)))
+
+
+    def _ensure_forward_progress_target(
+        self,
+        current_target: Tuple[float, float],
+        *,
+        front_min: Optional[float] = None,
+    ) -> Tuple[Tuple[float, float], str]:
+        """Guard against degenerate rolling targets that collapse onto the robot pose.
+
+        When the projected rolling target lands too close to the current robot
+        position (common near walls/corners on map6), the controller can stall
+        because the blue rolling target stays on the robot itself. In that case
+        we synthesize a small forward path-frame target instead of returning the
+        zero-progress target.
+        """
+        tx, ty = float(current_target[0]), float(current_target[1])
+        cx, cy = float(self.current_pose['x']), float(self.current_pose['y'])
+        target_dist = float(math.hypot(tx - cx, ty - cy))
+        min_target_dist = 0.08
+        if target_dist >= min_target_dist:
+            return (tx, ty), 'native'
+
+        if front_min is None:
+            sectors = self._scan_sector_metrics()
+            front_min = float(sectors.get('front_min', self.scan_max_range))
+        else:
+            front_min = float(front_min)
+
+        forward_step = max(0.10, min(0.35, 0.55 * max(front_min, 0.10)))
+        lateral_step = 0.0
+        fallback = self._path_to_world_point(forward_step, lateral_step)
+        fallback_dist = float(math.hypot(fallback[0] - cx, fallback[1] - cy))
+        if fallback_dist >= min_target_dist:
+            return tuple(fallback), 'path_fallback'
+
+        body_fallback = self._body_to_world_point(max(0.12, forward_step), 0.0)
+        return tuple(body_fallback), 'body_fallback'
 
     def _compute_social_risk_summary(self) -> Dict[str, float]:
         if not hasattr(self, 'parent_env'):
@@ -5547,10 +5594,6 @@ class IndependentRobotEnv(gym.Env):
             clear_reward = 0.0
             blocked_score = max(front_blocked_ratio, front_close_ratio)
             stuck_score = self._compute_stuck_score(front_blocked_ratio)
-            method3_terms = None
-            clear_reward = 0.0
-            blocked_score = max(front_blocked_ratio, front_close_ratio)
-            stuck_score = self._compute_stuck_score(front_blocked_ratio)
             method3_window_progress_reward = 0.0
             method3_window_path_progress_reward = 0.0
             method3_window_goal_progress_reward = 0.0
@@ -5787,34 +5830,6 @@ class IndependentRobotEnv(gym.Env):
                 )
             ) else 0.0
             self._last_local_head_on_pass_event = float(local_head_on_pass_event)
-            potential_terms = compute_interaction_potential_reward(
-                self,
-                dist_to_target=float(dist_to_target),
-                dist_to_goal=float(dist_to_goal),
-                front_min=float(front_min),
-                left_min=float(left_min),
-                right_min=float(right_min),
-                front_left_min=float(front_left_min),
-                front_right_min=float(front_right_min),
-                social_risk_max=float(interaction_social_risk),
-                ttc_min=float(ttc_min),
-                front_risk=float(predictive_front_risk),
-                cross_track_error=float(getattr(self, '_cross_track_error', 0.0)),
-                effective_mode=str(getattr(self, '_effective_interaction_mode', interaction_mode)),
-                applied_linear_vel=float(signed_linear_speed),
-                applied_angular_vel=float(signed_angular_vel),
-                local_goal_progress_delta=float(local_goal_progress_delta),
-                goal_progress_delta=float(goal_progress_delta),
-                path_projection_progress_delta=float(getattr(self, '_path_projection_progress_delta', 0.0)),
-                stuck_score=float(stuck_score),
-                detour_active=bool(getattr(self, '_detour_active', False) or getattr(self, '_detour_suppress_rolling', False)),
-                detour_done=bool(getattr(self, '_detour_done', False)),
-                head_on_pass_event=bool(local_head_on_pass_event > 0.5),
-                collision=bool(info.get('event') == 'collision'),
-                timeout=bool(truncated),
-                goal_reached=bool(info.get('event') == 'goal'),
-                config=self.interaction_potential_overrides,
-            )
             option_terms = ClassicNavigationRewardTerms(
                 progress_reward=0.0,
                 heading_reward=0.0,
@@ -6048,42 +6063,6 @@ class IndependentRobotEnv(gym.Env):
                 'pair_event_reward': 0.0,
                 'local_head_on_pass_event': float(getattr(self, '_last_local_head_on_pass_event', 0.0)),
             })
-
-            if potential_terms is not None:
-                info.update({
-                    'phi_goal_prev': float(potential_terms.phi_goal_prev),
-                    'phi_goal_curr': float(potential_terms.phi_goal_curr),
-                    'phi_goal_drop': float(potential_terms.phi_goal_drop),
-                    'phi_obs_prev': float(potential_terms.phi_obs_prev),
-                    'phi_obs_curr': float(potential_terms.phi_obs_curr),
-                    'phi_obs_drop': float(potential_terms.phi_obs_drop),
-                    'phi_agent_prev': float(potential_terms.phi_agent_prev),
-                    'phi_agent_curr': float(potential_terms.phi_agent_curr),
-                    'phi_agent_drop': float(potential_terms.phi_agent_drop),
-                    'phi_path_prev': float(potential_terms.phi_path_prev),
-                    'phi_path_curr': float(potential_terms.phi_path_curr),
-                    'phi_path_drop': float(potential_terms.phi_path_drop),
-                    'front_obstacle_potential': float(potential_terms.front_obstacle_potential),
-                    'side_obstacle_potential': float(potential_terms.side_obstacle_potential),
-                    'corner_obstacle_potential': float(potential_terms.corner_obstacle_potential),
-                    'r_potential': float(potential_terms.r_potential),
-                    'r_event': float(potential_terms.r_event),
-                    'r_pair': 0.0,
-                    'r_terminal': float(potential_terms.r_terminal),
-                    'final_reward': float(reward),
-                    'time_penalty_step': float(potential_terms.time_penalty),
-                    'spin_without_progress': float(1.0 if potential_terms.spin_without_progress_penalty < 0.0 else 0.0),
-                    'spin_without_progress_penalty': float(potential_terms.spin_without_progress_penalty),
-                    'reverse_without_risk_penalty': float(potential_terms.reverse_without_risk_penalty),
-                    'stuck_long': float(potential_terms.stuck_long),
-                'stuck_long_penalty': float(potential_terms.stuck_long_penalty),
-                'detour_active_penalty': float(potential_terms.detour_active_penalty),
-                'detour_success_bonus': float(potential_terms.detour_success_bonus),
-                    'corner_clear_bonus': float(potential_terms.corner_clear_bonus),
-                    'no_progress': float(potential_terms.no_progress),
-                    'progress_positive_simple': float(potential_terms.progress_positive),
-                    'ttc_risk': float(potential_terms.ttc_risk),
-                })
 
             return obs, reward, done, truncated, info
 

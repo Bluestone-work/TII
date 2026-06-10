@@ -60,29 +60,17 @@ class MAPPOMLPModel(TorchModelV2, nn.Module):
         # After 1D CNN encoding, the scan slot shrinks to scan_emb_dim
         self.scan_slot_dim = self.scan_emb_dim if self.angular_bins > self.scan_dim else self.scan_raw_dim
         self._use_scan_cnn = bool(self.angular_bins > self.scan_dim)
-        self.option_state_dim = int(custom_cfg.get("option_state_dim", 11))
+        self.option_state_dim = 0
         self.interaction_base_ego_dim = int(custom_cfg.get("interaction_base_ego_dim", 8))
-        self.action_mask_dim = int(
-            custom_cfg.get(
-                "action_mask_dim",
-                int(getattr(action_space, "n", 0)) if hasattr(action_space, "n") else 0,
-            )
-        )
-        self.tracking_target_dim = int(custom_cfg.get("tracking_target_dim", 2))
-        self.interaction_ego_state_dim = int(
-            custom_cfg.get(
-                "interaction_ego_state_dim",
-                self.interaction_base_ego_dim
-                + self.option_state_dim
-                + self.action_mask_dim
-                + self.tracking_target_dim,
-            )
-        )
-        self.base_safety_feature_dim = int(custom_cfg.get("base_safety_feature_dim", 14))
-        self.predictive_feature_dim = int(custom_cfg.get("predictive_feature_dim", 6))
-        self.gap_feature_dim = int(custom_cfg.get("gap_feature_dim", 0))
-        self.neighbor_prediction_dim = int(custom_cfg.get("neighbor_prediction_dim", 0))
-        self.obstacle_motion_dim = int(custom_cfg.get("obstacle_motion_dim", 0))
+        self.action_mask_dim = 0
+        self.tracking_target_dim = 0
+        self.interaction_ego_state_dim = int(custom_cfg.get("interaction_ego_state_dim", 8))
+        self.base_safety_feature_dim = int(custom_cfg.get("base_safety_feature_dim", 8))
+        self.predictive_feature_dim = 0
+        self.gap_feature_dim = 0
+        self.temporal_delta_dim = int(custom_cfg.get("temporal_delta_dim", 4))
+        self.neighbor_prediction_dim = 0
+        self.obstacle_motion_dim = 0
         # 环境侧观测槽位规则：最多保留 min(num_agents-1, 5) 个邻居，每个邻居 5 维
         # 这里不能直接默认 num_agents-1，否则当 num_agents > 6 时会与 env 的 obs 布局不一致。
         env_max_neighbors = max(0, min(self.num_agents - 1, 5))
@@ -152,18 +140,14 @@ class MAPPOMLPModel(TorchModelV2, nn.Module):
         self.safety_end = self.safety_start + self.base_safety_feature_dim
         self.ego_state_start = self.safety_start
         self.ego_state_end = self.ego_state_start + self.interaction_base_ego_dim
-        self.option_state_start = (
-            self.safety_end
-            + self.predictive_feature_dim
-            + self.gap_feature_dim
-            + self.neighbor_prediction_dim
-            + self.obstacle_motion_dim
-        )
-        self.option_state_end = self.option_state_start + self.option_state_dim
+        self.temporal_delta_start = self.safety_end
+        self.temporal_delta_end = self.temporal_delta_start + self.temporal_delta_dim
+        self.option_state_start = self.temporal_delta_end
+        self.option_state_end = self.option_state_start
         self.action_mask_start = self.option_state_end
-        self.action_mask_end = self.action_mask_start + self.action_mask_dim
+        self.action_mask_end = self.action_mask_start
         self.tracking_target_start = self.action_mask_end
-        self.tracking_target_end = self.tracking_target_start + self.tracking_target_dim
+        self.tracking_target_end = self.tracking_target_start
 
         # ── 1D CNN Angular Scan Encoder ─────────────────────────────────────
         if self._use_scan_cnn:
@@ -183,7 +167,7 @@ class MAPPOMLPModel(TorchModelV2, nn.Module):
         hidden_dim = int(custom_cfg.get("hidden_dim", 256))
         self.lstm_hidden_dim = int(custom_cfg.get("lstm_hidden_dim", hidden_dim))
         self.actor_source_dim = (
-            self.interaction_ego_state_dim + self.neighbor_dim
+            self.base_safety_feature_dim + self.temporal_delta_dim + self.neighbor_dim
             if self.use_high_level_branch else (
                 self.eff_actor_obs_dim if self._use_scan_cnn else self.actor_obs_dim
             )
@@ -347,12 +331,10 @@ class MAPPOMLPModel(TorchModelV2, nn.Module):
         return action_out, [h_t, c_t]
 
     def _extract_interaction_actor_features(self, local_obs: torch.Tensor) -> torch.Tensor:
-        """Build the high-level actor input from explicit local-observation slots."""
-        ego_state = local_obs[:, self.ego_state_start:self.ego_state_end]
-        option_state = local_obs[:, self.option_state_start:self.option_state_end]
-        action_mask = local_obs[:, self.action_mask_start:self.action_mask_end]
-        tracking_target = local_obs[:, self.tracking_target_start:self.tracking_target_end]
-        return torch.cat([ego_state, option_state, action_mask, tracking_target], dim=-1)
+        """Build the minimal actor input from risk summary and temporal deltas."""
+        risk_summary = local_obs[:, self.safety_start:self.safety_end]
+        temporal_delta = local_obs[:, self.temporal_delta_start:self.temporal_delta_end]
+        return torch.cat([risk_summary, temporal_delta], dim=-1)
 
     def _extract_action_mask(self, local_obs: torch.Tensor) -> torch.Tensor:
         """Extract action mask from local observation.

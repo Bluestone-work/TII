@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/neighbor_comm_retrain_stage1/GNN_MAPPO_Stage1_Cont_neighbor_comm_retrain_stage1_EnvStage1/best

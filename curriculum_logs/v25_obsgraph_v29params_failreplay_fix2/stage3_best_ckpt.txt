@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/v25_obsgraph_v29params_failreplay_fix2/GNN_MAPPO_Stage1_Cont_v25_obsgraph_v29params_failreplay_fix2_EnvStage3/best

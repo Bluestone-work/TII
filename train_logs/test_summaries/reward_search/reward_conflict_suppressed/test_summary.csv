@@ -1,2 +1,0 @@
-stage,repeat,num_episodes,total_success,total_collision,avg_reward,avg_steps,avg_min_dist,avg_social_risk,avg_front_risk,reached_agents,collided_agents,truncated_episodes,exit_code,log_path,checkpoint
-1,1,3,,,,,,,,,,,143,/home/wj/work/multi-robot-exploration-rl/train_logs/test_summaries/reward_search/reward_conflict_suppressed/test_stage1_run1.log,/home/wj/work/multi-robot-exploration-rl/ray_results/reward_search/reward_conflict_suppressed/GNN_MAPPO_Stage1_Interact_reward_conflict_suppressed_EnvStage1/best

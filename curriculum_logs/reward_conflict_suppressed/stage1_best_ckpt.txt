@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/reward_search/reward_conflict_suppressed/GNN_MAPPO_Stage1_Interact_reward_conflict_suppressed_EnvStage1/best

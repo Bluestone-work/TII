@@ -27,7 +27,7 @@ error()   { echo -e "${RED}[✗]${RESET} $*" >&2; }
 banner()  { echo -e "\n${BOLD}${CYAN}$*${RESET}\n"; }
 
 # ─── 可配置参数（可通过命令行覆盖）──────────────────────────────────────────
-MODEL_TYPE="mlp"          # gat | mlp
+MODEL_TYPE="gat"          # gat | mlp
 MLP_USE_COMM_OBS=0        # 0 | 1
 GAT_ACTOR_GRAPH="neighbor"    # local_risk | neighbor
 GAT_CRITIC_MODE="mlp"     # mlp | gat
@@ -487,6 +487,27 @@ check_env() {
     echo ""
 }
 
+
+wait_for_gazebo_port_free() {
+    local timeout_s="${1:-20}"
+    local waited=0
+    while (( waited < timeout_s )); do
+        if ! ss -ltn 2>/dev/null | grep -q ":${GAZEBO_PORT} "; then
+            return 0
+        fi
+        sleep 1
+        waited=$((waited + 1))
+    done
+    return 1
+}
+
+force_kill_gazebo_processes() {
+    pkill -9 -f gzserver 2>/dev/null || true
+    pkill -9 -f gzclient 2>/dev/null || true
+    pkill -9 -f 'gazebo[^/]*$' 2>/dev/null || true
+    sleep 2
+}
+
 stop_ros_env() {
     info "正在停止当前脚本启动的 ROS2/Gazebo 进程..."
     if [[ -n "$ROS_PID" ]] && kill -0 "$ROS_PID" 2>/dev/null; then
@@ -509,9 +530,13 @@ start_ros_env() {
     if [[ -n "$NUM_OBSTACLES_OVERRIDE" ]]; then obs_num="$NUM_OBSTACLES_OVERRIDE"; fi
     if [[ -n "$OBS_SPEED_SCALE_OVERRIDE" ]]; then obs_spd="$OBS_SPEED_SCALE_OVERRIDE"; fi
     local log="$LOG_DIR/stage${stage}_ros.log"
+    rm -f "$log"
+    : > "$log"
     local launch_file="main.launch.py"
+    local map_server_required=1
     if (( HEADLESS_SIM == 1 )); then
         launch_file="main_headless.launch.py"
+        map_server_required=0
     fi
 
     banner "  启动 Gazebo 环境 (Stage $stage · ${STAGE_NAME[$stage]})"
@@ -545,6 +570,9 @@ start_ros_env() {
     inner_cmd+="; stdbuf -oL -eL ros2 launch start_rl_environment_tb3 ${launch_file}"
     inner_cmd+=" map_number:=${map_num} robot_number:=${NUM_AGENTS}"
     inner_cmd+=" num_obstacles:=${obs_num} obs_speed_scale:=${obs_spd}"
+    if (( map_server_required == 0 )); then
+        inner_cmd+=" start_map_server:=false"
+    fi
     if (( HEADLESS_SIM == 1 )); then
         inner_cmd+=" enable_rviz:=$([[ $ENABLE_RVIZ -eq 1 ]] && echo true || echo false)"
     fi

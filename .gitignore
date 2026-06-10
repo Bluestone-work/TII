@@ -1,0 +1,40 @@
+# ROS/colcon build outputs
+build/
+install/
+log/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime logs and backups
+*.log
+*.log.bak
+*.out
+*.err
+
+# Training / experiment outputs
+ray_results/
+src/gnn_marl_training/ray_results/
+curriculum_logs/
+curriculum_logs_sfl/
+option_test_results/
+sb3_logs/
+sb3_models/
+orca_logs/
+train_logs/
+refine-logs/
+bc_collect_logs/
+bc_tune_logs/
+bc_tune_results/
+
+# TensorBoard / RL checkpoints and monitor streams
+events.out.tfevents.*
+*.pkl
+*.jsonl
+
+# Local editor / OS noise
+.vscode/
+.idea/
+.DS_Store

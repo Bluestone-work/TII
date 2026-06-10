@@ -1,6 +1,0 @@
-iteration,timesteps,episode_reward_mean,episode_len_mean,entropy,policy_loss,vf_loss,total_loss,kl,num_custom_metrics_mean
-1,0,0.0,,0.008,,,,,0
-2,0,0.0,,0.008,,,,,0
-3,0,0.0,,0.008,,,,,0
-4,0,0.0,,0.008,,,,,0
-5,0,0.0,,0.008,,,,,0

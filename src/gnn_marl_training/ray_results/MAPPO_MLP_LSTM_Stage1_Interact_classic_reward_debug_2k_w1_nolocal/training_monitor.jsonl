@@ -1,5 +1,0 @@
-{"iteration": 1, "timesteps": 0, "episode_reward_mean": 0.0, "episode_len_mean": null, "entropy": 0.008, "policy_loss": null, "vf_loss": null, "total_loss": null, "kl": null, "custom_metrics_mean": {}}
-{"iteration": 2, "timesteps": 0, "episode_reward_mean": 0.0, "episode_len_mean": null, "entropy": 0.008, "policy_loss": null, "vf_loss": null, "total_loss": null, "kl": null, "custom_metrics_mean": {}}
-{"iteration": 3, "timesteps": 0, "episode_reward_mean": 0.0, "episode_len_mean": null, "entropy": 0.008, "policy_loss": null, "vf_loss": null, "total_loss": null, "kl": null, "custom_metrics_mean": {}}
-{"iteration": 4, "timesteps": 0, "episode_reward_mean": 0.0, "episode_len_mean": null, "entropy": 0.008, "policy_loss": null, "vf_loss": null, "total_loss": null, "kl": null, "custom_metrics_mean": {}}
-{"iteration": 5, "timesteps": 0, "episode_reward_mean": 0.0, "episode_len_mean": null, "entropy": 0.008, "policy_loss": null, "vf_loss": null, "total_loss": null, "kl": null, "custom_metrics_mean": {}}

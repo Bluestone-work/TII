@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/reward_search/reward_high_risk_avoidance/GNN_MAPPO_Stage1_Interact_reward_high_risk_avoidance_EnvStage1/best

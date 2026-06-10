@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/stage1_map6_option_fix_v1/GNN_MAPPO_Stage1_Option_stage1_map6_option_fix_v1_EnvStage1/best

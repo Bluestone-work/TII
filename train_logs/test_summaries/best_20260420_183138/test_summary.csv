@@ -1,2 +1,0 @@
-stage,repeat,num_episodes,total_success,total_collision,avg_reward,avg_steps,avg_min_dist,avg_social_risk,avg_front_risk,reached_agents,collided_agents,truncated_episodes,exit_code,log_path,checkpoint
-2,1,5,6,14,12.26,515.8,0.154,0.037,0.179,6,14,0,0,/home/wj/work/multi-robot-exploration-rl/train_logs/test_summaries/best_20260420_183138/test_stage2_run1.log,/home/wj/work/multi-robot-exploration-rl/ray_results/GNN_MAPPO_Stage2_Cont_EnvStage2_4.20/best

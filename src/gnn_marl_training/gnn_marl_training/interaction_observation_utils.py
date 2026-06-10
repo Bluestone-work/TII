@@ -199,6 +199,49 @@ def build_interaction_neighbor_token(
     )
 
 
+
+
+def build_minimal_risk_summary(
+    *,
+    front_min: float,
+    left_min: float,
+    right_min: float,
+    front_close_ratio: float,
+    side_close_ratio: float,
+    predictive_social_risk: float,
+    predictive_front_risk: float,
+    ttc_min: float,
+    predictive_social_ttc_safe: float,
+) -> np.ndarray:
+    ttc_norm = 1.0
+    if math.isfinite(float(ttc_min)):
+        ttc_norm = float(np.clip(float(ttc_min) / max(float(predictive_social_ttc_safe), 1e-6), 0.0, 1.0))
+    return np.array([
+        float(front_min),
+        float(left_min),
+        float(right_min),
+        float(np.clip(front_close_ratio, 0.0, 1.0)),
+        float(np.clip(side_close_ratio, 0.0, 1.0)),
+        float(np.clip(predictive_social_risk, 0.0, 1.0)),
+        float(np.clip(predictive_front_risk, 0.0, 1.0)),
+        float(ttc_norm),
+    ], dtype=np.float32)
+
+
+def build_temporal_delta_summary(
+    *,
+    delta_front_min: float,
+    delta_ttc: float,
+    delta_social_risk: float,
+    delta_path_progress: float,
+) -> np.ndarray:
+    return np.array([
+        float(np.clip(delta_front_min, -1.0, 1.0)),
+        float(np.clip(delta_ttc / 5.0, -1.0, 1.0)),
+        float(np.clip(delta_social_risk, -1.0, 1.0)),
+        float(np.clip(delta_path_progress, -1.0, 1.0)),
+    ], dtype=np.float32)
+
 # ── Path projection progress (avoids Euclidean-goal-only progress trap) ───
 
 def project_point_to_polyline_arclength(

@@ -1,1 +1,0 @@
-stage,repeat,num_episodes,total_success,total_collision,avg_reward,avg_steps,avg_min_dist,avg_social_risk,avg_front_risk,reached_agents,collided_agents,truncated_episodes,exit_code,log_path,checkpoint

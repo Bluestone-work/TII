@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/reward_only_no_mask/GNN_MAPPO_Stage1_Interact_reward_only_no_mask_EnvStage1/best

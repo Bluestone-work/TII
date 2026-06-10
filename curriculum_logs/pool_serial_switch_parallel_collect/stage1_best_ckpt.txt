@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/pool_serial_switch_parallel_collect/GNN_MAPPO_ScenePool_pool_serial_switch_parallel_collect_EnvStage1/best

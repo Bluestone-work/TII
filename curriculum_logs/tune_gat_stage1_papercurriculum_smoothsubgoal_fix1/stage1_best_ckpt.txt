@@ -1,1 +1,0 @@
-/home/wj/work/multi-robot-exploration-rl/ray_results/tune_gat_stage1_papercurriculum_smoothsubgoal_fix1/GNN_MAPPO_Stage1_Interact_tune_gat_stage1_papercurriculum_smoothsubgoal_fix1_EnvStage1/best

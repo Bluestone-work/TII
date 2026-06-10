@@ -1,4 +1,0 @@
-usage: test_gnn_mappo.py [-h] --checkpoint_path CHECKPOINT_PATH
-                         [--num_episodes NUM_EPISODES] [--explore]
-                         [--diag_steps DIAG_STEPS]
-test_gnn_mappo.py: error: unrecognized arguments: --shield_enable 1 --shield_front_slow_dist 0.60 --shield_front_stop_dist 0.26 --shield_neighbor_slow_dist 0.45 --shield_linear_slow 0.12 --shield_linear_stop 0.04 --shield_turn_bias 0.35 --turn_in_place_front_dist 0.40 --turn_in_place_angle_thresh 0.45 --turn_in_place_w 0.90
