@@ -1,0 +1,129 @@
+\relax 
+\citation{vandenberg2008rvo,vandenberg2011orca}
+\citation{chen2017decentralized,long2018towards,fan2020distributed}
+\citation{liu2024saclidar,zhang2025complicated}
+\citation{montero2025memory}
+\citation{pico2025pathconstrained,meng2025robust}
+\citation{chen2025survey}
+\citation{zhang2025gatmapf,escudie2024multisoc,bi2025decentralized,liu2025cooperative,xiao2024macns,wong2024mrnppo,wang2025parallelcooperative}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\newlabel{sec:introduction}{{I}{1}{}{section.1}{}}
+\citation{zhang2025gatmapf,escudie2024multisoc}
+\citation{chen2017decentralized,long2018towards}
+\citation{rashid2018qmix}
+\citation{yu2022mappo}
+\citation{fan2020distributed}
+\citation{foerster2018coma}
+\citation{sukhbaatar2016commnet}
+\citation{das2019tarmac}
+\citation{velickovic2018gat}
+\citation{zhang2025gatmapf}
+\citation{escudie2024multisoc,bi2025decentralized}
+\citation{liu2025cooperative}
+\citation{xiao2024macns}
+\citation{wong2024mrnppo}
+\citation{wolpert2002optimal}
+\citation{shapley1953value}
+\citation{wang2020shapley}
+\citation{chang2022shapley}
+\citation{zhu2025safehj,dawood2025safecoop}
+\citation{riemens2026gpmpc}
+\citation{oliehoek2016concise,bernstein2002complexity}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work}{2}{}\protected@file@percent }
+\newlabel{sec:related_work}{{II}{2}{}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Problem Statement}{2}{}\protected@file@percent }
+\newlabel{sec:problem_statement}{{III}{2}{}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Method}{2}{}\protected@file@percent }
+\newlabel{sec:method}{{IV}{2}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-A}Rolling-Subgoal Guidance with Adaptive Detour Logic}{2}{}\protected@file@percent }
+\newlabel{sec:rolling}{{IV-A}{2}{}{subsection.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Motivation.} (a)~Warehouse aisle network in which multiple AGVs face tightly coupled head-on, merging, and dynamic-obstacle conflicts under partial observability. (b)~Under a shared team reward $r_t$, both agents that participate in a head-on encounter receive identical credit even though only one yielded; the counterfactual signal $\phi _A = V(s_t) - V(s_t\setminus A)$ resolves this ambiguity by quantifying each agent's marginal contribution to team value.}}{3}{}\protected@file@percent }
+\newlabel{fig:motivation}{{1}{3}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-B}Observation Construction and Risk-Based Token Selection}{3}{}\protected@file@percent }
+\newlabel{sec:obs}{{IV-B}{3}{}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-C}Dual-Graph Attention Architecture}{3}{}\protected@file@percent }
+\newlabel{sec:dual_graph}{{IV-C}{3}{}{subsection.4.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {System architecture of the dual-graph counterfactual MAPPO framework.} The pipeline consists of four stages. (1)~\emph  {Observation construction} extracts rolling subgoals from a global A* planner and combines them with LiDAR scans, ego-motion, and neighbor information to form the local observation. (2)~\emph  {Dual-graph encoding} constructs two ego-centric graphs—a social-risk graph attending to high-risk neighbors via predicted collision time and a dynamic-obstacle graph attending to moving obstacles via motion descriptors—and processes them with separate GAT encoders. (3)~\emph  {Policy network} fuses the MLP--LSTM navigation backbone with dual-graph features through a residual gate, producing continuous velocity commands. (4)~\emph  {Centralized training} uses a leave-one-out counterfactual critic to estimate marginal contributions $\phi _i = V(s) - V(s \setminus i)$, which are injected into per-agent rewards before advantage estimation. The partial-done protocol terminates episodes early when active agents drop below a threshold, maintaining clean trajectory boundaries for PPO updates.}}{4}{}\protected@file@percent }
+\newlabel{fig:system_architecture}{{2}{4}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-D}Policy Network with Residual Risk-Gated Fusion}{4}{}\protected@file@percent }
+\newlabel{sec:policy_arch}{{IV-D}{4}{}{subsection.4.4}{}}
+\citation{rashid2018qmix}
+\citation{foerster2018coma}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Dual-graph attention.} (a)~Social-risk graph: the ego attends to the top-$K_s{=}2$ neighbors ranked by predicted time-to-collision; pruned candidates are shown dashed and edge thickness encodes the resulting attention weight $\alpha _{ij}$. (b)~Dynamic-obstacle graph: the ego attends to the top-$K_o{=}3$ LiDAR sectors carrying moving obstacles, each scored by proximity and closing rate. (c)~One head of the risk-biased GAT: features are linearly projected, concatenated with a leaky-rectified compatibility score, augmented by a per-neighbor risk bias $\beta \, r_j$ with $\beta {=}2.5$, and softmax-normalized to yield $\alpha _{ij}$ before aggregating the value features.}}{5}{}\protected@file@percent }
+\newlabel{fig:dual_graph}{{3}{5}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-E}Leave-One-Out Counterfactual Credit Assignment}{5}{}\protected@file@percent }
+\newlabel{sec:counterfactual}{{IV-E}{5}{}{subsection.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Residual risk-gated fusion.} (a)~The MLP--LSTM backbone embedding $h^i_{\mathrm  {lstm}}$ bypasses the graph encoder via a residual skip. The fused graph embedding $h^i_{\mathrm  {graph}}$ is transformed by $\mathrm  {MLP}_\Delta $ and modulated element-wise by a learned sigmoid gate $g^i = \sigma (W_g[h^i_{\mathrm  {lstm}};h^i_{\mathrm  {graph}}]+b_g)$, with the bias $b_g = -1.0$ keeping the gate near zero at initialization. The gated delta is added to $h^i_{\mathrm  {lstm}}$ and normalized to yield $h^i_{\mathrm  {policy}}$. (b)~Mean gate activation $\bar  g^i$ as a function of normalized interaction risk: in open corridors (left band) the backbone dominates, while in high-risk pockets (right band) graph reasoning is mixed in.}}{5}{}\protected@file@percent }
+\newlabel{fig:residual_gate}{{4}{5}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-F}Density-Adaptive Reward and Partial-Done Training Protocol}{5}{}\protected@file@percent }
+\newlabel{sec:training_protocol}{{IV-F}{5}{}{subsection.4.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Leave-one-out counterfactual credit.} (a)~At each timestep the centralized critic computes the value of the full global state $V(s_t)$ and $N$ masked variants $V(s_t\setminus i)$ in which agent $i$'s observation slot is zeroed; the marginal contributions $\phi _i = V(s_t) - V(s_t\setminus i)$ are normalized, clipped, scaled by $\lambda _{cf}{=}0.15$, and injected into per-agent rewards before advantage estimation so that the credit propagates through multi-step returns. (b)~Vignette of a head-on encounter: under a shared $r_t$ both agents look identical, while $\phi _i$ assigns the larger positive credit to the yielding agent, breaking the credit ambiguity.}}{6}{}\protected@file@percent }
+\newlabel{fig:counterfactual}{{5}{6}{}{figure.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Dual-graph counterfactual MAPPO (one iteration).}}{6}{}\protected@file@percent }
+\newlabel{alg:training}{{1}{6}{}{algorithm.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Hyperparameters and architecture sizes.}}{6}{}\protected@file@percent }
+\newlabel{tab:hyperparams}{{I}{6}{}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experimental Setup}{6}{}\protected@file@percent }
+\newlabel{sec:experiments}{{V}{6}{}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Simulator and Training Configuration}{6}{}\protected@file@percent }
+\newlabel{sec:setup_train}{{V-A}{6}{}{subsection.5.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Six-stage curriculum schedule used during training.}}{7}{}\protected@file@percent }
+\newlabel{tab:curriculum}{{II}{7}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Scenarios and Curriculum}{7}{}\protected@file@percent }
+\newlabel{sec:setup_scenarios}{{V-B}{7}{}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {V-C}Baselines, Ablations, and Metrics}{7}{}\protected@file@percent }
+\newlabel{sec:setup_baselines}{{V-C}{7}{}{subsection.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Comparison across Circle-Swap scenarios. Arrows indicate the preferred direction. Values are mean performance over one hundred test episodes and three independent seeds.}}{7}{}\protected@file@percent }
+\newlabel{tab:main}{{III}{7}{}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results and Discussion}{7}{}\protected@file@percent }
+\newlabel{sec:results}{{VI}{7}{}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-A}Quantitative Comparison}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Ablation Study}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-C}Training Stability and Convergence}{7}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Ablation on Circle-Swap-$4$. Values follow the same convention as Table~\ref {tab:main}.}}{8}{}\protected@file@percent }
+\newlabel{tab:ablation}{{IV}{8}{}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Training curves on Circle-Swap-$4$.} (a)~Mean episode return against environment steps; the dual-graph counterfactual policy reaches a higher plateau and converges faster than the fully connected graph baseline and the MLP--LSTM backbone. (b)~Collision rate decays monotonically for all learners and saturates well below ORCA. Shaded variance is omitted for clarity; the per-seed standard deviation of the proposed method is within 8\% of the mean.}}{8}{}\protected@file@percent }
+\newlabel{fig:training_curves}{{6}{8}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-D}Sensitivity to Key Hyperparameters}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-E}Computational Cost}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-F}Qualitative Analysis}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-G}Failure Modes and Limitations}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{8}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{VII}{8}{}{section.7}{}}
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{vandenberg2008rvo}{1}
+\bibcite{vandenberg2011orca}{2}
+\bibcite{chen2017decentralized}{3}
+\bibcite{long2018towards}{4}
+\bibcite{fan2020distributed}{5}
+\bibcite{liu2024saclidar}{6}
+\bibcite{zhang2025complicated}{7}
+\bibcite{montero2025memory}{8}
+\bibcite{pico2025pathconstrained}{9}
+\bibcite{meng2025robust}{10}
+\bibcite{chen2025survey}{11}
+\bibcite{zhang2025gatmapf}{12}
+\bibcite{escudie2024multisoc}{13}
+\bibcite{bi2025decentralized}{14}
+\bibcite{liu2025cooperative}{15}
+\bibcite{xiao2024macns}{16}
+\bibcite{wong2024mrnppo}{17}
+\bibcite{wang2025parallelcooperative}{18}
+\bibcite{rashid2018qmix}{19}
+\bibcite{yu2022mappo}{20}
+\bibcite{foerster2018coma}{21}
+\bibcite{sukhbaatar2016commnet}{22}
+\bibcite{das2019tarmac}{23}
+\bibcite{velickovic2018gat}{24}
+\bibcite{wolpert2002optimal}{25}
+\bibcite{shapley1953value}{26}
+\bibcite{wang2020shapley}{27}
+\bibcite{chang2022shapley}{28}
+\bibcite{zhu2025safehj}{29}
+\bibcite{dawood2025safecoop}{30}
+\bibcite{riemens2026gpmpc}{31}
+\bibcite{oliehoek2016concise}{32}
+\bibcite{bernstein2002complexity}{33}
+\@writefile{toc}{\contentsline {section}{References}{9}{}\protected@file@percent }
+\gdef \@abspage@last{9}
