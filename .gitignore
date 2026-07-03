@@ -47,5 +47,3 @@ baseline_logs/
 .agents/
 
 # Diagnosis output data
-diagnosis_output_*/
-*.jsonl
