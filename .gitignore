@@ -45,3 +45,7 @@ baseline_logs/
 .claude/
 .codex/
 .agents/
+
+# Diagnosis output data
+diagnosis_output_*/
+*.jsonl
