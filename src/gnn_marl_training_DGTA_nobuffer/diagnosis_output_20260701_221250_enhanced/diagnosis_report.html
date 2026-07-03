@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>避碰策略诊断报告</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; max-width: 1200px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        .finding { background: #ecf0f1; padding: 10px; margin: 10px 0; border-left: 4px solid #3498db; }
+        .warning { background: #ffe6e6; border-left-color: #e74c3c; }
+        img { max-width: 100%; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .summary { background: #d5f4e6; padding: 15px; margin: 20px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🔍 避碰策略定量诊断报告</h1>
+    <p><strong>生成时间:</strong> 2026-06-30</p>
+<h2>1. 奖励-距离相关性</h2>
+<div class="finding">中距离(0.5-0.75m): 奖励均值 -0.1614</div>
+<div class="finding">奖励转正的距离: ≥0.80m (10% 分位)</div>
+<h2>2. 动态障碍识别</h2>
+<div class="finding">动态识别率: 63.19%</div>
+<div class="finding">动态 token 距离中位数: 2.56m</div>
+<h2>3. 碰撞分析</h2>
+<div class="finding">碰撞率: 0.05%</div>
+<div class="finding">碰撞时 min_dist 中位数: 0.251m</div>
+<div class="warning">  ⚠️  碰撞时 min_dist>0.25m,可能是激光读数滞后或栅格太粗</div>
+<h2>4. 速度-奖励相关性</h2>
+<div class="finding">不动(v<0.02): 奖励均值 -0.1346</div>
+<div class="finding">前进(v>0.1): 奖励均值 -0.1517</div>
+<div class="warning">  ⚠️  不动比前进奖励更高,奖励失衡确诊!</div>
+<h2>5. 风险暴露度量</h2>
+<div class="finding">危险区间(<0.3m)时间占比: 0.71%</div>
+<div class="finding">接近区间(<0.5m)时间占比: 6.91%</div>
+<div class="finding">危险接近事件(0.5m→<0.3m突降): 2 次</div>
+<h2>6. 目标导向行为</h2>
+<div class="finding">靠近目标的时间占比: 2.4%</div>
+<div class="finding">原地卡住(|Δd|<0.01m)时间占比: 95.1%</div>
+<div class="finding">远离目标的时间占比: 2.6%</div>
+<div class="warning">⚠️  原地卡住时间>30%，存在严重磨蹭问题</div>
+<div class="warning">⚠️  靠近目标时间<40%，策略不够目标导向</div>
+<h2>7. Episode 结果分析</h2>
+<div class="finding">总 episode 数: 80</div>
+<div class="finding">  collision: 43 (53.8%)</div>
+<div class="finding">  timeout: 29 (36.2%)</div>
+<div class="finding">  timeout/ongoing: 8 (10.0%)</div>
+<div class="warning">⚠️  到达率仅 0.0%，远低于预期</div>
+<h2>8. 奖励分解时间序列</h2>
+<div class="warning">⚠️  奖励分解字段缺失</div>
+<h2>📊 可视化分析</h2>
+<h3>Collision Analysis</h3>
+<img src="collision_analysis.png" alt="collision_analysis">
+<h3>Dynamic Token Distance Hist</h3>
+<img src="dynamic_token_distance_hist.png" alt="dynamic_token_distance_hist">
+<h3>Episode Outcomes</h3>
+<img src="episode_outcomes.png" alt="episode_outcomes">
+<h3>Goal Oriented Behavior</h3>
+<img src="goal_oriented_behavior.png" alt="goal_oriented_behavior">
+<h3>Reward Vs Distance Boxplot</h3>
+<img src="reward_vs_distance_boxplot.png" alt="reward_vs_distance_boxplot">
+<h3>Reward Vs Distance Scatter</h3>
+<img src="reward_vs_distance_scatter.png" alt="reward_vs_distance_scatter">
+<h3>Reward Vs Velocity</h3>
+<img src="reward_vs_velocity.png" alt="reward_vs_velocity">
+<h3>Risk Exposure Histogram</h3>
+<img src="risk_exposure_histogram.png" alt="risk_exposure_histogram">
+
+    <div class="summary">
+        <h2>💡 改进建议</h2>
+        <p>基于上述量化分析,建议按优先级改进:</p>
+        <ol>
+            <li><strong>奖励重平衡</strong> (如果发现 "不动 > 前进" 或中距离强负)</li>
+            <li><strong>扇区距离拼回观测</strong> (如果碰撞率高但 min_dist 在合理范围)</li>
+            <li><strong>动态速度平滑</strong> (如果动态识别率 <30%)</li>
+        </ol>
+        <p>详见 <code>DIAGNOSIS_REPORT.md</code> 完整方案。</p>
+    </div>
+    </body>
+    </html>
+    
