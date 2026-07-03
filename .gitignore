@@ -47,3 +47,7 @@ baseline_logs/
 .agents/
 
 # Diagnosis output data
+
+# Large diagnosis data files (cannot push >10MB files due to network timeout)
+diagnosis_output_20260701_221250/
+diagnosis_new.jsonl
