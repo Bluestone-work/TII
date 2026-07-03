@@ -3,38 +3,45 @@ build/
 install/
 log/
 
-# Python caches
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.so
+*.egg-info/
 
-# Runtime logs and backups
+# Training outputs
+sb3_logs/
+sb3_models/
+ray_results/
+curriculum_logs/
+orca_logs/
+test_results/
+benchmark_results/
+baseline_logs/
+
+# Logs
 *.log
-*.log.bak
 *.out
 *.err
 
-# Training / experiment outputs
-ray_results/
-src/gnn_marl_training/ray_results/
-curriculum_logs/
-curriculum_logs_sfl/
-option_test_results/
-sb3_logs/
-sb3_models/
-orca_logs/
-train_logs/
-refine-logs/
-bc_collect_logs/
-bc_tune_logs/
-bc_tune_results/
-
-# TensorBoard / RL checkpoints and monitor streams
-events.out.tfevents.*
+# Models
+*.pt
+*.pth
 *.pkl
-*.jsonl
 
-# Local editor / OS noise
+# IDE
 .vscode/
 .idea/
+
+# System
 .DS_Store
+
+# Data
+*.bag
+*.png
+*.jpg
+
+# Claude
+.claude/
+.codex/
+.agents/
