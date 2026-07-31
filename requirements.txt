@@ -1,0 +1,11 @@
+numpy
+scipy
+pandas
+matplotlib
+networkx
+gymnasium
+ray[rllib]
+torch
+tensorboard
+pyyaml
+tqdm

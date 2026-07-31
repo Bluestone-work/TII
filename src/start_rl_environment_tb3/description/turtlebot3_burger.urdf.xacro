@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<robot name="turtlebot3_burger" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:arg name="robot_name" default="tb3_0"/>
+  
+  <!-- Include TurtleBot3 Burger base model -->
+  <xacro:include filename="$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro" />
+  
+  <!-- Add custom lidar configuration for better collision detection -->
+  <xacro:property name="laser_visual_params">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.0508" length="0.055"/>
+    </geometry>
+  </xacro:property>
+  
+</robot>

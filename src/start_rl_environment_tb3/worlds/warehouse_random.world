@@ -1,0 +1,290 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<world name="warehouse_random">
+  <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+    <ros>
+      <argument>model_states:=model_states_demo</argument>
+    </ros>
+    <update_rate>1.0</update_rate>
+  </plugin>
+
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+
+  <!-- Boundary walls: 12m x 12m warehouse (±6m) -->
+  <model name="b_north">
+    <static>true</static>
+    <pose>0.0 6.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>12.0 0.2 1.5</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>12.0 0.2 1.5</size></box></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_south">
+    <static>true</static>
+    <pose>0.0 -6.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>12.0 0.2 1.5</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>12.0 0.2 1.5</size></box></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_east">
+    <static>true</static>
+    <pose>6.0 0.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.2 12.0 1.5</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.2 12.0 1.5</size></box></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="b_west">
+    <static>true</static>
+    <pose>-6.0 0.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.2 12.0 1.5</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.2 12.0 1.5</size></box></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- Random static obstacles: boxes and cylinders simulating warehouse items -->
+  <!-- Layout: 随机分布 10 个静态障碍物，留出足够导航空间 -->
+
+  <!-- Box obstacles (货箱) - 0.8m x 0.8m x 1.0m -->
+  <model name="static_box_0">
+    <static>true</static>
+    <pose>-3.5 -3.5 0.5 0 0 0.3</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.8 0.8 1.0</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.8 1.0</size></box></geometry>
+        <material><ambient>0.8 0.6 0.4 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_box_1">
+    <static>true</static>
+    <pose>2.5 -4.0 0.5 0 0 0.8</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.8 0.8 1.0</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.8 1.0</size></box></geometry>
+        <material><ambient>0.7 0.5 0.3 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_box_2">
+    <static>true</static>
+    <pose>-1.5 2.5 0.5 0 0 1.2</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.8 0.8 1.0</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.8 1.0</size></box></geometry>
+        <material><ambient>0.6 0.7 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_box_3">
+    <static>true</static>
+    <pose>4.0 3.5 0.5 0 0 0.5</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.8 0.8 1.0</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.8 1.0</size></box></geometry>
+        <material><ambient>0.8 0.5 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_box_4">
+    <static>true</static>
+    <pose>0.5 -1.5 0.5 0 0 0.9</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.8 0.8 1.0</size></box></geometry></collision>
+      <visual name="visual">
+        <geometry><box><size>0.8 0.8 1.0</size></box></geometry>
+        <material><ambient>0.5 0.6 0.7 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- Cylinder obstacles (圆柱货物) - radius 0.4m, height 1.2m -->
+  <model name="static_cyl_0">
+    <static>true</static>
+    <pose>-4.5 1.5 0.6 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry>
+        <material><ambient>0.3 0.5 0.7 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_cyl_1">
+    <static>true</static>
+    <pose>3.0 -2.0 0.6 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry>
+        <material><ambient>0.6 0.4 0.5 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_cyl_2">
+    <static>true</static>
+    <pose>-2.0 -1.0 0.6 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry>
+        <material><ambient>0.7 0.6 0.4 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_cyl_3">
+    <static>true</static>
+    <pose>1.5 4.0 0.6 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry>
+        <material><ambient>0.5 0.7 0.6 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="static_cyl_4">
+    <static>true</static>
+    <pose>-0.5 0.5 0.6 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.4</radius><length>1.2</length></cylinder></geometry>
+        <material><ambient>0.6 0.5 0.6 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <!-- Dynamic obstacles (8 cylinders, moved by obstacle_mover node) -->
+  <model name="dyn_obs_0">
+    <static>true</static>
+    <pose>-4.0 -4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_1">
+    <static>true</static>
+    <pose>-4.0 4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_2">
+    <static>true</static>
+    <pose>4.0 -4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_3">
+    <static>true</static>
+    <pose>4.0 4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_4">
+    <static>true</static>
+    <pose>-4.0 0.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_5">
+    <static>true</static>
+    <pose>4.0 0.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_6">
+    <static>true</static>
+    <pose>0.0 -4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_7">
+    <static>true</static>
+    <pose>0.0 4.0 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual">
+        <geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry>
+        <material><ambient>1.0 0.2 0.2 1</ambient></material>
+      </visual>
+    </link>
+  </model>
+
+</world>
+</sdf>

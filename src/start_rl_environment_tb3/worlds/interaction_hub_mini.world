@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<world name="interaction_hub_mini">
+  <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+    <ros>
+      <argument>model_states:=model_states_demo</argument>
+    </ros>
+    <update_rate>1.0</update_rate>
+  </plugin>
+
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+
+  <model name="b_north">
+    <static>true</static>
+    <pose>0.0 6.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>12.0 0.2 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>12.0 0.2 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="b_south">
+    <static>true</static>
+    <pose>0.0 -6.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>12.0 0.2 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>12.0 0.2 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="b_east">
+    <static>true</static>
+    <pose>6.0 0.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.2 12.0 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>0.2 12.0 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="b_west">
+    <static>true</static>
+    <pose>-6.0 0.0 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.2 12.0 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>0.2 12.0 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="quad_sw">
+    <static>true</static>
+    <pose>-3.45 -3.45 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="quad_nw">
+    <static>true</static>
+    <pose>-3.45 3.45 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="quad_se">
+    <static>true</static>
+    <pose>3.45 -3.45 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="quad_ne">
+    <static>true</static>
+    <pose>3.45 3.45 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>4.9 4.9 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="pillar_sw">
+    <static>true</static>
+    <pose>-1.15 -1.15 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="pillar_nw">
+    <static>true</static>
+    <pose>-1.15 1.15 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="pillar_se">
+    <static>true</static>
+    <pose>1.15 -1.15 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <model name="pillar_ne">
+    <static>true</static>
+    <pose>1.15 1.15 0.75 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>0.6 0.6 1.5</size></box></geometry></visual>
+    </link>
+  </model>
+
+  <!-- 动态障碍物 dyn_obs_0~7，默认停在四臂远端，由 obstacle_mover 接管 -->
+  <model name="dyn_obs_0">
+    <static>true</static>
+    <pose>-4.3 -0.6 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_1">
+    <static>true</static>
+    <pose>-4.3 0.6 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_2">
+    <static>true</static>
+    <pose>4.3 -0.6 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_3">
+    <static>true</static>
+    <pose>4.3 0.6 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_4">
+    <static>true</static>
+    <pose>-0.6 -4.3 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_5">
+    <static>true</static>
+    <pose>0.6 -4.3 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_6">
+    <static>true</static>
+    <pose>-0.6 4.3 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+
+  <model name="dyn_obs_7">
+    <static>true</static>
+    <pose>0.6 4.3 0.4 0 0 0</pose>
+    <link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.22</radius><length>0.8</length></cylinder></geometry></visual>
+    </link>
+  </model>
+</world>
+</sdf>
