@@ -1,8 +1,8 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <sdf version="1.6">
 <world name="intersection">
-  <!-- Gazebo ROS State Plugin - provides /set_entity_state service -->
-  <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+  
+  <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
     <ros>
       <argument>model_states:=model_states_demo</argument>
     </ros>
@@ -234,60 +234,6 @@
     </link>
   </model>
 
-  <model name="center_block1">
-    <static>true</static>
-    <pose>-0.36 -0.36 0.75 0 0 0</pose>
-    <link name="link">
-      <collision name="collision">
-        <geometry>
-          <box><size>0.48 0.48 1.5</size></box>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box><size>0.48 0.48 1.5</size></box>
-        </geometry>
-        <cast_shadows>true</cast_shadows>
-        <material>
-          <ambient>0.88 0.90 0.94 1</ambient>
-          <diffuse>0.96 0.97 0.99 1</diffuse>
-          <specular>0.08 0.08 0.09 1</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
-      </visual>
-    </link>
-  </model>
-
-  <model name="center_block2">
-    <static>true</static>
-    <pose>0.36 0.36 0.75 0 0 0</pose>
-    <link name="link">
-      <collision name="collision">
-        <geometry>
-          <box><size>0.48 0.48 1.5</size></box>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box><size>0.48 0.48 1.5</size></box>
-        </geometry>
-        <cast_shadows>true</cast_shadows>
-        <material>
-          <ambient>0.88 0.90 0.94 1</ambient>
-          <diffuse>0.96 0.97 0.99 1</diffuse>
-          <specular>0.08 0.08 0.09 1</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
-      </visual>
-    </link>
-  </model>
-
-
-  <!-- ════════════════════════════════════════════════════════════════
-       动态障碍物 dyn_obs_0~7  —  由 obstacle_mover 节点驱动（50 Hz）
-       停靠在地图安全区域，obstacle_mover 启动后接管位置控制。
-       LiDAR 对 static model 完全有效（碰撞几何正常生效）。
-       ════════════════════════════════════════════════════════════════ -->
   <model name="dyn_obs_0">
     <static>true</static>
     <pose>-2.7  0.5 0.4 0 0 0</pose>
